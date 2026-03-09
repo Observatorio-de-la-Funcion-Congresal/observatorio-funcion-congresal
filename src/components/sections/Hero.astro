@@ -1,0 +1,72 @@
+---
+/**
+ * Hero section — dark background with heading, subtitle, and CTA buttons.
+ *
+ * Props allow full customisation so this can be reused on other pages
+ * by swapping headline, sub-text, or the two button labels/hrefs.
+ */
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  headingItalic?: string;
+  headingItalicPrefix?: string;
+  headingEnd?: string;
+  body?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+}
+
+const {
+  eyebrow = 'Elecciones generales 2026',
+  heading = 'Antes de votar,',
+  headingItalicPrefix = 'conoce',
+  headingItalic = 'cómo trabajaron',
+  headingEnd = 'por ti',
+  body = '¿Sabías que 88 de los 130 congresistas están buscando reelegirse?\nMira cómo fue su desempeño',
+  primaryLabel = 'Busca a tu congresista',
+  primaryHref = '/candidatos',
+  secondaryLabel = 'Compara su información',
+  secondaryHref = '/compara',
+} = Astro.props;
+---
+
+<section class="relative flex items-center bg-navy-900 overflow-hidden">
+  <div class="absolute inset-0 bg-[url('/src/assets/hero-background.jpg')] bg-cover saturate-0"></div>
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-hero-overlay mix-blend-multiply"></div>
+
+  <Container class="relative z-10 py-20 text-center">
+    <p class="text-lg font-medium text-white mb-4 py-1 px-3 bg-white/10 rounded-3xl inline-block">
+      {eyebrow}
+    </p>
+
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 max-w-3xl mx-auto">
+      {heading}
+      <br />
+      <span class="font-extrabold">
+        {headingItalicPrefix}
+        <em class="italic text-light-blue-obs">{headingItalic}</em>
+      </span>
+      <br />
+      {headingEnd}
+    </h1>
+
+    <p class="text-white text-base leading-6 mx-auto mb-10 whitespace-pre-line">
+      {body}
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <Button href={primaryHref} variant="secondary" size="lg" class="rounded-2xl">
+        {primaryLabel}
+      </Button>
+      <Button href={secondaryHref} variant="outline-light" size="lg" class="rounded-2xl">
+        {secondaryLabel}
+      </Button>
+    </div>
+  </Container>
+</section>

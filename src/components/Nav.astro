@@ -1,0 +1,43 @@
+---
+/**
+ * Nav component — horizontal list of navigation links.
+ * Accepts an array of { label, href } items via props or uses defaults.
+ */
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  items?: NavItem[];
+  class?: string;
+}
+
+const defaultItems: NavItem[] = [
+  { label: 'Partidos', href: '/partidos' },
+  { label: 'Candidatos', href: '/candidatos' },
+  { label: 'Compara', href: '/compara' },
+];
+
+const { items = defaultItems, class: className = '' } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class={`flex items-center gap-8 ${className}`} aria-label="Menú principal">
+  {
+    items.map((item) => (
+      <a
+        href={item.href}
+        class={[
+          'text-sm font-medium transition-colors hover:text-navy-900',
+          currentPath === item.href
+            ? 'text-navy-900 border-b-2 border-navy-900 pb-0.5'
+            : 'text-gray-600',
+        ].join(' ')}
+      >
+        {item.label}
+      </a>
+    ))
+  }
+</nav>

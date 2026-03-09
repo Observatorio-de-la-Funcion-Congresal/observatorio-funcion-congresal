@@ -1,0 +1,76 @@
+---
+import Container from '../ui/Container.astro';
+
+interface Step {
+  number: string;
+  title: string;
+  description: string;
+  href?: string;
+  linkLabel?: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  body?: string;
+  steps?: Step[];
+}
+
+const {
+  eyebrow = '¿CÓMO USAR EL OBSERVATORIO?',
+  heading = 'En tres pasos, tienes todo lo que necesitas',
+  body = 'Sin tecnicismos, sin buscar en PDFs. Todo en un solo lugar.',
+  steps = [
+    {
+      number: '01',
+      title: 'Busca a tu congresista',
+      description: 'Por nombre, región o partido político.',
+      href: '/candidatos',
+      linkLabel: 'Buscar',
+    },
+    {
+      number: '02',
+      title: 'Revisa su desempeño',
+      description: 'Asistencias, votaciones y proyectos de ley del período 2021–2026.',
+      href: '/candidatos',
+      linkLabel: 'Explorar',
+    },
+    {
+      number: '03',
+      title: 'Compara con otros',
+      description: '¿Cómo se compara con el promedio de su región o partido?',
+      href: '/compara',
+      linkLabel: 'Comparar',
+    },
+  ],
+} = Astro.props;
+---
+
+<section class="bg-sky-blue-obs py-20">
+  <Container>
+    <div class="text-center mb-12 flex flex-col gap-4">
+      <p class="text-lg font-semibold text-dark-blue-obs">{eyebrow}</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold">{heading}</h2>
+      <p class="text-base">{body}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+      {
+        steps.map((step, index) => (
+          <div class={
+            [
+              "flex flex-col gap-3",
+              index === steps.length - 1 ? '' : 'border-r-light-blue-obs border-r-2 border-0'
+            ].join(' ')
+          } >
+            <span class="text-7xl font-extrabold text-primary-blue-obs">
+              {step.number}
+            </span>
+            <h3 class="text-base font-semibold text-primary-blue-obs">{step.title}</h3>
+            <p class="text-sm leading-5 text-primary-gray-obs">{step.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</section>

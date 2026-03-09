@@ -1,0 +1,75 @@
+---
+import Container from './ui/Container.astro';
+
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
+const contentLinks: FooterLink[] = [
+  { label: 'Sobre la bicameralidad', href: '/bicameralidad' },
+  { label: 'Conoce los partidos políticos', href: '/partidos' },
+  { label: 'Compara a tu candidato', href: '/compara' },
+  { label: 'Metodología', href: '/metodologia' },
+];
+
+const socialLinks = [
+  { label: 'Facebook', href: '#', icon: 'fb_icon.svg' },
+  { label: 'LinkedIn', href: '#', icon: 'ln_icon.svg' },
+  { label: 'Instagram', href: '#', icon: 'in_icon.svg' },
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-dark-blue-obs text-white">
+  <Container class="py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="flex flex-col gap-4">
+        <div>
+          <img src="/src/assets/logo-white.png" alt="" class="h-14 w-auto">
+        </div>
+        <p class="text-sm leading-5 font-inter text-light-gray-obs opacity-80 font-normal max-w-sm">
+          Plataforma de transparencia política que promueve la participación ciudadana informada en el proceso democrático peruano.
+        </p>
+        
+        <div class="flex items-center gap-3 mt-2">
+          {
+            socialLinks.map((s) => (
+              <a
+                href={s.href}
+                aria-label={s.label}
+                class="w-8 h-8 flex items-center justify-center rounded-lg p-2 bg-white/10 border border-transparent hover:border-primary-gray-obs"
+              >
+                <img src={`/src/assets/icons/${s.icon}`} alt="" class="w-full h-full" />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-bold mb-4 text-white">Contenido</h4>
+        <ul class="text-light-gray-obs">
+          {
+            contentLinks.map((link) => (
+              <li class="text-sm mb-3">
+                <a href={link.href} class="opacity-80 hover:opacity-100 transition-opacity">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </Container>
+
+  <div>
+    <Container class="py-4 border-t border-white/10">
+      <p class="text-sm text-light-gray-obs font-inter opacity-80">
+        © {currentYear} Bicameralidad Perú. Plataforma de transparencia política ciudadana.
+      </p>
+    </Container>
+  </div>
+</footer>

@@ -1,0 +1,23 @@
+---
+import Button from '../ui/Button.astro';
+
+const targetDate = new Date('2026-04-11');
+const today = new Date();
+const timeDifference = targetDate.getTime() - today.getTime();
+const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+---
+
+<div class={`bg-red-obs text-white`}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4 flex-wrap">
+    <p class="text-sm font-medium">
+      Faltan
+      <strong class="font-bold text-lg"> {daysRemaining} días</strong>
+      para el
+      <strong class="font-bold"> 11 de abril.</strong>
+      {' '}El voto informado es tu derecho y tu poder.
+    </p>
+    <Button href="/candidatos" variant="outline-light" size="sm">
+      Ver desempeño
+    </Button>
+  </div>
+</div>

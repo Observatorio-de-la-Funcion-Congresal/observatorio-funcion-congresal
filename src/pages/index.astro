@@ -1,11 +1,21 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Hero from '../components/sections/Hero.astro';
+import AlertBanner from '../components/sections/AlertBanner.astro';
+import HowToUse from '../components/sections/HowToUse.astro';
+import Bicameralidad from '../components/sections/Bicameralidad.astro';
+import EleccionesInfo from '../components/sections/EleccionesInfo.astro';
+import VoteCTA from '../components/sections/VoteCTA.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Observatorio de la Función Congresal — Elecciones 2026"
+  description="Antes de votar, conoce cómo trabajaron por ti. Revisa el desempeño de los 130 congresistas peruanos."
+>
+  <Hero />
+  <AlertBanner />
+  <HowToUse />
+  <Bicameralidad />
+  <EleccionesInfo />
+  <VoteCTA />
 </Layout>

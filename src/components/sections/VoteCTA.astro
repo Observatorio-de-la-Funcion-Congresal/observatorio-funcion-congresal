@@ -1,0 +1,33 @@
+---
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+
+interface Props {
+  eyebrow?: string;
+  date?: string;
+  body?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const {
+  eyebrow = 'Perú vota el',
+  date = '11 de abril de 2026',
+  body = 'El voto es universal y obligatorio.',
+  ctaLabel = 'Revisar a los 88 que buscan reelegirse',
+  ctaHref = '/candidatos',
+} = Astro.props;
+---
+
+<section class="bg-sky-blue-obs py-20 text-center">
+  <Container>
+    <p class="text-3xl font-bold flex flex-col gap-2">
+      {eyebrow}
+      <span class="text-5xl md:text-6xl font-bold text-dark-blue-obs">{date}</span>
+    </p>
+    <p class="text-primary-gray-obs my-6">{body}</p>
+    <Button href={ctaHref} variant="primary" size="lg">
+      {ctaLabel}
+    </Button>
+  </Container>
+</section>

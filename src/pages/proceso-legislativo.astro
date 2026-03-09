@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import InternalPageHero from '../components/sections/InternalPageHero.astro';
+import Card from '../components/ui/Card.astro';
+import Container from '../components/ui/Container.astro';
+
+const stages = [
+  {
+    number: 1,
+    title: 'Presentación de Iniciativa',
+    description:
+      'Congresistas, ciudadanos o el Poder Ejecutivo presentan un proyecto de ley.',
+  },
+  {
+    number: 2,
+    title: 'Revisión en Comisión',
+    description:
+      'El proyecto es derivado a una comisión especializada de la cámara de origen.',
+  },
+  {
+    number: 3,
+    title: 'Debate en Primera Cámara',
+    description:
+      'Se debate en el pleno de la cámara de origen (Congreso o Senado).',
+  },
+  {
+    number: 4,
+    title: 'Revisión en Segunda Cámara',
+    description:
+      'El proyecto aprobado pasa a la otra cámara para su análisis.',
+  },
+  {
+    number: 5,
+    title: 'Conciliación',
+    description:
+      'Si hay diferencias, ambas cámaras conforman una comisión de conciliación.',
+  },
+  {
+    number: 6,
+    title: 'Promulgación',
+    description:
+      'Una vez aprobado por ambas cámaras, el Presidente promulga la ley.',
+  },
+];
+---
+
+<Layout
+  title="El proceso legislativo — Observatorio de la Función Congresal"
+  description="De la idea a la ley: entender cómo se hacen las leyes en el Perú te ayuda a evaluar mejor el trabajo de tu congresista."
+>
+  <InternalPageHero
+    title="El proceso legislativo"
+    subtitle="De la idea a la ley: entender cómo se hacen las leyes en el Perú te ayuda a evaluar mejor el trabajo de tu congresista."
+  />
+
+  <section class="bg-gray-50 py-12 md:py-14">
+    <Container>
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-bold mb-3">
+          Etapas del proceso legislativo
+        </h2>
+        <p class="text-lg">
+          Conoce cómo una idea se convierte en ley a través del nuevo sistema bicameral
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {stages.map((stage) => (
+          <Card class="flex flex-col gap-4">
+            <span
+              class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-primary-blue-obs text-white font-bold shrink-0"
+            >
+              {stage.number}
+            </span>
+            <div>
+              <h3 class="font-bold mb-2">{stage.title}</h3>
+              <p class="text-sm text-primary-gray-obs leading-5">{stage.description}</p>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </Container>
+  </section>
+</Layout>

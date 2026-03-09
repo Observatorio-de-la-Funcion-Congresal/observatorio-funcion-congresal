@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+import InternalPageHero from '../components/sections/InternalPageHero.astro';
+import Card from '../components/ui/Card.astro';
+import Container from '../components/ui/Container.astro';
+import Button from '../components/ui/Button.astro';
+
+const stats = [
+  { label: 'Total de congresistas', value: '190' },
+  { label: 'Cámara de Diputados', value: '130 puestos' },
+  { label: 'Senado', value: '60 puestos' },
+  { label: 'Parlamentarios Andinos', value: '5' },
+  { label: 'Periodo legislativo', value: '5 años' },
+];
+
+const timelineEvents = [
+  {
+    year: '1992–1993',
+    title: 'Fujimori eliminó el Senado',
+    description:
+      'Tras el autogolpe del 5 de abril de 1992, se disolvió el Congreso bicameral y la Constitución de 1993 instauró un parlamento unicameral de 120 escaños (luego ampliado a 130).',
+  },
+  {
+    year: '2018',
+    title: 'Primer referéndum: No a la bicameralidad',
+    description:
+      'La ciudadanía rechazó (81%) la propuesta de retorno al bicameralismo presentada por el Congreso de ese entonces.',
+  },
+  {
+    year: '2023',
+    title: 'Ley de reforma constitucional aprobada',
+    description:
+      'El Congreso aprobó la ley que restaura el Senado, a aplicarse desde las elecciones de 2026, sin referéndum ciudadano.',
+  },
+  {
+    year: 'Abril 2026',
+    title: 'Elecciones con nuevo sistema',
+    description:
+      'Por primera vez desde 1992, los peruanos elegirán tanto Diputados (130) como Senadores (60), más el Presidente y Parlamentarios Andinos.',
+    isCurrent: true,
+  },
+];
+
+const exploreLinks = [
+  { label: 'Elecciones 2026', href: '/elecciones' },
+  { label: 'Metodología y fuentes', href: '/metodologia' },
+];
+---
+
+<Layout
+  title="¿Qué es la bicameralidad? — Observatorio de la Función Congresal"
+  description="Perú retorna al sistema de dos cámaras en 2026. Aquí te explicamos qué cambia y por qué importa."
+>
+  <InternalPageHero
+    title="¿Qué es la bicameralidad?"
+    subtitle="Perú retorna al sistema de dos cámaras en 2026. Aquí te explicamos qué cambia y por qué importa."
+  />
+
+  <section class="bg-dark-white-obs py-12 md:py-14">
+    <Container>
+      <div class="flex flex-col lg:flex-row gap-5 items-start">
+        <div class="flex flex-col gap-6 flex-1">
+          <Card>
+            <h2 class="text-2xl font-bold mb-4">
+              ¿Qué es un sistema bicameral?
+            </h2>
+            <p class="leading-6 mb-4 text-primary-gray-obs">
+              Un sistema bicameral es aquel en el que el parlamento está dividido en
+              <span class="font-bold">dos cámaras</span> con funciones diferenciadas:
+              generalmente una cámara "baja" o de representación popular (Diputados) y una cámara
+              "alta" de deliberación (Senado).
+            </p>
+            <p class="leading-6 text-primary-gray-obs">
+              El objetivo del bicameralismo es crear un sistema de
+              <span class="font-bold">doble revisión legislativa</span>: las leyes
+              que aprueba una cámara deben pasar por la revisión de la otra, lo que reduce el riesgo
+              de aprobaciones apresuradas y busca mayor calidad en las normas.
+            </p>
+          </Card>
+
+          <Card>
+            <h2 class="text-xl font-bold mb-4">
+              Perú: de unicameral a bicameral
+            </h2>
+            <ol class="relative flex flex-col gap-5">
+              {timelineEvents.map((event) => (
+                <li class="flex gap-4">
+                  <div class="flex flex-col items-center">
+                    <span
+                      class={[
+                        'w-4 h-4 rounded-full mt-1 shrink-0',
+                        event.isCurrent
+                          ? 'bg-red-obs'
+                          : 'bg-primary-blue-obs',
+                      ].join(' ')}
+                    />
+                    <div class="w-px flex-1 bg-light-gray-obs mt-1" />
+                  </div>
+                  <div class="pb-2">
+                    <p class="text-xs font-semibold text-primary-gray-obs mb-1">{event.year}</p>
+                    <p class="text-sm font-bold mb-1">{event.title}</p>
+                    <p class="text-sm text-primary-gray-obs leading-5">{event.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </Card>
+
+          <Card>
+            <h2 class="text-2xl font-bold mb-4">
+              ¿Por qué es relevante para el OFC?
+            </h2>
+            <p class="text-primary-gray-obs leading-6 mb-4">
+              Con la bicameralidad, el trabajo congresal se dividirá entre dos cámaras con roles
+              distintos. El Observatorio evolucionará para dar seguimiento a ambas cámaras: Diputados
+              y Senado, sus votaciones, sus proyectos y su asistencia por separado.
+            </p>
+            <Button href="/candidatos" variant="primary" size="lg">
+              Ver candidatos que postulan
+            </Button>
+          </Card>
+        </div>
+
+        <aside class="w-full lg:w-80 shrink-0 flex flex-col gap-5">
+          <Card padding={false} class="p-6">
+            <h3 class="text-base font-bold mb-4">En números</h3>
+            <ul class="flex flex-col divide-y divide-light-gray-obs">
+              {stats.map((stat) => (
+                <li class="flex justify-between items-center py-3 text-sm">
+                  <span class="text-primary-gray-obs">{stat.label}</span>
+                  <span class="font-semibold text-right">{stat.value}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+
+          <div class="bg-sky-blue-obs border border-light-blue-obs rounded-xl p-6">
+            <h3 class="text-base font-bold mb-4">Explorar más</h3>
+            <ul class="flex flex-col gap-2">
+              {exploreLinks.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="font-medium text-primary-blue-obs hover:underline"
+                  >
+                    {link.label} →
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </aside>
+      </div>
+    </Container>
+  </section>
+</Layout>
