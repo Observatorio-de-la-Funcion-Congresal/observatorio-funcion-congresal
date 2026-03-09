@@ -1,46 +1,44 @@
-# Astro Starter Kit: Basics
+# Observatorio de la Función Congresal
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+Este proyecto es una plataforma de transparencia política que promueve la participación ciudadana informada en el proceso democrático peruano. Desarrollado con Astro, TailwindCSS y componentes personalizados, el sitio web ofrece información sobre el sistema bicameral, el proceso legislativo y los candidatos al Congreso.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Estructura del Proyecto
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+Dentro de este proyecto, encontrarás las siguientes carpetas y archivos:
 
 ```text
 /
 ├── public/
 │   └── favicon.svg
 ├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
+│   ├── assets
+│   │   └── icons/
+│   ├── components
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   ├── Nav.astro
+│   │   ├── sections/
+│   │   └── ui/
 │   ├── layouts
 │   │   └── Layout.astro
 │   └── pages
-│       └── index.astro
-└── package.json
+│       ├── index.astro
+│       ├── bicameralidad.astro
+│       └── proceso-legislativo.astro
+├── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Para más información sobre la estructura de un proyecto Astro, consulta [la guía oficial](https://docs.astro.build/es/basics/project-structure/).
 
-## 🧞 Commands
+## 🧞 Comandos
 
-All commands are run from the root of the project, from a terminal:
+Todos los comandos se ejecutan desde la raíz del proyecto, en una terminal:
 
-| Command                   | Action                                           |
+| Comando                   | Acción                                           |
 | :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| `pnpm install`             | Instala las dependencias                        |
+| `pnpm dev`                 | Inicia el servidor de desarrollo en `localhost:4321` |
+| `pnpm build`               | Construye el sitio para producción en `./dist/` |
+| `pnpm preview`             | Previsualiza tu sitio construido localmente     |
+| `pnpm astro ...`           | Ejecuta comandos CLI como `astro add`, `astro check` |
+| `pnpm astro -- --help`     | Obtén ayuda sobre el CLI de Astro               |
