@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import InternalPageHero from '../components/sections/InternalPageHero.astro';
+import Container from '../components/ui/Container.astro';
+import PartyCard from '../components/ui/PartyCard.astro';
+import { Input } from 'free-astro-components';
+
+const URL_DATA = import.meta.env.URL_DATA;
+const URL_PARTY_PICTURE = import.meta.env.URL_PARTY_PICTURE;
+
+interface Party {
+  id: number;
+  name: string;
+  picture: string;
+  senator_count: number;
+  deputy_count: number;
+  leader: string;
+  founded_year: string;
+}
+
+let parties: Party[] = [];
+
+try {
+  const res = await fetch(`${URL_DATA}/party.json`);
+  parties = await res.json();
+} catch (e) {
+  console.error('Error fetching parties:', e);
+}
+
+const PAGE_SIZE = 9;
+---
+
+<Layout
+  title="Partidos Políticos — Observatorio de la Función Congresal"
+  description="Conoce las agrupaciones políticas, sus propuestas y representantes."
+>
+  <InternalPageHero
+    title="Partidos Políticos"
+    subtitle="Conoce las agrupaciones políticas, sus propuestas y representantes"
+  />
+
+  <section class="py-10 bg-gray-50 min-h-[60vh]">
+    <Container>
+
+      <!-- Search -->
+      <div class="mb-8">
+        <Input
+          type="search"
+          id="party-search"
+          name="party-search"
+          placeholder="Buscar por nombre"
+          class="w-full"
+          aria-label="Buscar partido político"
+        />
+      </div>
+
+      <!-- Empty state -->
+      <p id="parties-empty" class="hidden text-center text-primary-gray-obs py-12">
+        No se encontraron partidos con ese nombre.
+      </p>
+
+      <!-- Grid -->
+      <div id="parties-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {parties.map((party, index) => (
+          <div
+            class:list={['party-item', index >= PAGE_SIZE ? 'hidden' : '']}
+            data-name={party.name.toLowerCase()}
+            data-index={index}
+          >
+            <PartyCard
+              id={party.id}
+              name={party.name}
+              picture={party.picture}
+              senator_count={party.senator_count}
+              deputy_count={party.deputy_count}
+              leader={party.leader}
+              founded_year={party.founded_year}
+              pictureBase={URL_PARTY_PICTURE}
+            />
+          </div>
+        ))}
+      </div>
+
+      <!-- Load more -->
+      {parties.length > PAGE_SIZE && (
+        <div id="load-more-wrapper" class="mt-10 flex justify-center">
+          <button
+            id="load-more-btn"
+            class="px-8 py-3 rounded-2xl border border-primary-blue-obs text-primary-blue-obs text-sm font-medium hover:bg-primary-blue-obs hover:text-white transition-colors"
+          >
+            Ver más partidos
+          </button>
+        </div>
+      )}
+
+    </Container>
+  </section>
+</Layout>
+
+<script>
+  const searchInput = document.getElementById('party-search') as HTMLInputElement | null;
+  const grid = document.getElementById('parties-grid');
+  const emptyState = document.getElementById('parties-empty');
+  const loadMoreBtn = document.getElementById('load-more-btn');
+  const loadMoreWrapper = document.getElementById('load-more-wrapper');
+
+  const PAGE_SIZE = 9;
+  let currentVisible = PAGE_SIZE;
+  let isSearching = false;
+
+  function getAllItems(): HTMLElement[] {
+    return Array.from(document.querySelectorAll('.party-item')) as HTMLElement[];
+  }
+
+  function filterItems(query: string) {
+    const items = getAllItems();
+    const q = query.trim().toLowerCase();
+    isSearching = q.length > 0;
+
+    let visibleCount = 0;
+
+    items.forEach((item) => {
+      const name = item.dataset.name ?? '';
+      const matches = q === '' || name.includes(q);
+
+      if (isSearching) {
+        item.classList.toggle('hidden', !matches);
+        if (matches) visibleCount++;
+      } else {
+        const index = parseInt(item.dataset.index ?? '0', 10);
+        const show = index < currentVisible;
+        item.classList.toggle('hidden', !show);
+        if (show) visibleCount++;
+      }
+    });
+
+    if (emptyState) {
+      emptyState.classList.toggle('hidden', visibleCount > 0);
+    }
+
+    if (loadMoreWrapper) {
+      loadMoreWrapper.classList.toggle('hidden', isSearching);
+    }
+  }
+
+  searchInput?.addEventListener('input', (e) => {
+    filterItems((e.target as HTMLInputElement).value);
+  });
+
+  loadMoreBtn?.addEventListener('click', () => {
+    const items = getAllItems();
+    const newVisible = currentVisible + PAGE_SIZE;
+    items.forEach((item) => {
+      const index = parseInt(item.dataset.index ?? '0', 10);
+      if (index >= currentVisible && index < newVisible) {
+        item.classList.remove('hidden');
+      }
+    });
+    currentVisible = newVisible;
+
+    if (currentVisible >= items.length && loadMoreWrapper) {
+      loadMoreWrapper.classList.add('hidden');
+    }
+  });
+</script>

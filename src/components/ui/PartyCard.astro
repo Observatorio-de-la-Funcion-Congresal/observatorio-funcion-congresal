@@ -1,0 +1,70 @@
+---
+import diputadosIcon from '../../assets/icons/deputy.svg?raw';
+import senadoIcon from '../../assets/icons/senator.svg?raw';
+
+interface Props {
+  id: number;
+  name: string;
+  picture: string;
+  senator_count: number;
+  deputy_count: number;
+  leader: string;
+  founded_year: string;
+  pictureBase: string;
+}
+
+const { id, name, picture, senator_count, deputy_count, leader, founded_year, pictureBase } = Astro.props;
+
+const total = senator_count + deputy_count;
+const logoUrl = `${pictureBase}${picture}`;
+---
+
+<article
+  class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 flex flex-col gap-4 hover:shadow-md transition-shadow"
+  data-name={name.toLowerCase()}
+>
+  <!-- Header: logo + info -->
+  <div class="flex items-start gap-4">
+    <div class="shrink-0 w-20 h-20 rounded-xl overflow-hidden bg-gray-100 border border-gray-200">
+      <img
+        src={logoUrl}
+        alt={`Logo ${name}`}
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+    </div>
+    <div class="flex-1 min-w-0">
+      <h3 class="font-semibold text-primary-black-obs text-lg">{name}</h3>
+      <p class="text-xs text-primary-gray-obs mt-0.5">Fundado en {founded_year}</p>
+      <p class="text-xs text-primary-gray-obs mt-0.5">Líder: {leader}</p>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="flex flex-col gap-2 border-t border-gray-100 pt-3">
+    <div class="flex items-center justify-between text-sm">
+      <div class="flex items-center gap-2 text-primary-gray-obs">
+        <span class="w-5 h-5 shrink-0 text-primary-blue-obs">
+          <Fragment set:html={diputadosIcon} />
+        </span>
+        <span>Diputados</span>
+      </div>
+      <span class="font-semibold text-primary-black-obs">{deputy_count}</span>
+    </div>
+    <div class="flex items-center justify-between text-sm">
+      <div class="flex items-center gap-2 text-primary-gray-obs">
+        <span class="w-5 h-5 shrink-0 text-primary-blue-obs">
+          <Fragment set:html={senadoIcon} />
+        </span>
+        <span>Senadores</span>
+      </div>
+      <span class="font-semibold text-primary-black-obs">{senator_count}</span>
+    </div>
+  </div>
+
+  <!-- Total -->
+  <div class="flex items-center justify-between border-t border-gray-100 pt-3">
+    <span class="text-xs text-primary-gray-obs">Total congresistas</span>
+    <span class="font-bold text-primary-black-obs text-base">{total}</span>
+  </div>
+</article>
