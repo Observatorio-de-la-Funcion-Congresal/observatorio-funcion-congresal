@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "picture": "/api/portraits/women/1.jpg",
+        "name": "María Elena Rodríguez",
+        "region": "Lima",
+        "party": "Partido Nacional",
+        "partyId": 1,
+        "attendance": 90,
+        "projects": 8,
+        "applyTo": "Diputada"
+    },
+    {
+        "id": 2,
+        "picture": "/api/portraits/men/2.jpg",
+        "name": "Carlos Alberto Mendoza",
+        "region": "Cusco",
+        "party": "Partido Popular",
+        "partyId": 2,
+        "attendance": 88,
+        "projects": 6,
+        "applyTo": "Senador"
+    },
+    {
+        "id": 3,
+        "picture": "/api/portraits/women/3.jpg",
+        "name": "Ana Patricia Gonzales",
+        "region": "Arequipa",
+        "party": "Alianza Progresista",
+        "partyId": 3,
+        "attendance": 95,
+        "projects": 3,
+        "applyTo": "Diputada"
+    },
+    {
+        "id": 4,
+        "picture": "/api/portraits/men/4.jpg",
+        "name": "Roberto Vílchez Sánchez",
+        "region": "Piura",
+        "party": "Movimiento Verde",
+        "partyId": 4,
+        "attendance": 92,
+        "projects": 8,
+        "applyTo": "Diputado"
+    },
+    {
+        "id": 5,
+        "picture": "/api/portraits/women/5.jpg",
+        "name": "Lucía Fernández Torres",
+        "region": "La Libertad",
+        "party": "Renovación Popular",
+        "partyId": 5,
+        "attendance": 91,
+        "projects": 6,
+        "applyTo": "Diputada"
+    },
+    {
+        "id": 6,
+        "picture": "/api/portraits/men/6.jpg",
+        "name": "Jorge Luis Campos",
+        "region": "Lima",
+        "party": "Futuro Unido",
+        "partyId": 6,
+        "attendance": 87,
+        "projects": 7,
+        "applyTo": "Senador"
+    },
+    {
+        "id": 7,
+        "picture": "/api/portraits/women/7.jpg",
+        "name": "Carmen Rosa Valverde",
+        "region": "Junin",
+        "party": "Partido Nacional",
+        "partyId": 1,
+        "attendance": 81,
+        "projects": 13,
+        "applyTo": "Diputada"
+    },
+    {
+        "id": 8,
+        "picture": "/api/portraits/men/8.jpg",
+        "name": "Miguel Ángel Castro",
+        "region": "Ica",
+        "party": "Partido Popular",
+        "partyId": 2,
+        "attendance": 88,
+        "projects": 8,
+        "applyTo": "Diputado"
+    },
+    {
+        "id": 9,
+        "picture": "/api/portraits/women/9.jpg",
+        "name": "María José Herrera",
+        "region": "Puno",
+        "party": "Alianza Progresista",
+        "partyId": 3,
+        "attendance": 86,
+        "projects": 10,
+        "applyTo": "Senadora"
+    },
+    {
+        "id": 10,
+        "picture": "/api/portraits/men/10.jpg",
+        "name": "Fernando Ruiz",
+        "region": "Loreto",
+        "party": "Movimiento Verde",
+        "partyId": 4,
+        "attendance": 82,
+        "projects": 5,
+        "applyTo": "Diputado"
+    }
+]

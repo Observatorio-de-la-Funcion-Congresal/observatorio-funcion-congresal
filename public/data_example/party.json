@@ -1,0 +1,237 @@
+[
+    {
+        "id": 1,
+        "name": "Partido del Progreso",
+        "picture": "/100x100?i=d9e22222279c1e46487c4dc95a43baa3",
+        "senator_count": 10,
+        "deputy_count": 20,
+        "leader": "María Elena Rodríguez",
+        "founded_year": "1990"
+    },
+    {
+        "id": 2,
+        "name": "Partido del Pueblo Unido",
+        "picture": "/100x100?bg=FF3C3C&i=4a912bdfb7a2b359421bf69acbd6e221",
+        "senator_count": 8,
+        "deputy_count": 15,
+        "leader": "Carlos Alberto Mendoza",
+        "founded_year": "1985"
+    },
+    {
+        "id": 3,
+        "name": "Alianza Ciudadana",
+        "picture": "/100x100/avatar-2?bg=6392D9&i=aea46cbcaac8b9152022a23280ef4f3e",
+        "senator_count": 7,
+        "deputy_count": 12,
+        "leader": "Ana Patricia Gonzales",
+        "founded_year": "2002"
+    },
+    {
+        "id": 4,
+        "name": "Movimiento Ecologista Nacional",
+        "picture": "/100x100?bg=3D27F6&i=5efe8d596efd1dd7c55507ac9aeaef95",
+        "senator_count": 4,
+        "deputy_count": 9,
+        "leader": "Roberto Vílchez",
+        "founded_year": "2010"
+    },
+    {
+        "id": 5,
+        "name": "Renovación Democrática",
+        "picture": "/100x100/abstract?bg=C863D9&i=9e88b00d558613df9b31e2d3782244c3",
+        "senator_count": 6,
+        "deputy_count": 11,
+        "leader": "Lucía Fernández",
+        "founded_year": "1998"
+    },
+    {
+        "id": 6,
+        "name": "Futuro y Desarrollo",
+        "picture": "/100x100/flat?bg=C863D9&i=4fd6e41d0d4782e287ad04e8174a1ebd",
+        "senator_count": 3,
+        "deputy_count": 5,
+        "leader": "Jorge Luis Campos",
+        "founded_year": "2015"
+    }
+    ,
+    {
+        "id": 7,
+        "name": "Unidad por el Cambio",
+        "picture": "/100x100?bg=FF3C3C&i=4a912bdfb7a2b359421bf69acbd6e221",
+        "senator_count": 5,
+        "deputy_count": 10,
+        "leader": "Marcos Peña",
+        "founded_year": "2008"
+    },
+    {
+        "id": 8,
+        "name": "Solidaridad y Trabajo",
+        "picture": "/100x100/avatar-2?bg=6392D9&i=aea46cbcaac8b9152022a23280ef4f3e",
+        "senator_count": 2,
+        "deputy_count": 6,
+        "leader": "Sofía Ríos",
+        "founded_year": "2012"
+    },
+    {
+        "id": 9,
+        "name": "Frente de la Reforma",
+        "picture": "/100x100?bg=3D27F6&i=5efe8d596efd1dd7c55507ac9aeaef95",
+        "senator_count": 9,
+        "deputy_count": 14,
+        "leader": "Hernán Saldaña",
+        "founded_year": "1978"
+    },
+    {
+        "id": 10,
+        "name": "Patria y Futuro",
+        "picture": "/100x100/abstract?bg=C863D9&i=9e88b00d558613df9b31e2d3782244c3",
+        "senator_count": 1,
+        "deputy_count": 4,
+        "leader": "Olga Ponce",
+        "founded_year": "1995"
+    },
+    {
+        "id": 11,
+        "name": "Ciudadanos en Acción",
+        "picture": "/100x100/flat?bg=C863D9&i=4fd6e41d0d4782e287ad04e8174a1ebd",
+        "senator_count": 6,
+        "deputy_count": 13,
+        "leader": "Germán Torres",
+        "founded_year": "2000"
+    },
+    {
+        "id": 12,
+        "name": "Avance y Bienestar",
+        "picture": "/100x100?i=d9e22222279c1e46487c4dc95a43baa3",
+        "senator_count": 4,
+        "deputy_count": 9,
+        "leader": "Beatriz Mendoza",
+        "founded_year": "1989"
+    },
+    {
+        "id": 13,
+        "name": "Movimiento por la Justicia",
+        "picture": "/100x100?bg=FF3C3C&i=4a912bdfb7a2b359421bf69acbd6e221",
+        "senator_count": 3,
+        "deputy_count": 7,
+        "leader": "Alonso Vega",
+        "founded_year": "2011"
+    },
+    {
+        "id": 14,
+        "name": "Progreso y Libertad",
+        "picture": "/100x100/avatar-2?bg=6392D9&i=aea46cbcaac8b9152022a23280ef4f3e",
+        "senator_count": 11,
+        "deputy_count": 16,
+        "leader": "Carla Núñez",
+        "founded_year": "1965"
+    },
+    {
+        "id": 15,
+        "name": "Alianza Regional Popular",
+        "picture": "/100x100?bg=3D27F6&i=5efe8d596efd1dd7c55507ac9aeaef95",
+        "senator_count": 5,
+        "deputy_count": 8,
+        "leader": "Ignacio Fuentes",
+        "founded_year": "1992"
+    },
+    {
+        "id": 16,
+        "name": "Fuerza y Unión Regional",
+        "picture": "/100x100/abstract?bg=C863D9&i=9e88b00d558613df9b31e2d3782244c3",
+        "senator_count": 2,
+        "deputy_count": 3,
+        "leader": "María Solís",
+        "founded_year": "2005"
+    },
+    {
+        "id": 17,
+        "name": "Nueva Democracia Ciudadana",
+        "picture": "/100x100?i=d9e22222279c1e46487c4dc95a43baa3",
+        "senator_count": 4,
+        "deputy_count": 7,
+        "leader": "Valeria Mendoza",
+        "founded_year": "2003"
+    },
+    {
+        "id": 18,
+        "name": "Laboral y Productivo",
+        "picture": "/100x100?bg=FF3C3C&i=4a912bdfb7a2b359421bf69acbd6e221",
+        "senator_count": 2,
+        "deputy_count": 5,
+        "leader": "César Páez",
+        "founded_year": "1999"
+    },
+    {
+        "id": 19,
+        "name": "Pueblo en Movimiento",
+        "picture": "/100x100/avatar-2?bg=6392D9&i=aea46cbcaac8b9152022a23280ef4f3e",
+        "senator_count": 6,
+        "deputy_count": 11,
+        "leader": "Mariana Soto",
+        "founded_year": "1980"
+    },
+    {
+        "id": 20,
+        "name": "Fuerza Cívica Democrática",
+        "picture": "/100x100?bg=3D27F6&i=5efe8d596efd1dd7c55507ac9aeaef95",
+        "senator_count": 3,
+        "deputy_count": 6,
+        "leader": "Andrés Romero",
+        "founded_year": "2013"
+    },
+    {
+        "id": 21,
+        "name": "Movimiento Cívico Moderno",
+        "picture": "/100x100/abstract?bg=C863D9&i=9e88b00d558613df9b31e2d3782244c3",
+        "senator_count": 1,
+        "deputy_count": 4,
+        "leader": "Patricia León",
+        "founded_year": "2007"
+    },
+    {
+        "id": 22,
+        "name": "Alianza por las Regiones",
+        "picture": "/100x100/flat?bg=C863D9&i=4fd6e41d0d4782e287ad04e8174a1ebd",
+        "senator_count": 2,
+        "deputy_count": 5,
+        "leader": "Diego Varela",
+        "founded_year": "2014"
+    },
+    {
+        "id": 23,
+        "name": "Acción por la Gente",
+        "picture": "/100x100?i=d9e22222279c1e46487c4dc95a43baa3",
+        "senator_count": 7,
+        "deputy_count": 12,
+        "leader": "Rosa Gutiérrez",
+        "founded_year": "1996"
+    },
+    {
+        "id": 24,
+        "name": "Esperanza y Cambio",
+        "picture": "/100x100?bg=FF3C3C&i=4a912bdfb7a2b359421bf69acbd6e221",
+        "senator_count": 0,
+        "deputy_count": 2,
+        "leader": "Hugo Salinas",
+        "founded_year": "2018"
+    },
+    {
+        "id": 25,
+        "name": "Unión Social Popular",
+        "picture": "/100x100/avatar-2?bg=6392D9&i=aea46cbcaac8b9152022a23280ef4f3e",
+        "senator_count": 4,
+        "deputy_count": 9,
+        "leader": "Clara Muñoz",
+        "founded_year": "1993"
+    },
+    {
+        "id": 26,
+        "name": "Verde y Sostenible",
+        "picture": "/100x100?bg=3D27F6&i=5efe8d596efd1dd7c55507ac9aeaef95",
+        "senator_count": 2,
+        "deputy_count": 6,
+        "leader": "Rafael Del Río",
+        "founded_year": "2001"
+    }
+]
