@@ -3,10 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import InternalPageHero from '../components/sections/InternalPageHero.astro';
 import Container from '../components/ui/Container.astro';
 import CandidateCard from '../components/ui/CandidateCard.astro';
-import { Input, Select } from 'free-astro-components';
+import { Input } from 'free-astro-components';
+import Select from '../components/ui/Select/Select.astro';
 
 const URL_DATA = import.meta.env.URL_DATA;
 const URL_CANDIDATE_PICTURE = import.meta.env.URL_CANDIDATE_PICTURE;
+
+const TEXT_PLACEHOLDER = 'Selecciono'
 
 interface Candidate {
   id: number;
@@ -49,7 +52,7 @@ try {
 }
 
 // Build unique apply-to values from candidates
-const applyToOptions = [...new Set(candidates.map((c) => c.applyTo))].sort();
+const applyToOptions = ['Senador(a)', 'Diputado(a)'].sort();
 
 // Map partyId -> picture path
 const partyPictureMap = new Map(parties.map((p) => [p.id, p.picture]));
@@ -92,7 +95,7 @@ const PAGE_SIZE = 9;
         <Select
           id="filter-party"
           name="filter-party"
-          placeholder="Selecciono"
+          placeholder={TEXT_PLACEHOLDER}
           label="Partido"
           options={partyOptions}
           aria-label="Filtrar por partido"
@@ -100,7 +103,7 @@ const PAGE_SIZE = 9;
         <Select
           id="filter-apply-to"
           name="filter-apply-to"
-          placeholder="Selecciono"
+          placeholder={TEXT_PLACEHOLDER}
           label="Postula a"
           options={applyToSelectOptions}
           aria-label="Filtrar por cargo al que postula"
@@ -108,7 +111,7 @@ const PAGE_SIZE = 9;
         <Select
           id="filter-region"
           name="filter-region"
-          placeholder="Selecciono"
+          placeholder={TEXT_PLACEHOLDER}
           label="Región"
           options={regionOptions}
           aria-label="Filtrar por región"
@@ -166,6 +169,7 @@ const PAGE_SIZE = 9;
 </Layout>
 
 <script>
+  const TEXT_PLACEHOLDER = 'Selecciono';
   // --- Element references ---
   const searchInput = document.getElementById('candidate-search') as HTMLInputElement | null;
   const emptyState = document.getElementById('candidates-empty');
@@ -197,12 +201,20 @@ const PAGE_SIZE = 9;
     return query.length > 0 || party !== '' || applyTo !== '' || region !== '';
   }
 
+  function matchesApplyToFn(applyTo: string, filters: any) {
+    return (filters.applyTo === '' || filters.applyTo === TEXT_PLACEHOLDER ||
+      applyTo.toLowerCase() === filters.applyTo.toLowerCase() ||
+      (filters.applyTo.toLowerCase() === 'senador(a)' && ['senador', 'senadora'].includes(applyTo.toLowerCase())) ||
+      (filters.applyTo.toLowerCase() === 'diputado(a)' && ['diputado', 'diputada'].includes(applyTo.toLowerCase())));
+  }
+  
   function applyFilters() {
     const filters = getFilters();
     const filtering = isFiltering(filters);
     const items = getAllItems();
 
     let visibleCount = 0;
+
 
     items.forEach((item) => {
       const name = item.dataset.name ?? '';
@@ -212,9 +224,9 @@ const PAGE_SIZE = 9;
       const index = parseInt(item.dataset.index ?? '0', 10);
 
       const matchesQuery = filters.query === '' || name.includes(filters.query);
-      const matchesParty = filters.party === '' || party === filters.party.toLowerCase();
-      const matchesApplyTo = filters.applyTo === '' || applyTo === filters.applyTo.toLowerCase();
-      const matchesRegion = filters.region === '' || region === filters.region.toLowerCase();
+      const matchesParty = filters.party === '' || filters.party === TEXT_PLACEHOLDER || party === filters.party.toLowerCase();
+      const matchesApplyTo = matchesApplyToFn(applyTo, filters);
+      const matchesRegion = filters.region === '' || filters.region === TEXT_PLACEHOLDER || region === filters.region.toLowerCase();
 
       const matches = matchesQuery && matchesParty && matchesApplyTo && matchesRegion;
 

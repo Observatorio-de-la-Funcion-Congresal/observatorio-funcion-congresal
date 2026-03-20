@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Partido del Progreso",
+        "name": "Partido Nacional",
         "picture": "/100x100?i=d9e22222279c1e46487c4dc95a43baa3",
         "senator_count": 10,
         "deputy_count": 20,
@@ -10,7 +10,7 @@
     },
     {
         "id": 2,
-        "name": "Partido del Pueblo Unido",
+        "name": "Partido Popular",
         "picture": "/100x100?bg=FF3C3C&i=4a912bdfb7a2b359421bf69acbd6e221",
         "senator_count": 8,
         "deputy_count": 15,
