@@ -3,8 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import InternalPageHero from '../components/sections/InternalPageHero.astro';
 import Container from '../components/ui/Container.astro';
 import CandidateCard from '../components/ui/CandidateCard.astro';
-import { Input } from 'free-astro-components';
-import Select from '../components/ui/Select/Select.astro';
+import Select from '../components/ui/Input/Select.astro';
+import Input from '../components/ui/Input/Input.astro';
+import Button from '../components/ui/Button.astro';
 
 const URL_DATA = import.meta.env.URL_DATA;
 const URL_CANDIDATE_PICTURE = import.meta.env.URL_CANDIDATE_PICTURE;
@@ -155,12 +156,9 @@ const PAGE_SIZE = 9;
       <!-- Load more -->
       {candidates.length > PAGE_SIZE && (
         <div id="load-more-wrapper" class="mt-10 flex justify-center">
-          <button
-            id="load-more-btn"
-            class="px-8 py-3 rounded-2xl border border-primary-blue-obs text-primary-blue-obs text-sm font-medium hover:bg-primary-blue-obs hover:text-white transition-colors"
-          >
+          <Button id="load-more-btn" variant="outline-dark" size="md" class="rounded-2xl">
             Ver más candidatos
-          </button>
+          </Button>
         </div>
       )}
 
@@ -214,7 +212,6 @@ const PAGE_SIZE = 9;
     const items = getAllItems();
 
     let visibleCount = 0;
-
 
     items.forEach((item) => {
       const name = item.dataset.name ?? '';

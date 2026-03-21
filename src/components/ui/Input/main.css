@@ -121,11 +121,3 @@
   --ac-color-600: var(--ac-gray-100);
   --ac-color-700: var(--ac-white);
 }
-
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  border-width: 0;
-  border-style: solid;
-}

@@ -1,11 +1,12 @@
 ---
 interface Props {
   href?: string;
-  variant?: 'primary' | 'secondary' | 'outline' | 'outline-light';
+  variant?: 'primary' | 'secondary' | 'outline' | 'outline-light' | 'outline-dark';
   size?: 'sm' | 'md' | 'lg';
   class?: string;
   type?: 'button' | 'submit' | 'reset';
   target?: string;
+  id?: string;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   class: className = '',
   type = 'button',
   target,
+  id
 } = Astro.props;
 
 const variants: Record<string, string> = {
@@ -22,6 +24,7 @@ const variants: Record<string, string> = {
   secondary: 'bg-white text-primary-blue-obs hover:bg-gray-50 border border-white',
   outline: 'bg-transparent text-primary-blue-obs hover:bg-gray-100 border border-primary-blue-obs',
   'outline-light': 'bg-transparent text-white hover:bg-white/10 border border-white',
+  'outline-dark': 'bg-transparent text-primary-blue-obs hover:bg-primary-blue-obs hover:text-white border border-primary-blue-obs'
 };
 
 const sizes: Record<string, string> = {
@@ -38,11 +41,11 @@ const classes = [base, variants[variant], sizes[size], className].join(' ');
 
 {
   href ? (
-    <a href={href} target={target} class={classes}>
+    <a href={href} target={target} class={classes} id={id}>
       <slot />
     </a>
   ) : (
-    <button type={type} class={classes}>
+    <button type={type} class={classes} id={id}>
       <slot />
     </button>
   )
