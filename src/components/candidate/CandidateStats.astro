@@ -1,0 +1,45 @@
+---
+import Card from "../ui/Card.astro";
+import billIcon from "../../assets/icons/bill.svg?raw";
+import commissionIcon from "../../assets/icons/users.svg?raw";
+
+interface Props {
+  attendance: number;
+  abstentions: number;
+  projects: number;
+  commissions_count: number;
+}
+
+const { attendance, abstentions, projects, commissions_count } = Astro.props;
+
+const stats = [
+  { icon: null, value: `${attendance}%`, label: "Asistencia" },
+  { icon: null, value: `${abstentions}%`, label: "Abstenciones" },
+  { icon: billIcon, value: String(projects), label: "Proyectos (Autor)" },
+  {
+    icon: commissionIcon,
+    value: String(commissions_count),
+    label: "Comisiones",
+  },
+];
+---
+
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 font-inter">
+  {
+    stats.map((stat) => (
+      <Card roundedClass="rounded-2xl" padding={false} class="p-6">
+        <div class="flex items-center justify-between gap-2 mb-2">
+          <p class="text-sm text-primary-gray-obs">{stat.label}</p>
+          {stat.icon && (
+            <span class="w-5 h-5 svg-full text-primary-blue-obs shrink-0">
+              <Fragment set:html={stat.icon} />
+            </span>
+          )}
+        </div>
+        <p class="text-3xl font-bold text-primary-black-obs">
+          {stat.value}
+        </p>
+      </Card>
+    ))
+  }
+</div>

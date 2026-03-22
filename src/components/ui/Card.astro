@@ -3,14 +3,16 @@ interface Props {
   class?: string;
   shadow?: boolean;
   padding?: boolean;
+  roundedClass?: string;
 }
 
-const { class: className = '', shadow = true, padding = true } = Astro.props;
+const { class: className = '', shadow = true, padding = true, roundedClass = '' } = Astro.props;
 
 const shadowClass = shadow ? 'shadow-md' : '';
 const paddingClass = padding ? 'p-8' : '';
+const roundedStyle = roundedClass ? roundedClass : 'rounded-3xl';
 ---
 
-<div class={['bg-white rounded-3xl', shadowClass, paddingClass, className].filter(Boolean).join(' ')}>
+<div class={['bg-white', roundedStyle, shadowClass, paddingClass, className].filter(Boolean).join(' ')}>
   <slot />
 </div>

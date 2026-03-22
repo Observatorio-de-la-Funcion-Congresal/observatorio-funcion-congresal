@@ -1,0 +1,43 @@
+---
+import Card from '../ui/Card.astro';
+
+interface Props {
+  attendance_average: number;
+  accomplishment_average: number;
+  projects_average: number;
+}
+
+const { attendance_average, accomplishment_average, projects_average } = Astro.props;
+
+const bars = [
+  { label: 'Asistencia Promedio', value: attendance_average, color: 'bg-green-obs' },
+  { label: 'Cumplimiento Promedio', value: accomplishment_average, color: 'bg-green-obs' },
+];
+---
+
+<Card class="p-6" roundedClass='rounded-2xl' padding={false}>
+  <h3 class="font-bold text-primary-black-obs text-xl mb-4 tracking-normal">Métricas del Partido</h3>
+
+  <div class="flex flex-col gap-4 font-inter">
+    {bars.map(({ label, value, color }) => (
+      <div>
+        <p class="flex justify-between items-center mb-1.5">
+          <span class="text-primary-gray-obs text-sm">{label}</span>
+          <span class="font-bold text-primary-black-obs text-lg">{value}%</span>
+        </p>
+        <div class="w-full bg-gray-200 rounded-full h-2">
+          <div
+            class={`${color} h-2 rounded-full transition-all`}
+            style={`width: ${Math.min(value, 100)}%`}
+          />
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Projects average — shown as a figure, not a percentage bar -->
+  <div class="mt-4 pt-4 border-t border-gray-100 font-inter">
+    <p class="text-sm text-primary-gray-obs mb-0.5">Proyectos Promedio por Congresista</p>
+    <p class="text-3xl font-semibold text-primary-black-obs">{projects_average}</p>
+  </div>
+</Card>

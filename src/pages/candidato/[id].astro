@@ -1,0 +1,161 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Container from '../../components/ui/Container.astro';
+import CandidateHero from '../../components/sections/CandidateHero.astro';
+import CandidateStats from '../../components/candidate/CandidateStats.astro';
+import CandidateBiography from '../../components/candidate/CandidateBiography.astro';
+import CandidatePerformance from '../../components/candidate/CandidatePerformance.astro';
+import CandidateBills from '../../components/candidate/CandidateBills.astro';
+import CandidateAdditionalInfo from '../../components/candidate/CandidateAdditionalInfo.astro';
+import CandidateCommissions from '../../components/candidate/CandidateCommissions.astro';
+import KnowMoreCTA from '../../components/ui/KnowMoreCTA.astro';
+import Button from '../../components/ui/Button.astro';
+
+const URL_DATA = import.meta.env.URL_DATA;
+const URL_CANDIDATE_PICTURE = import.meta.env.URL_CANDIDATE_PICTURE;
+const URL_PARTY_PICTURE = import.meta.env.URL_PARTY_PICTURE;
+
+interface Performance {
+  attendance: number;
+  abstentions: number;
+  session_week: number;
+  accomplishment: number;
+  projects: number;
+  participation: number;
+}
+
+interface Bill {
+  title: string;
+  year: number;
+  status: 'Aprobado' | 'En comisión' | 'Archivado';
+}
+
+interface Bills {
+  presented: number;
+  approved: number;
+  approval_rate: number;
+  as_author: number;
+  as_adherent: number;
+  list: Bill[];
+}
+
+interface AdditionalInfo {
+  representation_week: number;
+  party_change: boolean;
+  commission_participation: string;
+  campaign_plan_url?: string;
+}
+
+interface Candidate {
+  id: number;
+  picture: string;
+  name: string;
+  region: string;
+  party: string;
+  partyId: number;
+  attendance: number;
+  abstentions: number;
+  projects: number;
+  commissions_count: number;
+  applyTo: string;
+  biography: string;
+  performance: Performance;
+  bills: Bills;
+  additional_info: AdditionalInfo;
+  commissions: string[];
+}
+
+interface Party {
+  id: number;
+  picture: string;
+  name: string;
+}
+
+export async function getStaticPaths() {
+  const URL_DATA = import.meta.env.URL_DATA;
+  try {
+    const res = await fetch(`${URL_DATA}/candidate-complete.json`);
+    const candidates: Candidate[] = await res.json();
+    return candidates.map((candidate) => ({
+      params: { id: String(candidate.id) },
+      props: { candidate },
+    }));
+  } catch {
+    return [];
+  }
+}
+
+const { candidate } = Astro.props as { candidate: Candidate };
+
+// Fetch party picture for this candidate
+let partyPicture = '';
+try {
+  const res = await fetch(`${URL_DATA}/party.json`);
+  const parties: Party[] = await res.json();
+  partyPicture = parties.find((p) => p.id === candidate.partyId)?.picture ?? '';
+} catch {
+  // fallback to empty
+}
+---
+
+<Layout
+  title={`${candidate.name} — Observatorio de la Función Congresal`}
+  description={`Conoce el desempeño y trayectoria de ${candidate.name}, candidato/a a ${candidate.applyTo} del partido ${candidate.party}.`}
+>
+  <CandidateHero
+    name={candidate.name}
+    picture={candidate.picture}
+    pictureBase={URL_CANDIDATE_PICTURE}
+    applyTo={candidate.applyTo}
+    party={candidate.party}
+    partyPicture={partyPicture}
+    partyPictureBase={URL_PARTY_PICTURE}
+    region={candidate.region}
+  />
+
+  <section class="py-14 bg-gray-50 min-h-[60vh]">
+    <Container>
+
+      <!-- Top stats -->
+      <div class="mb-6">
+        <CandidateStats
+          attendance={candidate.attendance}
+          abstentions={candidate.abstentions}
+          projects={candidate.projects}
+          commissions_count={candidate.commissions_count}
+        />
+      </div>
+
+      <div class="flex flex-col lg:flex-row gap-6 items-start">
+
+        <!-- Main column -->
+        <div class="flex-1 min-w-0 flex flex-col gap-6">
+          <CandidateBiography biography={candidate.biography} />
+
+          <CandidatePerformance performance={candidate.performance} />
+
+          <CandidateBills bills={candidate.bills} />
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="w-full lg:w-80 shrink-0 flex flex-col gap-6">
+          <CandidateAdditionalInfo info={candidate.additional_info} />
+
+          {candidate.additional_info.campaign_plan_url && (
+            <Button href={candidate.additional_info.campaign_plan_url} variant="outline-dark" class="rounded-xl bg-white">
+              Descargar plan de campaña
+            </Button>
+          )}
+
+          <CandidateCommissions commissions={candidate.commissions} />
+
+          <KnowMoreCTA
+            buttonText="Comparar con otro candidato"
+            buttonHref="/compara"
+          />
+        </aside>
+
+      </div>
+    </Container>
+  </section>
+</Layout>

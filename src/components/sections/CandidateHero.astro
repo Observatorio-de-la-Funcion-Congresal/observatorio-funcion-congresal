@@ -1,0 +1,82 @@
+---
+import Container from '../ui/Container.astro';
+import locationIcon from '../../assets/icons/location.svg?raw';
+
+interface Props {
+  name: string;
+  picture: string;
+  pictureBase: string;
+  applyTo: string;
+  party: string;
+  partyPicture: string;
+  partyPictureBase: string;
+  region: string;
+}
+
+const {
+  name,
+  picture,
+  pictureBase,
+  applyTo,
+  party,
+  partyPicture,
+  partyPictureBase,
+  region,
+} = Astro.props;
+
+const photoUrl = `${pictureBase}${picture}`;
+const partyLogoUrl = `${partyPictureBase}${partyPicture}`;
+---
+
+<section class="bg-primary-blue-obs py-10">
+  <Container>
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-1.5 text-white/80 text-sm mb-6 flex-wrap">
+      <a href="/" class="hover:text-white transition-colors">Inicio</a>
+      <span>›</span>
+      <a href="/candidatos" class="hover:text-white transition-colors">Candidatos</a>
+      <span>›</span>
+      <span class="text-white">{name}</span>
+    </nav>
+
+    <div class="flex items-start gap-6 flex-wrap sm:flex-nowrap">
+      <!-- Photo -->
+      <div class="shrink-0 w-28 h-28 rounded-2xl overflow-hidden bg-white">
+        <img
+          src={photoUrl}
+          alt={`Foto de ${name}`}
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- Info -->
+      <div class="flex-1 min-w-0">
+        <!-- Badge -->
+        <p class="inline-block text-xs font-medium bg-pill-blue-obs text-primary-blue-obs px-3 py-1 rounded-full mb-3">
+          Postula a {applyTo}
+        </p>
+
+        <h1 class="font-inter text-3xl md:text-4xl font-bold text-white leading-tight">{name}</h1>
+
+        <div class="font-inter flex flex-wrap items-center gap-x-4 gap-y-2 mt-3 text-sm text-light-blue-obs">
+          <!-- Party -->
+          <span class="flex items-center gap-1.5">
+            <img
+              src={partyLogoUrl}
+              alt={party}
+              class="w-5 h-5 rounded-full object-cover border border-white/30 shrink-0"
+            />
+            {party}
+          </span>
+          <!-- Region -->
+          <span class="flex items-center gap-1.5">
+            <span class="w-4 h-4 shrink-0">
+              <Fragment set:html={locationIcon} />
+            </span>
+            {region}
+          </span>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

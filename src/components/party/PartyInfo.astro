@@ -1,0 +1,44 @@
+---
+import calendarIcon from '../../assets/icons/calendar.svg?raw';
+import usersIcon from '../../assets/icons/users.svg?raw';
+import Card from '../ui/Card.astro';
+
+interface Props {
+  founded_year: string;
+  total: number;
+}
+
+const { founded_year, total } = Astro.props;
+const infoItems = [
+  {
+    icon: calendarIcon,
+    label: "Fundación",
+    value: founded_year
+  },
+  {
+    icon: usersIcon,
+    label: "Total Congresistas",
+    value: total
+  }
+];
+---
+
+<Card class="p-6" roundedClass='rounded-2xl' padding={false}>
+  <h3 class="font-bold text-primary-black-obs text-xl mb-4 tracking-normal">Información</h3>
+
+  <div class="flex flex-col gap-3">
+    {infoItems.map((item) => (
+      <div class="flex items-center gap-3">
+        <div class="flex items-center justify-center shrink-0 text-gray-icon-obs">
+          <span class="w-4 h-4">
+            <Fragment set:html={item.icon} />
+          </span>
+        </div>
+        <div class="font-inter text-sm">
+          <p class="text-primary-gray-obs">{item.label}</p>
+          <p class="font-medium text-primary-black-obs">{item.value}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</Card>

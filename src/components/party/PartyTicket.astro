@@ -1,0 +1,41 @@
+---
+import Card from '../ui/Card.astro';
+
+interface TicketMember {
+  name: string;
+  description?: string;
+}
+
+interface Props {
+  president: TicketMember;
+  vicePresident?: TicketMember;
+  vicePresident2?: TicketMember;
+  year?: number | string;
+}
+
+const { president, vicePresident, vicePresident2, year = 2026 } = Astro.props;
+
+const members = [
+  { role: 'Presidente', ...president },
+  ...(vicePresident ? [{ role: '1er Vicepresidente', ...vicePresident }] : []),
+  ...(vicePresident2 ? [{ role: '2do Vicepresidente', ...vicePresident2 }] : []),
+];
+---
+
+<Card roundedClass='rounded-2xl' class="p-6" padding={false}>
+  <h2 class="text-2xl font-bold text-primary-black-obs mb-4">
+    Plancha presidencial {year}
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    {members.map((member) => (
+      <div class="bg-sky-blue-obs rounded-lg p-5 border border-light-blue-obs">
+        <p class="text-xs text-primary-gray-obs mb-1.5 font-medium">{member.role}</p>
+        <p class="font-bold text-primary-black-obs leading-snug">{member.name}</p>
+        {member.description && (
+          <p class="text-sm text-primary-gray-obs mt-1.5">{member.description}</p>
+        )}
+      </div>
+    ))}
+  </div>
+</Card>

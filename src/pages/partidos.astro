@@ -63,8 +63,9 @@ const PAGE_SIZE = 9;
       <!-- Grid -->
       <div id="parties-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {parties.map((party, index) => (
-          <div
-            class:list={['party-item', index >= PAGE_SIZE ? 'hidden' : '']}
+          <a
+            href={`/partido/${party.id}`}
+            class:list={['party-item block', index >= PAGE_SIZE ? 'hidden' : '']}
             data-name={party.name.toLowerCase()}
             data-index={index}
           >
@@ -78,7 +79,7 @@ const PAGE_SIZE = 9;
               founded_year={party.founded_year}
               pictureBase={URL_PARTY_PICTURE}
             />
-          </div>
+          </a>
         ))}
       </div>
 

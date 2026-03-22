@@ -1,0 +1,25 @@
+---
+import Button from './Button.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  buttonText?: string;
+  buttonHref: string;
+}
+
+const {
+  title = '¿Quieres saber más?',
+  description = 'Conoce en detalle el desempeño de cada congresista del partido',
+  buttonText = 'Ir al comparador',
+  buttonHref,
+} = Astro.props;
+---
+
+<div class="bg-sky-blue-obs rounded-lg p-6 border border-light-blue-obs">
+  <h3 class="font-bold text-dark-blue-obs text-lg mb-2">{title}</h3>
+  <p class="text-sm text-primary-black-obs mb-6">{description}</p>
+  <Button href={buttonHref} variant="outline-dark" class="w-full rounded-xl bg-white">
+    {buttonText}
+  </Button>
+</div>

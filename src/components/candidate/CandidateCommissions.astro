@@ -1,0 +1,29 @@
+---
+import Card from '../ui/Card.astro';
+import checkCircleIcon from '../../assets/icons/check-circle.svg?raw';
+
+interface Props {
+  commissions: string[];
+}
+
+const { commissions } = Astro.props;
+---
+
+<Card roundedClass="rounded-2xl" padding={false} class="p-5">
+  <h3 class="font-bold text-primary-black-obs text-xl mb-4 tracking-normal">Comisiones</h3>
+
+  {commissions.length === 0 ? (
+    <p class="text-sm text-primary-gray-obs">Sin comisiones registradas.</p>
+  ) : (
+    <ul class="flex flex-col gap-2">
+      {commissions.map((commission) => (
+        <li class="flex items-center gap-2 bg-sky-blue-obs rounded-xl p-3">
+          <span class="w-4 h-4 text-green-600 shrink-0">
+            <Fragment set:html={checkCircleIcon} />
+          </span>
+          <span class="text-sm text-primary-black-obs">{commission}</span>
+        </li>
+      ))}
+    </ul>
+  )}
+</Card>

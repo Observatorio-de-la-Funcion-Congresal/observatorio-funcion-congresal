@@ -1,0 +1,47 @@
+---
+import diputadosIcon from '../../assets/icons/deputy.svg?raw';
+import senadoIcon from '../../assets/icons/senator.svg?raw';
+import partyStatIcon from '../../assets/icons/party_stat.svg?raw';
+import Card from '../ui/Card.astro';
+
+interface Props {
+  deputy_count: number;
+  senator_count: number;
+}
+
+const { deputy_count, senator_count } = Astro.props;
+const total = deputy_count + senator_count;
+
+const stats = [
+  {
+    icon: diputadosIcon,
+    count: deputy_count,
+    label: "Diputados"
+  },
+  {
+    icon: senadoIcon,
+    count: senator_count,
+    label: "Senadores"
+  },
+  {
+    icon: partyStatIcon,
+    count: total,
+    label: "Total"
+  }
+];
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-inter">
+  {stats.map((stat) => (
+    <Card roundedClass='rounded-2xl' class="p-6 flex items-center gap-4" padding={false}>
+      <div class="w-8 h-8 svg-full text-primary-blue-obs">
+        <Fragment set:html={stat.icon} />
+      </div>
+      
+      <div>
+        <p class="text-3xl font-bold text-primary-black-obs leading-none">{stat.count}</p>
+        <p class="text-sm text-primary-gray-obs mt-1">{stat.label}</p>
+      </div>
+    </Card>
+  ))}
+</div>

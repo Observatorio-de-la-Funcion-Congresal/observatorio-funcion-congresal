@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1,
+        "picture": "/api/portraits/women/1.jpg",
+        "name": "María Elena Rodríguez",
+        "region": "Lima",
+        "party": "Partido Nacional",
+        "partyId": 1,
+        "attendance": 92,
+        "abstentions": 5,
+        "projects": 8,
+        "commissions_count": 3,
+        "applyTo": "Diputada",
+        "biography": "Economista con 15 años de experiencia en gestión pública. Especializada en políticas económicas y desarrollo social.",
+        "performance": {
+            "attendance": 92,
+            "abstentions": 5,
+            "session_week": 75,
+            "accomplishment": 80,
+            "projects": 60,
+            "participation": 55
+        },
+        "bills": {
+            "presented": 42,
+            "approved": 8,
+            "approval_rate": 19,
+            "as_author": 8,
+            "as_adherent": 15,
+            "list": [
+                { "title": "Ley de telemedicina en zonas rurales", "year": 2024, "status": "En comisión" },
+                { "title": "Proyecto de salud mental comunitaria", "year": 2024, "status": "Aprobado" },
+                { "title": "Ley de acceso a medicamentos genéricos en MINSA", "year": 2025, "status": "Aprobado" },
+                { "title": "Modificatoria del SOAT", "year": 2027, "status": "Archivado" }
+            ]
+        },
+        "additional_info": {
+            "representation_week": 86,
+            "party_change": false,
+            "commission_participation": "Activa",
+            "campaign_plan_url": "#"
+        },
+        "commissions": [
+            "Economía",
+            "Presupuesto",
+            "Descentralización"
+        ]
+    },
+    {
+        "id": 2,
+        "picture": "/api/portraits/men/2.jpg",
+        "name": "Carlos Alberto Mendoza",
+        "region": "Cusco",
+        "party": "Partido Popular",
+        "partyId": 2,
+        "attendance": 88,
+        "abstentions": 8,
+        "projects": 6,
+        "commissions_count": 2,
+        "applyTo": "Senador",
+        "biography": "Abogado constitucionalista con 20 años en el sector público. Defensor de los derechos indígenas y la gobernanza regional.",
+        "performance": {
+            "attendance": 88,
+            "abstentions": 8,
+            "session_week": 18,
+            "accomplishment": 24,
+            "projects": 50,
+            "participation": 42
+        },
+        "bills": {
+            "presented": 31,
+            "approved": 6,
+            "approval_rate": 19,
+            "as_author": 6,
+            "as_adherent": 10,
+            "list": [
+                { "title": "Ley de consulta previa para comunidades andinas", "year": 2024, "status": "Aprobado" },
+                { "title": "Proyecto de descentralización fiscal regional", "year": 2024, "status": "En comisión" },
+                { "title": "Reforma del sistema de pensiones rurales", "year": 2025, "status": "En comisión" },
+                { "title": "Ley de protección del patrimonio arqueológico", "year": 2026, "status": "Archivado" }
+            ]
+        },
+        "additional_info": {
+            "representation_week": 72,
+            "party_change": false,
+            "commission_participation": "Activa",
+            "campaign_plan_url": "#"
+        },
+        "commissions": [
+            "Justicia y Derechos Humanos",
+            "Descentralización"
+        ]
+    }
+]

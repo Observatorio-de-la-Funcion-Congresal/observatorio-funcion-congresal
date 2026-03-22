@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "name": "Partido Nacional",
+        "picture": "/100x100?i=d9e22222279c1e46487c4dc95a43baa3",
+        "senator_count": 10,
+        "deputy_count": 20,
+        "leader": "María Elena Rodríguez",
+        "founded_year": "1990",
+        "leader_description": "Empresario y político, fundador del partido",
+        "vice_president": "María Elena Rodríguez",
+        "vice_president_description": "Artista y político",
+        "vice_president_2": "María Elena Rodríguez",
+        "vice_president_2_description": "Sindicalista y político",
+        "metrics": {
+            "attendance_average": 100,
+            "accomplishment_average": 83,
+            "projects_average": 11.5
+        },
+        "distribution": [
+            {
+                "name": "Senadores",
+                "value": 60
+            },
+            {
+                "name": "Diputados",
+                "value": 30
+            },
+            {
+                "name": "Parlamento Andino",
+                "value": 9
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Partido Popular",
+        "picture": "/100x100?bg=FF3C3C&i=4a912bdfb7a2b359421bf69acbd6e221",
+        "senator_count": 8,
+        "deputy_count": 15,
+        "leader": "Juan Pérez",
+        "founded_year": "1985",
+        "leader_description": "Abogado y político, defensor de los derechos humanos",
+        "vice_president": "Ana Gómez",
+        "vice_president_description": "Economista y activista social",
+        "vice_president_2": "Carlos Ruiz",
+        "vice_president_2_description": "Profesor universitario y analista político",
+        "metrics": {
+            "attendance_average": 95,
+            "accomplishment_average": 78,
+            "projects_average": 9.8
+        },
+        "distribution": [
+            {
+                "name": "Senadores",
+                "value": 50
+            },
+            {
+                "name": "Diputados",
+                "value": 40
+            },
+            {
+                "name": "Parlamento Andino",
+                "value": 10
+            }
+        ]
+    }
+]

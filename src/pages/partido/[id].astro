@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Container from '../../components/ui/Container.astro';
+import PartyHero from '../../components/sections/PartyHero.astro';
+import PartyStats from '../../components/party/PartyStats.astro';
+import PartyTicket from '../../components/party/PartyTicket.astro';
+import PartyAnalysis from '../../components/party/PartyAnalysis.astro';
+import PartyMetrics from '../../components/party/PartyMetrics.astro';
+import PartyInfo from '../../components/party/PartyInfo.astro';
+import KnowMoreCTA from '../../components/ui/KnowMoreCTA.astro';
+import PartyCandidates from '../../components/party/PartyCandidates.astro';
+
+const URL_DATA = import.meta.env.URL_DATA;
+const URL_PARTY_PICTURE = import.meta.env.URL_PARTY_PICTURE;
+const URL_CANDIDATE_PICTURE = import.meta.env.URL_CANDIDATE_PICTURE;
+
+interface Party {
+  id: number;
+  name: string;
+  picture: string;
+  senator_count: number;
+  deputy_count: number;
+  leader: string;
+  founded_year: string;
+  leader_description?: string;
+  vice_president?: string;
+  vice_president_description?: string;
+  vice_president_2?: string;
+  vice_president_2_description?: string;
+  metrics?: {
+    attendance_average: number;
+    accomplishment_average: number;
+    projects_average: number;
+  };
+  distribution?: { name: string; value: number }[];
+}
+
+interface Candidate {
+  id: number;
+  picture: string;
+  name: string;
+  region: string;
+  party: string;
+  partyId: number;
+  attendance: number;
+  projects: number;
+  applyTo: string;
+}
+
+export async function getStaticPaths() {
+  const URL_DATA = import.meta.env.URL_DATA;
+  try {
+    const res = await fetch(`${URL_DATA}/party-complete.json`);
+    const parties: Party[] = await res.json();
+    return parties.map((party) => ({
+      params: { id: String(party.id) },
+      props: { party },
+    }));
+  } catch {
+    return [];
+  }
+}
+
+const { party } = Astro.props as { party: Party };
+
+const total = party.senator_count + party.deputy_count;
+
+let candidates: Candidate[] = [];
+try {
+  const res = await fetch(`${URL_DATA}/candidate.json`);
+  const all: Candidate[] = await res.json();
+  candidates = all.filter((c) => c.partyId === party.id);
+} catch {
+  // no candidates available
+}
+
+const defaultMetrics = { attendance_average: 0, accomplishment_average: 0, projects_average: 0 };
+const defaultDistribution = [
+  { name: 'Senadores', value: Math.round((party.senator_count / total) * 100) || 0 },
+  { name: 'Diputados', value: Math.round((party.deputy_count / total) * 100) || 0 },
+];
+
+const metrics = party.metrics ?? defaultMetrics;
+const distribution = party.distribution ?? defaultDistribution;
+---
+
+<Layout
+  title={`${party.name} — Observatorio de la Función Congresal`}
+  description={`Conoce el desempeño y la información del partido ${party.name} en el Congreso peruano.`}
+>
+  <PartyHero
+    name={party.name}
+    picture={party.picture}
+    pictureBase={URL_PARTY_PICTURE}
+    founded_year={party.founded_year}
+    leader={party.leader}
+    leader_description={party.leader_description}
+    vice_president={party.vice_president}
+    vice_president_description={party.vice_president_description}
+    vice_president_2={party.vice_president_2}
+    vice_president_2_description={party.vice_president_2_description}
+  />
+
+  <section class="py-14 bg-gray-50 min-h-[60vh]">
+    <Container>
+      <div class="mb-8">
+        <PartyStats
+          deputy_count={party.deputy_count}
+          senator_count={party.senator_count}
+        />
+      </div>
+      <div class="flex flex-col lg:flex-row gap-6 items-start">
+
+        <!-- Main column -->
+        <div class="flex-1 min-w-0 flex flex-col gap-6">
+
+          {(party.leader || party.vice_president) && (
+            <PartyTicket
+              president={{ name: party.leader, description: party.leader_description }}
+              vicePresident={party.vice_president
+                ? { name: party.vice_president, description: party.vice_president_description }
+                : undefined}
+              vicePresident2={party.vice_president_2
+                ? { name: party.vice_president_2, description: party.vice_president_2_description }
+                : undefined}
+            />
+          )}
+
+          <PartyAnalysis distribution={distribution} metrics={metrics} />
+
+          <PartyCandidates
+            candidates={candidates}
+            pictureBase={URL_CANDIDATE_PICTURE}
+            partyPictureBase={URL_PARTY_PICTURE}
+            partyPicture={party.picture}
+          />
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="w-full lg:w-80 shrink-0 flex flex-col gap-6">
+          <PartyMetrics
+            attendance_average={metrics.attendance_average}
+            accomplishment_average={metrics.accomplishment_average}
+            projects_average={metrics.projects_average}
+          />
+
+          <PartyInfo founded_year={party.founded_year} total={total} />
+
+          <KnowMoreCTA
+            buttonHref="/compara"
+            description={`Conoce en detalle el desempeño de cada congresista de ${party.name}`}
+          />
+        </aside>
+
+      </div>
+    </Container>
+  </section>
+</Layout>

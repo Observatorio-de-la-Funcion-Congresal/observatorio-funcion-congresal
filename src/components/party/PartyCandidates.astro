@@ -1,0 +1,86 @@
+---
+import CandidateCard from '../ui/CandidateCard.astro';
+import Button from '../ui/Button.astro';
+import Card from '../ui/Card.astro';
+
+interface Candidate {
+  id: number;
+  picture: string;
+  name: string;
+  region: string;
+  party: string;
+  partyId: number;
+  attendance: number;
+  projects: number;
+  applyTo: string;
+  partyPicture?: string;
+}
+
+interface Props {
+  candidates: Candidate[];
+  pictureBase: string;
+  partyPictureBase: string;
+  partyPicture?: string;
+  initialCount?: number;
+}
+
+const { candidates, pictureBase, partyPictureBase, partyPicture, initialCount = 2 } = Astro.props;
+---
+
+<Card class="p-6" roundedClass='rounded-2xl' padding={false}>
+  <h2 class="text-2xl font-bold text-primary-black-obs mb-4">
+    Congresistas del partido ({candidates.length})
+  </h2>
+
+  {candidates.length === 0 ? (
+    <p class="text-center text-primary-gray-obs py-8">
+      No hay congresistas registrados para este partido.
+    </p>
+  ) : (
+    <>
+      <div id="candidates-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {candidates.map((candidate, index) => (
+          <div
+            class:list={['candidate-item', index >= initialCount ? 'hidden' : '']}
+            data-index={index}
+          >
+            <CandidateCard
+              id={candidate.id}
+              picture={candidate.picture}
+              name={candidate.name}
+              region={candidate.region}
+              party={candidate.party}
+              partyId={candidate.partyId}
+              attendance={candidate.attendance}
+              projects={candidate.projects}
+              applyTo={candidate.applyTo}
+              pictureBase={pictureBase}
+              partyPicture={partyPicture ?? candidate.picture}
+              partyPictureBase={partyPictureBase}
+              shadow={false}
+            />
+          </div>
+        ))}
+      </div>
+
+      {candidates.length > initialCount && (
+        <div id="load-more-candidates-wrapper" class="mt-6 flex justify-center">
+          <Button id="load-more-candidates-btn" variant="outline-dark" size="md" class="rounded-2xl w-full">
+            Ver más congresistas
+          </Button>
+        </div>
+      )}
+    </>
+  )}
+</div>
+
+<script>
+  const btn = document.getElementById('load-more-candidates-btn');
+  const wrapper = document.getElementById('load-more-candidates-wrapper');
+
+  btn?.addEventListener('click', () => {
+    const items = document.querySelectorAll<HTMLElement>('.candidate-item.hidden');
+    items.forEach((item) => item.classList.remove('hidden'));
+    wrapper?.classList.add('hidden');
+  });
+</script>

@@ -1,0 +1,49 @@
+---
+import DistributionChart from '../charts/DistributionChart.vue';
+import PerformanceChart from '../charts/PerformanceChart.vue';
+import Card from '../ui/Card.astro';
+
+interface DistributionItem {
+  name: string;
+  value: number;
+}
+
+interface Metrics {
+  attendance_average: number;
+  accomplishment_average: number;
+  projects_average: number;
+}
+
+interface Props {
+  distribution: DistributionItem[];
+  metrics: Metrics;
+}
+
+const { distribution, metrics } = Astro.props;
+---
+
+<Card roundedClass='rounded-2xl' class="p-6" padding={false}>
+  <h2 class="text-2xl font-bold text-primary-black-obs mb-4">Análisis del Partido</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <!-- Distribution donut chart -->
+    <div>
+      <p class="font-inter text-sm font-medium text-primary-gray-obs mb-4">Distribución de Cargos</p>
+      <DistributionChart
+        distribution={distribution}
+        client:only="vue"
+      />
+    </div>
+
+    <!-- Performance bar chart -->
+    <div>
+      <p class="font-inter text-sm font-medium text-primary-gray-obs mb-4">Desempeño Promedio</p>
+      <PerformanceChart
+        attendance={metrics.attendance_average}
+        accomplishment={metrics.accomplishment_average}
+        projects={metrics.projects_average}
+        client:only="vue"
+      />
+    </div>
+  </div>
+</Card>

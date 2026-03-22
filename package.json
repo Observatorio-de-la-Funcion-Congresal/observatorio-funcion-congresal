@@ -7,14 +7,16 @@
     "build": "astro build"
   },
   "dependencies": {
+    "@astrojs/vue": "^6.0.1",
     "@fontsource-variable/inter": "^5.2.8",
     "@fontsource/poppins": "^5.2.7",
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^6.0.2",
+    "chart.js": "^4.5.1",
     "free-astro-components": "^1.3.0",
-    "tailwindcss": "^4.2.1"
+    "tailwindcss": "^4.2.1",
+    "vue": "^3.5.30",
+    "vue-chartjs": "^5.3.3"
   },
-  "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be",
-  "devDependencies": {
-  }
+  "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be"
 }

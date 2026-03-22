@@ -1,0 +1,14 @@
+---
+import Card from '../ui/Card.astro';
+
+interface Props {
+  biography: string;
+}
+
+const { biography } = Astro.props;
+---
+
+<Card roundedClass="rounded-2xl" padding={false} class="p-6">
+  <h2 class="text-2xl font-bold text-primary-black-obs mb-3">Biografía</h2>
+  <p class="font-inter text-primary-gray-obs">{biography}</p>
+</Card>

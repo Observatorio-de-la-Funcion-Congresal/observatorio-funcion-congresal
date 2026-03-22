@@ -1,0 +1,84 @@
+---
+import Container from '../ui/Container.astro';
+import calendarIcon from '../../assets/icons/calendar.svg?raw';
+import userIcon from '../../assets/icons/user.svg?raw';
+
+interface Props {
+  name: string;
+  picture: string;
+  pictureBase: string;
+  founded_year: string;
+  leader: string;
+  leader_description?: string;
+  vice_president?: string;
+  vice_president_description?: string;
+  vice_president_2?: string;
+  vice_president_2_description?: string;
+}
+
+const {
+  name,
+  picture,
+  pictureBase,
+  founded_year,
+  leader,
+  vice_president,
+  vice_president_2,
+} = Astro.props;
+
+const logoUrl = `${pictureBase}${picture}`;
+---
+
+<section class="bg-primary-blue-obs py-10">
+  <Container>
+    <a
+      href="/partidos"
+      class="inline-flex items-center gap-1.5 text-white/80 text-sm mb-6 hover:text-white transition-colors"
+    >
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+      Volver a partidos
+    </a>
+
+    <div class="flex items-start gap-6 flex-wrap sm:flex-nowrap">
+      <!-- Logo -->
+      <div class="shrink-0 w-32 h-32 rounded-2xl overflow-hidden bg-white">
+        <img
+          src={logoUrl}
+          alt={`Logo ${name}`}
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- Info -->
+      <div class="flex-1 min-w-0 font-inter">
+        <h1 class="text-3xl md:text-4xl font-bold text-white leading-tight">{name}</h1>
+        <p class="text-light-blue-obs text-sm mt-3 flex items-center gap-1.5">
+          <Fragment set:html={calendarIcon} />
+          Fundado: {founded_year}
+        </p>
+
+        <!-- Leaders row -->
+        <div class="flex flex-wrap gap-x-5 gap-y-2 mt-3 text-sm text-light-blue-obs">
+          <span class="flex items-center gap-1.5">
+            <Fragment set:html={userIcon} />
+            Líder: {leader}
+          </span>
+          {vice_president && (
+            <span class="flex items-center gap-1.5">
+              <Fragment set:html={userIcon} />
+              1ra Vicepresidenta: {vice_president}
+            </span>
+          )}
+          {vice_president_2 && (
+            <span class="flex items-center gap-1.5">
+              <Fragment set:html={userIcon} />
+              2da Vicepresidenta: {vice_president_2}
+            </span>
+          )}
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
