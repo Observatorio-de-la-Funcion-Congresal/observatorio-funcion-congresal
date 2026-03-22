@@ -1,23 +1,27 @@
 <template>
-  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-1 flex gap-1">
-    <button
-      v-for="tab in tabs"
-      :key="tab.value"
-      @click="$emit('change', tab.value)"
-      class="flex-1 rounded-xl px-4 py-3 text-left transition-all"
-      :class="
-        mode === tab.value
-          ? 'bg-primary-blue-obs text-white shadow-sm'
-          : 'text-primary-black-obs hover:bg-gray-50'
-      "
-    >
-      <p class="font-semibold text-sm">{{ tab.title }}</p>
-      <p class="text-xs mt-0.5 opacity-70 leading-snug">{{ tab.description }}</p>
-    </button>
-  </div>
+  <Card padding="p-6">
+    <p class="text-xl font-bold mb-3">Tipo de Comparación</p>
+    <div class="p-1 flex gap-4">
+      <button
+        v-for="tab in tabs"
+        :key="tab.value"
+        @click="$emit('change', tab.value)"
+        class="flex-1 rounded-xl px-6 py-5 text-left transition-all cursor-pointer"
+        :class="
+          mode === tab.value
+            ? 'bg-sky-blue-obs border border-primary-blue-obs'
+            : 'hover:bg-gray-50 border border-lighten-gray-obs'
+        "
+      >
+        <p class="font-bold text-lg">{{ tab.title }}</p>
+        <p class="font-inter font-medium text-sm mt-2 text-primary-gray-obs">{{ tab.description }}</p>
+      </button>
+    </div>
+  </Card>
 </template>
 
 <script setup lang="ts">
+import Card from '../ui/Card/Card.vue';
 import type { ComparisonMode } from './types'
 
 defineProps<{ mode: ComparisonMode }>()

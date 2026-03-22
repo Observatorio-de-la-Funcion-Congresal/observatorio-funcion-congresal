@@ -7,14 +7,14 @@
     </Card>
 
     <!-- Radar chart (candidates only) -->
-    <Card v-if="mode === 'candidates'" padding="p-6">
+    <Card padding="p-6">
       <h3 class="text-lg font-bold text-primary-black-obs mb-4">Vista 360°</h3>
       <ComparisonRadarChart :labels="radarLabels" :datasets="radarDatasets" />
     </Card>
 
     <!-- Summary table -->
     <Card padding="p-6">
-      <h3 class="text-lg font-bold text-primary-black-obs mb-4">Resumen Comparativo</h3>
+      <h3 class="text-xl font-bold mb-4">Resumen Comparativo</h3>
       <ComparisonTable
         :headers="tableHeaders"
         :selections="tableSelections"

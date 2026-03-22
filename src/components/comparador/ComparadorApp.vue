@@ -2,14 +2,13 @@
   <div class="font-inter">
     <!-- Mode tabs -->
     <div class="mb-6">
-      <p class="text-xl font-bold text-primary-black-obs mb-3">Tipo de Comparación</p>
       <ComparadorMode :mode="mode" @change="onModeChange" />
     </div>
 
     <!-- Main layout -->
     <div class="flex flex-col lg:flex-row gap-6 items-start">
       <!-- Left: selector + metrics -->
-      <div class="w-full lg:w-72 shrink-0 flex flex-col gap-4">
+      <div class="w-full lg:w-96 shrink-0 flex flex-col gap-4">
         <CandidateSelectorPanel
           v-if="mode === 'candidates'"
           :candidates="candidateList"

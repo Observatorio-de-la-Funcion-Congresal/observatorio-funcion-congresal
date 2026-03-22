@@ -20,7 +20,9 @@
   --color-primary-black-obs: #191308;
   --color-primary-gray-obs: #4A5565;
   --color-light-gray-obs: #D1D5DC;
+  --color-lighten-gray-obs: #E5E7EB;
   --color-gray-icon-obs: #99A1AF;
+  --color-regular-gray-obs: #6A7282;
   
   --color-dark-white-obs: #F8FBFF;
   
@@ -37,6 +39,8 @@
   --color-light-green-obs: #EAFFF2;
 
   --color-hero-overlay: rgba(2, 62, 125, 0.8);
+
+  --spacing-3.5: 0.875rem;
 }
 
 * {

@@ -65,4 +65,78 @@
             }
         ]
     }
+
+    ,
+    {
+        "id": 3,
+        "name": "Alianza Ciudadana",
+        "picture": "/100x100/avatar-2?bg=6392D9&i=aea46cbcaac8b9152022a23280ef4f3e",
+        "senator_count": 7,
+        "deputy_count": 12,
+        "leader": "Ana Patricia Gonzales",
+        "founded_year": "2002",
+        "leader_description": "Líder regional centrada en políticas educativas y desarrollo local",
+        "vice_president": "Marina Torres",
+        "vice_president_description": "Activista social",
+        "vice_president_2": "Ricardo León",
+        "vice_president_2_description": "Economista",
+        "metrics": {
+            "attendance_average": 92,
+            "accomplishment_average": 68,
+            "projects_average": 7.3
+        },
+        "distribution": [
+            { "name": "Senadores", "value": 40 },
+            { "name": "Diputados", "value": 55 },
+            { "name": "Parlamento Andino", "value": 5 }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Movimiento Ecologista Nacional",
+        "picture": "/100x100?bg=3D27F6&i=5efe8d596efd1dd7c55507ac9aeaef95",
+        "senator_count": 4,
+        "deputy_count": 9,
+        "leader": "Roberto Vílchez",
+        "founded_year": "2010",
+        "leader_description": "Ambientalista y gestor de proyectos sostenibles",
+        "vice_president": "Silvia Ramos",
+        "vice_president_description": "Ingeniera ambiental",
+        "vice_president_2": "Hugo Campos",
+        "vice_president_2_description": "Biólogo conservacionista",
+        "metrics": {
+            "attendance_average": 94,
+            "accomplishment_average": 72,
+            "projects_average": 8.1
+        },
+        "distribution": [
+            { "name": "Senadores", "value": 25 },
+            { "name": "Diputados", "value": 60 },
+            { "name": "Parlamento Andino", "value": 15 }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Renovación Democrática",
+        "picture": "/100x100/abstract?bg=C863D9&i=9e88b00d558613df9b31e2d3782244c3",
+        "senator_count": 6,
+        "deputy_count": 11,
+        "leader": "Lucía Fernández",
+        "founded_year": "1998",
+        "leader_description": "Abogada y defensora de reforma administrativa",
+        "vice_president": "Carlos Méndez",
+        "vice_president_description": "Profesor de derecho",
+        "vice_president_2": "Teresa Molina",
+        "vice_president_2_description": "Gestora pública",
+        "metrics": {
+            "attendance_average": 90,
+            "accomplishment_average": 65,
+            "projects_average": 6.7
+        },
+        "distribution": [
+            { "name": "Senadores", "value": 35 },
+            { "name": "Diputados", "value": 50 },
+            { "name": "Parlamento Andino", "value": 15 }
+        ]
+    }
 ]

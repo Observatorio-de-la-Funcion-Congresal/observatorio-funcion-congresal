@@ -1,6 +1,6 @@
 <template>
   <Card>
-    <h3 class="text-sm font-semibold text-primary-black-obs mb-4">Selección Actual</h3>
+    <h3 class="text-xl font-bold mb-4">Selección Actual</h3>
 
     <!-- Empty state -->
     <div
@@ -20,20 +20,17 @@
       <div
         v-for="sel in selections"
         :key="sel.id"
-        class="flex items-center gap-2 pl-1 pr-2 py-1 rounded-full border text-sm font-medium"
-        :style="{ borderColor: sel.color, color: sel.color, backgroundColor: sel.color + '15' }"
+        class="flex items-center gap-2 px-3 py-2 rounded-lg border text-sm font-medium bg-sky-blue-obs border-light-blue-obs"
       >
-        <!-- Color dot -->
-        <span class="w-2.5 h-2.5 rounded-full shrink-0" :style="{ backgroundColor: sel.color }" />
         <!-- Avatar/Logo -->
         <img
           v-if="sel.picture"
           :src="pictureBase + sel.picture"
           :alt="sel.label"
-          class="w-6 h-6 rounded-full object-cover border border-white/50 shrink-0"
+          class="w-8 h-8 rounded-full object-cover border border-white/50 shrink-0"
         />
         <!-- Name -->
-        <span class="max-w-32 truncate">{{ sel.label }}</span>
+        <p class="font-inter text-sm max-w-40 truncate">{{ sel.label }}</p>
         <!-- Remove -->
         <button
           @click="$emit('remove', sel.id)"

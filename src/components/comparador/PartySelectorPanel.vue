@@ -1,33 +1,18 @@
 <template>
-  <Card padding="p-4">
-    <!-- Search -->
-    <div class="relative mb-3">
-      <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-      </span>
-      <input
-        v-model="search"
-        type="search"
-        placeholder="Buscar partido..."
-        class="w-full pl-9 pr-3 py-2 text-sm rounded-xl border border-gray-200 focus:outline-none focus:border-primary-blue-obs bg-gray-50"
-      />
-    </div>
-
-    <p class="text-xs text-primary-gray-obs mb-2">
-      Seleccionar Partidos
-      <span class="ml-1 text-gray-400">Máximo {{ MAX_SELECTIONS }} selecciones</span>
+  <Card padding="p-6">
+    <p class="text-xl font-bold">Seleccionar Partidos</p>
+    <p class="font-inter text-sm text-primary-gray-obs mt-4">
+      Máximo {{ MAX_SELECTIONS }} selecciones
     </p>
 
-    <ul class="flex flex-col gap-1 max-h-72 overflow-y-auto pr-1">
+    <ul class="flex flex-col gap-2 max-h-72 overflow-y-auto pr-1 mt-4">
       <li
         v-for="party in filtered"
         :key="party.id"
         @click="onToggle(party.id)"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-xl cursor-pointer transition-colors"
+        class="flex items-center gap-3 p-3.5 rounded-xl cursor-pointer transition-colors"
         :class="[
-          isSelected(party.id) ? 'bg-sky-blue-obs' : 'hover:bg-gray-50',
+          isSelected(party.id) ? 'bg-sky-blue-obs border-2 border-primary-blue-obs' : 'hover:bg-gray-50 border-2 border-lighten-gray-obs',
           loadingId === party.id ? 'opacity-50 pointer-events-none' : '',
           atMax && !isSelected(party.id) ? 'opacity-40 pointer-events-none' : '',
         ]"
@@ -44,14 +29,7 @@
           <p class="text-sm font-medium text-primary-black-obs truncate leading-tight">{{ party.name }}</p>
           <p class="text-xs text-primary-gray-obs">{{ party.senator_count + party.deputy_count }} congresistas</p>
         </div>
-        <!-- Check icon -->
-        <svg
-          v-if="isSelected(party.id)"
-          class="w-4 h-4 text-primary-blue-obs shrink-0"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
-        >
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
+        <div class="rounded-full w-2 h-2 bg-primary-blue-obs" v-if="isSelected(party.id)"></div>
         <!-- Loading spinner -->
         <svg
           v-else-if="loadingId === party.id"

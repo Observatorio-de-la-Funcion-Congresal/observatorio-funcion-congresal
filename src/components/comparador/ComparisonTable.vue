@@ -20,7 +20,7 @@
           :key="row.metric.key"
           class="border-b border-gray-50 last:border-0"
         >
-          <td class="py-2.5 pr-4 text-primary-gray-obs">{{ row.metric.label }}</td>
+          <td class="py-2.5 pr-4 text-primary-gray-obs text-sm">{{ row.metric.label }}</td>
           <td
             v-for="(val, i) in row.values"
             :key="i"
@@ -37,6 +37,7 @@
 <script setup lang="ts">
 import type { Metric } from './types'
 import { getNestedValue } from './composables/useComparison'
+import { computed } from 'vue'
 
 interface Header {
   id: number
@@ -61,11 +62,16 @@ const props = defineProps<{
   metrics: Metric[]
 }>()
 
-const rows = props.metrics.map((metric): Row => ({
-  metric,
-  values: props.selections.map((sel) => {
-    const val = getNestedValue(sel.data as Record<string, unknown>, metric.key)
-    return metric.unit === '%' ? val : val
-  }),
-}))
+const rows = computed(() => 
+  props.metrics.map((metric): Row => {
+    console.log('Processing metric:', metric.key, props.selections)
+    return {
+      metric,
+      values: props.selections.map((sel) => {
+        const val = getNestedValue(sel.data as Record<string, unknown>, metric.key)
+        return metric.unit === '%' ? val : val
+      }),
+    }
+  })
+)
 </script>
