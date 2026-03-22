@@ -1,7 +1,7 @@
 ---
 import DistributionChart from '../charts/DistributionChart.vue';
 import PerformanceChart from '../charts/PerformanceChart.vue';
-import Card from '../ui/Card.astro';
+import Card from '../ui/Card/Card.astro';
 
 interface DistributionItem {
   name: string;
@@ -9,9 +9,9 @@ interface DistributionItem {
 }
 
 interface Metrics {
-  attendance_average: number;
-  accomplishment_average: number;
-  projects_average: number;
+  attendance: number;
+  accomplishment: number;
+  projects: number;
 }
 
 interface Props {
@@ -39,9 +39,9 @@ const { distribution, metrics } = Astro.props;
     <div>
       <p class="font-inter text-sm font-medium text-primary-gray-obs mb-4">Desempeño Promedio</p>
       <PerformanceChart
-        attendance={metrics.attendance_average}
-        accomplishment={metrics.accomplishment_average}
-        projects={metrics.projects_average}
+        attendance={metrics.attendance}
+        accomplishment={metrics.accomplishment}
+        projects={metrics.projects}
         client:only="vue"
       />
     </div>

@@ -1,0 +1,27 @@
+{
+    "id": 2,
+    "name": "Partido Popular",
+    "picture": "/100x100?bg=FF3C3C&i=4a912bdfb7a2b359421bf69acbd6e221",
+    "senator_count": 8,
+    "deputy_count": 15,
+    "leader": "Juan Pérez",
+    "founded_year": "1985",
+    "leader_description": "Abogado y político, defensor de los derechos humanos",
+    "vice_president": "Ana Gómez",
+    "vice_president_description": "Economista y activista social",
+    "vice_president_2": "Carlos Ruiz",
+    "vice_president_2_description": "Profesor universitario y analista político",
+    "metrics": {
+        "attendance": 92,
+        "abstentions": 10,
+        "session_week": 15,
+        "accomplishment": 78,
+        "projects": 9.8,
+        "participation": 38
+    },
+    "distribution": [
+        { "name": "Senadores", "value": 50 },
+        { "name": "Diputados", "value": 40 },
+        { "name": "Parlamento Andino", "value": 10 }
+    ]
+}

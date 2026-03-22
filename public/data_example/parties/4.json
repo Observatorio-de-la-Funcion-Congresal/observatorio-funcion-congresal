@@ -1,0 +1,27 @@
+{
+    "id": 4,
+    "name": "Movimiento Ecologista Nacional",
+    "picture": "/100x100?bg=3D27F6&i=5efe8d596efd1dd7c55507ac9aeaef95",
+    "senator_count": 4,
+    "deputy_count": 9,
+    "leader": "Roberto Vílchez",
+    "founded_year": "2010",
+    "leader_description": "Ambientalista y gestor de proyectos sostenibles",
+    "vice_president": "Silvia Ramos",
+    "vice_president_description": "Ingeniera ambiental",
+    "vice_president_2": "Hugo Campos",
+    "vice_president_2_description": "Biólogo conservacionista",
+    "metrics": {
+        "attendance": 88,
+        "abstentions": 7,
+        "session_week": 10,
+        "accomplishment": 72,
+        "projects": 8.1,
+        "participation": 25
+    },
+    "distribution": [
+        { "name": "Senadores", "value": 25 },
+        { "name": "Diputados", "value": 60 },
+        { "name": "Parlamento Andino", "value": 15 }
+    ]
+}

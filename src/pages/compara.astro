@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import InternalPageHero from '../components/sections/InternalPageHero.astro';
+import Container from '../components/ui/Container.astro';
+import ComparadorApp from '../components/comparador/ComparadorApp.vue';
+
+const URL_DATA = import.meta.env.URL_DATA;
+const URL_CANDIDATE_PICTURE = import.meta.env.URL_CANDIDATE_PICTURE;
+const URL_PARTY_PICTURE = import.meta.env.URL_PARTY_PICTURE;
+---
+
+<Layout
+  title="Comparador — Observatorio de la Función Congresal"
+  description="Compara el desempeño de congresistas o partidos políticos."
+>
+  <InternalPageHero
+    title="Comparador"
+    subtitle="Compara el desempeño de congresistas o partidos políticos"
+  />
+
+  <section class="py-10 bg-gray-50 min-h-[70vh]">
+    <Container>
+      <ComparadorApp
+        dataUrl={URL_DATA}
+        candidatePictureBase={URL_CANDIDATE_PICTURE}
+        partyPictureBase={URL_PARTY_PICTURE}
+        client:only="vue"
+      />
+    </Container>
+  </section>
+</Layout>

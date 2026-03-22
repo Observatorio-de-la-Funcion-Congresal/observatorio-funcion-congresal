@@ -1,0 +1,43 @@
+{
+    "id": 3,
+    "picture": "/api/portraits/women/3.jpg",
+    "name": "Ana Patricia Gonzales",
+    "region": "Arequipa",
+    "party": "Alianza Progresista",
+    "partyId": 3,
+    "attendance": 95,
+    "abstentions": 2,
+    "projects": 3,
+    "commissions_count": 1,
+    "applyTo": "Diputada",
+    "biography": "Profesora universitaria y investigadora en políticas públicas con énfasis en educación regional.",
+    "performance": {
+        "attendance": 95,
+        "abstentions": 2,
+        "session_week": 65,
+        "accomplishment": 70,
+        "projects": 30,
+        "participation": 60
+    },
+    "bills": {
+        "presented": 15,
+        "approved": 3,
+        "approval_rate": 20,
+        "as_author": 3,
+        "as_adherent": 5,
+        "list": [
+            { "title": "Proyecto de fortalecimiento de la educación técnica regional", "year": 2024, "status": "En comisión" },
+            { "title": "Ley de apoyo a estudiantes becados", "year": 2025, "status": "Aprobado" },
+            { "title": "Iniciativa para acceso a internet en escuelas rurales", "year": 2026, "status": "En trámite" }
+        ]
+    },
+    "additional_info": {
+        "representation_week": 90,
+        "party_change": false,
+        "commission_participation": "Moderada",
+        "campaign_plan_url": "#"
+    },
+    "commissions": [
+        "Educación"
+    ]
+}
