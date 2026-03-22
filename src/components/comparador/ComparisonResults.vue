@@ -28,7 +28,7 @@
 import { computed } from 'vue'
 import Card from '../ui/Card/Card.vue'
 import type { CandidateSelection, PartySelection, Metric, ComparisonMode } from './types'
-import { getNestedValue, CANDIDATE_METRICS } from './composables/useComparison'
+import { getNestedValue } from './composables/useComparison'
 import ComparisonBarChart from './charts/ComparisonBarChart.vue'
 import ComparisonRadarChart from './charts/ComparisonRadarChart.vue'
 import ComparisonTable from './ComparisonTable.vue'
@@ -64,17 +64,22 @@ const barDatasets = computed(() =>
   }))
 )
 
-// ── Radar chart (candidates only, all 6 axes) ─────────────────────────────
+// ── Radar chart ─────────────────────────────
 
-const radarLabels = CANDIDATE_METRICS.map((m) => m.label)
+const radarLabels = computed(() => props.activeMetrics.map((m) => m.label))
 
-const radarDatasets = computed(() =>
-  props.candidateSelections.map((sel) => ({
-    label: sel.data.name,
-    data: CANDIDATE_METRICS.map((m) => getNestedValue(sel.data as Record<string, unknown>, m.key)),
+const radarDatasets = computed(() => (
+  selections.value.map((sel) => ({
+    label:
+      props.mode === 'candidates'
+        ? (sel as CandidateSelection).data.name
+        : (sel as PartySelection).data.name,
+    data: props.activeMetrics.map((m) =>
+      getNestedValue(sel.data as Record<string, unknown>, m.key)
+    ),
     color: sel.color,
   }))
-)
+))
 
 // ── Table ──────────────────────────────────────────────────────────────────
 

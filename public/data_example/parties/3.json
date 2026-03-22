@@ -1,0 +1,27 @@
+{
+    "id": 3,
+    "name": "Alianza Ciudadana",
+    "picture": "/100x100/avatar-2?bg=6392D9&i=aea46cbcaac8b9152022a23280ef4f3e",
+    "senator_count": 7,
+    "deputy_count": 12,
+    "leader": "Ana Patricia Gonzales",
+    "founded_year": "2002",
+    "leader_description": "Líder regional centrada en políticas educativas y desarrollo local",
+    "vice_president": "Marina Torres",
+    "vice_president_description": "Activista social",
+    "vice_president_2": "Ricardo León",
+    "vice_president_2_description": "Economista",
+    "metrics": {
+        "attendance": 85,
+        "abstentions": 12,
+        "session_week": 12,
+        "accomplishment": 68,
+        "projects": 7.3,
+        "participation": 30
+    },
+    "distribution": [
+        { "name": "Senadores", "value": 40 },
+        { "name": "Diputados", "value": 55 },
+        { "name": "Parlamento Andino", "value": 5 }
+    ]
+}

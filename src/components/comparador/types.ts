@@ -59,9 +59,9 @@ export interface PartySummary {
 
 export interface PartyDetail extends PartySummary {
   metrics: {
-    attendance_average: number
-    accomplishment_average: number
-    projects_average: number
+    attendance: number
+    accomplishment: number
+    projects: number
   }
 }
 

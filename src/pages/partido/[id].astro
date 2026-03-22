@@ -28,9 +28,9 @@ interface Party {
   vice_president_2?: string;
   vice_president_2_description?: string;
   metrics?: {
-    attendance_average: number;
-    accomplishment_average: number;
-    projects_average: number;
+    attendance: number;
+    accomplishment: number;
+    projects: number;
   };
   distribution?: { name: string; value: number }[];
 }
@@ -74,7 +74,7 @@ try {
   // no candidates available
 }
 
-const defaultMetrics = { attendance_average: 0, accomplishment_average: 0, projects_average: 0 };
+const defaultMetrics = { attendance: 0, accomplishment: 0, projects: 0 };
 const defaultDistribution = [
   { name: 'Senadores', value: Math.round((party.senator_count / total) * 100) || 0 },
   { name: 'Diputados', value: Math.round((party.deputy_count / total) * 100) || 0 },
@@ -139,9 +139,9 @@ const distribution = party.distribution ?? defaultDistribution;
         <!-- Sidebar -->
         <aside class="w-full lg:w-80 shrink-0 flex flex-col gap-6">
           <PartyMetrics
-            attendance_average={metrics.attendance_average}
-            accomplishment_average={metrics.accomplishment_average}
-            projects_average={metrics.projects_average}
+            attendance={metrics.attendance}
+            accomplishment={metrics.accomplishment}
+            projects={metrics.projects}
           />
 
           <PartyInfo founded_year={party.founded_year} total={total} />

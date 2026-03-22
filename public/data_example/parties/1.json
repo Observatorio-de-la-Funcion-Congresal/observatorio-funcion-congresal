@@ -1,0 +1,27 @@
+{
+    "id": 1,
+    "name": "Partido Nacional",
+    "picture": "/100x100?i=d9e22222279c1e46487c4dc95a43baa3",
+    "senator_count": 10,
+    "deputy_count": 20,
+    "leader": "María Elena Rodríguez",
+    "founded_year": "1990",
+    "leader_description": "Empresario y político, fundador del partido",
+    "vice_president": "María Elena Rodríguez",
+    "vice_president_description": "Artista y político",
+    "vice_president_2": "María Elena Rodríguez",
+    "vice_president_2_description": "Sindicalista y político",
+    "metrics": {
+        "attendance": 100,
+        "abstentions": 5,
+        "session_week": 20,
+        "accomplishment": 83,
+        "projects": 11.5,
+        "participation": 50
+    },
+    "distribution": [
+        { "name": "Senadores", "value": 60 },
+        { "name": "Diputados", "value": 30 },
+        { "name": "Parlamento Andino", "value": 9 }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "id": 2,
+    "picture": "/api/portraits/men/2.jpg",
+    "name": "Carlos Alberto Mendoza",
+    "region": "Cusco",
+    "party": "Partido Popular",
+    "partyId": 2,
+    "attendance": 88,
+    "abstentions": 8,
+    "projects": 6,
+    "commissions_count": 2,
+    "applyTo": "Senador",
+    "biography": "Abogado constitucionalista con 20 años en el sector público. Defensor de los derechos indígenas y la gobernanza regional.",
+    "performance": {
+        "attendance": 88,
+        "abstentions": 8,
+        "session_week": 18,
+        "accomplishment": 24,
+        "projects": 50,
+        "participation": 42
+    },
+    "bills": {
+        "presented": 31,
+        "approved": 6,
+        "approval_rate": 19,
+        "as_author": 6,
+        "as_adherent": 10,
+        "list": [
+            { "title": "Ley de consulta previa para comunidades andinas", "year": 2024, "status": "Aprobado" },
+            { "title": "Proyecto de descentralización fiscal regional", "year": 2024, "status": "En comisión" },
+            { "title": "Reforma del sistema de pensiones rurales", "year": 2025, "status": "En comisión" },
+            { "title": "Ley de protección del patrimonio arqueológico", "year": 2026, "status": "Archivado" }
+        ]
+    },
+    "additional_info": {
+        "representation_week": 72,
+        "party_change": false,
+        "commission_participation": "Activa",
+        "campaign_plan_url": "#"
+    },
+    "commissions": [
+        "Justicia y Derechos Humanos",
+        "Descentralización"
+    ]
+}

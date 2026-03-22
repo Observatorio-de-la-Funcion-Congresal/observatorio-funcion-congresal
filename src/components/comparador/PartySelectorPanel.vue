@@ -18,16 +18,15 @@
         ]"
       >
         <!-- Badge -->
-        <div
-          class="w-9 h-9 rounded-xl shrink-0 flex items-center justify-center text-white font-bold text-xs"
-          :style="{ backgroundColor: badgeColor(party.id) }"
-        >
-          {{ initials(party.name) }}
-        </div>
+        <img
+          v-if="party.picture"
+          :src="pictureBase + party.picture"
+          alt=""
+          class="w-9 h-9 rounded-xl object-cover border border-primary-gray-obs/20 shrink-0"
+        />
         <!-- Info -->
         <div class="flex-1 min-w-0">
           <p class="text-sm font-medium text-primary-black-obs truncate leading-tight">{{ party.name }}</p>
-          <p class="text-xs text-primary-gray-obs">{{ party.senator_count + party.deputy_count }} congresistas</p>
         </div>
         <div class="rounded-full w-2 h-2 bg-primary-blue-obs" v-if="isSelected(party.id)"></div>
         <!-- Loading spinner -->

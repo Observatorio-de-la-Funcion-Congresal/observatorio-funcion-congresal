@@ -9,6 +9,7 @@ import type {
   CandidateSelection,
   PartySelection,
 } from '../types'
+import { fetchCandidateDetail, fetchPartyDetail } from '../services/comparisonService'
 
 export const COMPARISON_COLORS = ['#023E7D', '#D62828', '#059669', '#D97706']
 export const MAX_SELECTIONS = 4
@@ -23,9 +24,12 @@ export const CANDIDATE_METRICS: Metric[] = [
 ]
 
 export const PARTY_METRICS: Metric[] = [
-  { key: 'metrics.attendance_average',     label: '% Asistencia Promedio',   unit: '%' },
-  { key: 'metrics.accomplishment_average', label: '% Cumplimiento Promedio', unit: '%' },
-  { key: 'metrics.projects_average',       label: 'Proyectos Promedio',      unit: ''  },
+  { key: 'metrics.attendance',     label: '% Asistencia al Pleno',       unit: '%' },
+  { key: 'metrics.abstentions',    label: '% Votos en Abstención',        unit: '%' },
+  { key: 'metrics.session_week',   label: '% Semana de Representación',   unit: '%' },
+  { key: 'metrics.accomplishment', label: 'Cumplimiento de Promesas',     unit: '%' },
+  { key: 'metrics.participation',  label: 'Participación en Comisiones',  unit: '%' },
+  { key: 'metrics.projects',       label: 'Proyectos de Ley (Autor)',     unit: ''  },
 ]
 
 export function getNestedValue(obj: Record<string, unknown>, path: string): number {
@@ -103,21 +107,12 @@ export function useComparison(dataUrl: string) {
     } catch { /* silent */ }
   }
 
-  async function fetchCandidateDetail(id: number): Promise<CandidateDetail | null> {
-    if (candidateDetailCache[id]) return candidateDetailCache[id]
-    // In production this would be: fetch(`${dataUrl}/candidates/${id}.json`)
-    const res = await fetch(`${dataUrl}/candidate-complete.json`)
-    const all: CandidateDetail[] = await res.json()
-    all.forEach((c) => { candidateDetailCache[c.id] = c })
-    return candidateDetailCache[id] ?? null
+  async function loadCandidateDetail(id: number): Promise<CandidateDetail | null> {
+    return fetchCandidateDetail(dataUrl, id, candidateDetailCache)
   }
 
-  async function fetchPartyDetail(id: number): Promise<PartyDetail | null> {
-    if (partyDetailCache[id]) return partyDetailCache[id]
-    const res = await fetch(`${dataUrl}/party-complete.json`)
-    const all: PartyDetail[] = await res.json()
-    all.forEach((p) => { partyDetailCache[p.id] = p })
-    return partyDetailCache[id] ?? null
+  async function loadPartyDetail(id: number): Promise<PartyDetail | null> {
+    return fetchPartyDetail(dataUrl, id, partyDetailCache)
   }
 
   // ── Toggle selections ──────────────────────────────────────────────────────
@@ -131,7 +126,7 @@ export function useComparison(dataUrl: string) {
     if (selectedCandidates.value.length >= MAX_SELECTIONS) return
     loadingId.value = id
     try {
-      const data = await fetchCandidateDetail(id)
+      const data = await loadCandidateDetail(id)
       if (!data) return
       selectedCandidates.value.push({ id, data, color: nextColor(selectedCandidates.value) })
     } finally {
@@ -148,7 +143,7 @@ export function useComparison(dataUrl: string) {
     if (selectedParties.value.length >= MAX_SELECTIONS) return
     loadingId.value = id
     try {
-      const data = await fetchPartyDetail(id)
+      const data = await loadPartyDetail(id)
       if (!data) return
       selectedParties.value.push({ id, data, color: nextColor(selectedParties.value) })
     } finally {

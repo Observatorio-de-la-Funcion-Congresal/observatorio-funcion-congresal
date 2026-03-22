@@ -13,9 +13,12 @@
         "vice_president_2": "María Elena Rodríguez",
         "vice_president_2_description": "Sindicalista y político",
         "metrics": {
-            "attendance_average": 100,
-            "accomplishment_average": 83,
-            "projects_average": 11.5
+            "attendance": 100,
+            "abstentions": 5,
+            "session_week": 20,
+            "accomplishment": 83,
+            "projects": 11.5,
+            "participation": 50
         },
         "distribution": [
             {
@@ -46,9 +49,12 @@
         "vice_president_2": "Carlos Ruiz",
         "vice_president_2_description": "Profesor universitario y analista político",
         "metrics": {
-            "attendance_average": 95,
-            "accomplishment_average": 78,
-            "projects_average": 9.8
+            "attendance": 92,
+            "abstentions": 10,
+            "session_week": 15,
+            "accomplishment": 78,
+            "projects": 9.8,
+            "participation": 38
         },
         "distribution": [
             {
@@ -81,9 +87,12 @@
         "vice_president_2": "Ricardo León",
         "vice_president_2_description": "Economista",
         "metrics": {
-            "attendance_average": 92,
-            "accomplishment_average": 68,
-            "projects_average": 7.3
+            "attendance": 85,
+            "abstentions": 12,
+            "session_week": 12,
+            "accomplishment": 68,
+            "projects": 7.3,
+            "participation": 30
         },
         "distribution": [
             { "name": "Senadores", "value": 40 },
@@ -105,9 +114,12 @@
         "vice_president_2": "Hugo Campos",
         "vice_president_2_description": "Biólogo conservacionista",
         "metrics": {
-            "attendance_average": 94,
-            "accomplishment_average": 72,
-            "projects_average": 8.1
+            "attendance": 88,
+            "abstentions": 7,
+            "session_week": 10,
+            "accomplishment": 72,
+            "projects": 8.1,
+            "participation": 25
         },
         "distribution": [
             { "name": "Senadores", "value": 25 },
@@ -129,9 +141,12 @@
         "vice_president_2": "Teresa Molina",
         "vice_president_2_description": "Gestora pública",
         "metrics": {
-            "attendance_average": 90,
-            "accomplishment_average": 65,
-            "projects_average": 6.7
+            "attendance": 80,
+            "abstentions": 15,
+            "session_week": 8,
+            "accomplishment": 65,
+            "projects": 6.7,
+            "participation": 20
         },
         "distribution": [
             { "name": "Senadores", "value": 35 },

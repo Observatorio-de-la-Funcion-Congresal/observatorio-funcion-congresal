@@ -1,0 +1,45 @@
+{
+    "id": 4,
+    "picture": "/api/portraits/men/4.jpg",
+    "name": "Roberto Vílchez Sánchez",
+    "region": "Piura",
+    "party": "Movimiento Verde",
+    "partyId": 4,
+    "attendance": 92,
+    "abstentions": 4,
+    "projects": 8,
+    "commissions_count": 2,
+    "applyTo": "Diputado",
+    "biography": "Ingeniero ambiental dedicado a la gestión de recursos hídricos y protección costera.",
+    "performance": {
+        "attendance": 92,
+        "abstentions": 4,
+        "session_week": 70,
+        "accomplishment": 75,
+        "projects": 60,
+        "participation": 65
+    },
+    "bills": {
+        "presented": 28,
+        "approved": 6,
+        "approval_rate": 21,
+        "as_author": 6,
+        "as_adherent": 8,
+        "list": [
+            { "title": "Ley de protección de humedales costeros", "year": 2024, "status": "En comisión" },
+            { "title": "Iniciativa de gestión integrada de cuencas", "year": 2025, "status": "Aprobado" },
+            { "title": "Proyecto de restauración ecosistémica", "year": 2026, "status": "En trámite" },
+            { "title": "Regulación de aguas subterráneas", "year": 2027, "status": "Archivado" }
+        ]
+    },
+    "additional_info": {
+        "representation_week": 78,
+        "party_change": false,
+        "commission_participation": "Activa",
+        "campaign_plan_url": "#"
+    },
+    "commissions": [
+        "Ambiente",
+        "Recursos Naturales"
+    ]
+}

@@ -2,16 +2,16 @@
 import Card from '../ui/Card/Card.astro';
 
 interface Props {
-  attendance_average: number;
-  accomplishment_average: number;
-  projects_average: number;
+  attendance: number;
+  accomplishment: number;
+  projects: number;
 }
 
-const { attendance_average, accomplishment_average, projects_average } = Astro.props;
+const { attendance, accomplishment, projects } = Astro.props;
 
 const bars = [
-  { label: 'Asistencia Promedio', value: attendance_average, color: 'bg-green-obs' },
-  { label: 'Cumplimiento Promedio', value: accomplishment_average, color: 'bg-green-obs' },
+  { label: 'Asistencia Promedio', value: attendance, color: 'bg-green-obs' },
+  { label: 'Cumplimiento Promedio', value: accomplishment, color: 'bg-green-obs' },
 ];
 ---
 
@@ -38,6 +38,6 @@ const bars = [
   <!-- Projects average — shown as a figure, not a percentage bar -->
   <div class="mt-4 pt-4 border-t border-gray-100 font-inter">
     <p class="text-sm text-primary-gray-obs mb-0.5">Proyectos Promedio por Congresista</p>
-    <p class="text-3xl font-semibold text-primary-black-obs">{projects_average}</p>
+    <p class="text-3xl font-semibold text-primary-black-obs">{projects}</p>
   </div>
 </Card>
