@@ -31,11 +31,16 @@ const currentYear = new Date().getFullYear();
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
       <div class="flex flex-col gap-4">
         <div>
-          <img src={LogoSrc} alt="" class="h-14 w-auto">
+          <img src={LogoSrc} alt="" class="h-14 w-auto" loading="lazy">
         </div>
-        <p class="text-sm leading-5 font-inter text-light-gray-obs opacity-80 font-normal max-w-sm">
-          Plataforma de transparencia política que promueve la participación ciudadana informada en el proceso democrático peruano.
-        </p>
+        <div class="text-sm leading-5 font-inter text-light-gray-obs opacity-80 font-normal max-w-sm">
+          <p class="block mb-1">
+            Plataforma de transparencia política que promueve la participación ciudadana informada en el proceso democrático peruano.
+          </p>
+          <p class="block opacity-90">
+            Apoyo técnico de <a target="_blank" rel="noopener noreferrer" href="https://www.openperu.org.pe" class="hover:underline hover:opacity-100">Open Perú</a>
+          </p>
+        </div>
         
         <div class="flex items-center gap-3 mt-2">
           {
