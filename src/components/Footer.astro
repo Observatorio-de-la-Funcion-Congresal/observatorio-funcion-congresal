@@ -1,6 +1,9 @@
 ---
 import Container from './ui/Container.astro';
 import LogoSrc from '../assets/logo-white.png?url';
+import fbIcon from '../assets/icons/fb_Icon.svg?raw';
+import lnIcon from '../assets/icons/ln_Icon.svg?raw';
+import inIcon from '../assets/icons/in_Icon.svg?raw';
 
 interface FooterLink {
   label: string;
@@ -15,9 +18,9 @@ const contentLinks: FooterLink[] = [
 ];
 
 const socialLinks = [
-  { label: 'Facebook', href: '#', icon: 'fb_Icon.svg' },
-  { label: 'LinkedIn', href: '#', icon: 'ln_Icon.svg' },
-  { label: 'Instagram', href: '#', icon: 'in_Icon.svg' },
+  { label: 'Facebook', href: '#', icon: fbIcon },
+  { label: 'LinkedIn', href: '#', icon: lnIcon },
+  { label: 'Instagram', href: '#', icon: inIcon },
 ];
 
 const currentYear = new Date().getFullYear();
@@ -42,7 +45,7 @@ const currentYear = new Date().getFullYear();
                 aria-label={s.label}
                 class="w-8 h-8 flex items-center justify-center rounded-lg p-2 bg-white/10 border border-transparent hover:border-primary-gray-obs"
               >
-                <img src={`/assets/icons/${s.icon}`} alt="" class="w-full h-full" />
+                <Fragment set:html={s.icon} />
               </a>
             ))
           }
