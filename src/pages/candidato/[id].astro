@@ -179,12 +179,13 @@ try {
         <aside class="w-full lg:w-80 shrink-0 flex flex-col gap-6">
           <CandidateAdditionalInfo info={candidate.additional_info} />
 
-          {candidate.additional_info.campaign_plan_url && (
-            <Button href={candidate.additional_info.campaign_plan_url} variant="outline-dark" class="rounded-xl bg-white">
-              Descargar plan de campaña
-            </Button>
-          )}
-
+          <!-- 
+            {candidate.additional_info.campaign_plan_url && (
+              <Button href={candidate.additional_info.campaign_plan_url} variant="outline-dark" class="rounded-xl bg-white">
+                Descargar plan de campaña
+              </Button>
+            )}
+          -->
           <CandidateCommissions commissions={candidate.commissions} />
 
           <KnowMoreCTA
