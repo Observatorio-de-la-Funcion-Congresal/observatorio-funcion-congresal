@@ -118,6 +118,27 @@
                 { "title": "Ley de protección del patrimonio arqueológico", "year": 2026, "status": "Archivado" }
             ]
         },
+        "motions_detail": {
+            "presented": 31,
+            "approved": 6,
+            "approval_rate": 19,
+            "as_author": 6,
+            "as_adherent": 10,
+            "list": [
+                { "title": "Ley de consulta previa para comunidades andinas", "year": 2024, "status": "Aprobado" },
+                { "title": "Proyecto de descentralización fiscal regional", "year": 2024, "status": "En comisión" },
+                { "title": "Reforma del sistema de pensiones rurales", "year": 2025, "status": "En comisión" },
+                { "title": "Ley de protección del patrimonio arqueológico", "year": 2026, "status": "Archivado" }
+            ]
+        },
+        "promises": {
+            "list": [
+                { "title": "Ley de consulta previa para comunidades andinas", "year": 2024, "status": "Cumplió" },
+                { "title": "Proyecto de descentralización fiscal regional", "year": 2024, "status": "No cumplió" },
+                { "title": "Reforma del sistema de pensiones rurales", "year": 2025, "status": "Cumplió" },
+                { "title": "Ley de protección del patrimonio arqueológico", "year": 2026, "status": "No cumplió" }
+            ]
+        },
         "additional_info": {
             "representation_week": 72,
             "party_change": false,
@@ -173,6 +194,25 @@
                 { "title": "Iniciativa para acceso a internet en escuelas rurales", "year": 2026, "status": "En trámite" }
             ]
         },
+        "motions_detail": {
+            "presented": 15,
+            "approved": 3,
+            "approval_rate": 20,
+            "as_author": 3,
+            "as_adherent": 5,
+            "list": [
+                { "title": "Proyecto de fortalecimiento de la educación técnica regional", "year": 2024, "status": "En comisión" },
+                { "title": "Ley de apoyo a estudiantes becados", "year": 2025, "status": "Aprobado" },
+                { "title": "Iniciativa para acceso a internet en escuelas rurales", "year": 2026, "status": "En trámite" }
+            ]
+        },
+        "promises": {
+            "list": [
+                { "title": "Proyecto de fortalecimiento de la educación técnica regional", "year": 2024, "status": "Cumplió" },
+                { "title": "Ley de apoyo a estudiantes becados", "year": 2025, "status": "No cumplió" },
+                { "title": "Iniciativa para acceso a internet en escuelas rurales", "year": 2026, "status": "Cumplió" }
+            ]
+        },
         "additional_info": {
             "representation_week": 90,
             "party_change": false,
@@ -226,6 +266,27 @@
                 { "title": "Regulación de aguas subterráneas", "year": 2027, "status": "Archivado" }
             ]
         },
+        "motions_detail": {
+            "presented": 28,
+            "approved": 6,
+            "approval_rate": 21,
+            "as_author": 6,
+            "as_adherent": 8,
+            "list": [
+                { "title": "Ley de protección de humedales costeros", "year": 2024, "status": "En comisión" },
+                { "title": "Iniciativa de gestión integrada de cuencas", "year": 2025, "status": "Aprobado" },
+                { "title": "Proyecto de restauración ecosistémica", "year": 2026, "status": "En trámite" },
+                { "title": "Regulación de aguas subterráneas", "year": 2027, "status": "Archivado" }
+            ]
+        },
+        "promises": {
+            "list": [
+                { "title": "Ley de protección de humedales costeros", "year": 2024, "status": "Cumplió" },
+                { "title": "Iniciativa de gestión integrada de cuencas", "year": 2025, "status": "No cumplió" },
+                { "title": "Proyecto de restauración ecosistémica", "year": 2026, "status": "Cumplió" },
+                { "title": "Regulación de aguas subterráneas", "year": 2027, "status": "No cumplió" }
+            ]
+        },
         "additional_info": {
             "representation_week": 78,
             "party_change": false,
@@ -277,6 +338,25 @@
                 { "title": "Reforma de procedimientos civiles simplificados", "year": 2024, "status": "En comisión" },
                 { "title": "Ley de protección a víctimas de violencia doméstica", "year": 2025, "status": "Aprobado" },
                 { "title": "Proyecto de mejora de acceso a la justicia gratuita", "year": 2026, "status": "En trámite" }
+            ]
+        },
+        "motions_detail": {
+            "presented": 20,
+            "approved": 4,
+            "approval_rate": 20,
+            "as_author": 4,
+            "as_adherent": 6,
+            "list": [
+                { "title": "Reforma de procedimientos civiles simplificados", "year": 2024, "status": "En comisión" },
+                { "title": "Ley de protección a víctimas de violencia doméstica", "year": 2025, "status": "Aprobado" },
+                { "title": "Proyecto de mejora de acceso a la justicia gratuita", "year": 2026, "status": "En trámite" }
+            ]
+        },
+        "promises": {
+            "list": [
+                { "title": "Reforma de procedimientos civiles simplificados", "year": 2024, "status": "Cumplió" },
+                { "title": "Ley de protección a víctimas de violencia doméstica", "year": 2025, "status": "No cumplió" },
+                { "title": "Proyecto de mejora de acceso a la justicia gratuita", "year": 2026, "status": "Cumplió" }
             ]
         },
         "additional_info": {

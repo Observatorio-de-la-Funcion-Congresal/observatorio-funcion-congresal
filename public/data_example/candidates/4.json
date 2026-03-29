@@ -55,6 +55,59 @@
             }
         ]
     },
+    "motions_detail": {
+        "presented": 28,
+        "approved": 6,
+        "approval_rate": 21,
+        "as_author": 6,
+        "as_adherent": 8,
+        "list": [
+            {
+                "title": "Ley de protección de humedales costeros",
+                "year": 2024,
+                "status": "En comisión"
+            },
+            {
+                "title": "Iniciativa de gestión integrada de cuencas",
+                "year": 2025,
+                "status": "Aprobado"
+            },
+            {
+                "title": "Proyecto de restauración ecosistémica",
+                "year": 2026,
+                "status": "En trámite"
+            },
+            {
+                "title": "Regulación de aguas subterráneas",
+                "year": 2027,
+                "status": "Archivado"
+            }
+        ]
+    },
+    "promises": {
+        "list": [
+            {
+                "title": "Ley de protección de humedales costeros",
+                "year": 2024,
+                "status": "Cumplió"
+            },
+            {
+                "title": "Iniciativa de gestión integrada de cuencas",
+                "year": 2025,
+                "status": "No cumplió"
+            },
+            {
+                "title": "Proyecto de restauración ecosistémica",
+                "year": 2026,
+                "status": "Cumplió"
+            },
+            {
+                "title": "Regulación de aguas subterráneas",
+                "year": 2027,
+                "status": "No cumplió"
+            }
+        ]
+    },
     "additional_info": {
         "representation_week": 78,
         "party_change": false,

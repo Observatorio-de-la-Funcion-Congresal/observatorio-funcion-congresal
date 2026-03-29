@@ -55,6 +55,59 @@
             }
         ]
     },
+    "motions_detail": {
+        "presented": 42,
+        "approved": 8,
+        "approval_rate": 19,
+        "as_author": 8,
+        "as_adherent": 15,
+        "list": [
+            {
+                "title": "Ley de telemedicina en zonas rurales",
+                "year": 2024,
+                "status": "En comisión"
+            },
+            {
+                "title": "Proyecto de salud mental comunitaria",
+                "year": 2024,
+                "status": "Aprobado"
+            },
+            {
+                "title": "Ley de acceso a medicamentos genéricos en MINSA",
+                "year": 2025,
+                "status": "Aprobado"
+            },
+            {
+                "title": "Modificatoria del SOAT",
+                "year": 2027,
+                "status": "Archivado"
+            }
+        ]
+    },
+    "promises": {
+        "list": [
+            {
+                "title": "Ley de telemedicina en zonas rurales",
+                "year": 2024,
+                "status": "Cumplió"
+            },
+            {
+                "title": "Proyecto de salud mental comunitaria",
+                "year": 2024,
+                "status": "No cumplió"
+            },
+            {
+                "title": "Ley de acceso a medicamentos genéricos en MINSA",
+                "year": 2025,
+                "status": "Cumplió"
+            },
+            {
+                "title": "Modificatoria del SOAT",
+                "year": 2027,
+                "status": "No cumplió"
+            }
+        ]
+    },
     "additional_info": {
         "representation_week": 86,
         "party_change": false,
