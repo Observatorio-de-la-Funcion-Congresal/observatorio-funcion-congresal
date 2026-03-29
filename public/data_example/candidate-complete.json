@@ -9,8 +9,10 @@
         "attendance": 92,
         "abstentions": 5,
         "projects": 8,
+        "motions": 34,
         "commissions_count": 3,
         "applyTo": "Diputada",
+        "isCandidate": true,
         "biography": "Economista con 15 años de experiencia en gestión pública. Especializada en políticas económicas y desarrollo social.",
         "performance": {
             "attendance": 92,
@@ -18,7 +20,14 @@
             "session_week": 75,
             "accomplishment": 80,
             "projects": 60,
-            "participation": 55
+            "participation": 55,
+            "motions": 34,
+            "vote_priorities": 5,
+            "session_week_percentage": 75,
+            "projects_percentage": 60,
+            "accomplishment_percentage": 80,
+            "vote_priorities_percentage": 5,
+            "motions_percentage": 34
         },
         "bills": {
             "presented": 42,
@@ -31,6 +40,27 @@
                 { "title": "Proyecto de salud mental comunitaria", "year": 2024, "status": "Aprobado" },
                 { "title": "Ley de acceso a medicamentos genéricos en MINSA", "year": 2025, "status": "Aprobado" },
                 { "title": "Modificatoria del SOAT", "year": 2027, "status": "Archivado" }
+            ]
+        },
+        "motions_detail": {
+            "presented": 42,
+            "approved": 8,
+            "approval_rate": 19,
+            "as_author": 8,
+            "as_adherent": 15,
+            "list": [
+                { "title": "Ley de telemedicina en zonas rurales", "year": 2024, "status": "En comisión" },
+                { "title": "Proyecto de salud mental comunitaria", "year": 2024, "status": "Aprobado" },
+                { "title": "Ley de acceso a medicamentos genéricos en MINSA", "year": 2025, "status": "Aprobado" },
+                { "title": "Modificatoria del SOAT", "year": 2027, "status": "Archivado" }
+            ]
+        },
+        "promises": {
+            "list": [
+                { "title": "Ley de telemedicina en zonas rurales", "year": 2024, "status": "Cumplió" },
+                { "title": "Proyecto de salud mental comunitaria", "year": 2024, "status": "No cumplió" },
+                { "title": "Ley de acceso a medicamentos genéricos en MINSA", "year": 2025, "status": "Cumplió" },
+                { "title": "Modificatoria del SOAT", "year": 2027, "status": "No cumplió" }
             ]
         },
         "additional_info": {
@@ -55,8 +85,10 @@
         "attendance": 88,
         "abstentions": 8,
         "projects": 6,
+        "motions": 22,
         "commissions_count": 2,
         "applyTo": "Senador",
+        "isCandidate": true,
         "biography": "Abogado constitucionalista con 20 años en el sector público. Defensor de los derechos indígenas y la gobernanza regional.",
         "performance": {
             "attendance": 88,
@@ -64,7 +96,14 @@
             "session_week": 18,
             "accomplishment": 24,
             "projects": 50,
-            "participation": 42
+            "participation": 42,
+            "motions": 22,
+            "vote_priorities": 20,
+            "session_week_percentage": 18,
+            "projects_percentage": 50,
+            "accomplishment_percentage": 24,
+            "vote_priorities_percentage": 20,
+            "motions_percentage": 22
         },
         "bills": {
             "presented": 31,
@@ -102,8 +141,10 @@
         "attendance": 95,
         "abstentions": 2,
         "projects": 3,
+        "motions": 7,
         "commissions_count": 1,
         "applyTo": "Diputada",
+        "isCandidate": false,
         "biography": "Profesora universitaria y investigadora en políticas públicas con énfasis en educación regional.",
         "performance": {
             "attendance": 95,
@@ -111,7 +152,14 @@
             "session_week": 65,
             "accomplishment": 70,
             "projects": 30,
-            "participation": 60
+            "participation": 60,
+            "motions": 7,
+            "vote_priorities": 12,
+            "session_week_percentage": 65,
+            "projects_percentage": 30,
+            "accomplishment_percentage": 70,
+            "vote_priorities_percentage": 12,
+            "motions_percentage": 7
         },
         "bills": {
             "presented": 15,
@@ -145,8 +193,10 @@
         "attendance": 92,
         "abstentions": 4,
         "projects": 8,
+        "motions": 41,
         "commissions_count": 2,
         "applyTo": "Diputado",
+        "isCandidate": true,
         "biography": "Ingeniero ambiental dedicado a la gestión de recursos hídricos y protección costera.",
         "performance": {
             "attendance": 92,
@@ -154,7 +204,14 @@
             "session_week": 70,
             "accomplishment": 75,
             "projects": 60,
-            "participation": 65
+            "participation": 65,
+            "motions": 41,
+            "vote_priorities": 14,
+            "session_week_percentage": 70,
+            "projects_percentage": 60,
+            "accomplishment_percentage": 75,
+            "vote_priorities_percentage": 14,
+            "motions_percentage": 41
         },
         "bills": {
             "presented": 28,
@@ -190,8 +247,10 @@
         "attendance": 91,
         "abstentions": 6,
         "projects": 6,
+        "motions": 15,
         "commissions_count": 2,
         "applyTo": "Diputada",
+        "isCandidate": true,
         "biography": "Abogada especializada en derecho civil y políticas de protección social.",
         "performance": {
             "attendance": 91,
@@ -199,7 +258,14 @@
             "session_week": 50,
             "accomplishment": 40,
             "projects": 45,
-            "participation": 50
+            "participation": 50,
+            "motions": 15,
+            "vote_priorities": 20,
+            "session_week_percentage": 50,
+            "projects_percentage": 45,
+            "accomplishment_percentage": 40,
+            "vote_priorities_percentage": 20,
+            "motions_percentage": 15
         },
         "bills": {
             "presented": 20,

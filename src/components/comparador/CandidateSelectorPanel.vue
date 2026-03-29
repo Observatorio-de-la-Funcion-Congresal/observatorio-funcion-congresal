@@ -83,8 +83,7 @@ const emit = defineEmits<{ toggle: [id: number] }>()
 const search = ref('')
 
 const filtered = computed(() => {
-  const q = search.value.trim().toLowerCase()
-  return q ? props.candidates.filter((c) => c.name.toLowerCase().includes(q) || c.party.toLowerCase().includes(q)) : props.candidates
+  return props.candidates.filter((c) => c.isCandidate)
 })
 
 const atMax = computed(() => props.selectedIds.length >= MAX_SELECTIONS)

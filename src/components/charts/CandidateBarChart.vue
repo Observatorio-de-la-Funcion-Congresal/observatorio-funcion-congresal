@@ -18,16 +18,16 @@ import {
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip)
 
 const props = defineProps<{
-  attendance: number
-  accomplishment: number
+  projects: number
+  motions: number
   session_week: number
 }>()
 
 const chartData = computed(() => ({
-  labels: ['Asistencia', 'Cumplimiento', 'Semana Rep.'],
+  labels: ['Proyectos ley pres.', 'Mociones', 'Semana Rep.'],
   datasets: [
     {
-      data: [props.attendance, props.accomplishment, props.session_week],
+      data: [props.projects, props.motions, props.session_week],
       backgroundColor: ['#023E7D', '#1C398E', '#103a82'],
       borderRadius: 6,
       borderSkipped: false,
@@ -42,7 +42,7 @@ const chartOptions = {
     legend: { display: false },
     tooltip: {
       callbacks: {
-        label: (ctx: { raw: unknown }) => ` ${ctx.raw}%`,
+        label: (ctx: { raw: unknown }) => ` ${ctx.raw}`,
       },
     },
   },
@@ -53,9 +53,8 @@ const chartOptions = {
     },
     y: {
       beginAtZero: true,
-      max: 100,
       grid: { color: '#f1f5f9' },
-      ticks: { color: '#4A5565', font: { size: 11 }, callback: (v: unknown) => `${v}%` },
+      ticks: { color: '#4A5565', font: { size: 11 }, callback: (v: unknown) => `${v}` },
     },
   },
 }

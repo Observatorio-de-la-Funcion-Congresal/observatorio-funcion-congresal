@@ -6,6 +6,7 @@ interface AdditionalInfo {
   party_change: boolean;
   commission_participation: string;
   campaign_plan_url?: string;
+  projects: number;
 }
 
 interface Props {
@@ -53,6 +54,16 @@ const { info } = Astro.props;
           <polyline points="20 6 9 17 4 12"/>
         </svg>
         {info.commission_participation}
+      </span>
+    </p>
+    
+    <hr class="border-light-gray-obs/90" />
+
+    <!-- Numero de proyectos -->
+    <p class="flex items-start justify-between flex-col">
+      <span class="text-primary-gray-obs text-sm">Numero de proyectos (Autor)</span>
+      <span class="flex items-center gap-1 font-medium text-green-obs">
+        {info.projects}
       </span>
     </p>
   </div>

@@ -17,7 +17,14 @@
         "session_week": 65,
         "accomplishment": 70,
         "projects": 30,
-        "participation": 60
+        "participation": 60,
+        "motions": 7,
+        "vote_priorities": 12,
+        "session_week_percentage": 65,
+        "projects_percentage": 30,
+        "accomplishment_percentage": 70,
+        "vote_priorities_percentage": 12,
+        "motions_percentage": 7
     },
     "bills": {
         "presented": 15,
@@ -26,9 +33,21 @@
         "as_author": 3,
         "as_adherent": 5,
         "list": [
-            { "title": "Proyecto de fortalecimiento de la educación técnica regional", "year": 2024, "status": "En comisión" },
-            { "title": "Ley de apoyo a estudiantes becados", "year": 2025, "status": "Aprobado" },
-            { "title": "Iniciativa para acceso a internet en escuelas rurales", "year": 2026, "status": "En trámite" }
+            {
+                "title": "Proyecto de fortalecimiento de la educación técnica regional",
+                "year": 2024,
+                "status": "En comisión"
+            },
+            {
+                "title": "Ley de apoyo a estudiantes becados",
+                "year": 2025,
+                "status": "Aprobado"
+            },
+            {
+                "title": "Iniciativa para acceso a internet en escuelas rurales",
+                "year": 2026,
+                "status": "En trámite"
+            }
         ]
     },
     "additional_info": {

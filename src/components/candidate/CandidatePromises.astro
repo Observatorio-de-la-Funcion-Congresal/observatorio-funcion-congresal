@@ -1,0 +1,51 @@
+---
+import Card from '../ui/Card/Card.astro';
+
+interface Promise {
+  title: string;
+  year: number;
+  status: 'Cumplió' | 'No cumplió';
+}
+
+interface Promises {
+  list: Promise[];
+}
+
+interface Props {
+  promises: Promises;
+  period?: string;
+}
+
+const { promises, period = '2021 – 2025' } = Astro.props;
+
+const statusStyles: Record<string, string> = {
+  'Cumplió':    'bg-light-green-obs text-green-obs',
+  'No cumplió': 'bg-yellow-100 text-[#92400E]',
+};
+---
+
+<Card roundedClass="rounded-2xl" padding={false} class="p-6">
+  <h2 class="text-2xl font-bold text-primary-black-obs mb-5">
+    Promesas de campaña
+  </h2>
+
+  <!-- Promise list -->
+  <div class="flex flex-col divide-y divide-gray-100">
+    {promises?.list.map((promise) => (
+      <div class="flex items-center justify-between py-3 gap-3">
+        <div class="min-w-0">
+          <p class="text-sm font-medium text-primary-black-obs truncate">{promise.title}</p>
+          <p class="text-xs text-primary-gray-obs mt-0.5">{promise.year}</p>
+        </div>
+        <span class={`text-xs font-medium px-3 py-1 rounded-full shrink-0 ${statusStyles[promise.status] ?? statusStyles['No cumplió']}`}>
+          {promise.status}
+        </span>
+      </div>
+    ))}
+  </div>
+
+  <p class="text-primary-gray-obs text-sm border-t border-gray-100 mt-3 pt-3">
+    *Se considera como “cumplió” si es que el proyecto de ley llegó a debate en el pleno.
+  </p>
+
+</Card>

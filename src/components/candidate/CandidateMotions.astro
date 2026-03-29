@@ -1,27 +1,27 @@
 ---
 import Card from '../ui/Card/Card.astro';
 
-interface Bill {
+interface Motion {
   title: string;
   year: number;
   status: 'Aprobado' | 'En comisión' | 'Archivado';
 }
 
-interface Bills {
+interface Motions {
   presented: number;
   approved: number;
   approval_rate: number;
   as_author: number;
   as_adherent: number;
-  list: Bill[];
+  list: Motion[];
 }
 
 interface Props {
-  bills: Bills;
+  motions: Motions;
   period?: string;
 }
 
-const { bills, period = '2021 – 2025' } = Astro.props;
+const { motions, period = '2021 – 2025' } = Astro.props;
 
 const statusStyles: Record<string, string> = {
   'Aprobado':    'bg-light-green-obs text-green-obs',
@@ -32,35 +32,35 @@ const statusStyles: Record<string, string> = {
 
 <Card roundedClass="rounded-2xl" padding={false} class="p-6">
   <h2 class="text-2xl font-bold text-primary-black-obs mb-5">
-    Proyectos de ley {period}
+    Mociones {period}
   </h2>
 
   <!-- Summary row -->
   <div class="grid grid-cols-3 gap-3 mb-5">
     <div class="bg-sky-blue-obs rounded-xl p-4 border border-light-blue-obs">
       <p class="text-sm text-primary-black-obs mb-1">Presentados</p>
-      <p class="text-3xl font-bold text-primary-blue-obs">{bills.presented}</p>
+      <p class="text-3xl font-bold text-primary-blue-obs">{motions.presented}</p>
     </div>
     <div class="bg-light-green-obs rounded-xl p-4 border border-light-blue-obs">
       <p class="text-sm text-primary-black-obs mb-1">Aprobados</p>
-      <p class="text-3xl font-bold text-green-obs">{bills.approved}</p>
+      <p class="text-3xl font-bold text-green-obs">{motions.approved}</p>
     </div>
     <div class="bg-yellow-obs rounded-xl p-4 border border-light-blue-obs">
       <p class="text-sm text-primary-black-obs mb-1">Tasa de aprobación</p>
-      <p class="text-3xl font-bold text-darken-yellow-obs">{bills.approval_rate}%</p>
+      <p class="text-3xl font-bold text-darken-yellow-obs">{motions.approval_rate}%</p>
     </div>
   </div>
 
-  <!-- Bill list -->
+  <!-- Motion list -->
   <div class="flex flex-col divide-y divide-gray-100">
-    {bills.list.map((bill) => (
+    {motions.list.map((motion) => (
       <div class="flex items-center justify-between py-3 gap-3">
         <div class="min-w-0">
-          <p class="text-sm font-medium text-primary-black-obs truncate">{bill.title}</p>
-          <p class="text-xs text-primary-gray-obs mt-0.5">{bill.year}</p>
+          <p class="text-sm font-medium text-primary-black-obs truncate">{motion.title}</p>
+          <p class="text-xs text-primary-gray-obs mt-0.5">{motion.year}</p>
         </div>
-        <span class={`text-xs font-medium px-3 py-1 rounded-full shrink-0 ${statusStyles[bill.status] ?? statusStyles['Archivado']}`}>
-          {bill.status}
+        <span class={`text-xs font-medium px-3 py-1 rounded-full shrink-0 ${statusStyles[motion.status] ?? statusStyles['Archivado']}`}>
+          {motion.status}
         </span>
       </div>
     ))}
@@ -70,16 +70,16 @@ const statusStyles: Record<string, string> = {
   <div class="grid grid-cols-2 gap-3 mt-5">
     <div class="bg-sky-blue-obs rounded-xl p-6 border border-light-blue-obs">
       <p class="text-sm text-dark-blue-obs mb-1 font-semibold">Como Autor</p>
-      <p class="text-3xl font-bold text-dark-blue-obs font-inter">{bills.as_author}</p>
+      <p class="text-3xl font-bold text-dark-blue-obs font-inter">{motions.as_author}</p>
       <p class="text-xs text-primary-black-obs mt-1">
-        Proyectos de ley presentados con autoría principal
+        Mociones de ley presentados con autoría principal
       </p>
     </div>
     <div class="bg-yellow-obs rounded-xl p-6 border border-yellow-100">
       <p class="text-sm text-darken-yellow-obs mb-1 font-semibold">Como Adherente</p>
-      <p class="text-3xl font-bold text-darken-yellow-obs font-inter">{bills.as_adherent}</p>
+      <p class="text-3xl font-bold text-darken-yellow-obs font-inter">{motions.as_adherent}</p>
       <p class="text-xs text-primary-black-obs mt-1">
-        Proyectos de ley donde figura como co-autor
+        Mociones de ley donde figura como co-autor
       </p>
     </div>
   </div>

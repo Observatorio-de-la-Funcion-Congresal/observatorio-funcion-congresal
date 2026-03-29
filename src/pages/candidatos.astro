@@ -22,6 +22,7 @@ interface Candidate {
   attendance: number;
   projects: number;
   applyTo: string;
+  motions: number;
 }
 
 interface Region {
@@ -143,6 +144,7 @@ const PAGE_SIZE = 9;
               party={candidate.party}
               partyId={candidate.partyId}
               attendance={candidate.attendance}
+              motions={candidate.motions}
               projects={candidate.projects}
               applyTo={candidate.applyTo}
               pictureBase={URL_CANDIDATE_PICTURE}

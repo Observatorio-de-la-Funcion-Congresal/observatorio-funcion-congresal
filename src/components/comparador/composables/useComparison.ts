@@ -15,20 +15,23 @@ export const COMPARISON_COLORS = ['#023E7D', '#D62828', '#059669', '#D97706']
 export const MAX_SELECTIONS = 4
 
 export const CANDIDATE_METRICS: Metric[] = [
-  { key: 'performance.attendance',     label: '% Asistencia al Pleno',       unit: '%' },
-  { key: 'performance.abstentions',    label: '% Votos en Abstención',        unit: '%' },
-  { key: 'performance.session_week',   label: '% Semana de Representación',   unit: '%' },
-  { key: 'performance.accomplishment', label: 'Cumplimiento de Promesas',     unit: '%' },
-  { key: 'performance.participation',  label: 'Participación en Comisiones',  unit: '%' },
+  { key: 'performance.participation',  label: 'Participación en Comisiones',  unit: '' },
   { key: 'performance.projects',       label: 'Proyectos de Ley (Autor)',     unit: ''  },
+  /* { key: 'performance.attendance',     label: 'Asistencia al Pleno',        unit: '' },
+  { key: 'performance.abstentions',    label: 'Votos en Abstención',        unit: '' }, */
+  { key: 'performance.motions',     label: 'Mociones presentadas',        unit: '' },
+  { key: 'performance.accomplishment',    label: 'Promesas identificadas',        unit: '' },
+   // { key: 'performance.accomplishment', label: 'Cumplimiento de Promesas',     unit: '' },
+  { key: 'performance.session_week',   label: 'Semana de Representación',   unit: '' },
+  { key: 'performance.vote_priorities', label: 'Votaciones a favor realizadas en los PL priorizados',     unit: '' },
 ]
 
 export const PARTY_METRICS: Metric[] = [
-  { key: 'metrics.attendance',     label: '% Asistencia al Pleno',       unit: '%' },
-  { key: 'metrics.abstentions',    label: '% Votos en Abstención',        unit: '%' },
-  { key: 'metrics.session_week',   label: '% Semana de Representación',   unit: '%' },
-  { key: 'metrics.accomplishment', label: 'Cumplimiento de Promesas',     unit: '%' },
-  { key: 'metrics.participation',  label: 'Participación en Comisiones',  unit: '%' },
+  { key: 'metrics.attendance',     label: 'Asistencia al Pleno',        unit: '' },
+  { key: 'metrics.abstentions',    label: 'Votos en Abstención',        unit: '' },
+  { key: 'metrics.session_week',   label: 'Semana de Representación',   unit: '' },
+  { key: 'metrics.accomplishment', label: 'Cumplimiento de Promesas',     unit: '' },
+  { key: 'metrics.participation',  label: 'Participación en Comisiones',  unit: '' },
   { key: 'metrics.projects',       label: 'Proyectos de Ley (Autor)',     unit: ''  },
 ]
 

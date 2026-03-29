@@ -17,7 +17,14 @@
         "session_week": 18,
         "accomplishment": 24,
         "projects": 50,
-        "participation": 42
+        "participation": 42,
+        "motions": 22,
+        "vote_priorities": 20,
+        "session_week_percentage": 18,
+        "projects_percentage": 50,
+        "accomplishment_percentage": 24,
+        "vote_priorities_percentage": 20,
+        "motions_percentage": 22
     },
     "bills": {
         "presented": 31,
@@ -26,10 +33,26 @@
         "as_author": 6,
         "as_adherent": 10,
         "list": [
-            { "title": "Ley de consulta previa para comunidades andinas", "year": 2024, "status": "Aprobado" },
-            { "title": "Proyecto de descentralización fiscal regional", "year": 2024, "status": "En comisión" },
-            { "title": "Reforma del sistema de pensiones rurales", "year": 2025, "status": "En comisión" },
-            { "title": "Ley de protección del patrimonio arqueológico", "year": 2026, "status": "Archivado" }
+            {
+                "title": "Ley de consulta previa para comunidades andinas",
+                "year": 2024,
+                "status": "Aprobado"
+            },
+            {
+                "title": "Proyecto de descentralización fiscal regional",
+                "year": 2024,
+                "status": "En comisión"
+            },
+            {
+                "title": "Reforma del sistema de pensiones rurales",
+                "year": 2025,
+                "status": "En comisión"
+            },
+            {
+                "title": "Ley de protección del patrimonio arqueológico",
+                "year": 2026,
+                "status": "Archivado"
+            }
         ]
     },
     "additional_info": {

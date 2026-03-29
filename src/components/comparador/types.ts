@@ -10,6 +10,7 @@ export interface CandidateSummary {
   applyTo: string
   attendance: number
   projects: number
+  isCandidate: boolean
 }
 
 export interface CandidateDetail {

@@ -19,23 +19,29 @@ import {
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip)
 
 const props = defineProps<{
-  attendance: number
-  accomplishment: number
-  participation: number
-  projects: number
-  session_week: number
+  session_week_percentage: number
+  projects_percentage: number
+  accomplishment_percentage: number
+  vote_priorities_percentage: number
+  motions_percentage: number
 }>()
 
 const chartData = computed(() => ({
-  labels: ['Asistencia', 'Cumplimiento', 'Participación', 'Proyectos', 'Semana Rep.'],
+  labels: [
+    '% Sem. representación', 
+    '% Proyectos aprobados', 
+    '% Cumplimiento promesas', 
+    '% Votación a favor', 
+    '% Mociones aprobadas'
+  ],
   datasets: [
     {
       data: [
-        props.attendance,
-        props.accomplishment,
-        props.participation,
-        props.projects,
-        props.session_week,
+        props.session_week_percentage,
+        props.projects_percentage,
+        props.accomplishment_percentage,
+        props.vote_priorities_percentage,
+        props.motions_percentage,
       ],
       backgroundColor: 'rgba(214, 40, 40, 0.25)',
       borderColor: '#D62828',

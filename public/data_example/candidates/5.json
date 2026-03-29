@@ -17,7 +17,14 @@
         "session_week": 50,
         "accomplishment": 40,
         "projects": 45,
-        "participation": 50
+        "participation": 50,
+        "motions": 15,
+        "vote_priorities": 20,
+        "session_week_percentage": 50,
+        "projects_percentage": 45,
+        "accomplishment_percentage": 40,
+        "vote_priorities_percentage": 20,
+        "motions_percentage": 15
     },
     "bills": {
         "presented": 20,
@@ -26,9 +33,21 @@
         "as_author": 4,
         "as_adherent": 6,
         "list": [
-            { "title": "Reforma de procedimientos civiles simplificados", "year": 2024, "status": "En comisión" },
-            { "title": "Ley de protección a víctimas de violencia doméstica", "year": 2025, "status": "Aprobado" },
-            { "title": "Proyecto de mejora de acceso a la justicia gratuita", "year": 2026, "status": "En trámite" }
+            {
+                "title": "Reforma de procedimientos civiles simplificados",
+                "year": 2024,
+                "status": "En comisión"
+            },
+            {
+                "title": "Ley de protección a víctimas de violencia doméstica",
+                "year": 2025,
+                "status": "Aprobado"
+            },
+            {
+                "title": "Proyecto de mejora de acceso a la justicia gratuita",
+                "year": 2026,
+                "status": "En trámite"
+            }
         ]
     },
     "additional_info": {

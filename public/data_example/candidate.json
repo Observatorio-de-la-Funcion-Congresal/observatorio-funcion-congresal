@@ -7,8 +7,10 @@
         "party": "Partido Nacional",
         "partyId": 1,
         "attendance": 90,
+        "motions": 34,
         "projects": 8,
-        "applyTo": "Diputada"
+        "applyTo": "Diputada",
+        "isCandidate": true
     },
     {
         "id": 2,
@@ -18,8 +20,10 @@
         "party": "Partido Popular",
         "partyId": 2,
         "attendance": 88,
+        "motions": 22,
         "projects": 6,
-        "applyTo": "Senador"
+        "applyTo": "Senador",
+        "isCandidate": true
     },
     {
         "id": 3,
@@ -29,8 +33,10 @@
         "party": "Alianza Progresista",
         "partyId": 3,
         "attendance": 95,
+        "motions": 7,
         "projects": 3,
-        "applyTo": "Diputada"
+        "applyTo": "Diputada",
+        "isCandidate": false
     },
     {
         "id": 4,
@@ -40,8 +46,10 @@
         "party": "Movimiento Verde",
         "partyId": 4,
         "attendance": 92,
+        "motions": 41,
         "projects": 8,
-        "applyTo": "Diputado"
+        "applyTo": "Diputado",
+        "isCandidate": true
     },
     {
         "id": 5,
@@ -51,8 +59,10 @@
         "party": "Renovación Popular",
         "partyId": 5,
         "attendance": 91,
+        "motions": 15,
         "projects": 6,
-        "applyTo": "Diputada"
+        "applyTo": "Diputada",
+        "isCandidate": true
     },
     {
         "id": 6,
@@ -62,8 +72,10 @@
         "party": "Futuro Unido",
         "partyId": 6,
         "attendance": 87,
+        "motions": 28,
         "projects": 7,
-        "applyTo": "Senador"
+        "applyTo": "Senador",
+        "isCandidate": true
     },
     {
         "id": 7,
@@ -73,8 +85,10 @@
         "party": "Partido Nacional",
         "partyId": 1,
         "attendance": 81,
+        "motions": 46,
         "projects": 13,
-        "applyTo": "Diputada"
+        "applyTo": "Diputada",
+        "isCandidate": true
     },
     {
         "id": 8,
@@ -84,8 +98,10 @@
         "party": "Partido Popular",
         "partyId": 2,
         "attendance": 88,
+        "motions": 11,
         "projects": 8,
-        "applyTo": "Diputado"
+        "applyTo": "Diputado",
+        "isCandidate": false
     },
     {
         "id": 9,
@@ -95,8 +111,10 @@
         "party": "Alianza Progresista",
         "partyId": 3,
         "attendance": 86,
+        "motions": 37,
         "projects": 10,
-        "applyTo": "Senadora"
+        "applyTo": "Senadora",
+        "isCandidate": true
     },
     {
         "id": 10,
@@ -106,7 +124,9 @@
         "party": "Movimiento Verde",
         "partyId": 4,
         "attendance": 82,
+        "motions": 19,
         "projects": 5,
-        "applyTo": "Diputado"
+        "applyTo": "Diputado",
+        "isCandidate": true
     }
 ]

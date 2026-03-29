@@ -9,6 +9,12 @@ interface Performance {
   session_week: number;
   participation: number;
   projects: number;
+  motions: number;
+  session_week_percentage: number;
+  projects_percentage: number;
+  accomplishment_percentage: number;
+  vote_priorities_percentage: number;
+  motions_percentage: number;
 }
 
 interface Props {
@@ -26,8 +32,8 @@ const { performance } = Astro.props;
     <div>
       <p class="text-sm font-medium text-primary-gray-obs mb-3 font-inter">Métricas Principales</p>
       <CandidateBarChart
-        attendance={performance.attendance}
-        accomplishment={performance.accomplishment}
+        projects={performance.projects}
+        motions={performance.motions}
         session_week={performance.session_week}
         client:only="vue"
       />
@@ -37,11 +43,11 @@ const { performance } = Astro.props;
     <div>
       <p class="text-sm font-medium text-primary-gray-obs mb-3 font-inter">Análisis 360°</p>
       <CandidateRadarChart
-        attendance={performance.attendance}
-        accomplishment={performance.accomplishment}
-        participation={performance.participation}
-        projects={performance.projects}
-        session_week={performance.session_week}
+        session_week_percentage={performance.session_week_percentage}
+        projects_percentage={performance.projects_percentage}
+        accomplishment_percentage={performance.accomplishment_percentage}
+        vote_priorities_percentage={performance.vote_priorities_percentage}
+        motions_percentage={performance.motions_percentage}
         client:only="vue"
       />
     </div>

@@ -6,6 +6,8 @@ import CandidateStats from '../../components/candidate/CandidateStats.astro';
 import CandidateBiography from '../../components/candidate/CandidateBiography.astro';
 import CandidatePerformance from '../../components/candidate/CandidatePerformance.astro';
 import CandidateBills from '../../components/candidate/CandidateBills.astro';
+import CandidatePromises from '../../components/candidate/CandidatePromises.astro';
+import CandidateMotions from '../../components/candidate/CandidateMotions.astro';
 import CandidateAdditionalInfo from '../../components/candidate/CandidateAdditionalInfo.astro';
 import CandidateCommissions from '../../components/candidate/CandidateCommissions.astro';
 import KnowMoreCTA from '../../components/ui/KnowMoreCTA.astro';
@@ -22,12 +24,24 @@ interface Performance {
   accomplishment: number;
   projects: number;
   participation: number;
+  motions: number;
+  session_week_percentage: number;
+  projects_percentage: number;
+  accomplishment_percentage: number;
+  vote_priorities_percentage: number;
+  motions_percentage: number;
 }
 
 interface Bill {
   title: string;
   year: number;
   status: 'Aprobado' | 'En comisión' | 'Archivado';
+}
+
+interface Promise {
+  title: string;
+  year: number;
+  status: 'Cumplió' | 'No cumplió';
 }
 
 interface Bills {
@@ -39,11 +53,25 @@ interface Bills {
   list: Bill[];
 }
 
+interface Motions {
+  presented: number;
+  approved: number;
+  approval_rate: number;
+  as_author: number;
+  as_adherent: number;
+  list: Bill[];
+}
+
+interface Promises {
+  list: Promise[];
+}
+
 interface AdditionalInfo {
   representation_week: number;
   party_change: boolean;
   commission_participation: string;
   campaign_plan_url?: string;
+  projects: number;
 }
 
 interface Candidate {
@@ -61,6 +89,8 @@ interface Candidate {
   biography: string;
   performance: Performance;
   bills: Bills;
+  motions_detail: Motions;
+  promises: Promises;
   additional_info: AdditionalInfo;
   commissions: string[];
 }
@@ -76,10 +106,13 @@ export async function getStaticPaths() {
   try {
     const res = await fetch(`${URL_DATA}/candidate-complete.json`);
     const candidates: Candidate[] = await res.json();
-    return candidates.map((candidate) => ({
-      params: { id: String(candidate.id) },
-      props: { candidate },
-    }));
+    return candidates.map((candidate) => {
+      candidate.additional_info.projects = candidate.projects;
+      return {
+        params: { id: String(candidate.id) },
+        props: { candidate },
+      };
+    });
   } catch {
     return [];
   }
@@ -117,15 +150,16 @@ try {
     <Container>
 
       <!-- Top stats -->
-      <div class="mb-6">
-        <CandidateStats
-          attendance={candidate.attendance}
-          abstentions={candidate.abstentions}
-          projects={candidate.projects}
-          commissions_count={candidate.commissions_count}
-        />
-      </div>
-
+      <!-- 
+        <div class="mb-6">
+          <CandidateStats
+            attendance={candidate.attendance}
+            abstentions={candidate.abstentions}
+            projects={candidate.projects}
+            commissions_count={candidate.commissions_count}
+          />
+        </div>
+      -->
       <div class="flex flex-col lg:flex-row gap-6 items-start">
 
         <!-- Main column -->
@@ -135,6 +169,10 @@ try {
           <CandidatePerformance performance={candidate.performance} />
 
           <CandidateBills bills={candidate.bills} />
+
+          <CandidateMotions motions={candidate.motions_detail} />
+
+          <CandidatePromises promises={candidate.promises} />
         </div>
 
         <!-- Sidebar -->
