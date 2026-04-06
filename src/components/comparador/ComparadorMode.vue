@@ -33,10 +33,10 @@ const tabs = [
     title: 'Comparar Congresistas',
     description: 'Compara el desempeño individual de hasta 4 congresistas',
   },
-  {
+  /* {
     value: 'parties' as ComparisonMode,
     title: 'Comparar Partidos',
     description: 'Compara el desempeño promedio de hasta 4 partidos políticos',
-  },
+  }, */
 ]
 </script>
