@@ -1,0 +1,165 @@
+---
+import Card from "../ui/Card/Card.astro";
+import { Accordion, AccordionItem } from "free-astro-components";
+
+type Law2025 =
+  | "31520"
+  | "31996"
+  | "32059"
+  | "31981"
+  | "31988"
+  | "31751"
+  | "31990"
+  | "32107"
+  | "32108"
+  | "32130";
+
+interface Promise {
+  title: string;
+  year: number;
+  status: "Cumplió" | "No cumplió";
+}
+
+interface LawsFor {
+  [key: string]: {
+    first: boolean;
+    second?: boolean;
+  };
+}
+
+interface LawDescription {
+  [key: string]: string;
+}
+
+interface Props {
+  lawsFor: LawsFor;
+}
+
+const { lawsFor } = Astro.props;
+
+const statusStyles: Record<string, string> = {
+  true: "bg-light-green-obs text-green-obs",
+  false: "bg-yellow-100 text-[#92400E]",
+};
+
+/* const lawsFor: LawsFor = {
+  "31520": {
+    first: true,
+    second: true,
+  },
+  "31996": {
+    first: true,
+    second: false,
+  },
+  "32059": {
+    first: true,
+    second: false,
+  },
+  "31981": {
+    first: true,
+    second: true,
+  },
+  "31988": {
+    first: true,
+  },
+  "31751": {
+    first: true,
+    second: true,
+  },
+  "31990": {
+    first: true,
+  },
+  "32107": {
+    first: true,
+  },
+  "32108": {
+    first: true,
+  },
+  "32130": {
+    first: true,
+  }
+}; */
+
+const lawDescription: LawDescription = {
+  "31520":
+    "Cambia la composición y el diseño del Consejo Directivo de la SUNEDU, incorporando representantes vinculados a las propias universidades.",
+  "31996":
+    "Permite el reingreso excepcional a la Carrera Pública Magisterial a docentes interinos cesados en 2014.",
+  "32059":
+    "Nombramiento progresivo del personal administrativo bajo el régimen CAS del MINSA.",
+  "31981":
+    "Elimina la obligatoriedad de las elecciones primarias abiertas, simultáneas y obligatorias (tipo PASO).",
+  "31988": "Restablece la bicameralidad.",
+  "31751":
+    "Fija en solo un año el plazo máximo de suspensión de la prescripción penal.",
+  "31990": "Cambia las reglas de la colaboración eficaz.",
+  "32107":
+    "Permite la prescripción de crímenes de lesa humanidad y de guerra cometidos antes del 1 de julio de 2002.",
+  "32108": "Redefine el concepto de organización criminal.",
+  "32130":
+    "Traslada a la Policía Nacional nuevos roles en la investigación preliminar del delito.",
+};
+
+const lawBlocks = [
+  {
+    name: "Eje educación y salud",
+    laws: ["31520", "31996", "32059"],
+  },
+  {
+    name: "Eje reformas políticas",
+    laws: ["31981", "31988"],
+  },
+  {
+    name: "Eje justicia y seguridad",
+    laws: ["31751", "31990", "32107", "32108", "32130"],
+  },
+];
+---
+
+<Card roundedClass="rounded-2xl" padding={false} class="p-6">
+  <h2 class="text-2xl font-bold text-primary-black-obs mb-5">
+    Votó a favor de:
+  </h2>
+
+  <div>
+    <Accordion>
+      {
+        lawBlocks.map((lawBlock) => (
+          <AccordionItem title={lawBlock.name}>
+            {lawBlock.laws.map((law) => (
+              <div>
+                {lawDescription[law] && (
+                  <div class="py-3 gap-3">
+                    <p class="text-sm font-medium text-primary-black-obs">
+                      Ley {law} - {lawDescription[law]}
+                    </p>
+                  </div>
+                )}
+                {
+                  lawsFor[law]?.first !== undefined && (
+                    <div class="flex items-center justify-between">
+                      <p class="text-xs text-primary-gray-obs">1ra votación</p>
+                      <span class={`text-xs font-medium px-3 py-1 rounded-full shrink-0 ${statusStyles[lawsFor[law].first.toString()]}`}>
+                        {lawsFor[law].first ? 'A favor' : 'En contra'}
+                      </span>
+                    </div>
+                  )
+                }
+                {
+                  lawsFor[law]?.second !== undefined && (
+                    <div class="flex items-center justify-between mt-1">
+                      <p class="text-xs text-primary-gray-obs">2da votación</p>
+                      <span class={`text-xs font-medium px-3 py-1 rounded-full shrink-0 ${statusStyles[lawsFor[law].second.toString()]}`}>
+                        {lawsFor[law].second ? 'A favor' : 'En contra'}
+                      </span>
+                    </div>
+                  )
+                }
+              </div>
+            ))}
+          </AccordionItem>
+        ))
+      }
+    </Accordion>
+  </div>
+</Card>

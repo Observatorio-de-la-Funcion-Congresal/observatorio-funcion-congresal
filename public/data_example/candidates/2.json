@@ -117,5 +117,17 @@
     "commissions": [
         "Justicia y Derechos Humanos",
         "Descentralización"
-    ]
+    ],
+    "lawsFor": {
+        "31520": { "first": false, "second": true },
+        "31996": { "first": true, "second": false },
+        "32059": { "first": false, "second": false },
+        "31981": { "first": true, "second": true },
+        "31988": { "first": false },
+        "31751": { "first": true, "second": false },
+        "31990": { "first": false },
+        "32107": { "first": true },
+        "32108": { "first": false },
+        "32130": { "first": true }
+    }
 }

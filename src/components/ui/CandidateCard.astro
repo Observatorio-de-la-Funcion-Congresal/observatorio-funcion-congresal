@@ -40,7 +40,11 @@ const partyLogoUrl = `${partyPictureBase}${partyPicture}`;
       />
     </div>
     <div class="flex-1 min-w-0">
-      <h3 class="font-semibold text-primary-black-obs text-lg">{name}</h3>
+      <h3 class="font-semibold text-primary-black-obs text-lg">
+        <a href={`/candidato/${id}`} class="hover:underline">
+          {name}
+        </a>
+      </h3>
       <!-- Party -->
       <div class="flex items-center gap-1.5 mt-1">
         <img

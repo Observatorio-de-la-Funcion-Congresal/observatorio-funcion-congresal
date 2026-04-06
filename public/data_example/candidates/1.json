@@ -118,5 +118,17 @@
         "Economía",
         "Presupuesto",
         "Descentralización"
-    ]
+    ],
+    "lawsFor": {
+        "31520": { "first": true, "second": false },
+        "31996": { "first": false, "second": true },
+        "32059": { "first": true, "second": true },
+        "31981": { "first": false, "second": false },
+        "31988": { "first": true },
+        "31751": { "first": false, "second": true },
+        "31990": { "first": true },
+        "32107": { "first": false },
+        "32108": { "first": true },
+        "32130": { "first": false }
+    }
 }

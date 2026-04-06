@@ -73,7 +73,19 @@
             "Economía",
             "Presupuesto",
             "Descentralización"
-        ]
+        ],
+        "lawsFor": {
+            "31520": { "first": true, "second": false },
+            "31996": { "first": false, "second": true },
+            "32059": { "first": true, "second": true },
+            "31981": { "first": false, "second": false },
+            "31988": { "first": true },
+            "31751": { "first": false, "second": true },
+            "31990": { "first": true },
+            "32107": { "first": false },
+            "32108": { "first": true },
+            "32130": { "first": false }
+        }
     },
     {
         "id": 2,
@@ -148,7 +160,19 @@
         "commissions": [
             "Justicia y Derechos Humanos",
             "Descentralización"
-        ]
+        ],
+        "lawsFor": {
+            "31520": { "first": false, "second": true },
+            "31996": { "first": true, "second": false },
+            "32059": { "first": false, "second": false },
+            "31981": { "first": true, "second": true },
+            "31988": { "first": false },
+            "31751": { "first": true, "second": false },
+            "31990": { "first": false },
+            "32107": { "first": true },
+            "32108": { "first": false },
+            "32130": { "first": true }
+        }
     }
 
     ,
@@ -221,7 +245,19 @@
         },
         "commissions": [
             "Educación"
-        ]
+        ],
+        "lawsFor": {
+            "31520": { "first": true, "second": true },
+            "31996": { "first": true, "second": false },
+            "32059": { "first": false, "second": true },
+            "31981": { "first": true, "second": false },
+            "31988": { "first": false },
+            "31751": { "first": false, "second": false },
+            "31990": { "first": true },
+            "32107": { "first": true },
+            "32108": { "first": false },
+            "32130": { "first": false }
+        }
     },
     {
         "id": 4,
@@ -296,7 +332,19 @@
         "commissions": [
             "Ambiente",
             "Recursos Naturales"
-        ]
+        ],
+        "lawsFor": {
+            "31520": { "first": false, "second": false },
+            "31996": { "first": false, "second": true },
+            "32059": { "first": true, "second": false },
+            "31981": { "first": false, "second": true },
+            "31988": { "first": true },
+            "31751": { "first": true, "second": true },
+            "31990": { "first": false },
+            "32107": { "first": false },
+            "32108": { "first": true },
+            "32130": { "first": true }
+        }
     },
     {
         "id": 5,
@@ -368,6 +416,18 @@
         "commissions": [
             "Justicia",
             "Mujer y Familia"
-        ]
+        ],
+        "lawsFor": {
+            "31520": { "first": true, "second": false },
+            "31996": { "first": false, "second": false },
+            "32059": { "first": true, "second": true },
+            "31981": { "first": false, "second": false },
+            "31988": { "first": true },
+            "31751": { "first": false, "second": true },
+            "31990": { "first": false },
+            "32107": { "first": true },
+            "32108": { "first": true },
+            "32130": { "first": false }
+        }
     }
 ]

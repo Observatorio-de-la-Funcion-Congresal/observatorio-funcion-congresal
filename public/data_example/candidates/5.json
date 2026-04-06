@@ -102,5 +102,17 @@
     "commissions": [
         "Justicia",
         "Mujer y Familia"
-    ]
+    ],
+    "lawsFor": {
+        "31520": { "first": true, "second": false },
+        "31996": { "first": false, "second": false },
+        "32059": { "first": true, "second": true },
+        "31981": { "first": false, "second": false },
+        "31988": { "first": true },
+        "31751": { "first": false, "second": true },
+        "31990": { "first": false },
+        "32107": { "first": true },
+        "32108": { "first": true },
+        "32130": { "first": false }
+    }
 }
