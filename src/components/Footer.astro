@@ -48,6 +48,8 @@ const currentYear = new Date().getFullYear();
               <a
                 href={s.href}
                 aria-label={s.label}
+                target="_blank"
+                rel="noopener noreferrer"
                 class="w-8 h-8 flex items-center justify-center rounded-lg p-2 bg-white/10 border border-transparent hover:border-primary-gray-obs"
               >
                 <Fragment set:html={s.icon} />
