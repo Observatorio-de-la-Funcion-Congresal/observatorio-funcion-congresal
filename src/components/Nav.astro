@@ -1,4 +1,6 @@
 ---
+import { SIMULATOR_URL } from '../constants';
+
 /**
  * Nav component — horizontal list of navigation links.
  * Accepts an array of { label, href } items via props or uses defaults.
@@ -17,7 +19,10 @@ const defaultItems: NavItem[] = [
   /* { label: 'Partidos', href: '/partidos' }, */
   { label: 'Candidatos', href: '/candidatos' },
   { label: 'Compara', href: '/compara' },
+  { label: 'Simulador de votos', href: SIMULATOR_URL }
 ];
+
+const startWithSlash = (path: string) => path.startsWith('/');
 
 const { items = defaultItems, class: className = '' } = Astro.props;
 
@@ -35,6 +40,8 @@ const currentPath = Astro.url.pathname;
             ? 'text-navy-900 border-b-2 border-navy-900 pb-0.5'
             : 'text-gray-600',
         ].join(' ')}
+        target={startWithSlash(item.href) ? '_self' : '_blank'}
+        rel={startWithSlash(item.href) ? undefined : 'noopener noreferrer'}
       >
         {item.label}
       </a>

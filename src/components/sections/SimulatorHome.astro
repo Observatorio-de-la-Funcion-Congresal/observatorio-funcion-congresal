@@ -1,0 +1,32 @@
+---
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+import { SIMULATOR_URL } from '../../constants';
+
+interface Props {
+  eyebrow?: string;
+  date?: string;
+  body?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const {
+  eyebrow = 'Revisa el simulador de votos',
+  body = 'Desarrollado por Luis Rodas, miembro del OFS',
+  ctaLabel = 'Ver simulador',
+  ctaHref = SIMULATOR_URL,
+} = Astro.props;
+---
+
+<section class="bg-white py-20 text-center">
+  <Container>
+    <p class="text-3xl font-bold flex flex-col gap-2">
+      {eyebrow}
+    </p>
+    <p class="text-primary-gray-obs my-6">{body}</p>
+    <Button href={ctaHref} variant="outline" size="lg" target="_blank" rel="noopener noreferrer">
+      {ctaLabel}
+    </Button>
+  </Container>
+</section>

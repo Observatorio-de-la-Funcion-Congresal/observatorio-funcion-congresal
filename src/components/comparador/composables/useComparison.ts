@@ -15,7 +15,7 @@ export const COMPARISON_COLORS = ['#023E7D', '#D62828', '#059669', '#D97706']
 export const MAX_SELECTIONS = 4
 
 export const CANDIDATE_METRICS: Metric[] = [
-  { key: 'performance.participation',  label: 'Participación en Comisiones',  unit: '' },
+  /* { key: 'performance.participation',  label: 'Participación en Comisiones',  unit: '' }, */
   { key: 'performance.projects',       label: 'Proyectos de Ley (Autor)',     unit: ''  },
   /* { key: 'performance.attendance',     label: 'Asistencia al Pleno',        unit: '' },
   { key: 'performance.abstentions',    label: 'Votos en Abstención',        unit: '' }, */
