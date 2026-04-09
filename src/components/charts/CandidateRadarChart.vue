@@ -30,7 +30,7 @@ const chartData = computed(() => ({
   labels: [
     '% Sem. representación', 
     '% Proyectos aprobados', 
-    '% Cumplimiento promesas', 
+    '% Promesas competentes', 
     '% Votación a favor', 
     '% Mociones aprobadas'
   ],

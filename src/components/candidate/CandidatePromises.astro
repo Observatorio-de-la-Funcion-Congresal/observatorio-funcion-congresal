@@ -4,7 +4,7 @@ import Card from '../ui/Card/Card.astro';
 interface Promise {
   title: string;
   year: number;
-  status: 'Cumplió' | 'No cumplió';
+  status: 'Competencia del Congreso' | 'Competencia del Ejecutivo' | 'Competencia del Gobierno Regional o Local';
 }
 
 interface Promises {
@@ -19,8 +19,9 @@ interface Props {
 const { promises, period = '2021 – 2025' } = Astro.props;
 
 const statusStyles: Record<string, string> = {
-  'Cumplió':    'bg-light-green-obs text-green-obs',
-  'No cumplió': 'bg-yellow-100 text-[#92400E]',
+  'Competencia del Congreso': 'bg-light-green-obs text-green-obs',
+  'Competencia del Ejecutivo': 'bg-yellow-100 text-[#92400E]',
+  'Competencia del Gobierno Regional o Local': 'bg-light-blue-obs text-blue-obs',
 };
 ---
 
@@ -45,7 +46,7 @@ const statusStyles: Record<string, string> = {
   </div>
 
   <p class="text-primary-gray-obs text-sm border-t border-gray-100 mt-3 pt-3">
-    *Se considera como “cumplió” si es que el proyecto de ley llegó a debate en el pleno.
+    *Se define "% promesas competentes" al porcentaje de promesas que son competencia del Congreso
   </p>
 
 </Card>

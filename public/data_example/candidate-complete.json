@@ -36,10 +36,26 @@
             "as_author": 8,
             "as_adherent": 15,
             "list": [
-                { "title": "Ley de telemedicina en zonas rurales", "year": 2024, "status": "En comisión" },
-                { "title": "Proyecto de salud mental comunitaria", "year": 2024, "status": "Aprobado" },
-                { "title": "Ley de acceso a medicamentos genéricos en MINSA", "year": 2025, "status": "Aprobado" },
-                { "title": "Modificatoria del SOAT", "year": 2027, "status": "Archivado" }
+                {
+                    "title": "Ley de telemedicina en zonas rurales",
+                    "year": 2024,
+                    "status": "En comisión"
+                },
+                {
+                    "title": "Proyecto de salud mental comunitaria",
+                    "year": 2024,
+                    "status": "Aprobado"
+                },
+                {
+                    "title": "Ley de acceso a medicamentos genéricos en MINSA",
+                    "year": 2025,
+                    "status": "Aprobado"
+                },
+                {
+                    "title": "Modificatoria del SOAT",
+                    "year": 2027,
+                    "status": "Archivado"
+                }
             ]
         },
         "motions_detail": {
@@ -49,18 +65,50 @@
             "as_author": 8,
             "as_adherent": 15,
             "list": [
-                { "title": "Ley de telemedicina en zonas rurales", "year": 2024, "status": "En comisión" },
-                { "title": "Proyecto de salud mental comunitaria", "year": 2024, "status": "Aprobado" },
-                { "title": "Ley de acceso a medicamentos genéricos en MINSA", "year": 2025, "status": "Aprobado" },
-                { "title": "Modificatoria del SOAT", "year": 2027, "status": "Archivado" }
+                {
+                    "title": "Ley de telemedicina en zonas rurales",
+                    "year": 2024,
+                    "status": "En comisión"
+                },
+                {
+                    "title": "Proyecto de salud mental comunitaria",
+                    "year": 2024,
+                    "status": "Aprobado"
+                },
+                {
+                    "title": "Ley de acceso a medicamentos genéricos en MINSA",
+                    "year": 2025,
+                    "status": "Aprobado"
+                },
+                {
+                    "title": "Modificatoria del SOAT",
+                    "year": 2027,
+                    "status": "Archivado"
+                }
             ]
         },
         "promises": {
             "list": [
-                { "title": "Ley de telemedicina en zonas rurales", "year": 2024, "status": "Cumplió" },
-                { "title": "Proyecto de salud mental comunitaria", "year": 2024, "status": "No cumplió" },
-                { "title": "Ley de acceso a medicamentos genéricos en MINSA", "year": 2025, "status": "Cumplió" },
-                { "title": "Modificatoria del SOAT", "year": 2027, "status": "No cumplió" }
+                {
+                    "title": "Ley de telemedicina en zonas rurales",
+                    "year": 2024,
+                    "status": "Competencia del Congreso"
+                },
+                {
+                    "title": "Proyecto de salud mental comunitaria",
+                    "year": 2024,
+                    "status": "Competencia del Ejecutivo"
+                },
+                {
+                    "title": "Ley de acceso a medicamentos genéricos en MINSA",
+                    "year": 2025,
+                    "status": "Competencia del Congreso"
+                },
+                {
+                    "title": "Modificatoria del SOAT",
+                    "year": 2027,
+                    "status": "Competencia del Gobierno Regional o Local"
+                }
             ]
         },
         "additional_info": {
@@ -75,16 +123,41 @@
             "Descentralización"
         ],
         "lawsFor": {
-            "31520": { "first": true, "second": false },
-            "31996": { "first": false, "second": true },
-            "32059": { "first": true, "second": true },
-            "31981": { "first": false, "second": false },
-            "31988": { "first": true },
-            "31751": { "first": false, "second": true },
-            "31990": { "first": true },
-            "32107": { "first": false },
-            "32108": { "first": true },
-            "32130": { "first": false }
+            "31520": {
+                "first": true,
+                "second": false
+            },
+            "31996": {
+                "first": false,
+                "second": true
+            },
+            "32059": {
+                "first": true,
+                "second": true
+            },
+            "31981": {
+                "first": false,
+                "second": false
+            },
+            "31988": {
+                "first": true
+            },
+            "31751": {
+                "first": false,
+                "second": true
+            },
+            "31990": {
+                "first": true
+            },
+            "32107": {
+                "first": false
+            },
+            "32108": {
+                "first": true
+            },
+            "32130": {
+                "first": false
+            }
         }
     },
     {
@@ -124,10 +197,26 @@
             "as_author": 6,
             "as_adherent": 10,
             "list": [
-                { "title": "Ley de consulta previa para comunidades andinas", "year": 2024, "status": "Aprobado" },
-                { "title": "Proyecto de descentralización fiscal regional", "year": 2024, "status": "En comisión" },
-                { "title": "Reforma del sistema de pensiones rurales", "year": 2025, "status": "En comisión" },
-                { "title": "Ley de protección del patrimonio arqueológico", "year": 2026, "status": "Archivado" }
+                {
+                    "title": "Ley de consulta previa para comunidades andinas",
+                    "year": 2024,
+                    "status": "Aprobado"
+                },
+                {
+                    "title": "Proyecto de descentralización fiscal regional",
+                    "year": 2024,
+                    "status": "En comisión"
+                },
+                {
+                    "title": "Reforma del sistema de pensiones rurales",
+                    "year": 2025,
+                    "status": "En comisión"
+                },
+                {
+                    "title": "Ley de protección del patrimonio arqueológico",
+                    "year": 2026,
+                    "status": "Archivado"
+                }
             ]
         },
         "motions_detail": {
@@ -137,18 +226,50 @@
             "as_author": 6,
             "as_adherent": 10,
             "list": [
-                { "title": "Ley de consulta previa para comunidades andinas", "year": 2024, "status": "Aprobado" },
-                { "title": "Proyecto de descentralización fiscal regional", "year": 2024, "status": "En comisión" },
-                { "title": "Reforma del sistema de pensiones rurales", "year": 2025, "status": "En comisión" },
-                { "title": "Ley de protección del patrimonio arqueológico", "year": 2026, "status": "Archivado" }
+                {
+                    "title": "Ley de consulta previa para comunidades andinas",
+                    "year": 2024,
+                    "status": "Aprobado"
+                },
+                {
+                    "title": "Proyecto de descentralización fiscal regional",
+                    "year": 2024,
+                    "status": "En comisión"
+                },
+                {
+                    "title": "Reforma del sistema de pensiones rurales",
+                    "year": 2025,
+                    "status": "En comisión"
+                },
+                {
+                    "title": "Ley de protección del patrimonio arqueológico",
+                    "year": 2026,
+                    "status": "Archivado"
+                }
             ]
         },
         "promises": {
             "list": [
-                { "title": "Ley de consulta previa para comunidades andinas", "year": 2024, "status": "Cumplió" },
-                { "title": "Proyecto de descentralización fiscal regional", "year": 2024, "status": "No cumplió" },
-                { "title": "Reforma del sistema de pensiones rurales", "year": 2025, "status": "Cumplió" },
-                { "title": "Ley de protección del patrimonio arqueológico", "year": 2026, "status": "No cumplió" }
+                {
+                    "title": "Ley de consulta previa para comunidades andinas",
+                    "year": 2024,
+                    "status": "Competencia del Congreso"
+                },
+                {
+                    "title": "Proyecto de descentralización fiscal regional",
+                    "year": 2024,
+                    "status": "Competencia del Ejecutivo"
+                },
+                {
+                    "title": "Reforma del sistema de pensiones rurales",
+                    "year": 2025,
+                    "status": "Competencia del Congreso"
+                },
+                {
+                    "title": "Ley de protección del patrimonio arqueológico",
+                    "year": 2026,
+                    "status": "Competencia del Ejecutivo"
+                }
             ]
         },
         "additional_info": {
@@ -162,20 +283,43 @@
             "Descentralización"
         ],
         "lawsFor": {
-            "31520": { "first": false, "second": true },
-            "31996": { "first": true, "second": false },
-            "32059": { "first": false, "second": false },
-            "31981": { "first": true, "second": true },
-            "31988": { "first": false },
-            "31751": { "first": true, "second": false },
-            "31990": { "first": false },
-            "32107": { "first": true },
-            "32108": { "first": false },
-            "32130": { "first": true }
+            "31520": {
+                "first": false,
+                "second": true
+            },
+            "31996": {
+                "first": true,
+                "second": false
+            },
+            "32059": {
+                "first": false,
+                "second": false
+            },
+            "31981": {
+                "first": true,
+                "second": true
+            },
+            "31988": {
+                "first": false
+            },
+            "31751": {
+                "first": true,
+                "second": false
+            },
+            "31990": {
+                "first": false
+            },
+            "32107": {
+                "first": true
+            },
+            "32108": {
+                "first": false
+            },
+            "32130": {
+                "first": true
+            }
         }
-    }
-
-    ,
+    },
     {
         "id": 3,
         "picture": "/api/portraits/women/3.jpg",
@@ -213,9 +357,21 @@
             "as_author": 3,
             "as_adherent": 5,
             "list": [
-                { "title": "Proyecto de fortalecimiento de la educación técnica regional", "year": 2024, "status": "En comisión" },
-                { "title": "Ley de apoyo a estudiantes becados", "year": 2025, "status": "Aprobado" },
-                { "title": "Iniciativa para acceso a internet en escuelas rurales", "year": 2026, "status": "En trámite" }
+                {
+                    "title": "Proyecto de fortalecimiento de la educación técnica regional",
+                    "year": 2024,
+                    "status": "En comisión"
+                },
+                {
+                    "title": "Ley de apoyo a estudiantes becados",
+                    "year": 2025,
+                    "status": "Aprobado"
+                },
+                {
+                    "title": "Iniciativa para acceso a internet en escuelas rurales",
+                    "year": 2026,
+                    "status": "En trámite"
+                }
             ]
         },
         "motions_detail": {
@@ -225,16 +381,40 @@
             "as_author": 3,
             "as_adherent": 5,
             "list": [
-                { "title": "Proyecto de fortalecimiento de la educación técnica regional", "year": 2024, "status": "En comisión" },
-                { "title": "Ley de apoyo a estudiantes becados", "year": 2025, "status": "Aprobado" },
-                { "title": "Iniciativa para acceso a internet en escuelas rurales", "year": 2026, "status": "En trámite" }
+                {
+                    "title": "Proyecto de fortalecimiento de la educación técnica regional",
+                    "year": 2024,
+                    "status": "En comisión"
+                },
+                {
+                    "title": "Ley de apoyo a estudiantes becados",
+                    "year": 2025,
+                    "status": "Aprobado"
+                },
+                {
+                    "title": "Iniciativa para acceso a internet en escuelas rurales",
+                    "year": 2026,
+                    "status": "En trámite"
+                }
             ]
         },
         "promises": {
             "list": [
-                { "title": "Proyecto de fortalecimiento de la educación técnica regional", "year": 2024, "status": "Cumplió" },
-                { "title": "Ley de apoyo a estudiantes becados", "year": 2025, "status": "No cumplió" },
-                { "title": "Iniciativa para acceso a internet en escuelas rurales", "year": 2026, "status": "Cumplió" }
+                {
+                    "title": "Proyecto de fortalecimiento de la educación técnica regional",
+                    "year": 2024,
+                    "status": "Competencia del Congreso"
+                },
+                {
+                    "title": "Ley de apoyo a estudiantes becados",
+                    "year": 2025,
+                    "status": "Competencia del Ejecutivo"
+                },
+                {
+                    "title": "Iniciativa para acceso a internet en escuelas rurales",
+                    "year": 2026,
+                    "status": "Competencia del Congreso"
+                }
             ]
         },
         "additional_info": {
@@ -247,16 +427,41 @@
             "Educación"
         ],
         "lawsFor": {
-            "31520": { "first": true, "second": true },
-            "31996": { "first": true, "second": false },
-            "32059": { "first": false, "second": true },
-            "31981": { "first": true, "second": false },
-            "31988": { "first": false },
-            "31751": { "first": false, "second": false },
-            "31990": { "first": true },
-            "32107": { "first": true },
-            "32108": { "first": false },
-            "32130": { "first": false }
+            "31520": {
+                "first": true,
+                "second": true
+            },
+            "31996": {
+                "first": true,
+                "second": false
+            },
+            "32059": {
+                "first": false,
+                "second": true
+            },
+            "31981": {
+                "first": true,
+                "second": false
+            },
+            "31988": {
+                "first": false
+            },
+            "31751": {
+                "first": false,
+                "second": false
+            },
+            "31990": {
+                "first": true
+            },
+            "32107": {
+                "first": true
+            },
+            "32108": {
+                "first": false
+            },
+            "32130": {
+                "first": false
+            }
         }
     },
     {
@@ -296,10 +501,26 @@
             "as_author": 6,
             "as_adherent": 8,
             "list": [
-                { "title": "Ley de protección de humedales costeros", "year": 2024, "status": "En comisión" },
-                { "title": "Iniciativa de gestión integrada de cuencas", "year": 2025, "status": "Aprobado" },
-                { "title": "Proyecto de restauración ecosistémica", "year": 2026, "status": "En trámite" },
-                { "title": "Regulación de aguas subterráneas", "year": 2027, "status": "Archivado" }
+                {
+                    "title": "Ley de protección de humedales costeros",
+                    "year": 2024,
+                    "status": "En comisión"
+                },
+                {
+                    "title": "Iniciativa de gestión integrada de cuencas",
+                    "year": 2025,
+                    "status": "Aprobado"
+                },
+                {
+                    "title": "Proyecto de restauración ecosistémica",
+                    "year": 2026,
+                    "status": "En trámite"
+                },
+                {
+                    "title": "Regulación de aguas subterráneas",
+                    "year": 2027,
+                    "status": "Archivado"
+                }
             ]
         },
         "motions_detail": {
@@ -309,18 +530,50 @@
             "as_author": 6,
             "as_adherent": 8,
             "list": [
-                { "title": "Ley de protección de humedales costeros", "year": 2024, "status": "En comisión" },
-                { "title": "Iniciativa de gestión integrada de cuencas", "year": 2025, "status": "Aprobado" },
-                { "title": "Proyecto de restauración ecosistémica", "year": 2026, "status": "En trámite" },
-                { "title": "Regulación de aguas subterráneas", "year": 2027, "status": "Archivado" }
+                {
+                    "title": "Ley de protección de humedales costeros",
+                    "year": 2024,
+                    "status": "En comisión"
+                },
+                {
+                    "title": "Iniciativa de gestión integrada de cuencas",
+                    "year": 2025,
+                    "status": "Aprobado"
+                },
+                {
+                    "title": "Proyecto de restauración ecosistémica",
+                    "year": 2026,
+                    "status": "En trámite"
+                },
+                {
+                    "title": "Regulación de aguas subterráneas",
+                    "year": 2027,
+                    "status": "Archivado"
+                }
             ]
         },
         "promises": {
             "list": [
-                { "title": "Ley de protección de humedales costeros", "year": 2024, "status": "Cumplió" },
-                { "title": "Iniciativa de gestión integrada de cuencas", "year": 2025, "status": "No cumplió" },
-                { "title": "Proyecto de restauración ecosistémica", "year": 2026, "status": "Cumplió" },
-                { "title": "Regulación de aguas subterráneas", "year": 2027, "status": "No cumplió" }
+                {
+                    "title": "Ley de protección de humedales costeros",
+                    "year": 2024,
+                    "status": "Competencia del Congreso"
+                },
+                {
+                    "title": "Iniciativa de gestión integrada de cuencas",
+                    "year": 2025,
+                    "status": "Competencia del Ejecutivo"
+                },
+                {
+                    "title": "Proyecto de restauración ecosistémica",
+                    "year": 2026,
+                    "status": "Competencia del Congreso"
+                },
+                {
+                    "title": "Regulación de aguas subterráneas",
+                    "year": 2027,
+                    "status": "Competencia del Ejecutivo"
+                }
             ]
         },
         "additional_info": {
@@ -334,16 +587,41 @@
             "Recursos Naturales"
         ],
         "lawsFor": {
-            "31520": { "first": false, "second": false },
-            "31996": { "first": false, "second": true },
-            "32059": { "first": true, "second": false },
-            "31981": { "first": false, "second": true },
-            "31988": { "first": true },
-            "31751": { "first": true, "second": true },
-            "31990": { "first": false },
-            "32107": { "first": false },
-            "32108": { "first": true },
-            "32130": { "first": true }
+            "31520": {
+                "first": false,
+                "second": false
+            },
+            "31996": {
+                "first": false,
+                "second": true
+            },
+            "32059": {
+                "first": true,
+                "second": false
+            },
+            "31981": {
+                "first": false,
+                "second": true
+            },
+            "31988": {
+                "first": true
+            },
+            "31751": {
+                "first": true,
+                "second": true
+            },
+            "31990": {
+                "first": false
+            },
+            "32107": {
+                "first": false
+            },
+            "32108": {
+                "first": true
+            },
+            "32130": {
+                "first": true
+            }
         }
     },
     {
@@ -383,9 +661,21 @@
             "as_author": 4,
             "as_adherent": 6,
             "list": [
-                { "title": "Reforma de procedimientos civiles simplificados", "year": 2024, "status": "En comisión" },
-                { "title": "Ley de protección a víctimas de violencia doméstica", "year": 2025, "status": "Aprobado" },
-                { "title": "Proyecto de mejora de acceso a la justicia gratuita", "year": 2026, "status": "En trámite" }
+                {
+                    "title": "Reforma de procedimientos civiles simplificados",
+                    "year": 2024,
+                    "status": "En comisión"
+                },
+                {
+                    "title": "Ley de protección a víctimas de violencia doméstica",
+                    "year": 2025,
+                    "status": "Aprobado"
+                },
+                {
+                    "title": "Proyecto de mejora de acceso a la justicia gratuita",
+                    "year": 2026,
+                    "status": "En trámite"
+                }
             ]
         },
         "motions_detail": {
@@ -395,16 +685,40 @@
             "as_author": 4,
             "as_adherent": 6,
             "list": [
-                { "title": "Reforma de procedimientos civiles simplificados", "year": 2024, "status": "En comisión" },
-                { "title": "Ley de protección a víctimas de violencia doméstica", "year": 2025, "status": "Aprobado" },
-                { "title": "Proyecto de mejora de acceso a la justicia gratuita", "year": 2026, "status": "En trámite" }
+                {
+                    "title": "Reforma de procedimientos civiles simplificados",
+                    "year": 2024,
+                    "status": "En comisión"
+                },
+                {
+                    "title": "Ley de protección a víctimas de violencia doméstica",
+                    "year": 2025,
+                    "status": "Aprobado"
+                },
+                {
+                    "title": "Proyecto de mejora de acceso a la justicia gratuita",
+                    "year": 2026,
+                    "status": "En trámite"
+                }
             ]
         },
         "promises": {
             "list": [
-                { "title": "Reforma de procedimientos civiles simplificados", "year": 2024, "status": "Cumplió" },
-                { "title": "Ley de protección a víctimas de violencia doméstica", "year": 2025, "status": "No cumplió" },
-                { "title": "Proyecto de mejora de acceso a la justicia gratuita", "year": 2026, "status": "Cumplió" }
+                {
+                    "title": "Reforma de procedimientos civiles simplificados",
+                    "year": 2024,
+                    "status": "Competencia del Congreso"
+                },
+                {
+                    "title": "Ley de protección a víctimas de violencia doméstica",
+                    "year": 2025,
+                    "status": "Competencia del Ejecutivo"
+                },
+                {
+                    "title": "Proyecto de mejora de acceso a la justicia gratuita",
+                    "year": 2026,
+                    "status": "Competencia del Congreso"
+                }
             ]
         },
         "additional_info": {
@@ -418,15 +732,38 @@
             "Mujer y Familia"
         ],
         "lawsFor": {
-            "31520": { "first": true, "second": false },
-            "31996": { "first": false, "second": false },
-            "32059": { "first": true, "second": true },
-            "31981": { "first": false, "second": false },
-            "31988": { "first": true },
-            "31751": { "first": false, "second": true },
-            "31990": { "first": false },
-            "32107": { "first": true },
-            "32130": { "first": false }
+            "31520": {
+                "first": true,
+                "second": false
+            },
+            "31996": {
+                "first": false,
+                "second": false
+            },
+            "32059": {
+                "first": true,
+                "second": true
+            },
+            "31981": {
+                "first": false,
+                "second": false
+            },
+            "31988": {
+                "first": true
+            },
+            "31751": {
+                "first": false,
+                "second": true
+            },
+            "31990": {
+                "first": false
+            },
+            "32107": {
+                "first": true
+            },
+            "32130": {
+                "first": false
+            }
         }
     }
 ]

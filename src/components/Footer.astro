@@ -4,6 +4,7 @@ import LogoSrc from '../assets/logo-white.png?url';
 import fbIcon from '../assets/icons/fb_Icon.svg?raw';
 import lnIcon from '../assets/icons/ln_Icon.svg?raw';
 import inIcon from '../assets/icons/in_Icon.svg?raw';
+import { METHODOLOGY_URL } from '../constants';
 
 interface FooterLink {
   label: string;
@@ -14,7 +15,7 @@ const contentLinks: FooterLink[] = [
   { label: 'Sobre la bicameralidad', href: '/bicameralidad' },
   /* { label: 'Conoce los partidos políticos', href: '/partidos' }, */
   { label: 'Compara a tu candidato', href: '/compara' },
-  { label: 'Metodología', href: '/metodologia' },
+  { label: 'Metodología', href: METHODOLOGY_URL },
 ];
 
 const socialLinks = [
@@ -24,6 +25,8 @@ const socialLinks = [
 ];
 
 const currentYear = new Date().getFullYear();
+
+const startWithSlash = (path: string) => path.startsWith('/');
 ---
 
 <footer class="bg-dark-blue-obs text-white">
@@ -65,7 +68,12 @@ const currentYear = new Date().getFullYear();
           {
             contentLinks.map((link) => (
               <li class="text-sm mb-3">
-                <a href={link.href} class="opacity-80 hover:opacity-100 transition-opacity">
+                <a 
+                  href={link.href} 
+                  class="opacity-80 hover:opacity-100 transition-opacity"
+                  target={startWithSlash(link.href) ? '_self' : '_blank'}
+                  rel={startWithSlash(link.href) ? undefined : 'noopener noreferrer'}
+                >
                   {link.label}
                 </a>
               </li>

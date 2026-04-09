@@ -4,6 +4,7 @@ import InternalPageHero from '../components/sections/InternalPageHero.astro';
 import Card from '../components/ui/Card/Card.astro';
 import Container from '../components/ui/Container.astro';
 import Button from '../components/ui/Button.astro';
+import { METHODOLOGY_URL } from '../constants';
 
 const stats = [
   { label: 'Total de congresistas', value: '190' },
@@ -42,8 +43,8 @@ const timelineEvents = [
 ];
 
 const exploreLinks = [
-  { label: 'Elecciones 2026', href: '/elecciones' },
-  { label: 'Metodología y fuentes', href: '/metodologia' },
+  // { label: 'Elecciones 2026', href: '/elecciones' },
+  { label: 'Metodología y fuentes', href: METHODOLOGY_URL },
 ];
 ---
 
@@ -142,6 +143,8 @@ const exploreLinks = [
                   <a
                     href={link.href}
                     class="font-medium text-primary-blue-obs hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {link.label} →
                   </a>
