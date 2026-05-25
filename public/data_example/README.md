@@ -105,7 +105,7 @@ Contiene información sobre promesas de campaña y su cumplimiento.
 {
   "title": "Ley de telemedicina en zonas rurales",
   "year": 2024,
-  "status": "Cumplió" // Posibles: "Cumplió", "No cumplió"
+  "status": "Competencia del Congreso" // Posibles: "Competencia del Congreso", "Competencia del Ejecutivo", "Competencia del Gobierno Regional o Local"
 }
 ```
 
