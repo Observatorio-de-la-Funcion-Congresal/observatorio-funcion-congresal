@@ -1,0 +1,119 @@
+---
+/**
+ * Countdown — displays a live countdown to a given target date/time.
+ *
+ * Props:
+ *  - targetDate : ISO 8601 string with optional timezone offset.
+ *                 e.g. "2026-06-07T07:00:00-05:00"
+ *  - label      : Optional label rendered above the timer.
+ */
+interface Props {
+  targetDate: string;
+  label?: string;
+}
+
+const { targetDate, label } = Astro.props;
+---
+
+<div class="countdown-root">
+  {label && (
+    <p class="text-white/80 text-sm sm:text-base mb-4">{label}</p>
+  )}
+
+  <div
+    class="flex items-end justify-center gap-2 sm:gap-3"
+    data-countdown={targetDate}
+    data-countdown-root
+  >
+    <!-- Days -->
+    <div class="flex flex-col items-center">
+      <span
+        data-countdown-days
+        class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-navy-900 border border-white/10 text-white text-2xl sm:text-4xl font-extrabold tabular-nums"
+      >--</span>
+      <span class="text-white/70 text-xs sm:text-sm mt-2 font-medium">Días</span>
+    </div>
+
+    <span class="text-white text-2xl sm:text-4xl font-extrabold pb-6">:</span>
+
+    <!-- Hours -->
+    <div class="flex flex-col items-center">
+      <span
+        data-countdown-hours
+        class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-navy-900 border border-white/10 text-white text-2xl sm:text-4xl font-extrabold tabular-nums"
+      >--</span>
+      <span class="text-white/70 text-xs sm:text-sm mt-2 font-medium">Horas</span>
+    </div>
+
+    <span class="text-white text-2xl sm:text-4xl font-extrabold pb-6">:</span>
+
+    <!-- Minutes -->
+    <div class="flex flex-col items-center">
+      <span
+        data-countdown-minutes
+        class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-navy-900 border border-white/10 text-white text-2xl sm:text-4xl font-extrabold tabular-nums"
+      >--</span>
+      <span class="text-white/70 text-xs sm:text-sm mt-2 font-medium">Minutos</span>
+    </div>
+
+    <span class="text-white text-2xl sm:text-4xl font-extrabold pb-6">:</span>
+
+    <!-- Seconds -->
+    <div class="flex flex-col items-center">
+      <span
+        data-countdown-seconds
+        class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-navy-900 border border-white/10 text-white text-2xl sm:text-4xl font-extrabold tabular-nums"
+      >--</span>
+      <span class="text-white/70 text-xs sm:text-sm mt-2 font-medium">Segundos</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  function pad(n: number): string {
+    return String(n).padStart(2, '0');
+  }
+
+  function initCountdown(root: HTMLElement) {
+    const targetStr = root.dataset.countdown;
+    if (!targetStr) return;
+
+    const targetTime = new Date(targetStr).getTime();
+
+    const daysEl = root.querySelector<HTMLElement>('[data-countdown-days]');
+    const hoursEl = root.querySelector<HTMLElement>('[data-countdown-hours]');
+    const minutesEl = root.querySelector<HTMLElement>('[data-countdown-minutes]');
+    const secondsEl = root.querySelector<HTMLElement>('[data-countdown-seconds]');
+
+    function tick() {
+      const now = Date.now();
+      const diff = targetTime - now;
+
+      if (diff <= 0) {
+        if (daysEl) daysEl.textContent = '00';
+        if (hoursEl) hoursEl.textContent = '00';
+        if (minutesEl) minutesEl.textContent = '00';
+        if (secondsEl) secondsEl.textContent = '00';
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      if (daysEl) daysEl.textContent = pad(days);
+      if (hoursEl) hoursEl.textContent = pad(hours);
+      if (minutesEl) minutesEl.textContent = pad(minutes);
+      if (secondsEl) secondsEl.textContent = pad(seconds);
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  document
+    .querySelectorAll<HTMLElement>('[data-countdown-root]')
+    .forEach(initCountdown);
+</script>

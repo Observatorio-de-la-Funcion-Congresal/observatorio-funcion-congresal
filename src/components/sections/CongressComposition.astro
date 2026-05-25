@@ -1,0 +1,98 @@
+---
+import Container from '../ui/Container.astro';
+import ParliamentChart from '../charts/ParliamentChart.vue';
+
+interface SeatGroup {
+  party: string;
+  count: number;
+  color: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  date?: string;
+  body?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  seats?: SeatGroup[];
+  actasContabilizadas?: number;
+  totalActas?: number;
+}
+
+const {
+  eyebrow = 'Nueva composición'
+} = Astro.props;
+
+const senatorPercentage = 96.6;
+const deputyPercentage = 97.3;
+
+const parties = [
+  { party: 'Fuerza Popular',          partySmall: 'FP',  color: '#D4621A', senators: 22, deputies: 43 },
+  { party: 'Juntos por el Perú',       partySmall: 'JPP', color: '#388E3C', senators: 14, deputies: 30 },
+  { party: 'Renovación Popular',       partySmall: 'RP',  color: '#1E5FAD', senators:  8, deputies: 15 },
+  { party: 'Partido del Buen Gobierno',partySmall: 'PBG', color: '#D4A800', senators:  7, deputies: 18 },
+  { party: 'Partido Cívico Obras',     partySmall: 'PCO', color: '#5B6E1A', senators:  5, deputies: 14 },
+  { party: 'Ahora Nación',             partySmall: 'AN',  color: '#B52B2B', senators:  4, deputies: 10 },
+];
+
+const senatorSeats = parties.map(({ senators, deputies, ...p }) => ({ ...p, count: senators })).sort((a, b) => b.count - a.count);
+const deputySeats  = parties.map(({ senators, deputies, ...p }) => ({ ...p, count: deputies })).sort((a, b) => b.count - a.count);
+
+---
+
+<section class="bg-sky-blue-obs py-20 text-center">
+  <Container>
+    <p class="text-3xl font-bold flex flex-col gap-2">
+      {eyebrow}
+    </p>
+    <div class="flex md:flex-row flex-col gap-12 w-full justify-around">
+      <div>
+        <div class="text-center w-full my-5">
+          <p class="text-lg font-semibold text-dark-blue-obs mb-2">Senadores</p>
+          <ParliamentChart client:load seats={senatorSeats} class="max-w-80 mx-auto" />
+        </div>
+    
+        <!-- Leyenda -->
+        <ul class="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-2 mb-6">
+          {senatorSeats.map((seat) => (
+            <li class="flex items-center gap-2 text-sm text-primary-gray-obs" title={seat.party}>
+              <span
+                class="inline-block w-3 h-3 rounded-sm flex-shrink-0"
+                style={`background-color: ${seat.color}`}
+              ></span>
+              <span class="font-medium">{seat.partySmall}</span>
+              <span class="text-regular-gray-obs">{seat.count}</span>
+            </li>
+          ))}
+        </ul>
+    
+        <!-- Actas contabilizadas -->
+        <p class="text-sm text-regular-gray-obs mt-1 mb-6">Actas contabilizadas: {senatorPercentage}% procesado</p>
+      </div>
+      <div>
+        <div class="text-center w-full my-5">
+          <p class="text-lg font-semibold text-dark-blue-obs mb-2">Diputados</p>
+          <ParliamentChart client:load seats={deputySeats} class="max-w-80 mx-auto" />
+        </div>
+    
+        <!-- Leyenda -->
+        <ul class="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-2 mb-6">
+          {deputySeats.map((seat) => (
+            <li class="flex items-center gap-2 text-sm text-primary-gray-obs" title={seat.party}>
+              <span
+                class="inline-block w-3 h-3 rounded-sm flex-shrink-0"
+                style={`background-color: ${seat.color}`}
+              ></span>
+              <span class="font-medium">{seat.partySmall}</span>
+              <span class="text-regular-gray-obs">{seat.count}</span>
+            </li>
+          ))}
+        </ul>
+    
+        <!-- Actas contabilizadas -->
+        <p class="text-sm text-regular-gray-obs mt-1 mb-6">Actas contabilizadas: {deputyPercentage}% procesado</p>
+      </div>
+    </div>
+
+  </Container>
+</section>

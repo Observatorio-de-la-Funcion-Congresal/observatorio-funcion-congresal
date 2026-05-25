@@ -1,0 +1,52 @@
+---
+/**
+ * Hero section — Segunda Vuelta 2026.
+ * Shows a countdown to election day and a CTA button.
+ *
+ * Props allow customisation of copy and links.
+ */
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+import Countdown from '../ui/Countdown.astro';
+
+interface Props {
+  heading?: string;
+  countdownLabel?: string;
+  /** ISO 8601 target date for the countdown, including timezone offset. */
+  countdownTarget?: string;
+  body?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+}
+
+const {
+  heading = 'Segunda Vuelta 2026',
+  countdownLabel = 'Tiempo restante para la Segunda Vuelta:',
+  countdownTarget = '2026-06-07T07:00:00-05:00',
+  body = 'Elige al Presidente y Vicepresidentes, y completa la formación del nuevo Congreso Bicameral. Conoce a los 130 Diputados y 50 Senadores electos.',
+  primaryLabel = 'Ver candidatos',
+  primaryHref = '/candidatos',
+} = Astro.props;
+---
+
+<section class="relative flex items-center bg-navy-900 overflow-hidden">
+  <div class="absolute inset-0 bg-[url('/src/assets/hero-background.jpg')] bg-cover saturate-0"></div>
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-hero-overlay mix-blend-multiply"></div>
+
+  <Container class="relative z-10 py-16 sm:py-24 text-center">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+      {heading}
+    </h1>
+
+    <Countdown targetDate={countdownTarget} label={countdownLabel} />
+
+    <p class="text-white text-sm sm:text-base leading-relaxed mx-auto mt-8 mb-10 max-w-xl whitespace-pre-line">
+      {body}
+    </p>
+
+    <Button href={primaryHref} variant="secondary" size="lg">
+      {primaryLabel}
+    </Button>
+  </Container>
+</section>
