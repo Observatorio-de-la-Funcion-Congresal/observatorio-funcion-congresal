@@ -27,9 +27,9 @@ const senatorPercentage = 96.6;
 const deputyPercentage = 97.3;
 
 const parties = [
-  { party: 'Fuerza Popular',          partySmall: 'FP',  color: '#D4621A', senators: 22, deputies: 43 },
-  { party: 'Juntos por el Perú',       partySmall: 'JPP', color: '#388E3C', senators: 14, deputies: 30 },
-  { party: 'Renovación Popular',       partySmall: 'RP',  color: '#1E5FAD', senators:  8, deputies: 15 },
+  { party: 'Fuerza Popular',          partySmall: 'FP',  color: '#D4621A', senators: 22, deputies: 41 },
+  { party: 'Juntos por el Perú',       partySmall: 'JPP', color: '#388E3C', senators: 13, deputies: 32 },
+  { party: 'Renovación Popular',       partySmall: 'RP',  color: '#1E5FAD', senators:  9, deputies: 15 },
   { party: 'Partido del Buen Gobierno',partySmall: 'PBG', color: '#D4A800', senators:  7, deputies: 18 },
   { party: 'Partido Cívico Obras',     partySmall: 'PCO', color: '#5B6E1A', senators:  5, deputies: 14 },
   { party: 'Ahora Nación',             partySmall: 'AN',  color: '#B52B2B', senators:  4, deputies: 10 },
@@ -94,7 +94,7 @@ const deputySeats  = parties.map(({ senators, deputies, ...p }) => ({ ...p, coun
       </div>
     </div>
 
-    <p class="text-xs text-gray-icon-obs mt-2 text-left">Fuente: <a href="https://decideperu.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-regular-gray-obs">decideperu.com</a></p>
+    <p class="text-xs text-gray-icon-obs mt-2 text-left">Fuente: <a href="https://decideperu.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-regular-gray-obs">decideperu.com</a> - Actas contabilizadas al 25 de mayo - 09:15 hrs</p>
 
   </Container>
 </section>
