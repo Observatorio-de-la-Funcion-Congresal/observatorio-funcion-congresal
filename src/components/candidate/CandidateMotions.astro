@@ -56,7 +56,7 @@ const statusStyles: Record<string, string> = {
     {motions.list.map((motion) => (
       <div class="flex items-center justify-between py-3 gap-3">
         <div class="min-w-0">
-          <p class="text-sm font-medium text-primary-black-obs truncate">{motion.title}</p>
+          <p class="text-sm font-medium text-primary-black-obs truncate" title={motion.title}>{motion.title}</p>
           <p class="text-xs text-primary-gray-obs mt-0.5">{motion.year}</p>
         </div>
         <span class={`text-xs font-medium px-3 py-1 rounded-full shrink-0 ${statusStyles[motion.status] ?? statusStyles['Archivado']}`}>

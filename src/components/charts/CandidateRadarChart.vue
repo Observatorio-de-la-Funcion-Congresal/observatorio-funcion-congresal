@@ -31,7 +31,7 @@ const chartData = computed(() => ({
     '% Sem. representación', 
     '% Proyectos aprobados', 
     '% Promesas competentes', 
-    '% Votación a favor', 
+    '% Votación en contra', 
     '% Mociones aprobadas'
   ],
   datasets: [
@@ -40,7 +40,7 @@ const chartData = computed(() => ({
         props.session_week_percentage,
         props.projects_percentage,
         props.accomplishment_percentage,
-        props.vote_priorities_percentage,
+        100 - props.vote_priorities_percentage,
         props.motions_percentage,
       ],
       backgroundColor: 'rgba(214, 40, 40, 0.25)',

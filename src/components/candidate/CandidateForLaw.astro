@@ -112,13 +112,14 @@ const lawBlocks = [
   {
     name: "Eje justicia y seguridad",
     laws: ["31751", "31990", "32107", "32130"],
+    note: "No se cuenta con la segunda votación de la Ley 32107 porque su texto sustitutorio fue votado en la Comisión Permanente. Mientras que, en el caso de la Ley 31990, se exoneró de una segunda votación.",
   },
 ];
 ---
 
 <Card roundedClass="rounded-2xl" padding={false} class="p-6">
   <h2 class="text-2xl font-bold text-primary-black-obs mb-5">
-    Votó a favor de:
+    Sentido del voto en:
   </h2>
 
   <div>
@@ -157,6 +158,11 @@ const lawBlocks = [
                 }
               </div>
             ))}
+            {'note' in lawBlock && lawBlock.note && (
+              <p class="text-xs text-primary-gray-obs mt-4 pt-3 border-t border-light-gray-obs leading-5">
+                * {lawBlock.note}
+              </p>
+            )}
           </AccordionItem>
         ))
       }
