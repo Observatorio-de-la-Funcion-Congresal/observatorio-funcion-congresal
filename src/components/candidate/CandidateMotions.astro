@@ -28,6 +28,11 @@ const statusStyles: Record<string, string> = {
   'En comisión': 'bg-yellow-100 text-[#92400E]',
   'Archivado':   'bg-gray-100 text-primary-gray-obs',
 };
+
+const motionsFormatted = motions.list.map((motion) => ({
+  ...motion,
+  status: `${motion.status.charAt(0).toUpperCase()}${motion.status.slice(1).toLowerCase()}`,
+}));
 ---
 
 <Card roundedClass="rounded-2xl" padding={false} class="p-6">
@@ -53,7 +58,7 @@ const statusStyles: Record<string, string> = {
 
   <!-- Motion list -->
   <div class="flex flex-col divide-y divide-gray-100">
-    {motions.list.map((motion) => (
+    {motionsFormatted.map((motion) => (
       <div class="flex items-center justify-between py-3 gap-3">
         <div class="min-w-0">
           <p class="text-sm font-medium text-primary-black-obs truncate" title={motion.title}>{motion.title}</p>

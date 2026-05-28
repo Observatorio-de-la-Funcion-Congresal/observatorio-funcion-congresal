@@ -28,6 +28,14 @@ const statusStyles: Record<string, string> = {
   'En comisión': 'bg-yellow-100 text-[#92400E]',
   'Archivado':   'bg-gray-100 text-primary-gray-obs',
 };
+
+const billsFormatted = bills.list.map((bill) => {
+  return {
+    ...bill,
+    status: `${bill.status.charAt(0).toUpperCase()}${bill.status.slice(1).toLowerCase()}`,
+  }
+})
+
 ---
 
 <Card roundedClass="rounded-2xl" padding={false} class="p-6">
@@ -53,7 +61,7 @@ const statusStyles: Record<string, string> = {
 
   <!-- Bill list -->
   <div class="flex flex-col divide-y divide-gray-100">
-    {bills.list.map((bill) => (
+    {billsFormatted.map((bill) => (
       <div class="flex items-center justify-between py-3 gap-3">
         <div class="min-w-0">
           <p class="text-sm font-medium text-primary-black-obs truncate" title={bill.title}>{bill.title}</p>
