@@ -168,9 +168,9 @@ try {
 
           <CandidatePerformance performance={candidate.performance} />
 
-          <CandidateBills client:load bills={candidate.bills} />
+          <CandidateBills client:load bills={candidate.bills} candidateName={candidate.name} />
 
-          <CandidateMotions client:load motions={candidate.motions_detail}  />
+          <CandidateMotions client:load motions={candidate.motions_detail} candidateName={candidate.name} />
 
           <CandidatePromises promises={candidate.promises} />
 

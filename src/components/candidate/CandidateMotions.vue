@@ -4,7 +4,7 @@
       <h2 class="text-2xl font-bold text-primary-black-obs">
         Mociones {{ period }}
       </h2>
-      <CandidateExportButton :list="motionsFormatted" list-name="Mociones" />
+      <CandidateExportButton :list="motionsFormatted" list-name="Mociones" :candidate-name="candidateName" />
     </div>
 
     <!-- Summary row -->
@@ -101,6 +101,7 @@ const props = withDefaults(
   defineProps<{
     motions: Motions;
     period?: string;
+    candidateName?: string;
   }>(),
   {
     period: '2021 – 2025'

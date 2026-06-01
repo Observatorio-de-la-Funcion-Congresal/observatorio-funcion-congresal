@@ -4,7 +4,7 @@
       <h2 class="text-2xl font-bold text-primary-black-obs">
         Proyectos de ley {{ period }}
       </h2>
-      <CandidateExportButton :list="billsFormatted" list-name="Proyectos de ley" />
+      <CandidateExportButton :list="billsFormatted" list-name="Proyectos de ley" :candidate-name="candidateName" />
     </div> 
 
     <!-- Summary row -->
@@ -101,6 +101,7 @@ const props = withDefaults(
   defineProps<{
     bills: Bills;
     period?: string;
+    candidateName?: string;
   }>(),
   {
     period: '2021 – 2025'

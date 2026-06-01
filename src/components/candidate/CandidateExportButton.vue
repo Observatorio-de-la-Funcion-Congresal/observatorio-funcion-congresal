@@ -13,6 +13,7 @@ import { createXlsx } from '@litejs/xlsx';
 const props = defineProps<{
   list: any[];
   listName?: string;
+  candidateName?: string;
 }>();
 
 const columnNames: { [key: string]: string } = {
@@ -52,12 +53,25 @@ const download = async () => {
       columnKeys.map(key => item[key])
     );
 
+    // Construir datos con información del candidato
+    const allData: any[] = [];
+    
+    // Agregar nombre del candidato si existe
+    if (props.candidateName) {
+      allData.push([`Candidato: ${props.candidateName}`]);
+      allData.push([]); // Fila vacía
+    }
+    
+    // Agregar encabezados y datos
+    allData.push(headerRow);
+    allData.push(...dataRows);
+
     // Crear el archivo Excel
     const fileAsUint8Array = await createXlsx({
       sheets: [{
         name: props.listName,
-        freeze: { rows: 1, cols: 0 },
-        data: [headerRow, ...dataRows]
+        freeze: { rows: props.candidateName ? 3 : 1, cols: 0 },
+        data: allData
       }]
     });
 
@@ -66,7 +80,7 @@ const download = async () => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `${props.listName || 'exportar'}.xlsx`;
+    link.download = `${props.listName || '_exportar'}.xlsx`;
     link.click();
     URL.revokeObjectURL(url);
   } catch (error) {
