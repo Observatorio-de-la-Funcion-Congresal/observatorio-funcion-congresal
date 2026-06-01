@@ -4,14 +4,14 @@ import Container from '../../components/ui/Container.astro';
 import CandidateHero from '../../components/sections/CandidateHero.astro';
 import CandidateBiography from '../../components/candidate/CandidateBiography.astro';
 import CandidatePerformance from '../../components/candidate/CandidatePerformance.astro';
-import CandidateBills from '../../components/candidate/CandidateBills.astro';
+import CandidateBills from '../../components/candidate/CandidateBills.vue';
 import CandidatePromises from '../../components/candidate/CandidatePromises.astro';
 import CandidateForLaw from '../../components/candidate/CandidateForLaw.astro';
-import CandidateMotions from '../../components/candidate/CandidateMotions.astro';
+import CandidateMotions from '../../components/candidate/CandidateMotions.vue';
 import CandidateAdditionalInfo from '../../components/candidate/CandidateAdditionalInfo.astro';
 import CandidateCommissions from '../../components/candidate/CandidateCommissions.astro';
 import KnowMoreCTA from '../../components/ui/KnowMoreCTA.astro';
-import Button from '../../components/ui/Button.astro';
+import Button from '../../components/ui/Button/Button.astro';
 
 const URL_DATA = import.meta.env.URL_DATA;
 const URL_CANDIDATE_PICTURE = import.meta.env.URL_CANDIDATE_PICTURE;
@@ -169,9 +169,9 @@ try {
 
           <CandidatePerformance performance={candidate.performance} />
 
-          <CandidateBills bills={candidate.bills} />
+          <CandidateBills client:load bills={candidate.bills} />
 
-          <CandidateMotions motions={candidate.motions_detail} />
+          <CandidateMotions client:load motions={candidate.motions_detail} />
 
           <CandidatePromises promises={candidate.promises} />
 

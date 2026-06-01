@@ -1,4 +1,3 @@
----
 interface Props {
   href?: string;
   variant?: 'primary' | 'secondary' | 'outline' | 'outline-light' | 'outline-dark';
@@ -9,17 +8,6 @@ interface Props {
   id?: string;
   rel?: string;
 }
-
-const {
-  href,
-  variant = 'primary',
-  size = 'md',
-  class: className = '',
-  type = 'button',
-  target,
-  id,
-  rel
-} = Astro.props;
 
 const variants: Record<string, string> = {
   primary: 'bg-primary-blue-obs text-white hover:bg-navy-800 border border-primary-blue-obs',
@@ -35,20 +23,8 @@ const sizes: Record<string, string> = {
   lg: 'px-4 py-3.5 text-base rounded-2xl',
 };
 
-const base =
-  'inline-flex items-center justify-center font-medium transition-colors cursor-pointer whitespace-nowrap';
+const base = 'inline-flex items-center justify-center font-medium transition-colors cursor-pointer whitespace-nowrap';
 
-const classes = [base, variants[variant], sizes[size], className].join(' ');
----
+export { variants, sizes, base };
 
-{
-  href ? (
-    <a href={href} target={target} class={classes} id={id} rel={rel}>
-      <slot />
-    </a>
-  ) : (
-    <button type={type} class={classes} id={id}>
-      <slot />
-    </button>
-  )
-}
+export type { Props };

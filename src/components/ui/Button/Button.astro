@@ -1,0 +1,29 @@
+---
+import { variants, sizes, base } from './button';
+import type { Props } from './button';
+
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  class: className = '',
+  type = 'button',
+  target,
+  id,
+  rel
+} = Astro.props as Props;
+
+const classes = [base, variants[variant], sizes[size], className].join(' ');
+---
+
+{
+  href ? (
+    <a href={href} target={target} class={classes} id={id} rel={rel}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={classes} id={id}>
+      <slot />
+    </button>
+  )
+}

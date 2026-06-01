@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@litejs/zip':
+    hash: eaaa7f3ba2392d6691cf850212854872ed7df1c73a4a5f0ec000c69028dfed37
+    path: patches/@litejs__zip.patch
+
 importers:
 
   .:
@@ -17,6 +22,9 @@ importers:
       '@fontsource/poppins':
         specifier: ^5.2.7
         version: 5.2.7
+      '@litejs/xlsx':
+        specifier: ^26.4.0
+        version: 26.4.0
       '@tailwindcss/vite':
         specifier: ^4.2.1
         version: 4.2.1(vite@7.3.1(jiti@2.6.1)(lightningcss@1.31.1)(yaml@2.8.2))
@@ -596,6 +604,12 @@ packages:
 
   '@kurkle/color@0.3.4':
     resolution: {integrity: sha512-M5UknZPHRu3DEDWoipU6sE8PdkZ6Z/S+v4dD+Ke8IaNlpdSQah50lz1KtcFBa2vsdOnwbbnxJwVM4wty6udA5w==}
+
+  '@litejs/xlsx@26.4.0':
+    resolution: {integrity: sha512-y3GhbkOGD9G1q4PwnWuPzPhv/uCyiCvp3m+HK9+anIG83Q0hF8LomzUA3oPuIpAlQI3x9rxwvzygGyS7DHS2rg==}
+
+  '@litejs/zip@26.4.0':
+    resolution: {integrity: sha512-ZvNtXiHBXFRFfAZjq1DWXRw+KTYSpG6ll2pY1d1F/JzynTdBfsJvmMLKVtJYUjeBjrmNqwIalnJZiwxcYpberA==}
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
@@ -2910,6 +2924,12 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.5
 
   '@kurkle/color@0.3.4': {}
+
+  '@litejs/xlsx@26.4.0':
+    dependencies:
+      '@litejs/zip': 26.4.0(patch_hash=eaaa7f3ba2392d6691cf850212854872ed7df1c73a4a5f0ec000c69028dfed37)
+
+  '@litejs/zip@26.4.0(patch_hash=eaaa7f3ba2392d6691cf850212854872ed7df1c73a4a5f0ec000c69028dfed37)': {}
 
   '@oslojs/encoding@1.1.0': {}
 

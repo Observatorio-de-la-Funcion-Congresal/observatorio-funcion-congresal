@@ -1,0 +1,28 @@
+diff --git a/zip.js b/zip.js
+index 2432c0a6f1a311c038dc36e37b560068ff425bca..68b882a490c5c8ef9cb4ef924cc1be500cafe2ab 100644
+--- a/zip.js
++++ b/zip.js
+@@ -46,7 +46,7 @@
+ 			if (!k) {
+ 				k = files.length
+ 				name = toUtf8(opts && opts.comment)
+-				push(toUint(cd + "PK\5\6" + le32(0) + le32((k<<16) + k) + le32(cd.length) + le32(offset) + le16(name.length) + name))
++				push(toUint(cd + "PK\x05\x06" + le32(0) + le32((k<<16) + k) + le32(cd.length) + le32(offset) + le16(name.length) + name))
+ 				file = new Uint8Array(outLen)
+ 				for (i = 0, offset = 0; (j = out[i++]); offset += j.length) file.set(j, offset)
+ 				return resolve(file)
+@@ -64,11 +64,11 @@
+ 				crc = (crc >>> 8) ^ crcTable[(crc ^ file[j++]) & 0xff]
+ 			}
+ 			compress(file, fileLen, (compressed, method) => {
+-				method = file === compressed ? "\0\0" : "\10\0"
++				method = file === compressed ? "\x00\x00" : "\x08\x00"
+ 				method = le32(20 | 1<<27) + method + le32(dosDate(new Date(k.time > 0 || k.time === 0 ? k.time : now))) + le32(-1^crc >>> 0) + le32(compressed.length) + le32(fileLen) + le32(nameLen)
+-				push(toUint("PK\3\4" + method + name))
++				push(toUint("PK\x03\x04" + method + name))
+ 				push(compressed)
+-				cd += "PK\1\2\0\24" + method + "\0\0" + le32(0) + le32(32) + le32(offset) + name
++				cd += "PK\x01\x02\x00\x14" + method + "\x00\x00" + le32(0) + le32(32) + le32(offset) + name
+ 				offset += 30 + compressed.length + nameLen
+ 				add(resolve)
+ 			})
