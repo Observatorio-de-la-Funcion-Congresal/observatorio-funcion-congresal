@@ -4,7 +4,7 @@
       <h2 class="text-2xl font-bold text-primary-black-obs">
         Mociones {{ period }}
       </h2>
-      <CandidateExportButton :list="motionsFormatted" />
+      <CandidateExportButton :list="motionsFormatted" list-name="Mociones" />
     </div>
 
     <!-- Summary row -->

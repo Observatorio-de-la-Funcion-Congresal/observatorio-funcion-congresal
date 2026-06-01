@@ -4,7 +4,7 @@
       <h2 class="text-2xl font-bold text-primary-black-obs">
         Proyectos de ley {{ period }}
       </h2>
-      <CandidateExportButton :list="billsFormatted" />
+      <CandidateExportButton :list="billsFormatted" list-name="Proyectos de ley" />
     </div> 
 
     <!-- Summary row -->

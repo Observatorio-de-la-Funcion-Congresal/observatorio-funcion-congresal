@@ -11,7 +11,6 @@ import CandidateMotions from '../../components/candidate/CandidateMotions.vue';
 import CandidateAdditionalInfo from '../../components/candidate/CandidateAdditionalInfo.astro';
 import CandidateCommissions from '../../components/candidate/CandidateCommissions.astro';
 import KnowMoreCTA from '../../components/ui/KnowMoreCTA.astro';
-import Button from '../../components/ui/Button/Button.astro';
 
 const URL_DATA = import.meta.env.URL_DATA;
 const URL_CANDIDATE_PICTURE = import.meta.env.URL_CANDIDATE_PICTURE;
@@ -171,7 +170,7 @@ try {
 
           <CandidateBills client:load bills={candidate.bills} />
 
-          <CandidateMotions client:load motions={candidate.motions_detail} />
+          <CandidateMotions client:load motions={candidate.motions_detail}  />
 
           <CandidatePromises promises={candidate.promises} />
 
