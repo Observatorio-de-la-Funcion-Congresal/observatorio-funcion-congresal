@@ -33,9 +33,9 @@ const statusStyles: Record<string, string> = {
   <!-- Promise list -->
   <div class="flex flex-col divide-y divide-gray-100">
     {promises?.list.map((promise) => (
-      <div class="flex items-center justify-between py-3 gap-3">
+      <div class="flex items-start justify-between py-3 gap-3 flex-col md:flex-row md:items-center flex-wrap overflow-wrap">
         <div class="min-w-0">
-          <p class="text-sm font-medium text-primary-black-obs truncate">{promise.title}</p>
+          <p class="text-sm font-medium text-primary-black-obs md:truncate" title={promise.title}>{promise.title}</p>
           <p class="text-xs text-primary-gray-obs mt-0.5">{promise.year}</p>
         </div>
         <span class={`text-xs font-medium px-3 py-1 rounded-full shrink-0 ${statusStyles[promise.status] ?? statusStyles['No cumplió']}`}>

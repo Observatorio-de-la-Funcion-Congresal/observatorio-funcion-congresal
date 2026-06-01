@@ -8,7 +8,7 @@
     </div> 
 
     <!-- Summary row -->
-    <div class="grid grid-cols-3 gap-3 mb-5">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-5">
       <div class="bg-sky-blue-obs rounded-xl p-4 border border-light-blue-obs">
         <p class="text-sm text-primary-black-obs mb-1">Presentados</p>
         <p class="text-3xl font-bold text-primary-blue-obs">{{ bills.presented }}</p>
@@ -25,16 +25,16 @@
 
     <!-- Bill list with accordion animation -->
     <div 
-      class="overflow-hidden transition-all duration-300 ease-out"
+      class="overflow-hidden transition-all duration-300 ease-out max-w-full"
     >
       <div class="flex flex-col divide-y divide-gray-100">
         <div 
           v-for="bill in displayedBills" 
           :key="`${bill.year}-${bill.title}`" 
-          class="flex items-center justify-between py-3 gap-3"
+          class="flex items-start justify-between py-3 gap-3 flex-col md:flex-row md:items-center"
         >
           <div class="min-w-0">
-            <p class="text-sm font-medium text-primary-black-obs truncate" :title="bill.title">
+            <p class="text-sm font-medium text-primary-black-obs md:truncate" :title="bill.title">
               {{ bill.title }}
             </p>
             <p class="text-xs text-primary-gray-obs mt-0.5">{{ bill.year }}</p>

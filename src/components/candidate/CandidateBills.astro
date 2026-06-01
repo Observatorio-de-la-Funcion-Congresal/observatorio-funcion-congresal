@@ -44,7 +44,7 @@ const billsFormatted = bills.list.map((bill) => {
   </h2>
 
   <!-- Summary row -->
-  <div class="grid grid-cols-3 gap-3 mb-5">
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-5">
     <div class="bg-sky-blue-obs rounded-xl p-4 border border-light-blue-obs">
       <p class="text-sm text-primary-black-obs mb-1">Presentados</p>
       <p class="text-3xl font-bold text-primary-blue-obs">{bills.presented}</p>
@@ -62,9 +62,9 @@ const billsFormatted = bills.list.map((bill) => {
   <!-- Bill list -->
   <div class="flex flex-col divide-y divide-gray-100">
     {billsFormatted.map((bill) => (
-      <div class="flex items-center justify-between py-3 gap-3">
+      <div class="flex items-start justify-between py-3 gap-3 flex-col md:flex-row md:items-center flex-wrap overflow-wrap">
         <div class="min-w-0">
-          <p class="text-sm font-medium text-primary-black-obs truncate" title={bill.title}>{bill.title}</p>
+          <p class="text-sm font-medium text-primary-black-obs md:truncate" title={bill.title}>{bill.title}</p>
           <p class="text-xs text-primary-gray-obs mt-0.5">{bill.year}</p>
         </div>
         <span class={`text-xs font-medium px-3 py-1 rounded-full shrink-0 ${statusStyles[bill.status] ?? statusStyles['Archivado']}`}>
