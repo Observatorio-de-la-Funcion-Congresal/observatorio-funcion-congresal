@@ -104,7 +104,7 @@ const props = withDefaults(
     candidateName?: string;
   }>(),
   {
-    period: '2021 – 2025'
+    period: '2023-2 – 2025'
   }
 );
 
