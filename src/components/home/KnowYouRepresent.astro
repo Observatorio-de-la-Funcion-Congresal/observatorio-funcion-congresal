@@ -1,0 +1,45 @@
+---
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button/Button.astro';
+
+interface Props {
+  eyebrow?: string;
+  bodyLine1?: string;
+  bodyLine2?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  ctaLabel2?: string;
+  ctaHref2?: string;
+}
+
+const {
+  eyebrow = 'Conoce a tus representantes',
+  bodyLine1 = 'Explora el desempeño de Representantes y partidos políticos.',
+  bodyLine2 = 'Transparencia y datos para una ciudadanía informada.',
+  ctaLabel = 'Ver representantes',
+  ctaHref = '/congresistas',
+  ctaLabel2 = 'Ver partidos',
+  ctaHref2 = '/partidos',
+} = Astro.props;
+---
+
+<section class="bg-primary-blue-obs py-20 text-center text-white">
+  <Container>
+    <p class="text-4xl font-bold flex flex-col gap-2">
+      {eyebrow}
+    </p>
+    <p class="my-6 max-w-2xl mx-auto">
+      {bodyLine1}
+      <br />
+      {bodyLine2}
+    </p>
+    <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
+      <Button href={ctaHref} variant="secondary" size="md" class="rounded-lg">
+        {ctaLabel}
+      </Button>
+      <Button href={ctaHref2} variant="secondary" size="md" class="rounded-lg">
+        {ctaLabel2}
+      </Button>
+    </div>
+  </Container>
+</section>

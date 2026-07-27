@@ -16,6 +16,7 @@
   --color-sky-blue-obs: #EFF6FF;
   --color-dark-blue-obs: #0A2847;
   --color-pill-blue-obs: #E6F2FF;
+  --color-accent-blue-obs: #0353A4;
   
   --color-primary-black-obs: #191308;
   --color-primary-gray-obs: #4A5565;
@@ -38,7 +39,7 @@
   --color-green-obs: #00652A;
   --color-light-green-obs: #EAFFF2;
 
-  --color-hero-overlay: rgba(2, 62, 125, 0.8);
+  --color-hero-overlay: rgba(2, 62, 125, 0.91);
 
   --spacing-3.5: 0.875rem;
 }

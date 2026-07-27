@@ -1,0 +1,10 @@
+{
+  "general": 
+    [
+      { "label": "Leyes aprobadas", "value": 284 },
+      { "label": "Proyectos presentados", "value": 2841 },
+      { "label": "Total de mociones", "value": 312 },
+      { "label": "Interpelaciones", "value": 18 },
+      { "label": "Mociones de censura", "value": 7 }
+    ]
+}

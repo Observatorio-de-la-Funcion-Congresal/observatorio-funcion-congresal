@@ -1,6 +1,4 @@
 ---
-import { SIMULATOR_URL } from '../constants';
-
 /**
  * Nav component — horizontal list of navigation links.
  * Accepts an array of { label, href } items via props or uses defaults.
@@ -16,11 +14,10 @@ interface Props {
 }
 
 const defaultItems: NavItem[] = [
-  /* { label: 'Partidos', href: '/partidos' }, */
   { label: 'Bicameralidad', href: '/bicameralidad' },
-  { label: 'Candidatos', href: '/candidatos' },
-  { label: 'Compara', href: '/compara' },
-  { label: 'Simulador de votos', href: SIMULATOR_URL }
+  { label: 'Congresistas', href: '/congresistas' },
+  { label: 'Partidos políticos', href: '/partidos' },
+  { label: 'Actividad del congreso', href: '/actividad-del-congreso' }
 ];
 
 const startWithSlash = (path: string) => path.startsWith('/');

@@ -1,25 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/sections/HeroSecondRound.astro';
-import AlertBanner from '../components/sections/AlertBanner.astro';
-import HowToUse from '../components/sections/HowToUse.astro';
+import Hero from '../components/sections/Hero.astro';
 import Bicameralidad from '../components/sections/Bicameralidad.astro';
-import NotGoing from '../components/sections/NotGoing.astro';
-import SimulatorHome from '../components/sections/SimulatorHome.astro';
-import CongressComposition from '../components/sections/CongressComposition.astro';
+import KnowYouRepresent from '../components/home/KnowYouRepresent.astro';
+import WhatLeft from '../components/home/WhatLeft.astro';
 
 ---
 
 <Layout
-  title="Observatorio de la Función Congresal — Elecciones 2026"
-  description="Antes de votar, conoce cómo trabajaron por ti. Revisa el desempeño de los 130 congresistas peruanos."
+  title="Observatorio de la Función Congresal"
+  description="El Congreso del Perú, explicado para todos."
 >
   <Hero />
-  <AlertBanner />
-  <HowToUse />
-  <NotGoing />
+  <WhatLeft />
   <Bicameralidad />
-  <!-- <EleccionesInfo /> -->
-  <CongressComposition />
-  <SimulatorHome />
+  <KnowYouRepresent />
 </Layout>

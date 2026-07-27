@@ -1,0 +1,49 @@
+---
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button/Button.astro';
+import type { PreviousData } from '../../types/previous';
+
+const URL_DATA = import.meta.env.URL_DATA;
+
+interface Props {
+  year?: string;
+}
+
+const {
+  year = '2021-2026',
+} = Astro.props;
+
+const eyebrow = `Conoce qué nos dejó el Congreso ${year}`
+const body = 'Consulta la composición, leyes aprobadas e hitos del Congreso unicameral anterior. Un registro histórico para entender la transición al nuevo sistema.'
+const ctaLabel = 'Ver historial completo'
+const ctaHref = `/historial-${year}`
+
+const datResult = await fetch(`${URL_DATA}/${year}.json`);
+const congressData: PreviousData = await datResult.json();
+
+
+---
+
+<section class="bg-sky-blue-obs py-20 text-white">
+  <Container class="flex flex-col md:flex-row items-center justify-between gap-8">
+    <div class="w-2/5">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-primary-black-obs mb-4">{eyebrow}</h2>
+      <p class="text-gray-600 text-base max-w-2xl mx-auto mb-6">{body}</p>
+      <Button href={ctaHref} variant="outline" size="md" class="rounded-lg bg-white">
+        {ctaLabel}
+      </Button>
+    </div>
+    <div class="w-3/5">
+      <ul class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {
+          congressData.general.map((item) => (
+            <li class="text-primary-blue-obs rounded-2xl p-4 flex flex-col gap-2 border border-accent-blue-obs">
+              <span class="text-2xl font-bold">{item.value}</span>
+              <span class="text-xs text-primary-gray-obs uppercase font-semibold">{item.label}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </Container>
+</section>

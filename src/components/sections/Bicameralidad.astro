@@ -8,10 +8,20 @@ interface ChamberItem {
   bullets: string[];
 }
 
+interface CharacteristicItem {
+  icon: string;
+  title: string;
+  description: string;
+}
+
 interface Props {
   heading?: string;
   body?: string;
   chambers?: ChamberItem[];
+  characteristics?: {
+    name: string;
+    items: CharacteristicItem[];
+  };
 }
 
 const {
@@ -39,6 +49,26 @@ const {
       ],
     },
   ],
+  characteristics = {
+    name: 'Características de la Bicameralidad',
+    items: [
+      {
+        icon: 'balance_icon.svg',
+        title: 'Mayor Control',
+        description: 'Doble revisión de las leyes para garantizar su calidad',
+      },
+      {
+        icon: 'deal_icon.svg',
+        title: 'Representación Dual',
+        description: 'Regional en Diputados, nacional en Senadores',
+      },
+      {
+        icon: 'shield_icon.svg',
+        title: 'Contrapesos',
+        description: 'Sistema de equilibrios que evita abusos de poder',
+      }
+    ]
+  }
 } = Astro.props;
 ---
 
@@ -67,6 +97,20 @@ const {
           </Card>
         ))
       }
+    </div>
+    <div class="bg-sky-blue-obs rounded-3xl p-8 mt-8">
+      <h3 class="text-2xl text-center font-bold text-gray-900 mb-8 mx-auto">{characteristics.name}</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          characteristics.items.map((item) => (
+            <div class="flex flex-col items-center text-center gap-2">
+              <img src={"/assets/icons/" + item.icon} alt="" class="w-12 h-12" loading="lazy" />
+              <h4 class="text-base font-bold">{item.title}</h4>
+              <p class="text-primary-gray-obs text-sm">{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </Container>
 </section>
