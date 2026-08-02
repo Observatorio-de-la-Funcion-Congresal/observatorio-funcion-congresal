@@ -16,7 +16,7 @@ const {
 const eyebrow = `Conoce qué nos dejó el Congreso ${year}`
 const body = 'Consulta la composición, leyes aprobadas e hitos del Congreso unicameral anterior. Un registro histórico para entender la transición al nuevo sistema.'
 const ctaLabel = 'Ver historial completo'
-const ctaHref = `/historial-${year}`
+const ctaHref = `/congreso-${year}`
 
 const datResult = await fetch(`${URL_DATA}/${year}.json`);
 const congressData: PreviousData = await datResult.json();
