@@ -2,26 +2,159 @@
     {
         "id": 1,
         "name": "Partido Nacional",
-        "picture": "/100x100?i=d9e22222279c1e46487c4dc95a43baa3"
+        "picture": "/100x100?i=d9e22222279c1e46487c4dc95a43baa3",
+        "senator_count": 10,
+        "deputy_count": 20,
+        "leader": "María Elena Rodríguez",
+        "founded_year": "1990",
+        "leader_description": "Empresario y político, fundador del partido",
+        "vice_president": "María Elena Rodríguez",
+        "vice_president_description": "Artista y político",
+        "vice_president_2": "María Elena Rodríguez",
+        "vice_president_2_description": "Sindicalista y político",
+        "metrics": {
+            "attendance": 100,
+            "abstentions": 5,
+            "session_week": 20,
+            "accomplishment": 83,
+            "projects": 11.5,
+            "participation": 50
+        },
+        "distribution": [
+            {
+                "name": "Senadores",
+                "value": 60
+            },
+            {
+                "name": "Diputados",
+                "value": 30
+            },
+            {
+                "name": "Parlamento Andino",
+                "value": 9
+            }
+        ]
     },
     {
         "id": 2,
         "name": "Partido Popular",
-        "picture": "/100x100?bg=FF3C3C&i=4a912bdfb7a2b359421bf69acbd6e221"
+        "picture": "/100x100?bg=FF3C3C&i=4a912bdfb7a2b359421bf69acbd6e221",
+        "senator_count": 8,
+        "deputy_count": 15,
+        "leader": "Juan Pérez",
+        "founded_year": "1985",
+        "leader_description": "Abogado y político, defensor de los derechos humanos",
+        "vice_president": "Ana Gómez",
+        "vice_president_description": "Economista y activista social",
+        "vice_president_2": "Carlos Ruiz",
+        "vice_president_2_description": "Profesor universitario y analista político",
+        "metrics": {
+            "attendance": 92,
+            "abstentions": 10,
+            "session_week": 15,
+            "accomplishment": 78,
+            "projects": 9.8,
+            "participation": 38
+        },
+        "distribution": [
+            {
+                "name": "Senadores",
+                "value": 50
+            },
+            {
+                "name": "Diputados",
+                "value": 40
+            },
+            {
+                "name": "Parlamento Andino",
+                "value": 10
+            }
+        ]
     },
     {
         "id": 3,
         "name": "Alianza Ciudadana",
-        "picture": "/100x100/avatar-2?bg=6392D9&i=aea46cbcaac8b9152022a23280ef4f3e"
+        "picture": "/100x100/avatar-2?bg=6392D9&i=aea46cbcaac8b9152022a23280ef4f3e",
+        "senator_count": 7,
+        "deputy_count": 12,
+        "leader": "Ana Patricia Gonzales",
+        "founded_year": "2002",
+        "leader_description": "Líder regional centrada en políticas educativas y desarrollo local",
+        "vice_president": "Marina Torres",
+        "vice_president_description": "Activista social",
+        "vice_president_2": "Ricardo León",
+        "vice_president_2_description": "Economista",
+        "metrics": {
+            "attendance": 85,
+            "abstentions": 12,
+            "session_week": 12,
+            "accomplishment": 68,
+            "projects": 7.3,
+            "participation": 30
+        },
+        "distribution": [
+            {
+                "name": "Senadores",
+                "value": 40
+            },
+            {
+                "name": "Diputados",
+                "value": 55
+            },
+            {
+                "name": "Parlamento Andino",
+                "value": 5
+            }
+        ]
     },
     {
         "id": 4,
         "name": "Movimiento Ecologista Nacional",
-        "picture": "/100x100?bg=3D27F6&i=5efe8d596efd1dd7c55507ac9aeaef95"
+        "picture": "/100x100?bg=3D27F6&i=5efe8d596efd1dd7c55507ac9aeaef95",
+        "senator_count": 4,
+        "deputy_count": 9,
+        "leader": "Roberto Vílchez",
+        "founded_year": "2010",
+        "leader_description": "Ambientalista y gestor de proyectos sostenibles",
+        "vice_president": "Silvia Ramos",
+        "vice_president_description": "Ingeniera ambiental",
+        "vice_president_2": "Hugo Campos",
+        "vice_president_2_description": "Biólogo conservacionista",
+        "metrics": {
+            "attendance": 88,
+            "abstentions": 7,
+            "session_week": 10,
+            "accomplishment": 72,
+            "projects": 8.1,
+            "participation": 25
+        },
+        "distribution": [
+            {
+                "name": "Senadores",
+                "value": 25
+            },
+            {
+                "name": "Diputados",
+                "value": 60
+            },
+            {
+                "name": "Parlamento Andino",
+                "value": 15
+            }
+        ]
     },
     {
         "id": 5,
         "name": "Renovación Democrática",
-        "picture": "/100x100/abstract?bg=C863D9&i=9e88b00d558613df9b31e2d3782244c3"
+        "picture": "/100x100/abstract?bg=C863D9&i=9e88b00d558613df9b31e2d3782244c3",
+        "senator_count": 6,
+        "deputy_count": 11,
+        "leader": "Lucía Fernández",
+        "founded_year": "1998",
+        "leader_description": "Abogada y defensora de reforma administrativa",
+        "vice_president": "Carlos Méndez",
+        "vice_president_description": "Profesor de derecho",
+        "vice_president_2": "Teresa Molina",
+        "vice_president_2_description": "Gestora pública"
     }
 ]

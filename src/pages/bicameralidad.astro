@@ -5,47 +5,101 @@ import Card from '../components/ui/Card/Card.astro';
 import Container from '../components/ui/Container.astro';
 import Button from '../components/ui/Button/Button.astro';
 import CongressCompositionCharts from '../components/sections/CongressCompositionCharts.astro';
-import { METHODOLOGY_URL } from '../constants';
+import deputyIcon from '../assets/icons/deputy.svg?raw';
+import senatorIcon from '../assets/icons/senator.svg?raw';
+import usersIcon from '../assets/icons/users.svg?raw';
 
-const stats = [
-  { label: 'Total de congresistas', value: '190' },
-  { label: 'Cámara de Diputados', value: '130 puestos' },
-  { label: 'Senado', value: '60 puestos' },
-  { label: 'Parlamentarios Andinos', value: '5' },
-  { label: 'Periodo legislativo', value: '5 años' },
+const advantages = [
+  'Mayor deliberación y calidad legislativa por doble revisión de proyectos.',
+  'Representación diferenciada: regional (Diputados) y nacional (Senado).',
+  'Mejor contrapeso institucional dentro del Legislativo.',
+  'Mayor especialización parlamentaria en dos cámaras distintas.',
+  'Reducción de leyes inconsultas o aprobadas precipitadamente.',
+];
+
+const chambers = [
+  {
+    name: 'Cámara de Diputados',
+    seats: '130',
+    icon: deputyIcon,
+    badgeClass: 'bg-sky-blue-obs',
+    numberClass: 'text-primary-blue-obs',
+    description:
+      'Primera cámara del Parlamento peruano. Representa a la ciudadanía a través de circunscripciones regionales proporcionales a la población.',
+    requirements: 'Edad mínima: 25 años. Elegidos por 5 años con reelección por un período adicional.',
+    functions: [
+      'Presentar e iniciar proyectos de ley',
+      'Aprobar el Presupuesto General de la República',
+      'Fiscalizar al Poder Ejecutivo',
+      'Nombrar al Defensor del Pueblo',
+      'Interpelar ministros',
+    ],
+  },
+  {
+    name: 'Senado de la República',
+    seats: '60',
+    icon: senatorIcon,
+    badgeClass: 'bg-sky-red-obs',
+    numberClass: 'text-red-obs',
+    description:
+      'Cámara revisora. Elegida en circunscripción nacional única, representa la visión de conjunto del país. Ratifica tratados internacionales.',
+    requirements: 'Edad mínima: 45 años. Elegidos por 5 años con reelección por un período adicional.',
+    functions: [
+      'Revisar leyes aprobadas por la Cámara de Diputados',
+      'Ratificar tratados y convenios internacionales',
+      'Aprobar el nombramiento de embajadores',
+      'Autorizar el ingreso de tropas extranjeras',
+      'Juzgar en antejuicio político',
+    ],
+  },
+  {
+    name: 'Parlamento Andino',
+    seats: '5',
+    icon: usersIcon,
+    badgeClass: 'bg-light-green-obs',
+    numberClass: 'text-green-obs',
+    description:
+      'Órgano deliberante de la Comunidad Andina de Naciones. Los representantes peruanos son elegidos en elección directa.',
+    requirements: 'Edad mínima: 25 años. Período de 5 años en circunscripción nacional.',
+    functions: [
+      'Deliberar sobre integración andina',
+      'Proponer normas comunitarias',
+      'Fomentar relaciones parlamentarias regionales',
+      'Promover la participación ciudadana en la CAN',
+      'Impulsar libre circulación de personas y bienes',
+    ],
+  },
 ];
 
 const timelineEvents = [
   {
-    year: '1992–1993',
-    title: 'Fujimori eliminó el Senado',
-    description:
-      'Tras el autogolpe del 5 de abril de 1992, se disolvió el Congreso bicameral y la Constitución de 1993 instauró un parlamento unicameral de 120 escaños (luego ampliado a 130).',
+    year: '1823',
+    description: 'Primera Constitución peruana: sistema bicameral con Senado y Cámara de Diputados.',
+  },
+  {
+    year: '1993',
+    description: 'La Constitución de 1993 suprime el Senado y establece el Congreso unicameral de 120 escaños.',
+  },
+  {
+    year: '2002',
+    description: 'Primer intento de restaurar el bicameralismo. Reforma no prospera por falta de consenso.',
   },
   {
     year: '2018',
-    title: 'Primer referéndum: No a la bicameralidad',
-    description:
-      'La ciudadanía rechazó (81%) la propuesta de retorno al bicameralismo presentada por el Congreso de ese entonces.',
+    description: 'Referéndum: ciudadanos rechazan la bicameralidad en consulta popular impulsada por PPK.',
   },
   {
-    year: '2023',
-    title: 'Ley de reforma constitucional aprobada',
-    description:
-      'El Congreso aprobó la ley que restaura el Senado, a aplicarse desde las elecciones de 2026, sin referéndum ciudadano.',
+    year: '2022',
+    description: 'Nueva propuesta aprobada por el Congreso e incluida en reforma constitucional.',
   },
   {
-    year: 'Abril 2026',
-    title: 'Elecciones con nuevo sistema',
-    description:
-      'Por primera vez desde 1992, los peruanos elegirán tanto Diputados (130) como Senadores (60), más el Presidente y Parlamentarios Andinos.',
-    isCurrent: true,
+    year: '2024',
+    description: 'Referéndum de ratificación: 54.2% aprueba el retorno al sistema bicameral.',
   },
-];
-
-const exploreLinks = [
-  // { label: 'Elecciones 2026', href: '/elecciones' },
-  { label: 'Metodología y fuentes', href: METHODOLOGY_URL },
+  {
+    year: '2026',
+    description: 'Primeras elecciones bajo el nuevo sistema. Instalación del Congreso bicameral el 26 de julio.',
+  },
 ];
 ---
 
@@ -54,95 +108,116 @@ const exploreLinks = [
   description="Perú retorna al sistema de dos cámaras en 2026. Aquí te explicamos qué cambia y por qué importa."
 >
   <InternalPageHero
-    title="¿Qué es la bicameralidad?"
-    subtitle="Perú retorna al sistema de dos cámaras en 2026. Aquí te explicamos qué cambia y por qué importa."
+    title="El nuevo sistema bicameral del Perú"
+    subtitle="Tras más de 30 años de sistema unicameral, el Perú retorna a la tradición parlamentaria bicameral con la instalación del Congreso 2026-2031."
   />
 
-  <section class="bg-dark-white-obs py-12 md:py-14">
+  <!-- ¿Qué es la bicameralidad? -->
+  <section class="bg-white py-12 md:py-16">
     <Container>
-      <div class="flex flex-col lg:flex-row gap-5 items-start">
-        <div class="flex flex-col gap-6 flex-1">
-          <Card>
-            <h2 class="text-2xl font-bold mb-4">
-              ¿Qué es un sistema bicameral?
-            </h2>
-            <p class="leading-6 mb-4 text-primary-gray-obs">
-              Un sistema bicameral es aquel en el que el parlamento está dividido en
-              <span class="font-bold">dos cámaras</span> con funciones diferenciadas:
-              generalmente una cámara "baja" o de representación popular (Diputados) y una cámara
-              "alta" de deliberación (Senado).
-            </p>
-            <p class="leading-6 text-primary-gray-obs">
-              El objetivo del bicameralismo es crear un sistema de
-              <span class="font-bold">doble revisión legislativa</span>: las leyes
-              que aprueba una cámara deben pasar por la revisión de la otra, lo que reduce el riesgo
-              de aprobaciones apresuradas y busca mayor calidad en las normas.
-            </p>
-          </Card>
-
-          <Card>
-            <h2 class="text-xl font-bold mb-4">
-              Perú: de unicameral a bicameral
-            </h2>
-            <ol class="relative flex flex-col gap-5">
-              {timelineEvents.map((event) => (
-                <li class="flex gap-4">
-                  <div class="flex flex-col items-center">
-                    <span
-                      class={[
-                        'w-4 h-4 rounded-full mt-1 shrink-0',
-                        event.isCurrent
-                          ? 'bg-red-obs'
-                          : 'bg-primary-blue-obs',
-                      ].join(' ')}
-                    />
-                    <div class="w-px flex-1 bg-light-gray-obs mt-1" />
-                  </div>
-                  <div class="pb-2">
-                    <p class="text-xs font-semibold text-primary-gray-obs mb-1">{event.year}</p>
-                    <p class="text-sm font-bold mb-1">{event.title}</p>
-                    <p class="text-sm text-primary-gray-obs leading-5">{event.description}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </Card>
-
-          <Card>
-            <h2 class="text-xl font-bold mb-6">Nueva composición del Congreso</h2>
-            <CongressCompositionCharts />
-          </Card>
-
-          <Card>
-            <h2 class="text-2xl font-bold mb-4">
-              ¿Por qué es relevante para el OFC?
-            </h2>
-            <p class="text-primary-gray-obs leading-6 mb-4">
-              Con la bicameralidad, el trabajo congresal se dividirá entre dos cámaras con roles
-              distintos. El Observatorio evolucionará para dar seguimiento a ambas cámaras: Diputados
-              y Senado, sus votaciones, sus proyectos y su asistencia por separado.
-            </p>
-            <Button href="/candidatos" variant="primary" size="lg">
-              Ver candidatos
-            </Button>
-          </Card>
+      <div class="flex flex-col lg:flex-row gap-10 lg:gap-12">
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold mb-4">¿Qué es la bicameralidad?</h2>
+          <p class="leading-6 mb-4 text-primary-gray-obs">
+            Un sistema bicameral es aquel en el que el Poder Legislativo está dividido en dos cámaras
+            o asambleas: una cámara baja (Cámara de Diputados) y una cámara alta (Senado). Cada cámara
+            tiene funciones específicas y complementarias.
+          </p>
+          <p class="leading-6 text-primary-gray-obs">
+            La bicameralidad busca mejorar la calidad de las leyes mediante la doble revisión,
+            representar de manera diferenciada a la ciudadanía, y generar un sistema de contrapesos
+            dentro del propio Poder Legislativo.
+          </p>
         </div>
 
-        <aside class="w-full lg:w-80 shrink-0 flex flex-col gap-5">
-          <Card padding={false} class="p-6">
-            <h3 class="text-base font-bold mb-4">En números</h3>
-            <ul class="flex flex-col divide-y divide-light-gray-obs">
-              {stats.map((stat) => (
-                <li class="flex justify-between items-center py-3 text-sm">
-                  <span class="text-primary-gray-obs">{stat.label}</span>
-                  <span class="font-semibold text-right">{stat.value}</span>
-                </li>
-              ))}
-            </ul>
+        <div class="bg-lighter-gray-obs border border-solid border-lighter-border-gray-obs p-8 w-xl">
+          <h3 class="text-sm font-bold tracking-wide mb-5">
+            Ventajas del sistema bicameral
+          </h3>
+          <ol class="flex flex-col gap-4">
+            {advantages.map((advantage, index) => (
+              <li class="flex items-center gap-3">
+                <span
+                  class="w-6 h-6 rounded-full bg-light-blue-obs text-primary-blue-obs text-xs font-bold flex items-center justify-center shrink-0"
+                >
+                  {index + 1}
+                </span>
+                <span class="text-sm text-primary-gray-obs leading-5">{advantage}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Las tres instancias parlamentarias -->
+  <section class="bg-sky-blue-obs py-12 md:py-16">
+    <Container>
+      <h2 class="text-2xl font-bold mb-8">Las tres instancias parlamentarias</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {chambers.map((chamber) => (
+          <Card class="flex flex-col gap-4">
+            <div class="flex items-center justify-between">
+              <span class={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${chamber.badgeClass}`}>
+                <span class="w-5 h-5 svg-full" set:html={chamber.icon} />
+              </span>
+              <span class={`text-3xl font-inter font-bold ${chamber.numberClass}`}>{chamber.seats}</span>
+            </div>
+
+            <div>
+              <h3 class="font-bold mb-2">{chamber.name}</h3>
+              <p class="text-regular-gray-obs leading-5 mb-3">{chamber.description}</p>
+              <p class="text-sm font-inter italic text-gray-icon-obs">{chamber.requirements}</p>
+            </div>
+
+            <div>
+              <p class="text-sm font-bold text-primary-gray-obs uppercase tracking-wide mb-2">
+                Funciones principales
+              </p>
+              <ul class="flex flex-col gap-1.5 list-disc pl-4">
+                {chamber.functions.map((fn) => (
+                  <li class="text-sm text-primary-gray-obs leading-5">{fn}</li>
+                ))}
+              </ul>
+            </div>
           </Card>
+        ))}
+      </div>
+    </Container>
+  </section>
 
+  <!-- Nueva composición -->
+  <section class="bg-white py-12 md:py-16">
+    <Container>
+      <h2 class="text-2xl font-bold text-center mb-8">Nueva composición</h2>
+      <CongressCompositionCharts />
+    </Container>
+  </section>
 
-        </aside>
+  <!-- Cronología del bicameralismo -->
+  <section class="bg-primary-blue-obs py-12 md:py-16">
+    <Container>
+      <h2 class="text-2xl font-bold text-white mb-8">Cronología del bicameralismo en el Perú</h2>
+      <ol class="flex flex-col divide-y divide-white/10">
+        {timelineEvents.map((event) => (
+          <li class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6 py-4 font-inter">
+            <span class="text-white/80 font-bold w-20 shrink-0">{event.year}</span>
+            <span class="text-white/70 text-sm leading-6">{event.description}</span>
+          </li>
+        ))}
+      </ol>
+    </Container>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-dark-white-obs py-8">
+    <Container>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <p class="font-medium">Explora los representantes elegidos bajo el nuevo sistema bicameral.</p>
+        <Button href="/candidatos" variant="outline" size="md" class="rounded-lg">
+          Ver representantes
+        </Button>
       </div>
     </Container>
   </section>

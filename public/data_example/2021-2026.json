@@ -6,5 +6,14 @@
       { "label": "Total de mociones", "value": 312 },
       { "label": "Interpelaciones", "value": 18 },
       { "label": "Mociones de censura", "value": 7 }
+    ],
+  "composition":
+    [
+      { "party": "Perú Libre", "color": "#B91C2B", "seats": 37 },
+      { "party": "Fuerza Popular", "color": "#E0433A", "seats": 24 },
+      { "party": "Alianza para el Progreso", "color": "#1E8E5A", "seats": 15 },
+      { "party": "Renovación Popular", "color": "#4FA5D9", "seats": 12 },
+      { "party": "Acción Popular", "color": "#1E5FAD", "seats": 18 },
+      { "party": "Otros", "color": "#8A93A2", "seats": 32 }
     ]
 }

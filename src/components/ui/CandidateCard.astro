@@ -1,4 +1,6 @@
 ---
+import { HAS_CONGRESISTA_ACTIVITY_DATA } from '../../constants';
+
 interface Props {
   id: number;
   picture: string;
@@ -7,6 +9,8 @@ interface Props {
   party: string;
   partyId: number;
   attendance: number;
+  abstentions?: number;
+  commissionsCount?: number;
   projects: number;
   applyTo: string;
   pictureBase: string;
@@ -14,9 +18,26 @@ interface Props {
   partyPictureBase: string;
   shadow?: boolean;
   motions?: number;
+  hasData?: boolean;
 }
 
-const { id, picture, name, region, party, attendance, projects, applyTo, pictureBase, partyPicture, partyPictureBase, shadow = true, motions } = Astro.props;
+const {
+  id,
+  picture,
+  name,
+  region,
+  party,
+  attendance,
+  abstentions,
+  commissionsCount,
+  projects,
+  applyTo,
+  pictureBase,
+  partyPicture,
+  partyPictureBase,
+  shadow = true,
+  hasData = HAS_CONGRESISTA_ACTIVITY_DATA,
+} = Astro.props;
 
 const photoUrl = `${pictureBase}${picture}`;
 const partyLogoUrl = `${partyPictureBase}${partyPicture}`;
@@ -66,38 +87,35 @@ const partyLogoUrl = `${partyPictureBase}${partyPicture}`;
   </div>
 
   <!-- Stats -->
-  <div class="grid grid-cols-2 gap-3">
-    <div class="bg-sky-blue-obs rounded-xl p-3">
-      <p class="text-xs text-primary-blue-obs mb-1 font-medium">Mociones</p>
-      <p class="text-base font-bold text-primary-blue-obs">{motions}</p>
-    </div>
-    <div class="bg-yellow-obs rounded-xl p-3">
-      <p class="text-xs text-dark-yellow-obs mb-1 font-medium">Proyectos</p>
-      <p class="text-base font-bold text-dark-yellow-obs">{projects}</p>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <div class="flex items-center justify-between">
-    {
-      applyTo === 'Senador' ? (
-        <span class="text-xs bg-light-gray-obs py-1 px-2 text-primary-gray-obs rounded-2xl">
-          Se postula a {applyTo}
-        </span>
-      ) : (
-        <span class="text-xs bg-sky-blue-obs py-1 px-2 text-primary-blue-obs rounded-2xl">
-          Se postula a {applyTo}
-        </span>    
-      )
-    }
-    <a
-      href={`/candidato/${id}`}
-      class="flex items-center gap-1 text-xs text-dark-blue-obs hover:underline"
-    >
-      Ver perfil
-      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M5 12h14M12 5l7 7-7 7"/>
-      </svg>
-    </a>
-  </div>
+  {
+    hasData ? (
+      <div class="flex flex-col gap-3">
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-sky-blue-obs rounded-xl p-3">
+            <p class="text-xs text-primary-blue-obs mb-1 font-medium">Asistencia</p>
+            <p class="text-base font-bold text-primary-blue-obs">{attendance}%</p>
+          </div>
+          <div class="bg-red-100 rounded-xl p-3">
+            <p class="text-xs text-red-600 mb-1 font-medium">Abstenciones</p>
+            <p class="text-base font-bold text-red-600">{abstentions}%</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between text-xs">
+          <span class={`flex items-center gap-1 ${(commissionsCount ?? 0) > 0 ? 'text-green-600' : 'text-primary-gray-obs'}`}>
+            {(commissionsCount ?? 0) > 0 && (
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            )}
+            En comisiones
+          </span>
+          <span class="text-primary-gray-obs">{projects} proyectos</span>
+        </div>
+      </div>
+    ) : (
+      <div class="bg-light-gray-obs rounded-xl p-3 text-center">
+        <p class="text-xs text-primary-gray-obs">Datos de actividad no disponibles aún</p>
+      </div>
+    )
+  }
 </article>

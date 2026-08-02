@@ -6,6 +6,7 @@ import CandidateCard from '../components/ui/CandidateCard.astro';
 import Select from '../components/ui/Input/Select.astro';
 import Input from '../components/ui/Input/Input.astro';
 import Button from '../components/ui/Button/Button.astro';
+import { HAS_CONGRESISTA_ACTIVITY_DATA } from '../constants';
 
 const URL_DATA = import.meta.env.URL_DATA;
 const URL_CANDIDATE_PICTURE = import.meta.env.URL_CANDIDATE_PICTURE;
@@ -20,6 +21,8 @@ interface Candidate {
   party: string;
   partyId: number;
   attendance: number;
+  abstentions: number;
+  commissions_count: number;
   projects: number;
   applyTo: string;
   motions: number;
@@ -73,7 +76,7 @@ const PAGE_SIZE = 9;
   description="Conoce a tus candidatos, su desempeño y compromiso con el país."
 >
   <InternalPageHero
-    title="Candidatos"
+    title="Congresistas"
     subtitle="Conoce a tus candidatos, su desempeño y compromiso con el país"
   />
 
@@ -144,12 +147,15 @@ const PAGE_SIZE = 9;
               party={candidate.party}
               partyId={candidate.partyId}
               attendance={candidate.attendance}
+              abstentions={candidate.abstentions}
+              commissionsCount={candidate.commissions_count}
               motions={candidate.motions}
               projects={candidate.projects}
               applyTo={candidate.applyTo}
               pictureBase={URL_CANDIDATE_PICTURE}
               partyPicture={partyPictureMap.get(candidate.partyId)}
               partyPictureBase={URL_PARTY_PICTURE}
+              hasData={HAS_CONGRESISTA_ACTIVITY_DATA}
             />
           </div>
         ))}
