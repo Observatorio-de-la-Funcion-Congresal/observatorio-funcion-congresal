@@ -7,6 +7,10 @@ import Select from '../components/ui/Input/Select.astro';
 import Input from '../components/ui/Input/Input.astro';
 import Button from '../components/ui/Button/Button.astro';
 import { HAS_CONGRESISTA_ACTIVITY_DATA } from '../constants';
+import Card from '../components/ui/Card/Card.astro';
+import diputadosIcon from '../assets/icons/deputy.svg?raw';
+import senadoIcon from '../assets/icons/senator.svg?raw';
+import partyStatIcon from '../assets/icons/party_stat.svg?raw';
 
 const URL_DATA = import.meta.env.URL_DATA;
 const URL_CANDIDATE_PICTURE = import.meta.env.URL_CANDIDATE_PICTURE;
@@ -69,6 +73,17 @@ const regionOptions = regions.map((r) => ({ label: r.nombre_ubigeo, value: r.nom
 const applyToSelectOptions = applyToOptions.map((a) => ({ label: a, value: a }));
 
 const PAGE_SIZE = 9;
+
+const deputyCount = candidates.filter((c) => ['diputado', 'diputada'].includes(c.applyTo.toLowerCase())).length;
+const senatorCount = candidates.filter((c) => ['senador', 'senadora'].includes(c.applyTo.toLowerCase())).length;
+
+const headerStats = [
+  { icon: partyStatIcon, count: candidates.length, label: 'Total' },
+  { icon: diputadosIcon, count: deputyCount, label: 'Diputados' },
+  { icon: senadoIcon, count: senatorCount, label: 'Senadores' },
+];
+
+
 ---
 
 <Layout
@@ -83,45 +98,61 @@ const PAGE_SIZE = 9;
   <section class="py-10 bg-gray-50 min-h-[60vh]">
     <Container>
 
-      <!-- Search -->
-      <div class="mb-5">
-        <Input
-          type="search"
-          id="candidate-search"
-          name="candidate-search"
-          placeholder="Buscar por nombre"
-          class="w-full"
-          aria-label="Buscar candidato"
-        />
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-inter mb-8">
+        {headerStats.map((stat) => (
+          <Card roundedClass="rounded-2xl" class="p-6 flex items-center gap-4" padding={false}>
+            <div class="w-8 h-8 svg-full text-primary-blue-obs">
+              <Fragment set:html={stat.icon} />
+            </div>
+            <div>
+              <p class="text-3xl font-bold text-primary-black-obs leading-none">{stat.count}</p>
+              <p class="text-sm text-primary-gray-obs mt-1">{stat.label}</p>
+            </div>
+          </Card>
+        ))}
       </div>
 
-      <!-- Filters -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-        <Select
-          id="filter-party"
-          name="filter-party"
-          placeholder={TEXT_PLACEHOLDER}
-          label="Partido"
-          options={partyOptions}
-          aria-label="Filtrar por partido"
-        />
-        <Select
-          id="filter-apply-to"
-          name="filter-apply-to"
-          placeholder={TEXT_PLACEHOLDER}
-          label="Postula a"
-          options={applyToSelectOptions}
-          aria-label="Filtrar por cargo al que postula"
-        />
-        <Select
-          id="filter-region"
-          name="filter-region"
-          placeholder={TEXT_PLACEHOLDER}
-          label="Región"
-          options={regionOptions}
-          aria-label="Filtrar por región"
-        />
-      </div>
+      <Card padding={false} class="p-6 mb-8">
+        <!-- Search -->
+        <div class="mb-5">
+          <Input
+            type="search"
+            id="candidate-search"
+            name="candidate-search"
+            placeholder="Buscar por nombre"
+            class="w-full"
+            aria-label="Buscar candidato"
+          />
+        </div>
+  
+        <!-- Filters -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <Select
+            id="filter-party"
+            name="filter-party"
+            placeholder={TEXT_PLACEHOLDER}
+            label="Partido"
+            options={partyOptions}
+            aria-label="Filtrar por partido"
+          />
+          <Select
+            id="filter-apply-to"
+            name="filter-apply-to"
+            placeholder={TEXT_PLACEHOLDER}
+            label="Cargo"
+            options={applyToSelectOptions}
+            aria-label="Filtrar por cargo"
+          />
+          <Select
+            id="filter-region"
+            name="filter-region"
+            placeholder={TEXT_PLACEHOLDER}
+            label="Región"
+            options={regionOptions}
+            aria-label="Filtrar por región"
+          />
+        </div>
+      </Card>
 
       <!-- Empty state -->
       <p id="candidates-empty" class="hidden text-center text-primary-gray-obs py-12">
