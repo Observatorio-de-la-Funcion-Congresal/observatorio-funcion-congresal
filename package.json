@@ -10,16 +10,16 @@
   },
   "dependencies": {
     "@astrojs/vue": "^7.0.2",
-    "@fontsource/inter": "^5.2.8",
-    "@fontsource/poppins": "^5.2.7",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/poppins": "^5.3.0",
     "@litejs/xlsx": "26.4.0",
-    "@tailwindcss/vite": "^4.2.1",
+    "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.2.4",
     "chart.js": "^4.5.1",
     "free-astro-components": "^1.3.0",
-    "tailwindcss": "^4.2.1",
-    "vue": "^3.5.30",
-    "vue-chartjs": "^5.3.3"
+    "tailwindcss": "^4.3.3",
+    "vue": "^3.5.41",
+    "vue-chartjs": "^5.3.4"
   },
   "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be"
 }
