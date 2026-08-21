@@ -78,14 +78,14 @@ const { candidates, pictureBase, partyPictureBase, partyPicture, initialCount = 
       )}
     </>
   )}
-</div>
+</Card>
 
 <script>
   const btn = document.getElementById('load-more-candidates-btn');
   const wrapper = document.getElementById('load-more-candidates-wrapper');
 
   btn?.addEventListener('click', () => {
-    const items = document.querySelectorAll<HTMLElement>('.candidate-item.hidden');
+    const items = document.querySelectorAll('.candidate-item.hidden');
     items.forEach((item) => item.classList.remove('hidden'));
     wrapper?.classList.add('hidden');
   });
