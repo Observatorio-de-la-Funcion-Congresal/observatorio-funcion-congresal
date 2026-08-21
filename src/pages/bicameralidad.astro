@@ -7,7 +7,7 @@ import Button from '../components/ui/Button/Button.astro';
 import CongressCompositionCharts from '../components/sections/CongressCompositionCharts.astro';
 import deputyIcon from '../assets/icons/deputy.svg?raw';
 import senatorIcon from '../assets/icons/senator.svg?raw';
-import usersIcon from '../assets/icons/users.svg?raw';
+import browserIcon from '../assets/icons/browser.svg?raw';
 
 const advantages = [
   'Mayor deliberación y calidad legislativa por doble revisión de proyectos.',
@@ -55,7 +55,7 @@ const chambers = [
   {
     name: 'Parlamento Andino',
     seats: '5',
-    icon: usersIcon,
+    icon: browserIcon,
     badgeClass: 'bg-light-green-obs',
     numberClass: 'text-green-obs',
     description:
@@ -130,7 +130,7 @@ const timelineEvents = [
           </p>
         </div>
 
-        <div class="bg-lighter-gray-obs border border-solid border-lighter-border-gray-obs p-8 w-xl">
+        <div class="bg-lighter-gray-obs border border-solid border-lighter-border-gray-obs p-8 md:w-xl w-full">
           <h3 class="text-sm font-bold tracking-wide mb-5">
             Ventajas del sistema bicameral
           </h3>

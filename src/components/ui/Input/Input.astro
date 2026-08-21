@@ -48,12 +48,26 @@ const inputClasses = ['ac-input', statusClasses, className]
       )
     }
     <input
+      data-input
       class={inputClasses}
       {...props}
     />
     {
       icon && type !== 'password' && (
         <Icon icon={icon} class="ac-input-icon ac-input-icon--right" />
+      )
+    }
+    {
+      type !== 'password' && (
+        <button
+          data-input-clear
+          type="button"
+          class="ac-input-clear-btn"
+          hidden
+          aria-label="Borrar contenido"
+        >
+          <Icon icon="clear" />
+        </button>
       )
     }
     {
@@ -109,8 +123,17 @@ const inputClasses = ['ac-input', statusClasses, className]
     }
 
     &:has(.ac-input-icon--right) .ac-input,
-    &:has(.ac-input-password-btn) .ac-input {
+    &:has(.ac-input-password-btn) .ac-input,
+    &:has(.ac-input-clear-btn:not([hidden])) .ac-input {
       padding-right: var(--ac-spacing-12);
+    }
+
+    &:has(.ac-input-icon--right):has(.ac-input-clear-btn:not([hidden])) .ac-input {
+      padding-right: calc(var(--ac-spacing-12) + var(--ac-spacing-6));
+    }
+
+    &:has(.ac-input-icon--right):has(.ac-input-clear-btn:not([hidden])) .ac-input-clear-btn {
+      right: calc(var(--ac-spacing-4) + var(--ac-spacing-6));
     }
   }
 
@@ -217,11 +240,35 @@ const inputClasses = ['ac-input', statusClasses, className]
       display: none;
     }
   }
+
+  .ac-input-clear-btn {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    color: rgb(var(--ac-color-400));
+    cursor: pointer;
+    height: var(--ac-spacing-6);
+    padding: 0;
+    position: absolute;
+    right: var(--ac-spacing-4);
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--ac-spacing-6);
+    transition: all 0.3s ease-in-out;
+
+    &[hidden] {
+      display: none;
+    }
+
+    &:hover {
+      color: var(--ac-primary-hover);
+    }
+  }
 </style>
 
 <script>
   import { DOMLoaded } from './utils';
-  import { toggleInputPassword } from './input'
+  import { clearInput, toggleInputPassword, updateClearButtonVisibility } from './input'
 
   DOMLoaded(() => {
     const inputPasswordButtons = document.querySelectorAll(
@@ -236,6 +283,26 @@ const inputClasses = ['ac-input', statusClasses, className]
           ?.querySelector('[data-input-password]') as HTMLInputElement
 
         toggleInputPassword(button, input)
+      })
+    })
+
+    const clearButtons = document.querySelectorAll(
+      '[data-input-clear]'
+    ) as NodeListOf<HTMLButtonElement>
+
+    clearButtons.forEach((button) => {
+      const input = button
+        ?.closest('.ac-input-wrapper')
+        ?.querySelector('[data-input]') as HTMLInputElement | null
+
+      if (!input) return
+
+      updateClearButtonVisibility(input, button)
+      input.addEventListener('input', () => updateClearButtonVisibility(input, button))
+
+      button.addEventListener('click', (event) => {
+        event.preventDefault()
+        clearInput(input, button)
       })
     })
   })

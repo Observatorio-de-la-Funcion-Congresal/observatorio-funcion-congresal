@@ -75,6 +75,16 @@ const selectClasses = ['ac-select', statusClasses, className]
 
     <Icon icon="chevron-down" class="ac-select-icon" />
 
+    <button
+      data-select-clear
+      type="button"
+      class="ac-select-clear"
+      hidden={!hasSelectedOption}
+      aria-label="Limpiar selección"
+    >
+      <Icon icon="clear" />
+    </button>
+
     <div data-select-popover class="ac-select-popover">
       <div>
         <ul class="ac-select-list">
@@ -257,10 +267,17 @@ const selectClasses = ['ac-select', statusClasses, className]
     cursor: pointer;
     color: rgb(var(--ac-color-400));
     font-size: var(--ac-text-base);
+    height: var(--ac-spacing-6);
+    width: var(--ac-spacing-6);
     transition: color 0.3s ease-in-out;
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
   }
 
-  .ac-select-clear.hidden {
+  .ac-select-clear[hidden] {
     display: none;
   }
 
@@ -332,6 +349,7 @@ const selectClasses = ['ac-select', statusClasses, className]
 <script>
   import { DOMLoaded } from './utils';
   import {
+    clearSelect,
     closeSelect,
     openSelect,
     selectOption,
@@ -351,6 +369,9 @@ const selectClasses = ['ac-select', statusClasses, className]
       const options = popover?.querySelectorAll(
         '[data-select-option]'
       ) as NodeListOf<HTMLButtonElement>;
+      const clearButton = selectWrapper?.querySelector(
+        '[data-select-clear]'
+      ) as HTMLButtonElement | null;
 
       let isOpen = false;
 
@@ -393,13 +414,21 @@ const selectClasses = ['ac-select', statusClasses, className]
 
       options?.forEach((option, index) => {
         option.addEventListener('click', () => {
-          selectOption(index, options, option, select);
+          selectOption(index, options, option, select, clearButton);
           closeSelect(options, select);
           setIsOpen(false);
 
           const changeEvent = new Event('change', { bubbles: true });
           select.dispatchEvent(changeEvent);
         });
+      });
+
+      clearButton?.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        clearSelect(select, options, clearButton);
+        closeSelect(options, select);
+        setIsOpen(false);
       });
     });
   });

@@ -26,15 +26,15 @@ const congressData: PreviousData = await datResult.json();
 
 <section class="bg-sky-blue-obs py-20 text-white">
   <Container class="flex flex-col md:flex-row items-center justify-between gap-8">
-    <div class="w-2/5">
+    <div class="md:w-2/5">
       <h2 class="text-3xl md:text-4xl font-extrabold text-primary-black-obs mb-4">{eyebrow}</h2>
       <p class="text-gray-600 text-base max-w-2xl mx-auto mb-6">{body}</p>
       <Button href={ctaHref} variant="outline" size="md" class="rounded-lg bg-white">
         {ctaLabel}
       </Button>
     </div>
-    <div class="w-3/5">
-      <ul class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="md:w-3/5 w-full">
+      <ul class="grid grid-cols-2 md:grid-cols-3 gap-6">
         {
           congressData.general.map((item) => (
             <li class="text-primary-blue-obs rounded-2xl p-4 flex flex-col gap-2 border border-accent-blue-obs">

@@ -40,6 +40,7 @@ export const selectOption = (
   options: NodeListOf<HTMLButtonElement>,
   option: Element,
   select: HTMLSelectElement,
+  clearButton?: HTMLButtonElement | null,
 ) => {
   select.selectedIndex = index + 1
   select.setAttribute('data-selected', 'true')
@@ -47,6 +48,21 @@ export const selectOption = (
     option.setAttribute('aria-selected', 'false')
   })
   option.setAttribute('aria-selected', 'true')
+  clearButton?.removeAttribute('hidden')
+}
+
+export const clearSelect = (
+  select: HTMLSelectElement,
+  options: NodeListOf<HTMLButtonElement>,
+  clearButton?: HTMLButtonElement | null,
+) => {
+  select.selectedIndex = 0
+  select.setAttribute('data-selected', 'false')
+  options.forEach((option: Element) => {
+    option.setAttribute('aria-selected', 'false')
+  })
+  clearButton?.setAttribute('hidden', 'hidden')
+  select.dispatchEvent(new Event('change', { bubbles: true }))
 }
 
 export const handleDocumentMousedown = (

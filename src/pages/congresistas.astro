@@ -78,7 +78,7 @@ const deputyCount = candidates.filter((c) => ['diputado', 'diputada'].includes(c
 const senatorCount = candidates.filter((c) => ['senador', 'senadora'].includes(c.applyTo.toLowerCase())).length;
 
 const headerStats = [
-  { icon: partyStatIcon, count: candidates.length, label: 'Total' },
+  { count: candidates.length, label: 'Total' },
   { icon: diputadosIcon, count: deputyCount, label: 'Diputados' },
   { icon: senadoIcon, count: senatorCount, label: 'Senadores' },
 ];
@@ -101,9 +101,13 @@ const headerStats = [
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-inter mb-8">
         {headerStats.map((stat) => (
           <Card roundedClass="rounded-2xl" class="p-6 flex items-center gap-4" padding={false}>
-            <div class="w-8 h-8 svg-full text-primary-blue-obs">
-              <Fragment set:html={stat.icon} />
-            </div>
+            {
+              stat.icon && (
+                <div class="w-8 h-8 svg-full text-primary-blue-obs">
+                  <Fragment set:html={stat.icon} />
+                </div>
+              )
+            }
             <div>
               <p class="text-3xl font-bold text-primary-black-obs leading-none">{stat.count}</p>
               <p class="text-sm text-primary-gray-obs mt-1">{stat.label}</p>
