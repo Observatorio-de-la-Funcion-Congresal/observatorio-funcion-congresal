@@ -296,6 +296,26 @@ const headerStats = [
   applyToSelect?.addEventListener('change', applyFilters);
   regionSelect?.addEventListener('change', applyFilters);
 
+  // Prefill filters from URL params (e.g. links from a party's "Ver lista de diputados/senadores")
+  function applySelectFromParam(select: HTMLSelectElement | null, value: string | null) {
+    if (!select || !value) return;
+    const optionIndex = Array.from(select.options).findIndex((opt) => opt.value === value);
+    if (optionIndex === -1) return;
+
+    select.selectedIndex = optionIndex;
+    select.setAttribute('data-selected', 'true');
+
+    const wrapper = select.closest('[data-select-wrapper]');
+    const popoverOptions = wrapper?.querySelectorAll('[data-select-option]');
+    popoverOptions?.[optionIndex - 1]?.setAttribute('aria-selected', 'true');
+    wrapper?.querySelector('[data-select-clear]')?.removeAttribute('hidden');
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  applySelectFromParam(partySelect, urlParams.get('party'));
+  applySelectFromParam(applyToSelect, urlParams.get('cargo'));
+  applyFilters();
+
   loadMoreBtn?.addEventListener('click', () => {
     const items = getAllItems();
     const newVisible = currentVisible + PAGE_SIZE;

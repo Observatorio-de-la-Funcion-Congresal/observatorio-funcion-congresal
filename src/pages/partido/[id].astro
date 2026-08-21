@@ -3,12 +3,13 @@ import Layout from '../../layouts/Layout.astro';
 import Container from '../../components/ui/Container.astro';
 import PartyHero from '../../components/sections/PartyHero.astro';
 import PartyStats from '../../components/party/PartyStats.astro';
-import PartyTicket from '../../components/party/PartyTicket.astro';
+import PartyLeadership from '../../components/party/PartyLeadership.astro';
 import PartyAnalysis from '../../components/party/PartyAnalysis.astro';
 import PartyMetrics from '../../components/party/PartyMetrics.astro';
 import PartyInfo from '../../components/party/PartyInfo.astro';
 import KnowMoreCTA from '../../components/ui/KnowMoreCTA.astro';
 import PartyCandidates from '../../components/party/PartyCandidates.astro';
+import { HAS_CONGRESISTA_ACTIVITY_DATA } from '../../constants';
 
 const URL_DATA = import.meta.env.URL_DATA;
 const URL_PARTY_PICTURE = import.meta.env.URL_PARTY_PICTURE;
@@ -43,6 +44,8 @@ interface Candidate {
   party: string;
   partyId: number;
   attendance: number;
+  abstentions?: number;
+  commissions_count?: number;
   projects: number;
   applyTo: string;
 }
@@ -80,9 +83,7 @@ const defaultDistribution = [
   { name: 'Diputados', value: Math.round((party.deputy_count / total) * 100) || 0 },
 ];
 
-// Flag explícito: solo mostramos Análisis/Métricas cuando el backend envía
-// datos reales de desempeño. Evita confundir "sin datos" con un desempeño real de 0%.
-const hasPerformanceData = party.metrics != null && party.distribution != null;
+const hasPerformanceData = HAS_CONGRESISTA_ACTIVITY_DATA;
 
 const metrics = party.metrics ?? defaultMetrics;
 const distribution = party.distribution ?? defaultDistribution;
@@ -111,24 +112,13 @@ const distribution = party.distribution ?? defaultDistribution;
         <PartyStats
           deputy_count={party.deputy_count}
           senator_count={party.senator_count}
+          partyName={party.name}
         />
       </div>
       <div class="flex flex-col lg:flex-row gap-6 items-start">
 
         <!-- Main column -->
         <div class="flex-1 min-w-0 flex flex-col gap-6">
-
-          {(party.leader || party.vice_president) && (
-            <PartyTicket
-              president={{ name: party.leader, description: party.leader_description }}
-              vicePresident={party.vice_president
-                ? { name: party.vice_president, description: party.vice_president_description }
-                : undefined}
-              vicePresident2={party.vice_president_2
-                ? { name: party.vice_president_2, description: party.vice_president_2_description }
-                : undefined}
-            />
-          )}
 
           {hasPerformanceData && (
             <PartyAnalysis distribution={distribution} metrics={metrics} />
@@ -144,6 +134,8 @@ const distribution = party.distribution ?? defaultDistribution;
 
         <!-- Sidebar -->
         <aside class="w-full lg:w-80 shrink-0 flex flex-col gap-6">
+          {party.leader && <PartyLeadership name={party.leader} />}
+
           {hasPerformanceData && (
             <PartyMetrics
               attendance={metrics.attendance}
@@ -154,10 +146,7 @@ const distribution = party.distribution ?? defaultDistribution;
 
           <PartyInfo founded_year={party.founded_year} total={total} />
 
-          <KnowMoreCTA
-            buttonHref="/compara"
-            description={`Conoce en detalle el desempeño de cada congresista de ${party.name}`}
-          />
+          <KnowMoreCTA buttonHref="/compara" />
         </aside>
 
       </div>

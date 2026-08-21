@@ -31,6 +31,8 @@ El objeto `Candidate` contiene toda la información detallada de un candidato/co
 | **motions** | `number` | Cantidad de mociones o propuestas presentadas |
 | **commissions_count** | `number` | Cantidad de comisiones en las que participa el candidato |
 
+> **Nota:** `attendance`, `abstentions`, `commissions_count` y `projects` solo se muestran en las tarjetas de congresistas cuando `HAS_CONGRESISTA_ACTIVITY_DATA` (en `src/constants.ts`) es `true`; en caso contrario se muestra el mensaje "Datos de actividad no disponibles aún".
+
 ### Objeto: performance
 
 Contiene métricas detalladas sobre el desempeño parlamentario del candidato.
@@ -171,6 +173,39 @@ El objeto `Party` contiene información sobre un partido político, incluyendo s
 | **id** | `number` | Identificador único del partido. Se utiliza como parámetro de ruta en la página `/partido/[id]` |
 | **name** | `string` | Nombre completo del partido político (ej: "Partido Nacional", "Alianza Progresista") |
 | **picture** | `string` | URL de la imagen/logo del partido. Usado en tarjetas y página de detalle |
+| **senator_count** | `number` | Cantidad de senadores del partido |
+| **deputy_count** | `number` | Cantidad de diputados del partido |
+| **founded_year** | `string` | Año de fundación del partido |
+| **leader** | `string` | Nombre del líder/presidente de la plancha del partido |
+| **leader_description** | `string` | Descripción breve del líder (opcional) |
+| **vice_president** | `string` | Nombre del primer vicepresidente de la plancha (opcional) |
+| **vice_president_description** | `string` | Descripción breve del primer vicepresidente (opcional) |
+| **vice_president_2** | `string` | Nombre del segundo vicepresidente de la plancha (opcional) |
+| **vice_president_2_description** | `string` | Descripción breve del segundo vicepresidente (opcional) |
+
+### Objeto: metrics (opcional)
+
+Métricas de desempeño promedio del partido, mostradas en la sección "Análisis del Partido" y en el bloque "Métricas del Partido" de la página de detalle.
+
+| Propiedad | Tipo | Descripción |
+|-----------|------|-------------|
+| **attendance** | `number` | Asistencia promedio del partido (0-100) |
+| **abstentions** | `number` | Abstenciones promedio del partido |
+| **session_week** | `number` | Participación promedio en sesiones de la semana |
+| **accomplishment** | `number` | Índice de cumplimiento promedio (0-100) |
+| **projects** | `number` | Promedio de proyectos de ley por congresista |
+| **participation** | `number` | Nivel de participación promedio en debates/sesiones |
+
+### Objeto: distribution (opcional)
+
+Distribución porcentual de cargos del partido, usada en el gráfico de dona de "Análisis del Partido".
+
+| Propiedad | Tipo | Descripción |
+|-----------|------|-------------|
+| **name** | `string` | Nombre del cargo (ej: "Senadores", "Diputados", "Parlamento Andino") |
+| **value** | `number` | Porcentaje que representa ese cargo dentro del partido |
+
+> **Nota:** tanto `metrics`/`distribution` (secciones "Análisis del Partido" y "Métricas del Partido" en `/partido/[id]`) como las estadísticas de actividad en las tarjetas de congresistas (asistencia, abstenciones, comisiones, proyectos) se muestran u ocultan según el flag `HAS_CONGRESISTA_ACTIVITY_DATA` definido en `src/constants.ts`.
 
 ---
 

@@ -155,6 +155,28 @@
         "vice_president": "Carlos Méndez",
         "vice_president_description": "Profesor de derecho",
         "vice_president_2": "Teresa Molina",
-        "vice_president_2_description": "Gestora pública"
+        "vice_president_2_description": "Gestora pública",
+        "metrics": {
+            "attendance": 90,
+            "abstentions": 6,
+            "session_week": 14,
+            "accomplishment": 75,
+            "projects": 8.7,
+            "participation": 28
+        },
+        "distribution": [
+            {
+                "name": "Senadores",
+                "value": 35
+            },
+            {
+                "name": "Diputados",
+                "value": 55
+            },
+            {
+                "name": "Parlamento Andino",
+                "value": 10
+            }
+        ]
     }
 ]

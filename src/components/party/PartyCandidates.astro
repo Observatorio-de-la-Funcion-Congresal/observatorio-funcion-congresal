@@ -2,6 +2,7 @@
 import CandidateCard from '../ui/CandidateCard.astro';
 import Button from '../ui/Button/Button.astro';
 import Card from '../ui/Card/Card.astro';
+import { HAS_CONGRESISTA_ACTIVITY_DATA } from '../../constants';
 
 interface Candidate {
   id: number;
@@ -11,6 +12,8 @@ interface Candidate {
   party: string;
   partyId: number;
   attendance: number;
+  abstentions?: number;
+  commissions_count?: number;
   projects: number;
   applyTo: string;
   partyPicture?: string;
@@ -29,7 +32,7 @@ const { candidates, pictureBase, partyPictureBase, partyPicture, initialCount = 
 
 <Card class="p-6" roundedClass='rounded-2xl' padding={false}>
   <h2 class="text-2xl font-bold text-primary-black-obs mb-4">
-    Congresistas del partido ({candidates.length})
+    Congresistas ({candidates.length})
   </h2>
 
   {candidates.length === 0 ? (
@@ -52,12 +55,15 @@ const { candidates, pictureBase, partyPictureBase, partyPicture, initialCount = 
               party={candidate.party}
               partyId={candidate.partyId}
               attendance={candidate.attendance}
+              abstentions={candidate.abstentions}
+              commissionsCount={candidate.commissions_count}
               projects={candidate.projects}
               applyTo={candidate.applyTo}
               pictureBase={pictureBase}
               partyPicture={partyPicture ?? candidate.picture}
               partyPictureBase={partyPictureBase}
               shadow={false}
+              hasData={HAS_CONGRESISTA_ACTIVITY_DATA}
             />
           </div>
         ))}
