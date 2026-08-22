@@ -1,0 +1,54 @@
+---
+import Container from '../ui/Container.astro';
+import Card from '../ui/Card/Card.astro';
+import datosIcon from '../../assets/icons/datos.svg?raw';
+import procesamientoIcon from '../../assets/icons/procesamiento.svg?raw';
+import revisionIcon from '../../assets/icons/revision-independiente.svg?raw';
+import actualizacionIcon from '../../assets/icons/actualizacion.svg?raw';
+
+const steps = [
+  {
+    icon: datosIcon,
+    title: 'Fuentes de datos',
+    description:
+      'Todos los datos provienen de fuentes públicas oficiales: portal del Congreso, diario El Peruano, JNE y registros del Parlamento Andino.',
+  },
+  {
+    icon: procesamientoIcon,
+    title: 'Procesamiento',
+    description:
+      'Los datos son procesados, validados y estructurados por nuestro equipo con criterios estandarizados para medir asistencia, promesas y actividad legislativa.',
+  },
+  {
+    icon: revisionIcon,
+    title: 'Revisión independiente',
+    description:
+      'Un equipo editorial independiente verifica la información antes de su publicación. Correcciones son transparentadas en cada perfil.',
+  },
+  {
+    icon: actualizacionIcon,
+    title: 'Actualización',
+    description:
+      'Los datos se actualizan semanalmente durante el período de sesiones. En receso, la actualización es mensual.',
+  },
+];
+---
+
+<section class="bg-[#F7FAFF] pt-10 md:pt-14 pb-0">
+  <Container>
+    <h2 class="text-2xl font-bold mb-8">¿Cómo trabajamos?</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {steps.map((step) => (
+        <Card
+          roundedClass="rounded-2xl"
+          shadow={false}
+          class="border border-lighter-border-gray-obs shadow flex flex-col gap-3"
+        >
+          <div class="w-10 h-10 svg-full" set:html={step.icon} />
+          <h3 class="text-base font-bold">{step.title}</h3>
+          <p class="text-sm text-primary-gray-obs leading-5">{step.description}</p>
+        </Card>
+      ))}
+    </div>
+  </Container>
+</section>

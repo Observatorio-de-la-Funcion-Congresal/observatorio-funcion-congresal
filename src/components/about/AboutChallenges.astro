@@ -1,0 +1,53 @@
+---
+import Container from '../ui/Container.astro';
+import Card from '../ui/Card/Card.astro';
+
+const challenges = [
+  {
+    number: '01',
+    title: 'Acceso a datos legislativos',
+    description:
+      'El Congreso no publica todos sus datos en formatos abiertos. Parte de la información requiere extracción manual desde documentos PDF y actas.',
+  },
+  {
+    number: '02',
+    title: 'Definición de promesas de campaña',
+    description:
+      'Establecer qué constituye una promesa cumplida, en progreso o incumplida requiere criterios metodológicos claros que estamos permanentemente refinando.',
+  },
+  {
+    number: '03',
+    title: 'Sostenibilidad financiera',
+    description:
+      'Operamos con financiamiento limitado. Dependemos de donaciones ciudadanas y apoyos de fundaciones para mantener la independencia editorial.',
+  },
+  {
+    number: '04',
+    title: 'Cobertura completa',
+    description:
+      'Con 195 representantes, la cobertura total de perfiles y promesas es un trabajo continuo de nuestro equipo.',
+  },
+];
+---
+
+<section class="bg-[#F7FAFF] pt-12 md:pt-20 pb-12 md:pb-16">
+  <Container>
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">Los desafíos del monitoreo legislativo</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-[18px]">
+      {challenges.map((challenge) => (
+        <Card
+          roundedClass="rounded-2xl"
+          shadow={false}
+          padding={false}
+          class="border border-lighter-border-gray-obs shadow-[0_4px_4px_rgba(0,0,0,0.15)] p-6 flex flex-col gap-4"
+        >
+          <span class="text-4xl font-bold text-primary-blue-obs">{challenge.number}</span>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-base font-bold text-primary-black-obs">{challenge.title}</h3>
+            <p class="text-sm text-primary-black-obs leading-6">{challenge.description}</p>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </Container>
+</section>
