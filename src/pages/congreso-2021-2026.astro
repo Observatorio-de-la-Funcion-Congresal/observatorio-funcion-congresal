@@ -6,7 +6,7 @@ import Container from "../components/ui/Container.astro";
 import PartyPieChart from "../components/charts/PartyPieChart.vue";
 import type { PreviousData } from "../types/previous";
 
-const URL_DATA = import.meta.env.URL_DATA;
+const URL_DATA = import.meta.env.URL_DATA_V2;
 
 const datResult = await fetch(`${URL_DATA}/2021-2026.json`);
 const congressData: PreviousData = await datResult.json();

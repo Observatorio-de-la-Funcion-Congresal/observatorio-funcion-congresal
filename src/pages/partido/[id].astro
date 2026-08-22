@@ -11,7 +11,7 @@ import KnowMoreCTA from '../../components/ui/KnowMoreCTA.astro';
 import PartyCandidates from '../../components/party/PartyCandidates.astro';
 import { HAS_CONGRESISTA_ACTIVITY_DATA } from '../../constants';
 
-const URL_DATA = import.meta.env.URL_DATA;
+const URL_DATA = import.meta.env.URL_DATA_V2;
 const URL_PARTY_PICTURE = import.meta.env.URL_PARTY_PICTURE;
 const URL_CANDIDATE_PICTURE = import.meta.env.URL_CANDIDATE_PICTURE;
 
@@ -51,7 +51,7 @@ interface Candidate {
 }
 
 export async function getStaticPaths() {
-  const URL_DATA = import.meta.env.URL_DATA;
+  const URL_DATA = import.meta.env.URL_DATA_V2;
   try {
     const res = await fetch(`${URL_DATA}/party-complete.json`);
     const parties: Party[] = await res.json();
