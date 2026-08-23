@@ -209,7 +209,70 @@ Distribución porcentual de cargos del partido, usada en el gráfico de dona de 
 
 ---
 
-## 🔗 Relaciones entre Candidate y Party
+## � Objeto: CongressActivity
+
+El objeto `CongressActivity` (`congress-activity.json`) alimenta la página `/actividad-congreso`, con indicadores generales, gráficos y listados de proyectos de ley/mociones del período.
+
+### Objeto: stats
+
+| Propiedad | Tipo | Descripción |
+|-----------|------|-------------|
+| **factions_formed** | `number` | Cantidad de bancadas formadas |
+| **bills_approved** | `number` | Leyes aprobadas en el período |
+| **bills_presented** | `number` | Proyectos de ley presentados |
+| **plenary_sessions** | `number` | Sesiones del pleno realizadas |
+| **active_commissions** | `number` | Comisiones activas |
+| **avg_attendance** | `number` | Asistencia promedio (0-100) |
+| **avg_promises_fulfilled** | `number` | Promedio de promesas cumplidas (0-100) |
+
+Usado en: Componente `ActivityStats`
+
+### Array: monthly_bills
+
+| Propiedad | Tipo | Descripción |
+|-----------|------|-------------|
+| **month** | `string` | Mes abreviado (ej: "Ene", "Feb") |
+| **deputies** | `number` | Leyes aprobadas por Diputados ese mes |
+| **senate** | `number` | Leyes aprobadas por Senado ese mes |
+
+Usado en: Componente `ActivityCharts` → `MonthlyBillsChart` (gráfico de barras agrupadas)
+
+### Array: bill_status_distribution
+
+| Propiedad | Tipo | Descripción |
+|-----------|------|-------------|
+| **name** | `string` | Nombre del estado de tramitación (ej: "Aprobados", "En debate") |
+| **value** | `number` | Cantidad de proyectos en ese estado |
+
+Usado en: Componente `ActivityCharts` → `DistributionChart` (gráfico de dona)
+
+### Arrays: bills y motions
+
+Ambos comparten la misma estructura de item (proyectos de ley y mociones respectivamente).
+
+| Propiedad | Tipo | Descripción |
+|-----------|------|-------------|
+| **id** | `string` | Número identificador del proyecto/moción (ej: "32080") |
+| **title** | `string` | Título del proyecto/moción |
+| **commission** | `string` | Comisión a cargo |
+| **faction** | `string` | Bancada que lo presentó |
+| **date** | `string` | Fecha de presentación (`YYYY-MM-DD`) |
+| **status** | `string` | Estado: `"Approved"`, `"Rejected"`, `"Archived"` o `"In commission"` |
+| **downloadUrl** | `string` | URL de descarga del documento |
+
+Usado en: Componente `ActivityRecordsTable` (tabla reutilizada tanto para "Proyectos de ley aprobadas recientemente", con filtros de búsqueda/comisión/bancada/estado, como para "Mociones", sin filtros)
+
+### Array: active_commission_list
+
+| Propiedad | Tipo | Descripción |
+|-----------|------|-------------|
+| **active_commission_list** | `string[]` | Nombres de las comisiones activas del período |
+
+Usado en: Componente `ActivityCommissionsList`
+
+---
+
+## �🔗 Relaciones entre Candidate y Party
 
 - Cada `Candidate` tiene un `partyId` que referencia a un `Party.id`
 - Los candidatos se filtran por `partyId` en la página de detalle de partido
@@ -226,6 +289,7 @@ public/data_example/
 ├── candidate.json              # Array resumido de candidatos (para listas)
 ├── party-complete.json         # Array completo de todos los partidos
 ├── party.json                  # Array resumido de partidos (para listas)
+├── congress-activity.json      # Estadísticas, gráficos y listados de actividad del congreso
 ├── candidates/
 │   ├── 1.json                 # Detalle completo del candidato ID 1
 │   ├── 2.json                 # Detalle completo del candidato ID 2

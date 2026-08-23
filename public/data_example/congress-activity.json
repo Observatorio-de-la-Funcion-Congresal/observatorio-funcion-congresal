@@ -1,0 +1,71 @@
+{
+  "stats": {
+    "factions_formed": 4,
+    "bills_approved": 47,
+    "bills_presented": 312,
+    "plenary_sessions": 38,
+    "active_commissions": 22,
+    "avg_attendance": 88.4,
+    "avg_promises_fulfilled": 77.2
+  },
+  "monthly_bills": [
+    { "month": "Ene", "deputies": 3, "senate": 2 },
+    { "month": "Feb", "deputies": 4, "senate": 3 },
+    { "month": "Mar", "deputies": 4, "senate": 4 },
+    { "month": "Abr", "deputies": 6, "senate": 4 },
+    { "month": "May", "deputies": 4, "senate": 3 },
+    { "month": "Jun", "deputies": 5, "senate": 4 }
+  ],
+  "bill_status_distribution": [
+    { "name": "Aprobados", "value": 47 },
+    { "name": "En debate", "value": 68 },
+    { "name": "En comisión", "value": 124 },
+    { "name": "Archivados", "value": 73 }
+  ],
+  "bills": [
+    { "id": "32080", "title": "Ley de Descentralización Fiscal", "commission": "Presupuesto", "faction": "Bancada 1", "date": "2026-06-28", "status": "Archived", "downloadUrl": "#" },
+    { "id": "32079", "title": "Ley de Transparencia Presupuestal Digital", "commission": "Fiscalización", "faction": "Bancada 2", "date": "2026-06-15", "status": "Rejected", "downloadUrl": "#" },
+    { "id": "32078", "title": "Ley de Protección de Bosques Primarios", "commission": "Medio Ambiente", "faction": "Bancada 2", "date": "2026-06-10", "status": "Approved", "downloadUrl": "#" },
+    { "id": "32077", "title": "Reforma del Sistema de Control Presupuestal", "commission": "Presupuesto", "faction": "Bancada 3", "date": "2026-06-05", "status": "Rejected", "downloadUrl": "#" },
+    { "id": "32076", "title": "Ley Nacional Antibullying Escolar", "commission": "Educación", "faction": "Partido Cívico Obras", "date": "2026-05-25", "status": "Approved", "downloadUrl": "#" },
+    { "id": "32075", "title": "Ley de Medicina Tradicional Andina", "commission": "Salud", "faction": "Ahora Nación", "date": "2026-05-18", "status": "Approved", "downloadUrl": "#" },
+    { "id": "32080", "title": "Ley de Descentralización Fiscal", "commission": "Presupuesto", "faction": "Fuerza Popular", "date": "2026-06-28", "status": "Archived", "downloadUrl": "#" },
+    { "id": "32079", "title": "Ley de Transparencia Presupuestal Digital", "commission": "Fiscalización", "faction": "Juntos por el Perú", "date": "2026-06-15", "status": "Approved", "downloadUrl": "#" },
+    { "id": "32078", "title": "Ley de Protección de Bosques Primarios", "commission": "Medio Ambiente", "faction": "Buen Gobierno", "date": "2026-06-10", "status": "Rejected", "downloadUrl": "#" }
+  ],
+  "motions": [
+    { "id": "32080", "title": "Descentralización Fiscal", "commission": "Presupuesto", "faction": "Bancada 1", "date": "2026-06-28", "status": "Archived", "downloadUrl": "#" },
+    { "id": "32079", "title": "Transparencia Presupuestal Digital", "commission": "Fiscalización", "faction": "Bancada 2", "date": "2026-06-15", "status": "Rejected", "downloadUrl": "#" },
+    { "id": "32076", "title": "Protección de Bosques Primarios", "commission": "Medio Ambiente", "faction": "Bancada 2", "date": "2026-06-10", "status": "Approved", "downloadUrl": "#" },
+    { "id": "32077", "title": "Reforma del Sistema de Control Presupuestal", "commission": "Presupuesto", "faction": "Bancada 3", "date": "2026-06-05", "status": "Rejected", "downloadUrl": "#" },
+    { "id": "32076", "title": "Nacional Antibullying Escolar", "commission": "Educación", "faction": "Partido Cívico Obras", "date": "2026-05-25", "status": "Approved", "downloadUrl": "#" },
+    { "id": "32075", "title": "Medicina Tradicional Andina", "commission": "Salud", "faction": "Ahora Nación", "date": "2026-05-18", "status": "Approved", "downloadUrl": "#" },
+    { "id": "2080", "title": "Descentralización Fiscal", "commission": "Presupuesto", "faction": "Fuerza Popular", "date": "2026-06-28", "status": "Archived", "downloadUrl": "#" },
+    { "id": "32079", "title": "Transparencia Presupuestal Digital", "commission": "Fiscalización", "faction": "Juntos por el Perú", "date": "2026-06-15", "status": "Approved", "downloadUrl": "#" },
+    { "id": "32078", "title": "Protección de Bosques Primarios", "commission": "Medio Ambiente", "faction": "Buen Gobierno", "date": "2026-06-10", "status": "Rejected", "downloadUrl": "#" }
+  ],
+  "active_commission_list": [
+    "Economía y Finanzas",
+    "Presupuesto",
+    "Salud y Población",
+    "Educación",
+    "Constitución",
+    "Fiscalización",
+    "Ética",
+    "Justicia",
+    "Cultura y Patrimonio",
+    "Agraria",
+    "Medio Ambiente",
+    "Transportes",
+    "Mujer y Familia",
+    "Pueblos Andinos",
+    "Amazonía",
+    "Defensa",
+    "Descentralización",
+    "Relaciones Exteriores",
+    "Producción",
+    "Vivienda",
+    "Integración Andina",
+    "MYPE e Industria"
+  ]
+}

@@ -1,0 +1,39 @@
+---
+import Card from '../ui/Card/Card.astro';
+import MonthlyBillsChart from '../charts/MonthlyBillsChart.vue';
+import DistributionChart from '../charts/DistributionChart.vue';
+
+interface MonthlyBills {
+  month: string;
+  deputies: number;
+  senate: number;
+}
+
+interface DistributionItem {
+  name: string;
+  value: number;
+}
+
+interface Props {
+  monthlyBills: MonthlyBills[];
+  statusDistribution: DistributionItem[];
+}
+
+const { monthlyBills, statusDistribution } = Astro.props;
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
+  <Card roundedClass="rounded-2xl" padding={false} class="p-6">
+    <h2 class="text-lg font-bold text-primary-black-obs mb-4">
+      Leyes aprobadas por mes — Diputados vs Senado
+    </h2>
+    <MonthlyBillsChart client:load data={monthlyBills} />
+  </Card>
+
+  <Card roundedClass="rounded-2xl" padding={false} class="p-6">
+    <h2 class="text-lg font-bold text-primary-black-obs mb-4">
+      Proyectos por estado de tramitación
+    </h2>
+    <DistributionChart client:load distribution={statusDistribution} />
+  </Card>
+</div>

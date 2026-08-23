@@ -1,0 +1,23 @@
+---
+import Card from '../ui/Card/Card.astro';
+
+interface Stat {
+  value: string | number;
+  label: string;
+}
+
+interface Props {
+  stats: Stat[];
+}
+
+const { stats } = Astro.props;
+---
+
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 font-inter mb-8">
+  {stats.map((stat) => (
+    <Card roundedClass="rounded-2xl" class="p-6" padding={false}>
+      <p class="text-3xl font-bold text-primary-black-obs leading-none">{stat.value}</p>
+      <p class="text-sm text-primary-gray-obs mt-1">{stat.label}</p>
+    </Card>
+  ))}
+</div>

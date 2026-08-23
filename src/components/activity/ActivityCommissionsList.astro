@@ -1,0 +1,18 @@
+---
+interface Props {
+  commissions: string[];
+}
+
+const { commissions } = Astro.props;
+---
+
+<div class="mb-8">
+  <h2 class="text-xl font-bold text-primary-black-obs mb-4">Comisiones activas</h2>
+  <div class="flex flex-wrap gap-2">
+    {commissions.map((commission) => (
+      <span class="px-4 py-2 rounded-full bg-sky-blue-obs text-primary-black-obs text-sm">
+        {commission}
+      </span>
+    ))}
+  </div>
+</div>

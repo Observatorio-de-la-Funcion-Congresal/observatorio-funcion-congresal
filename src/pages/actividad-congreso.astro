@@ -2,6 +2,73 @@
 import Layout from '../layouts/Layout.astro';
 import InternalPageHero from '../components/sections/InternalPageHero.astro';
 import Container from '../components/ui/Container.astro';
+import ActivityStats from '../components/activity/ActivityStats.astro';
+import ActivityCharts from '../components/activity/ActivityCharts.astro';
+import ActivityRecordsTable from '../components/activity/ActivityRecordsTable.vue';
+import ActivityCommissionsList from '../components/activity/ActivityCommissionsList.astro';
+import type { ActivityRecord } from '../components/activity/ActivityRecordsTable.vue';
+
+const URL_DATA = import.meta.env.URL_DATA_V2;
+
+interface CongressActivityStats {
+  factions_formed: number;
+  bills_approved: number;
+  bills_presented: number;
+  plenary_sessions: number;
+  active_commissions: number;
+  avg_attendance: number;
+  avg_promises_fulfilled: number;
+}
+
+interface MonthlyBills {
+  month: string;
+  deputies: number;
+  senate: number;
+}
+
+interface DistributionItem {
+  name: string;
+  value: number;
+}
+
+interface CongressActivity {
+  stats: CongressActivityStats;
+  monthly_bills: MonthlyBills[];
+  bill_status_distribution: DistributionItem[];
+  bills: ActivityRecord[];
+  motions: ActivityRecord[];
+  active_commission_list: string[];
+}
+
+let activity: CongressActivity | null = null;
+
+try {
+  const res = await fetch(`${URL_DATA}/congress-activity.json`);
+  activity = await res.json();
+} catch (e) {
+  console.error('Error fetching data:', e);
+}
+
+const stats = activity?.stats;
+
+const headerStats = stats
+  ? [
+      { value: stats.factions_formed, label: 'Bancadas formadas' },
+      { value: stats.bills_approved, label: 'Leyes aprobadas' },
+      { value: stats.bills_presented, label: 'Proyectos presentados' },
+      { value: stats.plenary_sessions, label: 'Sesiones del pleno' },
+      { value: stats.active_commissions, label: 'Comisiones activas' },
+      { value: `${stats.avg_attendance}%`, label: 'Asistencias promedio' },
+      { value: `${stats.avg_promises_fulfilled}%`, label: 'Promedio promesas cumplidas' },
+    ]
+  : [];
+
+const bills = activity?.bills ?? [];
+const motions = activity?.motions ?? [];
+
+// Options derived from the bills dataset, used to filter the bills table
+const commissionOptions = [...new Set(bills.map((b) => b.commission))].sort();
+const factionOptions = [...new Set(bills.map((b) => b.faction))].sort();
 ---
 
 <Layout
@@ -15,7 +82,29 @@ import Container from '../components/ui/Container.astro';
 
   <section class="py-10 bg-gray-50 min-h-[70vh]">
     <Container>
-      <p>Próximamente...</p>
+      <ActivityStats stats={headerStats} />
+
+      <ActivityCharts
+        monthlyBills={activity?.monthly_bills ?? []}
+        statusDistribution={activity?.bill_status_distribution ?? []}
+      />
+
+      <ActivityRecordsTable
+        client:load
+        title="Proyectos de ley aprobadas recientemente"
+        records={bills}
+        commissionOptions={commissionOptions}
+        factionOptions={factionOptions}
+      />
+
+      <ActivityRecordsTable
+        client:load
+        title="Mociones"
+        records={motions}
+        showFilters={false}
+      />
+
+      <ActivityCommissionsList commissions={activity?.active_commission_list ?? []} />
     </Container>
   </section>
 </Layout>
