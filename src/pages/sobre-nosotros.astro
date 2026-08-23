@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import InternalPageHero from '../components/sections/InternalPageHero.astro';
+import AboutWhatIs from '../components/about/AboutWhatIs.astro';
+import AboutHowWeWork from '../components/about/AboutHowWeWork.astro';
+import AboutChallenges from '../components/about/AboutChallenges.astro';
+import AboutTeam from '../components/about/AboutTeam.astro';
+---
+
+<Layout
+  title="Sobre nosotros — Observatorio de la Función Congresal"
+  description="Conoce quiénes somos, cómo trabajamos y los desafíos del monitoreo legislativo ciudadano en el Perú."
+>
+  <InternalPageHero
+    title="Una iniciativa ciudadana por la transparencia"
+    subtitle="El Observatorio es una plataforma ciudadana independiente cuyo objetivo es acercar información legislativa confiable, clara y actualizada a todos los peruanos."
+    subtitleClass="text-white text-lg leading-7 font-inter max-w-[790px]"
+  />
+  <AboutWhatIs />
+  <AboutHowWeWork />
+  <AboutChallenges />
+  <AboutTeam />
+</Layout>

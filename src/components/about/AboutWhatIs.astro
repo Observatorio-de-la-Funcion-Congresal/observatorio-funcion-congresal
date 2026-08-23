@@ -1,0 +1,46 @@
+---
+import Container from '../ui/Container.astro';
+import downloadIcon from '../../assets/icons/download.svg?raw';
+
+const stats = [
+  { value: '2026', label: 'Año de fundación' },
+  { value: '195', label: 'Representantes monitoreados' },
+  { value: '+312', label: 'Promesas registradas' },
+  { value: '47', label: 'Leyes documentadas' },
+];
+---
+
+<section class="bg-[#F7FAFF] pt-10 md:pt-14 pb-0">
+  <Container>
+    <div class="flex flex-col lg:flex-row gap-10 lg:gap-12 items-start">
+      <div class="flex-1">
+        <h2 class="text-2xl font-bold mb-4">¿Qué es el Observatorio?</h2>
+        <p class="leading-[26px] mb-4 text-primary-gray-obs">
+          Somos un equipo interdisciplinario de politólogos, abogados, periodistas y especialistas en
+          datos, unidos por la convicción de que la democracia se fortalece con información accesible
+          y veraz.
+        </p>
+        <p class="leading-[26px] mb-6 text-primary-gray-obs">
+          Desde 2019 monitoreamos el Congreso peruano. Con el sistema bicameral en 2026, relanzamos la
+          plataforma para cubrir las tres instancias parlamentarias.
+        </p>
+        <button
+          type="button"
+          class="inline-flex items-center gap-2 text-primary-blue-obs font-medium underline"
+        >
+          Descarga nuestra metodología
+          <span class="w-6 h-6 svg-full"><Fragment set:html={downloadIcon} /></span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 w-full lg:w-auto lg:min-w-[22rem]">
+        {stats.map((stat) => (
+          <div class="bg-white shadow rounded-2xl p-6 text-center">
+            <p class="text-3xl font-bold text-[#101828] mb-1">{stat.value}</p>
+            <p class="text-sm text-primary-gray-obs">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>
