@@ -1,0 +1,52 @@
+---
+import Container from '../ui/Container.astro';
+import ActoresClaveCard from './ActoresClaveCard.astro';
+import ProcessStep from '../process/ProcessStep.astro';
+
+interface Actor {
+  name: string;
+  description: string;
+  icon?: string;
+  rawIcon?: string;
+  badgeClass?: string;
+}
+
+interface Step {
+  title: string;
+  description: string;
+  icon?: string;
+  rawIcon?: string;
+  variant?: 'default' | 'highlight' | 'final';
+}
+
+interface Props {
+  actorsTitle?: string;
+  actors: Actor[];
+  steps: Step[];
+}
+
+const { actorsTitle = 'Actores Clave', actors, steps } = Astro.props;
+---
+
+<section class="bg-white py-12 md:py-16">
+  <Container>
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-[20rem_1fr] lg:items-start">
+      <ActoresClaveCard title={actorsTitle} actors={actors} />
+
+      <div class="relative">
+        <div class="absolute bottom-5 left-5 top-5 w-px bg-light-gray-obs" aria-hidden="true"></div>
+
+        {steps.map((step, index) => (
+          <ProcessStep
+            number={index + 1}
+            title={step.title}
+            description={step.description}
+            icon={step.icon}
+            rawIcon={step.rawIcon}
+            variant={step.variant}
+          />
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>

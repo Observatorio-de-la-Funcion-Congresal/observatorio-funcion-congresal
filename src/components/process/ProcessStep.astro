@@ -1,0 +1,31 @@
+---
+import Icon from '../ui/Icon/Icon.astro';
+import ProcessStepNode from './ProcessStepNode.astro';
+
+interface Props {
+  number: number;
+  title: string;
+  description: string;
+  icon?: string;
+  rawIcon?: string;
+  variant?: 'default' | 'highlight' | 'final';
+}
+
+const { number, title, description, icon, rawIcon, variant = 'default' } = Astro.props;
+
+const cardBgClass =
+  variant === 'final' ? 'bg-sky-blue-obs' : variant === 'highlight' ? 'bg-lighter-gray-obs' : 'bg-white';
+---
+
+<div class="relative z-10 mb-6 flex items-start gap-4 last:mb-0 sm:gap-6">
+  <ProcessStepNode number={number} variant={variant === 'final' ? 'final' : 'default'} />
+
+  <div class={`flex-1 rounded-xl border border-lighten-gray-obs p-6 ${cardBgClass}`}>
+    <div class="mb-2 flex items-center gap-2">
+      {icon && <Icon icon={icon} class="h-5 w-5 text-primary-blue-obs" />}
+      {rawIcon && <span class="svg-full h-5 w-5" set:html={rawIcon} />}
+      <h3 class="font-bold text-primary-black-obs">{title}</h3>
+    </div>
+    <p class="text-sm leading-6 text-primary-gray-obs">{description}</p>
+  </div>
+</div>

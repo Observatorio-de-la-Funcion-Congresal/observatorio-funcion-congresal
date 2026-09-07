@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import InternalPageHero from '../components/sections/InternalPageHero.astro';
+import CaminoLeySection from '../components/sections/CaminoLeySection.astro';
+import deputyIcon from '../assets/icons/deputy.svg?raw';
+import senatorIcon from '../assets/icons/senator.svg?raw';
+import browserIcon from '../assets/icons/browser.svg?raw';
+
+const actors = [
+  {
+    name: 'Cámara de Diputados',
+    description: '130 representantes encargados del debate inicial y la aprobación preliminar.',
+    rawIcon: deputyIcon,
+    badgeClass: 'bg-sky-blue-obs',
+  },
+  {
+    name: 'Senado',
+    description: '60 senadores que revisan, aprueban en segunda instancia o proponen modificaciones.',
+    rawIcon: senatorIcon,
+    badgeClass: 'bg-light-blue-obs',
+  },
+  {
+    name: 'Poder Ejecutivo',
+    description: 'Promulga la ley u observa la propuesta devolviéndola al Congreso.',
+    icon: 'user-circle',
+    badgeClass: 'bg-sky-blue-obs',
+  },
+];
+
+const steps = [
+  {
+    title: 'Iniciativa Legislativa',
+    icon: 'note',
+    description:
+      'La presentación del proyecto de ley puede provenir del Presidente, Congresistas, otros poderes del Estado, instituciones públicas o ciudadanos (con firmas).',
+  },
+  {
+    title: 'Derivación a Comisiones',
+    icon: 'clipboard',
+    description:
+      'El proyecto ingresa a la Cámara de Diputados y se envía a las comisiones especializadas para su estudio y elaboración de un dictamen.',
+  },
+  {
+    title: 'Aprobación en Cámara de Diputados',
+    icon: 'user-group',
+    description:
+      'Si el dictamen es favorable, pasa al Pleno de la Cámara de Diputados para debate y votación inicial.',
+  },
+  {
+    title: 'Revisión por el Senado',
+    icon: 'sort',
+    variant: 'highlight' as const,
+    description:
+      'Una vez aprobado por los diputados, el proyecto pasa al Senado. Esta cámara actúa como instancia revisora para garantizar calidad técnica y consenso político.',
+  },
+  {
+    title: 'Resolución de Discrepancias',
+    icon: 'edit-clipboard',
+    description:
+      'Si el Senado modifica el proyecto, regresa a la Cámara de Diputados. Si no hay acuerdo, se forma una Comisión Mixta (diputados y senadores) para consensuar un texto final.',
+  },
+  {
+    title: 'Envío al Ejecutivo',
+    icon: 'send',
+    description:
+      'Aprobado por ambas cámaras, el texto final se envía al Presidente de la República, quien tiene 15 días hábiles para evaluarlo.',
+  },
+  {
+    title: 'Promulgación u Observación',
+    icon: 'check-box',
+    description:
+      'El Presidente puede promulgar la ley u observarla (veto parcial o total). Si es observada, el Congreso puede allanarse a las observaciones o insistir en su texto original (requiere mayoría absoluta).',
+  },
+  {
+    title: 'Publicación y Vigencia',
+    rawIcon: browserIcon,
+    variant: 'final' as const,
+    description:
+      'La ley promulgada se publica en el Diario Oficial "El Peruano". Generalmente, entra en vigencia al día siguiente de su publicación, convirtiéndose en norma obligatoria para todos.',
+  },
+];
+---
+
+<Layout
+  title="El camino de la ley — Observatorio de la Función Congresal"
+  description="Conoce el paso a paso de cómo una idea se transforma en una ley dentro del sistema bicameral peruano, desde su presentación hasta su publicación final."
+>
+  <InternalPageHero
+    eyebrow="Educación Cívica"
+    title="El Camino de la Ley"
+    subtitle="Conoce el paso a paso de cómo una idea se transforma en una ley dentro del sistema bicameral peruano, desde su presentación hasta su publicación final."
+  />
+
+  <CaminoLeySection actors={actors} steps={steps} />
+</Layout>

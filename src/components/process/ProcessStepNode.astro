@@ -1,0 +1,20 @@
+---
+interface Props {
+  number: number;
+  variant?: 'default' | 'final';
+  class?: string;
+}
+
+const { number, variant = 'default', class: className = '' } = Astro.props;
+
+const variantClass =
+  variant === 'final'
+    ? 'bg-primary-blue-obs text-white border-primary-blue-obs'
+    : 'bg-white text-primary-blue-obs border-primary-blue-obs';
+---
+
+<span
+  class={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border-2 font-bold ${variantClass} ${className}`}
+>
+  {number}
+</span>
