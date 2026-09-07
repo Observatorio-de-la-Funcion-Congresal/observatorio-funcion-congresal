@@ -1,0 +1,53 @@
+---
+import TimelineYearNode from './TimelineYearNode.astro';
+
+interface Stat {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  year: string;
+  yearVariant?: 'default' | 'highlight';
+  eyebrow?: string;
+  title: string;
+  description: string;
+  stats?: Stat[];
+}
+
+const { year, yearVariant = 'default', eyebrow, title, description, stats = [] } = Astro.props;
+---
+
+<div class="relative mt-2 flex flex-col gap-4 pl-14 sm:mt-4 sm:flex-row sm:items-start sm:gap-6 sm:pl-0">
+  <div class="sm:order-1 sm:w-[calc(50%-2rem)]">
+    <div class="rounded-2xl bg-navy-900 p-8 text-white shadow-md">
+      {eyebrow && (
+        <span class="mb-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-white/70">
+          <span class="h-1.5 w-1.5 rounded-full bg-white/70"></span>
+          {eyebrow}
+        </span>
+      )}
+      <h3 class="mb-3 text-xl font-bold md:text-2xl">{title}</h3>
+      <p class="mb-6 text-sm leading-6 text-white/80">{description}</p>
+
+      {stats.length > 0 && (
+        <div class="flex flex-wrap gap-6 border-t border-white/10 pt-4">
+          {stats.map((stat) => (
+            <div class="flex items-center gap-2">
+              <span class="text-sm text-white/70">{stat.label}</span>
+              <span class="font-inter text-lg font-bold">{stat.value}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+
+  <TimelineYearNode
+    year={year}
+    variant={yearVariant}
+    class="absolute left-0 top-1 z-10 sm:static sm:order-2 sm:top-0"
+  />
+
+  <div class="hidden sm:order-3 sm:block sm:w-[calc(50%-2rem)]"></div>
+</div>

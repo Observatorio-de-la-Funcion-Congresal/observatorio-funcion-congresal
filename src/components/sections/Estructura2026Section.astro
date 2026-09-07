@@ -1,0 +1,89 @@
+---
+import Container from '../ui/Container.astro';
+import Card from '../ui/Card/Card.astro';
+import ProportionBar from '../ui/ProportionBar.astro';
+import senatorIcon from '../../assets/icons/senator.svg?raw';
+import deputyIcon from '../../assets/icons/deputy.svg?raw';
+
+interface Requirement {
+  title: string;
+  description: string;
+  icon: string;
+  badgeClass?: string;
+}
+
+interface ProportionRow {
+  year: string;
+  leftLabel: string;
+  leftPercent: number;
+  rightLabel: string;
+  rightPercent: number;
+}
+
+interface Props {
+  heading?: string;
+  senadoRequirement?: Requirement;
+  diputadosRequirement?: Requirement;
+  proportionRows?: ProportionRow[];
+  proportionCaption?: string;
+}
+
+const {
+  heading = 'Estructura 2026',
+  senadoRequirement = {
+    title: 'Requisitos Senado',
+    icon: senatorIcon,
+    badgeClass: 'bg-sky-red-obs',
+    description:
+      'Se requerirá tener mínimo 45 años o haber sido congresista/diputado previamente. Diseñado como cámara de reflexión y revisión normativa.',
+  },
+  diputadosRequirement = {
+    title: 'Requisitos Diputados',
+    icon: deputyIcon,
+    badgeClass: 'bg-sky-blue-obs',
+    description:
+      'Edad mínima de 25 años. Cámara política y de origen normativo, encargada de la interpelación y fiscalización inmediata.',
+  },
+  proportionRows = [
+    { year: '1979 (60/180)', leftLabel: 'Senado', leftPercent: 25, rightLabel: 'Diputados', rightPercent: 75 },
+    { year: '2026 (60/130)', leftLabel: 'Senado', leftPercent: 31.5, rightLabel: 'Diputados', rightPercent: 68.5 },
+  ],
+  proportionCaption = 'Peso relativo del Senado vs. Diputados en escaños.',
+} = Astro.props;
+
+const requirements = [senadoRequirement, diputadosRequirement];
+---
+
+<section class="bg-sky-blue-obs py-12 md:py-16">
+  <Container>
+    <h2 class="mb-8 border-l-4 border-primary-blue-obs pl-3 text-2xl font-bold text-primary-black-obs md:text-3xl">
+      {heading}
+    </h2>
+
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+      {requirements.map((requirement) => (
+        <Card class="flex flex-col gap-4">
+          <span class={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${requirement.badgeClass}`}>
+            <span class="svg-full h-5 w-5" set:html={requirement.icon} />
+          </span>
+          <h3 class="font-bold text-primary-black-obs">{requirement.title}</h3>
+          <p class="text-sm leading-6 text-regular-gray-obs">{requirement.description}</p>
+        </Card>
+      ))}
+
+      <Card class="flex flex-col gap-5">
+        <h3 class="font-bold text-primary-black-obs">Proporción Histórica</h3>
+        {proportionRows.map((row) => (
+          <ProportionBar
+            year={row.year}
+            leftLabel={row.leftLabel}
+            leftPercent={row.leftPercent}
+            rightLabel={row.rightLabel}
+            rightPercent={row.rightPercent}
+          />
+        ))}
+        <p class="text-xs text-gray-icon-obs">{proportionCaption}</p>
+      </Card>
+    </div>
+  </Container>
+</section>

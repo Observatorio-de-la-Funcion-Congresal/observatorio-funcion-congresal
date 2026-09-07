@@ -1,0 +1,24 @@
+---
+interface Props {
+  year: string;
+  leftLabel: string;
+  leftPercent: number;
+  rightLabel: string;
+  rightPercent: number;
+}
+
+const { year, leftLabel, leftPercent, rightLabel, rightPercent } = Astro.props;
+---
+
+<div class="flex flex-col gap-2">
+  <div class="flex items-center justify-between text-xs font-inter">
+    <span class="font-bold text-primary-black-obs">{year}</span>
+    <span class="text-primary-gray-obs">
+      {leftLabel} {leftPercent}% / {rightLabel} {rightPercent}%
+    </span>
+  </div>
+  <div class="flex h-2.5 w-full overflow-hidden rounded-full bg-lighter-gray-obs">
+    <span class="h-full bg-primary-blue-obs" style={`width: ${leftPercent}%`}></span>
+    <span class="h-full bg-light-blue-obs" style={`width: ${rightPercent}%`}></span>
+  </div>
+</div>

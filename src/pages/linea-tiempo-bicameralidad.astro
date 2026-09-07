@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+import InternalPageHero from '../components/sections/InternalPageHero.astro';
+import Container from '../components/ui/Container.astro';
+import Button from '../components/ui/Button/Button.astro';
+import EvolucionTimelineSection from '../components/sections/EvolucionTimelineSection.astro';
+import Estructura2026Section from '../components/sections/Estructura2026Section.astro';
+
+const milestones = [
+  {
+    year: '1979',
+    badgeLabel: 'Constitución de 1979',
+    title: 'Establecimiento de Bicameralidad',
+    description:
+      'La Constitución Política de 1979 establece un Congreso bicameral, conformado por el Senado y la Cámara de Diputados, con 60 senadores y 180 diputados.',
+  },
+  {
+    year: '1993',
+    yearVariant: 'highlight' as const,
+    cardVariant: 'tint' as const,
+    badgeLabel: 'Constitución de 1993',
+    title: 'Instauración Unicameral',
+    description:
+      'La Constitución Política de 1993 instaura originalmente un Congreso unicameral, conformado por una sola cámara: el Congreso de la República; posteriormente, el artículo 90 fue reformado por la Ley N.° 31988.',
+  },
+  {
+    year: '2001',
+    yearVariant: 'highlight' as const,
+    badgeLabel: 'Ley N.° 27600',
+    title: 'Revisión Integral',
+    description:
+      'Se promulga la Ley N.° 27600, que encarga a la Comisión de Constitución, Reglamento y Acusaciones Constitucionales realizar una revisión integral de la Constitución de 1993, considerando la Constitución histórica del Perú y, particularmente, la Constitución de 1979.',
+  },
+  {
+    year: '2002',
+    badgeLabel: 'Proyecto de Reforma',
+    title: 'Debate Parlamentario',
+    description:
+      'La Comisión de Constitución aprueba un proyecto de reforma constitucional en cumplimiento de la Ley N.° 27600 y el proceso llega al debate parlamentario, aunque no culmina con la aprobación de una nueva Constitución.',
+  },
+  {
+    year: '2004',
+    badgeLabel: 'Debate del Pleno',
+    title: 'Intento Fallido de Restablecimiento',
+    description:
+      'El Pleno debate una propuesta para restablecer la bicameralidad mediante la modificación del artículo 90; obtuvo 72 votos a favor, 36 en contra y 3 abstenciones, pero no alcanzó la mayoría requerida para su aprobación en dos legislaturas ordinarias sucesivas.',
+  },
+  {
+    year: '2007',
+    badgeLabel: 'Dictamen de Comisión',
+    title: 'Nuevas Iniciativas',
+    description:
+      'La Comisión de Constitución aprueba un nuevo dictamen que acumula diversas iniciativas legislativas orientadas a sustituir el Congreso unicameral por un sistema compuesto por Senado y Cámara de Diputados.',
+  },
+  {
+    year: '2012',
+    badgeLabel: '2012–2013',
+    title: 'Acumulación de Proyectos',
+    description:
+      'Se presentan nuevas iniciativas para restablecer la bicameralidad y la Comisión de Constitución aprueba un dictamen que acumula los Proyectos de Ley N.os 07/2011-CR, 258/2011-CR, 1457/2012-CR y 1493/2012-CR.',
+  },
+  {
+    year: '2017',
+    badgeLabel: '2017–2018',
+    title: 'Proyecto del Ejecutivo',
+    description:
+      'Se presentan diversas iniciativas para restablecer la bicameralidad, entre ellas el Proyecto de Ley N.° 3185/2018-PE del Poder Ejecutivo, que incorporó criterios vinculados con la participación igualitaria de mujeres y hombres y la representación de las regiones.',
+  },
+  {
+    year: '2018',
+    cardVariant: 'tint' as const,
+    badgeLabel: 'Referéndum Nacional',
+    title: 'Rechazo Ciudadano',
+    description:
+      "El 9 de diciembre se realiza el Referéndum Nacional y la ciudadanía rechaza la bicameralidad con aproximadamente 90% de votos válidos por el 'No' y 10% por el 'Sí'; las otras tres reformas sometidas a consulta sí fueron aprobadas.",
+  },
+  {
+    year: '2023',
+    yearVariant: 'highlight' as const,
+    badgeLabel: 'Primera Votación',
+    title: 'Aprobación Inicial',
+    description:
+      'El 16 de noviembre, el Pleno del Congreso aprueba en primera votación el dictamen que restablece la bicameralidad y permite la reelección parlamentaria, con 93 votos a favor, 28 en contra y 1 abstención.',
+  },
+];
+
+const finalMilestone = {
+  year: '2024',
+  eyebrow: 'Aprobación Definitiva',
+  title: 'Reforma Constitucional Aprobada',
+  description:
+    'El 6 de marzo, el Pleno ratifica en segunda votación la reforma que restablece la bicameralidad con 91 votos a favor; la Ley N.° 31988 fue promulgada y publicada el 20 de marzo de 2024 y entrará en vigencia con las siguientes elecciones generales.',
+  stats: [
+    { label: 'Senado', value: '60' },
+    { label: 'Diputados', value: '130' },
+  ],
+};
+---
+
+<Layout
+  title="La evolución de la bicameralidad en el Perú — Observatorio de la Función Congresal"
+  description="Un recorrido por las constituciones y reformas que moldearon la estructura del Congreso peruano, desde 1979 hasta el retorno al sistema bicameral."
+>
+  <InternalPageHero
+    eyebrow="Línea de Timeline Histórica"
+    title="La Evolución de la Bicameralidad en el Perú"
+    subtitle="Un recorrido a través de las constituciones y reformas que han moldeado la estructura de nuestro Congreso, desde el retorno a la democracia hasta las reformas más recientes. Entender este camino es vital para analizar el futuro legislativo."
+  />
+
+  <EvolucionTimelineSection
+    heading="Hitos Legislativos (1979 - 2024)"
+    badgeLabel="Orden Cronológico"
+    milestones={milestones}
+    finalMilestone={finalMilestone}
+  />
+
+  <Estructura2026Section />
+
+  <!-- CTA -->
+  <section class="bg-dark-white-obs py-8">
+    <Container>
+      <div class="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
+        <p class="font-medium">Explora los representantes elegidos bajo el nuevo sistema bicameral.</p>
+        <Button href="/congresistas" variant="outline" size="md" class="rounded-lg">
+          Ver representantes
+        </Button>
+      </div>
+    </Container>
+  </section>
+</Layout>

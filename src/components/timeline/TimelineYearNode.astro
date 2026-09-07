@@ -1,0 +1,17 @@
+---
+interface Props {
+  year: string;
+  variant?: 'default' | 'highlight';
+  class?: string;
+}
+
+const { year, variant = 'default', class: className = '' } = Astro.props;
+
+const variantClass = variant === 'highlight' ? 'bg-red-obs' : 'bg-navy-900';
+---
+
+<span
+  class={`inline-flex min-w-12 items-center justify-center rounded-lg px-2 py-1 text-[11px] font-inter font-bold text-white shadow-md sm:min-w-0 sm:px-4 sm:py-2 sm:text-sm ${variantClass} ${className}`}
+>
+  {year}
+</span>

@@ -1,0 +1,74 @@
+---
+import Container from '../ui/Container.astro';
+import TimelineMilestone from '../timeline/TimelineMilestone.astro';
+import TimelineFinalCard from '../timeline/TimelineFinalCard.astro';
+
+interface Milestone {
+  year: string;
+  yearVariant?: 'default' | 'highlight';
+  badgeLabel: string;
+  title: string;
+  description: string;
+  cardVariant?: 'default' | 'tint';
+}
+
+interface FinalMilestone {
+  year: string;
+  yearVariant?: 'default' | 'highlight';
+  eyebrow?: string;
+  title: string;
+  description: string;
+  stats?: { label: string; value: string }[];
+}
+
+interface Props {
+  heading: string;
+  badgeLabel?: string;
+  milestones: Milestone[];
+  finalMilestone: FinalMilestone;
+}
+
+const { heading, badgeLabel, milestones, finalMilestone } = Astro.props;
+---
+
+<section class="bg-white py-12 md:py-16">
+  <Container>
+    <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between md:mb-14">
+      <h2 class="text-2xl font-bold text-primary-black-obs md:text-3xl">{heading}</h2>
+      {badgeLabel && (
+        <span class="inline-flex w-fit items-center gap-2 rounded-full bg-sky-blue-obs px-4 py-2 text-xs font-semibold text-primary-blue-obs">
+          {badgeLabel}
+        </span>
+      )}
+    </div>
+
+    <div class="relative">
+      <div
+        class="absolute bottom-0 left-6 top-0 w-px bg-light-gray-obs sm:left-1/2 sm:-translate-x-1/2"
+        aria-hidden="true"
+      >
+      </div>
+
+      {milestones.map((milestone, index) => (
+        <TimelineMilestone
+          year={milestone.year}
+          yearVariant={milestone.yearVariant}
+          badgeLabel={milestone.badgeLabel}
+          title={milestone.title}
+          description={milestone.description}
+          cardVariant={milestone.cardVariant}
+          side={index % 2 === 0 ? 'left' : 'right'}
+        />
+      ))}
+
+      <TimelineFinalCard
+        year={finalMilestone.year}
+        yearVariant={finalMilestone.yearVariant}
+        eyebrow={finalMilestone.eyebrow}
+        title={finalMilestone.title}
+        description={finalMilestone.description}
+        stats={finalMilestone.stats}
+      />
+    </div>
+  </Container>
+</section>

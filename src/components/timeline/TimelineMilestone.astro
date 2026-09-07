@@ -1,0 +1,65 @@
+---
+import Card from '../ui/Card/Card.astro';
+import TimelineYearNode from './TimelineYearNode.astro';
+
+interface Props {
+  year: string;
+  yearVariant?: 'default' | 'highlight';
+  badgeLabel: string;
+  title: string;
+  description: string;
+  side?: 'left' | 'right';
+  cardVariant?: 'default' | 'tint';
+}
+
+const {
+  year,
+  yearVariant = 'default',
+  badgeLabel,
+  title,
+  description,
+  side = 'left',
+  cardVariant = 'default',
+} = Astro.props;
+
+const isLeft = side === 'left';
+const cardBg = cardVariant === 'tint' ? 'bg-sky-red-obs' : 'bg-white';
+const badgeBgClass = cardVariant === 'tint' ? 'bg-white' : 'bg-sky-blue-obs';
+const badgeTextClass = cardVariant === 'tint' ? 'text-red-obs' : 'text-primary-blue-obs';
+---
+
+<div class="relative mb-8 flex flex-col gap-4 pl-14 sm:mb-14 sm:flex-row sm:items-start sm:gap-6 sm:pl-0">
+  <div class="sm:order-1 sm:w-[calc(50%-2rem)] sm:text-right">
+    {isLeft && (
+      <Card class={cardBg} roundedClass="rounded-2xl">
+        <span
+          class={`inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-3 ${badgeBgClass} ${badgeTextClass}`}
+        >
+          {badgeLabel}
+        </span>
+        <h3 class="text-lg font-bold text-primary-black-obs mb-2">{title}</h3>
+        <p class="text-sm leading-6 text-primary-gray-obs">{description}</p>
+      </Card>
+    )}
+  </div>
+
+  <TimelineYearNode
+    year={year}
+    variant={yearVariant}
+    class="absolute left-0 top-1 z-10 sm:static sm:order-2 sm:top-0"
+  />
+
+  <div class="sm:order-3 sm:w-[calc(50%-2rem)]">
+    {!isLeft && (
+      <Card class={cardBg} roundedClass="rounded-2xl">
+        <span
+          class={`inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-3 ${badgeBgClass} ${badgeTextClass}`}
+        >
+          {badgeLabel}
+        </span>
+        <h3 class="text-lg font-bold text-primary-black-obs mb-2">{title}</h3>
+        <p class="text-sm leading-6 text-primary-gray-obs">{description}</p>
+      </Card>
+    )}
+  </div>
+</div>
