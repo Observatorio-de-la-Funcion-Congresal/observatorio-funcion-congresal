@@ -1,12 +1,13 @@
 ---
 import Container from '../ui/Container.astro';
 import downloadIcon from '../../assets/icons/download.svg?raw';
+import { METHODOLOGY_URL } from '../../constants';
 
 const stats = [
   { value: '2026', label: 'Año de fundación' },
-  { value: '195', label: 'Representantes monitoreados' },
-  { value: '+312', label: 'Promesas registradas' },
-  { value: '47', label: 'Leyes documentadas' },
+  { value: '190', label: 'Representantes monitoreados' },
+  { value: '+120', label: 'Promesas identificadas Congreso 2026' },
+  { value: '6', label: 'Partidos políticos' },
 ];
 ---
 
@@ -21,16 +22,20 @@ const stats = [
           y veraz.
         </p>
         <p class="leading-[26px] mb-6 text-primary-gray-obs">
-          Desde 2019 monitoreamos el Congreso peruano. Con el sistema bicameral en 2026, relanzamos la
-          plataforma para cubrir las tres instancias parlamentarias.
+          En el marco de las elecciones generales 2026 se extrajo la información de promesas de campaña de aquellos
+          congresistas que buscaban la reelección en el nuevo congreso bicameral. Posteriormente, 
+          con el nuevo congreso bicameral, trabajamos por acercar la información sobre el desempeño y 
+          propuestas de los congresistas en ambas cámaras.
         </p>
-        <button
-          type="button"
+        <a
+          href={METHODOLOGY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           class="inline-flex items-center gap-2 text-primary-blue-obs font-medium underline"
         >
           Descarga nuestra metodología
           <span class="w-6 h-6 svg-full"><Fragment set:html={downloadIcon} /></span>
-        </button>
+        </a>
       </div>
 
       <div class="grid grid-cols-2 gap-4 w-full lg:w-auto lg:min-w-[22rem]">
