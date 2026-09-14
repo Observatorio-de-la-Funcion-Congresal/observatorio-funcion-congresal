@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import InternalPageHero from '../components/sections/InternalPageHero.astro';
+import Container from '../components/ui/Container.astro';
+import GlossaryApp from '../components/glossary/GlossaryApp.vue';
+
+const URL_DATA = import.meta.env.URL_DATA_V2;
+---
+
+<Layout
+  title="Glosario Legislativo — Observatorio de la Función Congresal"
+  description="Consulta los términos técnicos más importantes para entender el funcionamiento del Congreso de la República y los procesos parlamentarios en el Perú."
+>
+  <InternalPageHero
+    title="Glosario Legislativo"
+    subtitle="Consulta los términos técnicos más importantes para entender el funcionamiento del Congreso de la República y los procesos parlamentarios en el Perú"
+  />
+
+  <section class="py-10 bg-gray-50 min-h-[60vh]">
+    <Container>
+      <GlossaryApp dataUrl={URL_DATA} client:only="vue" />
+    </Container>
+  </section>
+</Layout>

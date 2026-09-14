@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "term": "Proyecto de ley",
+    "definition": "Proposición legislativa destinada a crear, modificar, interpretar, derogar o suspender una norma con rango de ley. En el procedimiento legislativo ordinario, se presenta ante la Cámara de Diputados por los sujetos que tienen derecho de iniciativa legislativa.",
+    "source": "Constitución Política del Perú, arts. 105 y 107; Reglamento de la Cámara de Diputados."
+  },
+  {
+    "id": 2,
+    "term": "Iniciativa legislativa",
+    "definition": "Facultad reconocida por la Constitución a determinados órganos, autoridades, instituciones y ciudadanos para presentar proposiciones legislativas. En la formación ordinaria de leyes, el presidente de la República y los diputados tienen derecho de iniciativa, así como los demás sujetos previstos por la Constitución en las materias que les corresponden.",
+    "source": "Constitución Política del Perú, art. 107."
+  },
+  {
+    "id": 3,
+    "term": "Comisión parlamentaria",
+    "definition": "Órgano especializado integrado por senadores o diputados, según la cámara a la que pertenezca, encargado de estudiar, debatir, dictaminar, investigar o realizar otras funciones parlamentarias sobre materias determinadas.",
+    "source": "Constitución Política del Perú, art. 94; reglamentos de la Cámara de Diputados y del Senado."
+  },
+  {
+    "id": 4,
+    "term": "Bicameralidad",
+    "definition": "Sistema legislativo que consiste en dos cámaras asamblearias (ej. Senado y Cámara de Diputados). Permite una mayor deliberación y control en la creación de leyes.",
+    "source": "Reglamento del Congreso de la República."
+  },
+  {
+    "id": 5,
+    "term": "Cámara de Diputados",
+    "definition": "Una de las cámaras en un sistema bicameral, generalmente considerada la \"cámara baja\". Se encarga de proponer, debatir y aprobar proyectos de ley, representando de manera más directa a la población por distritos electorales.",
+    "source": "Reglamento de la Cámara de Diputados."
+  },
+  {
+    "id": 6,
+    "term": "Dictamen",
+    "definition": "Documento que contiene la opinión y resolución fundamentada de una comisión sobre un proyecto de ley, recomendando su aprobación, modificación o rechazo.",
+    "source": "Reglamento del Congreso de la República."
+  },
+  {
+    "id": 7,
+    "term": "Legislatura",
+    "definition": "Periodo durante el cual el Congreso ejerce sus funciones ordinarias. Se divide típicamente en legislaturas ordinarias y extraordinarias.",
+    "source": "Constitución Política del Perú, art. 106."
+  },
+  {
+    "id": 8,
+    "term": "Pleno del Congreso",
+    "definition": "Máxima asamblea deliberativa del Congreso donde se reúnen todos los congresistas para debatir y votar los proyectos de ley y otros asuntos de importancia nacional.",
+    "source": "Reglamento del Congreso de la República."
+  },
+  {
+    "id": 9,
+    "term": "Promulgación",
+    "definition": "Acto por el cual el Presidente de la República (o el Presidente del Congreso en su defecto) manda publicar y cumplir una ley aprobada por el Congreso.",
+    "source": "Constitución Política del Perú, art. 108."
+  },
+  {
+    "id": 10,
+    "term": "Quórum",
+    "definition": "Número mínimo de miembros que deben estar presentes en una sesión del Congreso o comisión para que sus deliberaciones y acuerdos sean válidos.",
+    "source": "Reglamento del Congreso de la República."
+  },
+  {
+    "id": 11,
+    "term": "Senado",
+    "definition": "Cámara alta en un sistema bicameral. Suele tener funciones de revisión de las leyes aprobadas por la cámara baja y representación territorial o reflexiva más amplia.",
+    "source": "Reglamento del Senado de la República."
+  }
+]
