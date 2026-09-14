@@ -87,13 +87,18 @@ async function loadTerms() {
 
 async function loadAvailableLetters() {
   try {
-    availableLetters.value = await fetchGlossaryLetters(props.dataUrl)
+    availableLetters.value = await fetchGlossaryLetters(props.dataUrl, { search: search.value })
   } catch {
     // non-critical — nav just shows no letters enabled
   }
 }
 
-const debouncedLoadTerms = debounce(loadTerms, props.searchDebounceMs)
+function refresh() {
+  loadTerms()
+  loadAvailableLetters()
+}
+
+const debouncedRefresh = debounce(refresh, props.searchDebounceMs)
 
 function onSelectLetter(letter: string | null) {
   activeLetter.value = letter
@@ -101,11 +106,10 @@ function onSelectLetter(letter: string | null) {
 }
 
 watch(search, () => {
-  debouncedLoadTerms()
+  debouncedRefresh()
 })
 
 onMounted(() => {
-  loadTerms()
-  loadAvailableLetters()
+  refresh()
 })
 </script>

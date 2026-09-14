@@ -5,7 +5,7 @@ export interface FetchGlossaryParams {
   letter?: string | null
 }
 
-// Mock endpoint: filters client-side until a real search API exists.
+// Backend applies the search/letter filters; the client just fetches and renders the result.
 export async function fetchGlossaryTerms(
   dataUrl: string,
   { search = '', letter = null }: FetchGlossaryParams = {}
@@ -18,19 +18,17 @@ export async function fetchGlossaryTerms(
   const res = await fetch(`${dataUrl}/glossary.json${query ? `?${query}` : ''}`)
   if (!res.ok) throw new Error('Failed to load the glossary')
 
-  const terms: GlossaryTerm[] = await res.json()
-  const q = search.trim().toLowerCase()
-
-  return terms.filter((t) => {
-    const matchesSearch = q === '' || t.term.toLowerCase().includes(q) || t.definition.toLowerCase().includes(q)
-    const matchesLetter = !letter || t.term.trim()[0]?.toUpperCase() === letter
-    return matchesSearch && matchesLetter
-  })
+  return res.json()
 }
 
 // Dedicated endpoint so available letters stay correct once glossary.json is paginated server-side.
-export async function fetchGlossaryLetters(dataUrl: string): Promise<Set<string>> {
-  const res = await fetch(`${dataUrl}/glossary-letters.json`)
+// Backend applies the search filter and returns only the letters that have matching terms.
+export async function fetchGlossaryLetters(dataUrl: string, { search = '' }: FetchGlossaryParams = {}): Promise<Set<string>> {
+  const params = new URLSearchParams()
+  if (search) params.set('search', search)
+
+  const query = params.toString()
+  const res = await fetch(`${dataUrl}/glossary-letters.json${query ? `?${query}` : ''}`)
   if (!res.ok) throw new Error('Failed to load the glossary letters')
 
   const letters: string[] = await res.json()
