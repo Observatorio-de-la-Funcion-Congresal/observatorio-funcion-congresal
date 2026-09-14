@@ -1,28 +1,23 @@
 ---
 import Container from '../ui/Container.astro';
 
-// Contenido de ejemplo: reemplazar por el equipo real cuando esté definido.
 const members = [
-  {
-    name: 'Daniela Urquiaga',
-    role: 'Directora Ejecutiva',
-    bio: 'Politóloga por la PUCP, máster en Gobierno y Administración Pública por la UCM.',
-  },
-  {
-    name: 'Rodrigo Almenara',
-    role: 'Director de Datos',
-    bio: 'Estadístico y especialista en ciencia de datos aplicada a política pública.',
-  },
-  {
-    name: 'Valeria Meza',
-    role: 'Investigadora Legislativa',
-    bio: 'Abogada constitucionalista especializada en derecho parlamentario comparado.',
-  },
-  {
-    name: 'Carlos Huamán',
-    role: 'Diseño y Comunicaciones',
-    bio: 'Diseñador UX/UI con enfoque en visualización de datos para el sector público.',
-  },
+  { name: 'Adrian Priale', title: 'Ingeniero de Sistemas', role: 'Voluntario para el desarrollo web de la plataforma' },
+  { name: 'Alcides Huanca', title: 'Ingeniero de Sistemas', role: 'Voluntario para el desarrollo web de la plataforma' },
+  { name: 'Alex Evanan', title: 'Economista', role: 'Voluntario para la recopilación y análisis de datos' },
+  { name: 'Almendra Orbegoso', title: 'Mg. en Diseño de Experiencia de Usuario', role: 'Voluntaria para conducir la investigación en el diseño de la plataforma' },
+  { name: 'Alonso Barandiaran', title: 'Lic. en Ciencia Política y Gobierno', role: 'Voluntario para la recopilación y análisis de datos' },
+  { name: 'Braulio Arteaga', title: 'Economista', role: 'Voluntario para la recopilación y análisis de datos' },
+  { name: 'Daniela Segura', title: 'Comunicadora Social', role: 'Voluntaria encargada del Diseño UX de la plataforma' },
+  { name: 'Eduardo Haro', title: 'MPP', role: 'Voluntario para las comunicaciones internas y externas' },
+  { name: 'Karen Gonzales', title: 'Diseñadora Gráfica', role: 'Voluntaria encargada del Diseño UI de la plataforma' },
+  { name: 'Kiara Momediano', title: 'Comunicadora', role: 'Voluntaria encargada de comunicaciones externas y publicaciones' },
+  { name: 'Luis Rodas', title: 'Economista', role: 'Voluntario para la recopilación y análisis de datos' },
+  { name: 'Mariapaula Macedo', title: 'Br. en Ciencia Política y Gobierno', role: 'Voluntaria para la recopilación y análisis de datos' },
+  { name: 'Marlene Cardenas', title: 'Antropóloga', role: 'Voluntaria para la recopilación y análisis de datos' },
+  { name: 'Mauricio Ibañez', title: 'MPP', role: 'Voluntario encargado de la dirección general del proyecto' },
+  { name: 'Monica Sanchez', title: 'Abogada', role: 'Voluntaria encargada del diseño del Producto Digital' },
+  { name: 'Valeria Arce', title: 'Br. En Administración de Servicios', role: 'Voluntaria para la recopilación y análisis de datos' },
 ];
 
 ---
@@ -34,8 +29,8 @@ const members = [
       {members.map((member) => (
         <div>
           <h3 class="text-sm font-bold text-white mb-1.5">{member.name}</h3>
-          <p class="text-xs font-bold text-white/60 mb-2">{member.role}</p>
-          <p class="text-xs text-white/50 leading-5">{member.bio}</p>
+          <p class="text-xs font-bold text-white/60 mb-2">{member.title}</p>
+          <p class="text-xs text-white/50 leading-5">{member.role}</p>
         </div>
       ))}
     </div>
