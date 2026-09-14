@@ -7,12 +7,14 @@
 interface NavChild {
   label: string;
   href: string;
+  disabled?: boolean;
 }
 
 interface NavItem {
   label: string;
   href?: string;
   children?: NavChild[];
+  disabled?: boolean;
 }
 
 interface Props {
@@ -28,7 +30,7 @@ const defaultItems: NavItem[] = [
       { label: 'Conoce tu congreso', href: '/bicameralidad' },
       { label: 'Línea de tiempo', href: '/linea-tiempo-bicameralidad' },
       { label: 'Glosario', href: '/glosario' },
-      { label: 'Ruta de proyecto de ley', href: '/ruta-proyecto-ley' }
+      { label: 'Ruta de proyecto de ley', href: '/ruta-proyecto-ley', disabled: true }
     ]
   },
   { label: 'Congresistas', href: '/congresistas' },
@@ -36,7 +38,7 @@ const defaultItems: NavItem[] = [
   { label: 'Actividad del congreso', href: '#' }
 ];
 
-const startWithSlash = (path: string) => path.startsWith('/');
+const startWithSlash = (path: string) => path.startsWith('/') || path === '#';
 
 const { items = defaultItems, class: className = '', mobile = false } = Astro.props;
 
@@ -62,6 +64,8 @@ const currentPath = Astro.url.pathname;
                     'text-sm transition-colors hover:text-navy-900',
                     currentPath === child.href ? 'text-navy-900 font-medium' : 'text-gray-500',
                   ].join(' ')}
+                  aria-disabled={child.disabled ? 'true' : 'false'}
+                  tabindex={child.disabled ? '-1' : undefined}
                 >
                   {child.label}
                 </a>
@@ -125,6 +129,8 @@ const currentPath = Astro.url.pathname;
           ].join(' ')}
           target={startWithSlash(item.href!) ? '_self' : '_blank'}
           rel={startWithSlash(item.href!) ? undefined : 'noopener noreferrer'}
+          aria-disabled={item.disabled ? 'true' : 'false'}
+          tabindex={item.disabled ? '-1' : undefined}
         >
           {item.label}
         </a>
