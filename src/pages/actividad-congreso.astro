@@ -2,6 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import InternalPageHero from '../components/sections/InternalPageHero.astro';
 import Container from '../components/ui/Container.astro';
+import RepresentationWeeks from '../components/activity/RepresentationWeeks.astro';
+
+/*
+ * Contenido anterior de la página (estadísticas, gráficos y tablas desde congress-activity.json).
+ * Comentado temporalmente: la API local (URL_DATA_V2) aún no expone congress-activity.json.
+
 import ActivityStats from '../components/activity/ActivityStats.astro';
 import ActivityCharts from '../components/activity/ActivityCharts.astro';
 import ActivityRecordsTable from '../components/activity/ActivityRecordsTable.vue';
@@ -69,12 +75,28 @@ const motions = activity?.motions ?? [];
 // Options derived from the bills dataset, used to filter the bills table
 const commissionOptions = [...new Set(bills.map((b) => b.commission))].sort();
 const factionOptions = [...new Set(bills.map((b) => b.faction))].sort();
+*/
 ---
 
 <Layout
   title="Actividad del Congreso — Observatorio de la Función Congresal"
-  description="Leyes aprobadas, proyectos en debate, sesiones y comisiones del período 2026."
+  description="Semanas de representación 2021–2026: informes presentados por los congresistas y su porcentaje de cumplimiento."
 >
+  <InternalPageHero
+    eyebrow="Actividad del Congreso"
+    title="Semanas de representación 2021–2026"
+    subtitle="Revisa cuántos informes presentaron los congresistas y cuál porcentaje de cumplimiento alcanzaron."
+  />
+
+  <section class="py-10 bg-dark-white-obs min-h-[70vh]">
+    <Container>
+      <RepresentationWeeks />
+    </Container>
+  </section>
+
+  {/*
+  Contenido anterior de la página — descomentar junto con el bloque del frontmatter.
+
   <InternalPageHero
     title="Actividad del Congreso"
     subtitle="Leyes aprobadas, proyectos en debate, sesiones y comisiones del período 2026."
@@ -107,4 +129,5 @@ const factionOptions = [...new Set(bills.map((b) => b.faction))].sort();
       <ActivityCommissionsList commissions={activity?.active_commission_list ?? []} />
     </Container>
   </section>
+  */}
 </Layout>

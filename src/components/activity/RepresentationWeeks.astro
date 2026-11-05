@@ -1,0 +1,230 @@
+---
+/**
+ * RepresentationWeeks — "Semanas de representación 2021–2026" section.
+ * Ported from maquetacion/actividad del congreso/index-2.html.
+ * Data is static (hard-coded from the mockup) until an API source exists.
+ */
+import usersIcon from '../../assets/icons/users.svg?raw';
+import userIcon from '../../assets/icons/user.svg?raw';
+import checkIcon from '../../assets/icons/check-circle.svg?raw';
+import billIcon from '../../assets/icons/bill.svg?raw';
+import calendarIcon from '../../assets/icons/calendar.svg?raw';
+
+type MonthStatus = 'none' | 'held' | 'partial' | 'missing';
+
+const MONTHS = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Dic'];
+
+// h = held, p = partial, m = missing (no representation week), - = outside the period
+const CALENDAR_SOURCE: Record<string, string> = {
+  '2021': '--------hhph',
+  '2022': 'hhhhhhmhhhhm',
+  '2023': 'hhhhhmhhhhmh',
+  '2024': 'hhhhhhhhhhhh',
+  '2025': 'hhhhhhhhhhhh',
+  '2026': 'hhhhhhh-----',
+};
+
+const STATUS_BY_CODE: Record<string, MonthStatus> = { h: 'held', p: 'partial', m: 'missing', '-': 'none' };
+
+const calendar = Object.entries(CALENDAR_SOURCE).map(([year, codes]) => ({
+  year,
+  months: [...codes].map((code) => STATUS_BY_CODE[code]),
+}));
+
+const STATUS_CLASS: Record<MonthStatus, string> = {
+  none: 'bg-lighter-border-gray-obs',
+  held: 'bg-light-blue-obs',
+  partial: 'bg-[#FFB800]',
+  missing: 'bg-red-obs',
+};
+
+const legend: { status: MonthStatus; label: string }[] = [
+  { status: 'held', label: 'Con semana de representación' },
+  { status: 'partial', label: 'Información parcial (nov. 2021)' },
+  { status: 'missing', label: 'Sin semana de representación' },
+];
+
+const complianceStats = [
+  { icon: userIcon, value: '91,0 %', label: 'Promedio de informes presentados por congresista' },
+  { icon: checkIcon, value: '28', label: 'congresistas presentaron todos sus informes (100 %)' },
+  { icon: usersIcon, value: '102 de 140', label: 'congresistas superan el 90 % de cumplimiento' },
+  { icon: billIcon, value: '14', label: 'congresistas están por debajo del 80 %' },
+];
+
+const groups = [
+  { name: 'Juntos por el Perú – Voces del Pueblo', value: 94.5 },
+  { name: 'Bloque Magisterial', value: 94.5 },
+  { name: 'Acción Popular', value: 94.1 },
+  { name: 'Honor y Democracia', value: 94.1 },
+  { name: 'Fuerza Popular', value: 93.4 },
+  { name: 'No agrupados', value: 87.4 },
+  { name: 'Perú Libre', value: 86.3 },
+  // Single-member group: shown lighter because it is not comparable
+  { name: 'Podemos Perú', value: 75.0, outlier: true },
+];
+
+const AXIS_TICKS = [0, 20, 40, 60, 80, 100];
+
+const formatPercent = (value: number) => `${value.toFixed(1).replace('.', ',')} %`;
+
+const QUALITY_ANALYSIS_URL = '#';
+const OFICIALIA_MAYOR_URL = '#';
+
+const panelClass = 'bg-white border border-[#DCE9F5] rounded-2xl';
+const iconClass = '[&>svg]:w-6 [&>svg]:h-6';
+---
+
+<div class="font-inter text-dark-blue-obs flex flex-col gap-4">
+  <!-- Intro -->
+  <section class={`${panelClass} grid grid-cols-1 sm:grid-cols-[60px_1fr] gap-4 p-5`}>
+    <div class={`w-12 h-12 sm:w-15 sm:h-15 rounded-full bg-pill-blue-obs text-accent-blue-obs grid place-items-center ${iconClass}`} aria-hidden="true" set:html={usersIcon} />
+    <div class="text-sm leading-relaxed text-primary-gray-obs space-y-2">
+      <h2 class="text-lg sm:text-xl font-extrabold text-dark-blue-obs">¿Qué son las semanas de representación?</h2>
+      <p>
+        Cada mes, los congresistas deben dedicar algunos días de su trabajo a estar en contacto con la ciudadanía. Este
+        periodo se llama <strong>semana de representación</strong> y está establecido en el Reglamento del Congreso.
+      </p>
+      <p>
+        Durante esos días, los congresistas se reúnen con vecinos y organizaciones sociales, coordinan con autoridades,
+        visitan obras, programas sociales, colegios, postas y otros servicios públicos para conocer las necesidades de la
+        población.
+      </p>
+      <p>
+        Al finalizar, deben presentar un informe sobre las actividades realizadas ante la
+        <a href={OFICIALIA_MAYOR_URL} class="font-bold text-accent-blue-obs hover:underline">Oficialía Mayor del Congreso</a>,
+        que es el área administrativa encargada de recibir estos informes y apoyar el funcionamiento del Congreso. Estos
+        informes se publican en PDF para que la ciudadanía pueda conocer qué actividades reportó cada congresista.
+      </p>
+    </div>
+  </section>
+
+  <div class="grid grid-cols-1 lg:grid-cols-[1.22fr_1fr] gap-4">
+    <!-- Calendar -->
+    <section class={`${panelClass} p-4 sm:p-5`}>
+      <h2 class="text-lg sm:text-xl font-extrabold">En total hubo 54 semanas de representación</h2>
+      <p class="text-sm text-regular-gray-obs mt-1">entre septiembre de 2021 y julio de 2026 (59 meses en total)</p>
+
+      <div class="my-6 grid gap-1.5 sm:gap-2" role="img" aria-label="Calendario mensual de semanas de representación de 2021 a 2026">
+        <div class="grid grid-cols-[32px_repeat(12,minmax(0,1fr))] sm:grid-cols-[38px_repeat(12,minmax(0,1fr))] gap-1 sm:gap-2">
+          <span></span>
+          {MONTHS.map((m) => <span class="text-center text-[8px] sm:text-[11px] font-semibold text-primary-gray-obs">{m}</span>)}
+        </div>
+        {calendar.map((row) => (
+          <div class="grid grid-cols-[32px_repeat(12,minmax(0,1fr))] sm:grid-cols-[38px_repeat(12,minmax(0,1fr))] gap-1 sm:gap-2 items-center">
+            <b class="text-[9px] sm:text-[11px] font-semibold text-regular-gray-obs">{row.year}</b>
+            {row.months.map((status) => <i class={`block aspect-square rounded-md sm:rounded-lg ${STATUS_CLASS[status]}`}></i>)}
+          </div>
+        ))}
+      </div>
+
+      <div class="flex flex-wrap gap-x-5 gap-y-2 text-xs text-regular-gray-obs">
+        {legend.map((item) => (
+          <span class="flex items-center gap-2">
+            <i class={`inline-block w-4 h-4 rounded ${STATUS_CLASS[item.status]}`}></i>{item.label}
+          </span>
+        ))}
+      </div>
+
+      <div class="mt-4 p-4 rounded-xl bg-sky-blue-obs flex items-center gap-3 text-xs leading-relaxed text-primary-gray-obs">
+        <span class="w-8 h-8 shrink-0 rounded-full bg-[#2782F4] text-white grid place-items-center text-lg font-bold">i</span>
+        <p>
+          No hubo semana de representación en julio y diciembre de 2022, junio y noviembre de 2023. En noviembre de 2021
+          la cobertura fue parcial.
+        </p>
+      </div>
+    </section>
+
+    <!-- Compliance -->
+    <section class={`${panelClass} p-4 sm:p-5`}>
+      <h2 class="text-lg sm:text-xl font-extrabold">¿Cómo fue el cumplimiento de la presentación de informes?</h2>
+      <p class="text-sm text-regular-gray-obs mt-1 mb-3">
+        De un total de 6 979 informes que los congresistas debían presentar, se presentaron <strong>6 372.</strong>
+      </p>
+
+      <div class="rounded-xl px-3 py-3 text-center text-white bg-linear-to-r from-primary-blue-obs to-accent-blue-obs flex flex-col">
+        <strong class="text-4xl font-extrabold leading-tight">91,3 %</strong>
+        <span class="text-sm font-semibold">de informes presentados</span>
+        <small class="text-xs mt-1">6 372 de 6 979 informes exigibles</small>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
+        {complianceStats.map((stat) => (
+          <div class="min-h-19 p-3 rounded-xl bg-sky-blue-obs flex items-center gap-3">
+            <span class={`w-10 h-10 shrink-0 rounded-full bg-pill-blue-obs text-accent-blue-obs grid place-items-center ${iconClass}`} set:html={stat.icon} />
+            <div>
+              <strong class="block text-base">{stat.value}</strong>
+              <p class="text-xs text-primary-gray-obs leading-snug mt-0.5">{stat.label}</p>
+            </div>
+          </div>
+        ))}
+        <div class="sm:col-span-2 p-3 rounded-xl bg-sky-blue-obs flex items-center gap-3">
+          <span class="w-10 h-10 shrink-0 rounded-full bg-red-obs text-white border-4 border-sky-red-obs grid place-items-center text-xl font-extrabold">!</span>
+          <div>
+            <strong class="block text-base">3</strong>
+            <p class="text-xs text-primary-gray-obs leading-snug mt-0.5">
+              congresistas están por debajo del 50 % (el más bajo es 26,7 %).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-2 p-3 rounded-xl bg-[#E2F5F2] text-[#426C70] flex items-center gap-3 text-xs leading-relaxed">
+        <span class={`shrink-0 text-[#087D73] ${iconClass}`} set:html={calendarIcon} />
+        <p>
+          Si se consideran las licencias, exoneraciones y dispensas registradas (447 documentos), la
+          <strong>cobertura sube a 96,3 %.</strong> Aún quedan 257 meses-congresista sin ningún documento.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Groups bar chart -->
+  <section class={`${panelClass} p-4 sm:p-5`}>
+    <h2 class="text-lg sm:text-xl font-extrabold">Porcentaje de informes presentados por grupo parlamentario</h2>
+    <p class="text-sm text-regular-gray-obs mt-1 mb-4">Porcentaje de informes presentados sobre el total exigible.</p>
+
+    <div class="grid gap-1.5">
+      {groups.map((group) => (
+        <div class="grid grid-cols-[115px_minmax(0,1fr)_48px] sm:grid-cols-[220px_minmax(0,1fr)_74px] items-center gap-1.5 sm:gap-2.5">
+          <span class="text-right text-[10px] sm:text-xs text-regular-gray-obs">{group.name}</span>
+          <div class="h-3.5 sm:h-5">
+            <i
+              class={`block h-full rounded-r ${group.outlier ? 'bg-[#82C6ED]' : 'bg-accent-blue-obs'}`}
+              style={`width:${group.value}%`}
+            ></i>
+          </div>
+          <b class="text-[10px] sm:text-xs text-accent-blue-obs whitespace-nowrap">{formatPercent(group.value)}</b>
+        </div>
+      ))}
+    </div>
+    <div class="flex justify-between mt-2 mb-3 ml-[121px] mr-[48px] sm:ml-[230px] sm:mr-[84px] text-[8px] sm:text-[11px] text-gray-icon-obs">
+      {AXIS_TICKS.map((tick) => <span>{tick} %</span>)}
+    </div>
+
+    <div class="flex items-center gap-3 p-3 border border-[#FFDC8B] rounded-xl bg-yellow-obs text-[#C44C00] text-xs leading-relaxed">
+      <span class="w-7 h-7 shrink-0 rounded-full bg-[#F18A00] text-white border-2 border-[#FFE2AE] grid place-items-center text-base font-extrabold">!</span>
+      <p>
+        <strong>Nota:</strong> Podemos Perú registró un cumplimiento del <strong>75,0 % (21 de 28 informes).</strong> Este
+        resultado corresponde a un solo congresista, por lo que no es comparable con el de los demás grupos parlamentarios,
+        que están integrados por varios congresistas.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quality analysis CTA -->
+  <section class={`${panelClass} flex flex-wrap sm:flex-nowrap items-center gap-4 p-4`}>
+    <div class={`w-12 h-12 sm:w-16 sm:h-16 shrink-0 rounded-full bg-pill-blue-obs text-accent-blue-obs grid place-items-center ${iconClass}`} aria-hidden="true" set:html={billIcon} />
+    <div class="flex-1 min-w-[calc(100%-4rem)] sm:min-w-0">
+      <h2 class="text-lg sm:text-xl font-extrabold">¿Qué tan completos y de calidad son estos informes?</h2>
+      <p class="text-xs text-regular-gray-obs mt-1">
+        Explora el análisis de calidad de los informes de representación, elaborado por nuestro voluntario Luis Rodas.
+      </p>
+    </div>
+    <a
+      href={QUALITY_ANALYSIS_URL}
+      class="border-[1.5px] border-accent-blue-obs rounded-lg px-4 py-3 text-xs font-semibold text-accent-blue-obs underline hover:bg-sky-blue-obs"
+    >
+      Ver análisis de calidad de los informes <span aria-hidden="true" class="ml-2 no-underline">↗</span>
+    </a>
+  </section>
+</div>
