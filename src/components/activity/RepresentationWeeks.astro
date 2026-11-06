@@ -2,6 +2,8 @@
 /**
  * RepresentationWeeks — "Semanas de representación 2021–2026" section.
  * Ported from maquetacion/actividad del congreso/index-2.html.
+ * Markup mirrors the mockup (index-2.html); styles.css values are reproduced with Tailwind
+ * arbitrary values. Breakpoints follow the mockup (max-width 850px / 600px).
  * Data is static (hard-coded from the mockup) until an API source exists.
  */
 import usersIcon from '../../assets/icons/users.svg?raw';
@@ -9,6 +11,8 @@ import userIcon from '../../assets/icons/user.svg?raw';
 import checkIcon from '../../assets/icons/check-circle.svg?raw';
 import billIcon from '../../assets/icons/bill.svg?raw';
 import calendarIcon from '../../assets/icons/calendar.svg?raw';
+// Mockup titles use Inter 800, which Layout.astro does not load (only 400–700).
+import '@fontsource/inter/800.css';
 
 type MonthStatus = 'none' | 'held' | 'partial' | 'missing';
 
@@ -31,17 +35,18 @@ const calendar = Object.entries(CALENDAR_SOURCE).map(([year, codes]) => ({
   months: [...codes].map((code) => STATUS_BY_CODE[code]),
 }));
 
+// Cell color per status (mockup: .blue / .yellow / .red; default gray = outside the period)
 const STATUS_CLASS: Record<MonthStatus, string> = {
-  none: 'bg-lighter-border-gray-obs',
-  held: 'bg-light-blue-obs',
-  partial: 'bg-[#FFB800]',
-  missing: 'bg-red-obs',
+  none: 'bg-[#f0f2f4]',
+  held: 'bg-[#c8e3f1]',
+  partial: 'bg-[#ffb800]',
+  missing: 'bg-[#ed1c24]',
 };
 
-const legend: { status: MonthStatus; label: string }[] = [
-  { status: 'held', label: 'Con semana de representación' },
-  { status: 'partial', label: 'Información parcial (nov. 2021)' },
-  { status: 'missing', label: 'Sin semana de representación' },
+const legend: { status: MonthStatus; lines: string[] }[] = [
+  { status: 'held', lines: ['Con semana de representación'] },
+  { status: 'partial', lines: ['Información parcial', '(nov. 2021)'] },
+  { status: 'missing', lines: ['Sin semana de', 'representación'] },
 ];
 
 const complianceStats = [
@@ -72,14 +77,40 @@ const OFICIALIA_MAYOR_URL = '#';
 
 const panelClass = 'bg-white border border-[#DCE9F5] rounded-2xl';
 const iconClass = '[&>svg]:w-6 [&>svg]:h-6';
+
+// Shared class strings (mirroring the mockup's .panel, h2, .subtitle and .stat-* rules)
+const panel = 'bg-white/88 border border-[#dce9f5] rounded-2xl shadow-[0_1px_2px_rgba(16,65,112,0.025)]';
+const panelTitle =
+  'mb-[5px] text-[#081d63] text-[20px] leading-[1.2] font-extrabold tracking-[-0.35px] max-[600px]:text-[17px]';
+const subtitle = 'text-[#667596] text-[13.5px] leading-[1.4]';
+const calendarRow =
+  'grid grid-cols-[38px_repeat(12,minmax(0,1fr))] gap-2 items-center max-[850px]:gap-[6px] max-[600px]:grid-cols-[32px_repeat(12,minmax(0,1fr))] max-[600px]:gap-1';
+const statCard = 'p-[10px] rounded-xl bg-[#eff7fe] flex items-center gap-[10px]';
+const statValue = 'block text-[17px] leading-[1.2] font-bold';
+const statLabel = 'mt-[3px] text-[#586987] text-[11.5px] leading-[1.35]';
+const roundIcon =
+  'rounded-full grid place-items-center shrink-0 bg-[#dceeff] text-[#0755b5] [&>svg]:w-[30px] [&>svg]:h-[30px] max-[600px]:w-12 max-[600px]:h-12 max-[600px]:[&>svg]:w-6 max-[600px]:[&>svg]:h-6';
 ---
 
-<div class="font-inter text-dark-blue-obs flex flex-col gap-4">
+<!--
+  subpixel-antialiased is forced (!) on every element: global.css applies antialiased smoothing to *
+  outside any layer, which renders text thinner/lighter than the mockup.
+-->
+<div class="font-inter leading-[normal] text-[#081d63] subpixel-antialiased! **:subpixel-antialiased!">
+  <header class="mx-[10px] mb-[26px] max-[600px]:mx-[2px] max-[600px]:mb-[18px]">
+    <h2 class="mb-[5px] text-[clamp(25px,3.2vw,36px)] leading-[1.15] font-extrabold tracking-[-0.8px] text-[#081d63]">
+      Semanas de representación 2021–2026
+    </h2>
+    <p class="text-[#667596] text-[17px] leading-[1.45] max-[600px]:text-[14px]">
+      Revisa cuántos informes presentaron los congresistas y cuál porcentaje de cumplimiento alcanzaron.
+    </p>
+  </header>
+
   <!-- Intro -->
-  <section class={`${panelClass} grid grid-cols-1 sm:grid-cols-[60px_1fr] gap-4 p-5`}>
-    <div class={`w-12 h-12 sm:w-15 sm:h-15 rounded-full bg-pill-blue-obs text-accent-blue-obs grid place-items-center ${iconClass}`} aria-hidden="true" set:html={usersIcon} />
-    <div class="text-sm leading-relaxed text-primary-gray-obs space-y-2">
-      <h2 class="text-lg sm:text-xl font-extrabold text-dark-blue-obs">¿Qué son las semanas de representación?</h2>
+  <section class={`${panel} grid grid-cols-[66px_1fr] gap-[18px] px-[22px] py-5 mb-4 max-[600px]:grid-cols-1 max-[600px]:gap-[10px] max-[600px]:p-4`}>
+    <div class={`${roundIcon} w-[60px] h-[60px]`} aria-hidden="true" set:html={usersIcon} />
+    <div class="[&>p]:text-[#4f5e7e] [&>p]:text-[14.5px] [&>p]:leading-[1.48] [&>p]:mt-[7px]">
+      <h3 class={panelTitle}>¿Qué son las semanas de representación?</h3>
       <p>
         Cada mes, los congresistas deben dedicar algunos días de su trabajo a estar en contacto con la ciudadanía. Este
         periodo se llama <strong>semana de representación</strong> y está establecido en el Reglamento del Congreso.
@@ -91,42 +122,48 @@ const iconClass = '[&>svg]:w-6 [&>svg]:h-6';
       </p>
       <p>
         Al finalizar, deben presentar un informe sobre las actividades realizadas ante la
-        <a href={OFICIALIA_MAYOR_URL} class="font-bold text-accent-blue-obs hover:underline">Oficialía Mayor del Congreso</a>,
+        <a href={OFICIALIA_MAYOR_URL} class="text-[#0759c4] font-bold no-underline hover:underline">Oficialía Mayor del Congreso</a>,
         que es el área administrativa encargada de recibir estos informes y apoyar el funcionamiento del Congreso. Estos
         informes se publican en PDF para que la ciudadanía pueda conocer qué actividades reportó cada congresista.
       </p>
     </div>
   </section>
 
-  <div class="grid grid-cols-1 lg:grid-cols-[1.22fr_1fr] gap-4">
+  <div class="grid grid-cols-[1.22fr_1fr] gap-[14px] mb-4 max-[850px]:grid-cols-1">
     <!-- Calendar -->
-    <section class={`${panelClass} p-4 sm:p-5`}>
-      <h2 class="text-lg sm:text-xl font-extrabold">En total hubo 54 semanas de representación</h2>
-      <p class="text-sm text-regular-gray-obs mt-1">entre septiembre de 2021 y julio de 2026 (59 meses en total)</p>
-
-      <div class="my-6 grid gap-1.5 sm:gap-2" role="img" aria-label="Calendario mensual de semanas de representación de 2021 a 2026">
-        <div class="grid grid-cols-[32px_repeat(12,minmax(0,1fr))] sm:grid-cols-[38px_repeat(12,minmax(0,1fr))] gap-1 sm:gap-2">
+    <section class={`${panel} pt-[17px] px-5 pb-[18px] max-[600px]:px-3 max-[600px]:py-[14px]`}>
+      <h3 class={panelTitle}>En total hubo 54 semanas de representación</h3>
+      <p class={`${subtitle} mb-[14px]`}>entre septiembre de 2021 y julio de 2026 (59 meses en total)</p>
+      <div
+        class="mt-[30px] mb-6 grid gap-[7px] max-[600px]:gap-[6px] max-[600px]:mt-[22px] max-[600px]:mb-[18px]"
+        role="img"
+        aria-label="Calendario mensual de semanas de representación de 2021 a 2026"
+      >
+        <div class={`${calendarRow} mb-1`}>
           <span></span>
-          {MONTHS.map((m) => <span class="text-center text-[8px] sm:text-[11px] font-semibold text-primary-gray-obs">{m}</span>)}
+          {MONTHS.map((m) => (
+            <span class="text-center text-[#465574] text-[10.5px] font-semibold max-[600px]:text-[8px]">{m}</span>
+          ))}
         </div>
         {calendar.map((row) => (
-          <div class="grid grid-cols-[32px_repeat(12,minmax(0,1fr))] sm:grid-cols-[38px_repeat(12,minmax(0,1fr))] gap-1 sm:gap-2 items-center">
-            <b class="text-[9px] sm:text-[11px] font-semibold text-regular-gray-obs">{row.year}</b>
-            {row.months.map((status) => <i class={`block aspect-square rounded-md sm:rounded-lg ${STATUS_CLASS[status]}`}></i>)}
+          <div class={calendarRow}>
+            <b class="text-[11px] text-[#627393] font-semibold max-[600px]:text-[9px]">{row.year}</b>
+            {row.months.map((status) => (
+              <i class={`block w-full aspect-square rounded-lg max-[600px]:rounded-[5px] ${STATUS_CLASS[status]}`}></i>
+            ))}
           </div>
         ))}
       </div>
-
-      <div class="flex flex-wrap gap-x-5 gap-y-2 text-xs text-regular-gray-obs">
+      <div class="flex items-start justify-between gap-3 min-h-[54px] text-[#627393] text-[11.5px] leading-[1.45] max-[600px]:gap-[7px] max-[600px]:text-[9px]">
         {legend.map((item) => (
-          <span class="flex items-center gap-2">
-            <i class={`inline-block w-4 h-4 rounded ${STATUS_CLASS[item.status]}`}></i>{item.label}
+          <span class="flex items-start gap-2">
+            <i class={`inline-block w-4 h-4 rounded-[5px] shrink-0 max-[600px]:w-3 max-[600px]:h-3 ${STATUS_CLASS[item.status]}`}></i>
+            <span>{item.lines.map((line, idx) => <>{idx > 0 && <br />}{line}</>)}</span>
           </span>
         ))}
       </div>
-
-      <div class="mt-4 p-4 rounded-xl bg-sky-blue-obs flex items-center gap-3 text-xs leading-relaxed text-primary-gray-obs">
-        <span class="w-8 h-8 shrink-0 rounded-full bg-[#2782F4] text-white grid place-items-center text-lg font-bold">i</span>
+      <div class="mt-[17px] px-4 py-[15px] rounded-xl bg-[#edf6ff] flex items-center gap-[14px] text-[#526484] text-[12.5px] leading-[1.5]">
+        <span class="grid place-items-center w-[31px] h-[31px] rounded-full bg-[#2782f4] text-white text-[22px] font-bold shrink-0">i</span>
         <p>
           No hubo semana de representación en julio y diciembre de 2022, junio y noviembre de 2023. En noviembre de 2021
           la cobertura fue parcial.
@@ -135,41 +172,43 @@ const iconClass = '[&>svg]:w-6 [&>svg]:h-6';
     </section>
 
     <!-- Compliance -->
-    <section class={`${panelClass} p-4 sm:p-5`}>
-      <h2 class="text-lg sm:text-xl font-extrabold">¿Cómo fue el cumplimiento de la presentación de informes?</h2>
-      <p class="text-sm text-regular-gray-obs mt-1 mb-3">
+    <section class={`${panel} pt-[17px] px-5 pb-[18px] max-[600px]:px-3 max-[600px]:py-[14px]`}>
+      <h3 class={panelTitle}>¿Cómo fue el cumplimiento de la presentación de informes?</h3>
+      <p class={`${subtitle} mb-[5px]`}>
         De un total de 6 979 informes que los congresistas debían presentar, se presentaron <strong>6 372.</strong>
       </p>
-
-      <div class="rounded-xl px-3 py-3 text-center text-white bg-linear-to-r from-primary-blue-obs to-accent-blue-obs flex flex-col">
-        <strong class="text-4xl font-extrabold leading-tight">91,3 %</strong>
-        <span class="text-sm font-semibold">de informes presentados</span>
-        <small class="text-xs mt-1">6 372 de 6 979 informes exigibles</small>
+      <div class="rounded-xl pt-[9px] px-3 pb-[10px] text-center text-white bg-[linear-gradient(110deg,#06498f,#0756a8)] flex flex-col">
+        <strong class="text-[37px] leading-[1.05] font-extrabold">91,3 %</strong>
+        <span class="text-[14px] font-semibold">de informes presentados</span>
+        <small class="mt-[3px] text-[11.5px]">6 372 de 6 979 informes exigibles</small>
       </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
+      <div class="grid grid-cols-2 gap-[7px] mt-2">
         {complianceStats.map((stat) => (
-          <div class="min-h-19 p-3 rounded-xl bg-sky-blue-obs flex items-center gap-3">
-            <span class={`w-10 h-10 shrink-0 rounded-full bg-pill-blue-obs text-accent-blue-obs grid place-items-center ${iconClass}`} set:html={stat.icon} />
+          <div class={`${statCard} min-h-[76px]`}>
+            <span
+              class="w-10 h-10 rounded-full bg-[#e1f0ff] text-[#0755b5] grid place-items-center shrink-0 [&>svg]:w-[22px] [&>svg]:h-[22px]"
+              aria-hidden="true"
+              set:html={stat.icon}
+            />
             <div>
-              <strong class="block text-base">{stat.value}</strong>
-              <p class="text-xs text-primary-gray-obs leading-snug mt-0.5">{stat.label}</p>
+              <strong class={statValue}>{stat.value}</strong>
+              <p class={statLabel}>{stat.label}</p>
             </div>
           </div>
         ))}
-        <div class="sm:col-span-2 p-3 rounded-xl bg-sky-blue-obs flex items-center gap-3">
-          <span class="w-10 h-10 shrink-0 rounded-full bg-red-obs text-white border-4 border-sky-red-obs grid place-items-center text-xl font-extrabold">!</span>
+        <div class={`${statCard} col-span-full min-h-[62px]`}>
+          <span
+            class="w-10 h-10 grid place-items-center rounded-full bg-[#ed2c32] text-white border-[5px] border-[#ffdfe0] text-[24px] font-extrabold shrink-0"
+            aria-hidden="true">!</span
+          >
           <div>
-            <strong class="block text-base">3</strong>
-            <p class="text-xs text-primary-gray-obs leading-snug mt-0.5">
-              congresistas están por debajo del 50 % (el más bajo es 26,7 %).
-            </p>
+            <strong class={statValue}>3</strong>
+            <p class={statLabel}>congresistas están por debajo del 50 %<br />(el más bajo es 26,7 %).</p>
           </div>
         </div>
       </div>
-
-      <div class="mt-2 p-3 rounded-xl bg-[#E2F5F2] text-[#426C70] flex items-center gap-3 text-xs leading-relaxed">
-        <span class={`shrink-0 text-[#087D73] ${iconClass}`} set:html={calendarIcon} />
+      <div class="mt-[7px] px-[13px] py-[10px] rounded-xl bg-[#e2f5f2] text-[#426c70] flex items-center gap-3 text-[11.5px] leading-[1.45]">
+        <span class="text-[#087d73] shrink-0 [&>svg]:w-[26px] [&>svg]:h-[26px]" aria-hidden="true" set:html={calendarIcon} />
         <p>
           Si se consideran las licencias, exoneraciones y dispensas registradas (447 documentos), la
           <strong>cobertura sube a 96,3 %.</strong> Aún quedan 257 meses-congresista sin ningún documento.
@@ -179,30 +218,31 @@ const iconClass = '[&>svg]:w-6 [&>svg]:h-6';
   </div>
 
   <!-- Groups bar chart -->
-  <section class={`${panelClass} p-4 sm:p-5`}>
-    <h2 class="text-lg sm:text-xl font-extrabold">Porcentaje de informes presentados por grupo parlamentario</h2>
-    <p class="text-sm text-regular-gray-obs mt-1 mb-4">Porcentaje de informes presentados sobre el total exigible.</p>
-
-    <div class="grid gap-1.5">
+  <section class={`${panel} pt-4 px-5 pb-[15px] mb-4 max-[600px]:px-3 max-[600px]:py-[14px]`}>
+    <h3 class={panelTitle}>Porcentaje de informes presentados por grupo parlamentario</h3>
+    <p class={`${subtitle} mb-[15px]`}>Porcentaje de informes presentados sobre el total exigible.</p>
+    <div class="grid gap-[5px]">
       {groups.map((group) => (
-        <div class="grid grid-cols-[115px_minmax(0,1fr)_48px] sm:grid-cols-[220px_minmax(0,1fr)_74px] items-center gap-1.5 sm:gap-2.5">
-          <span class="text-right text-[10px] sm:text-xs text-regular-gray-obs">{group.name}</span>
-          <div class="h-3.5 sm:h-5">
+        <div class="grid grid-cols-[220px_minmax(0,1fr)_74px] items-center gap-[10px] min-h-5 max-[600px]:grid-cols-[115px_minmax(0,1fr)_48px] max-[600px]:gap-[6px]">
+          <span class="text-right text-[#627393] text-[11.5px] max-[600px]:text-[9px]">{group.name}</span>
+          <div class="h-[19px] rounded-r-[5px] overflow-hidden max-[600px]:h-[14px]">
             <i
-              class={`block h-full rounded-r ${group.outlier ? 'bg-[#82C6ED]' : 'bg-accent-blue-obs'}`}
+              class={`block h-full rounded-r-[5px] ${group.outlier ? 'bg-[#82c6ed]' : 'bg-[linear-gradient(90deg,#07509b,#0758a9)]'}`}
               style={`width:${group.value}%`}
             ></i>
           </div>
-          <b class="text-[10px] sm:text-xs text-accent-blue-obs whitespace-nowrap">{formatPercent(group.value)}</b>
+          <b class="text-[#0753a8] text-[12px] whitespace-nowrap max-[600px]:text-[9px]">{formatPercent(group.value)}</b>
         </div>
       ))}
     </div>
-    <div class="flex justify-between mt-2 mb-3 ml-[121px] mr-[48px] sm:ml-[230px] sm:mr-[84px] text-[8px] sm:text-[11px] text-gray-icon-obs">
+    <div class="flex justify-between mt-2 mb-[13px] ml-[230px] mr-[73px] text-[#8290aa] text-[10.5px] max-[600px]:ml-[121px] max-[600px]:mr-[48px] max-[600px]:text-[8px]">
       {AXIS_TICKS.map((tick) => <span>{tick} %</span>)}
     </div>
-
-    <div class="flex items-center gap-3 p-3 border border-[#FFDC8B] rounded-xl bg-yellow-obs text-[#C44C00] text-xs leading-relaxed">
-      <span class="w-7 h-7 shrink-0 rounded-full bg-[#F18A00] text-white border-2 border-[#FFE2AE] grid place-items-center text-base font-extrabold">!</span>
+    <div class="flex items-center gap-[13px] px-[13px] py-[9px] border border-[#ffdc8b] rounded-[10px] bg-[#fff6e6] text-[#c44c00] text-[12.5px] leading-[1.45] max-[600px]:text-[10px]">
+      <span
+        class="w-[29px] h-[29px] rounded-full bg-[#f18a00] text-white border-[3px] border-[#ffe2ae] grid place-items-center text-[19px] font-extrabold shrink-0"
+        aria-hidden="true">!</span
+      >
       <p>
         <strong>Nota:</strong> Podemos Perú registró un cumplimiento del <strong>75,0 % (21 de 28 informes).</strong> Este
         resultado corresponde a un solo congresista, por lo que no es comparable con el de los demás grupos parlamentarios,
@@ -212,19 +252,19 @@ const iconClass = '[&>svg]:w-6 [&>svg]:h-6';
   </section>
 
   <!-- Quality analysis CTA -->
-  <section class={`${panelClass} flex flex-wrap sm:flex-nowrap items-center gap-4 p-4`}>
-    <div class={`w-12 h-12 sm:w-16 sm:h-16 shrink-0 rounded-full bg-pill-blue-obs text-accent-blue-obs grid place-items-center ${iconClass}`} aria-hidden="true" set:html={billIcon} />
-    <div class="flex-1 min-w-[calc(100%-4rem)] sm:min-w-0">
-      <h2 class="text-lg sm:text-xl font-extrabold">¿Qué tan completos y de calidad son estos informes?</h2>
-      <p class="text-xs text-regular-gray-obs mt-1">
+  <section class={`${panel} flex items-center gap-5 px-[18px] py-[14px] max-[600px]:flex-wrap max-[600px]:gap-3`}>
+    <div class={`${roundIcon} w-[66px] h-[66px]`} aria-hidden="true" set:html={billIcon} />
+    <div class="flex-1 max-[600px]:min-w-[calc(100%-65px)]">
+      <h3 class={panelTitle}>¿Qué tan completos y de calidad son estos informes?</h3>
+      <p class="text-[#657493] text-[11.5px] leading-[1.4]">
         Explora el análisis de calidad de los informes de representación, elaborado por nuestro voluntario Luis Rodas.
       </p>
     </div>
     <a
       href={QUALITY_ANALYSIS_URL}
-      class="border-[1.5px] border-accent-blue-obs rounded-lg px-4 py-3 text-xs font-semibold text-accent-blue-obs underline hover:bg-sky-blue-obs"
+      class="border-[1.5px] border-[#075cff] rounded-[9px] px-4 py-3 text-[#0755cf] text-[12px] font-semibold whitespace-nowrap underline max-[600px]:ml-[60px] max-[600px]:whitespace-normal"
     >
-      Ver análisis de calidad de los informes <span aria-hidden="true" class="ml-2 no-underline">↗</span>
+      Ver análisis de calidad de los informes <span aria-hidden="true" class="ml-[10px] text-[18px] no-underline inline-block">↗</span>
     </a>
   </section>
 </div>

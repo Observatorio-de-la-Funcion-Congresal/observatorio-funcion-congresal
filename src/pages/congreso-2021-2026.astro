@@ -4,6 +4,7 @@ import InternalPageHero from "../components/sections/InternalPageHero.astro";
 import Card from "../components/ui/Card/Card.astro";
 import Container from "../components/ui/Container.astro";
 import PartyPieChart from "../components/charts/PartyPieChart.vue";
+import RepresentationWeeks from "../components/activity/RepresentationWeeks.astro";
 import type { PreviousData } from "../types/previous";
 
 const URL_DATA = import.meta.env.URL_DATA_V2;
@@ -160,6 +161,10 @@ const timelineEvents = [
           </div>
         </div>
       </Card>
+
+      <div class="mt-12">
+        <RepresentationWeeks />
+      </div>
     </Container>
   </section>
 </Layout>
