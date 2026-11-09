@@ -1,0 +1,2138 @@
+{
+  "laws": [
+    {
+      "number": "31520",
+      "label": "Ley 31520 – 2da votación"
+    },
+    {
+      "number": "31751",
+      "label": "Ley 31751 – 2da votación"
+    },
+    {
+      "number": "31981",
+      "label": "Ley 31981 – 2da votación"
+    },
+    {
+      "number": "31988",
+      "label": "Ley 31988 – 1ra votación (no hubo 2da)"
+    },
+    {
+      "number": "31990",
+      "label": "Ley 31990 – 1ra votación (no hubo 2da)"
+    },
+    {
+      "number": "31996",
+      "label": "Ley 31996 – exoneración de 2da votación"
+    },
+    {
+      "number": "32059",
+      "label": "Ley 32059 – exoneración de 2da votación"
+    },
+    {
+      "number": "32107",
+      "label": "Ley 32107 – 1ra votación (no hubo 2da)"
+    },
+    {
+      "number": "32130",
+      "label": "Ley 32130 – 2da votación"
+    }
+  ],
+  "members": [
+    {
+      "order": 1,
+      "name": "María Grimaneza Acuña Peralta",
+      "party": "Alianza para el Progreso",
+      "votes": [
+        "NO",
+        "LP",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 2,
+      "name": "Segundo Héctor Acuña Peralta",
+      "party": "Alianza para el Progreso",
+      "votes": [
+        "NO",
+        "ABST.",
+        "NO",
+        "LE",
+        "NO",
+        "SI",
+        "AUS",
+        "AUS",
+        null
+      ]
+    },
+    {
+      "order": 3,
+      "name": "María Antonieta Agüero Gutiérrez",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 4,
+      "name": "Alejandro Aurelio Aguinaga Recuenco",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "LE",
+        "SI",
+        "SI",
+        "AUS",
+        "AUS",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 5,
+      "name": "Yorel Kira Alcarraz Agüero",
+      "party": "Somos Perú",
+      "votes": [
+        "AUS",
+        "NO",
+        "SI",
+        "SI",
+        null,
+        "SI",
+        "SI",
+        "LO",
+        null
+      ]
+    },
+    {
+      "order": 6,
+      "name": "Arturo Alegría García",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "***",
+        "SI",
+        "SI",
+        "SI",
+        "SI"
+      ]
+    },
+    {
+      "order": 7,
+      "name": "María del Carmen Alva Prieto",
+      "party": "Acción Popular",
+      "votes": [
+        "AUS",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "LP"
+      ]
+    },
+    {
+      "order": 8,
+      "name": "Carlos Enrique Alva Rojas",
+      "party": "Acción Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI"
+      ]
+    },
+    {
+      "order": 9,
+      "name": "Yessica Rosselli Amuruz Dulanto",
+      "party": "Avanza País",
+      "votes": [
+        "SI",
+        "ABST.",
+        "SI",
+        "SI",
+        "SI",
+        "SINRES",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 10,
+      "name": "Carlos Antonio Anderson Ramírez",
+      "party": "Podemos Perú",
+      "votes": [
+        "NO",
+        "SI",
+        "NO",
+        "NO",
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 11,
+      "name": "Luis Ángel Aragón Carreño",
+      "party": "Acción Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "AUS",
+        "AUS",
+        "SI",
+        "ABST.",
+        null
+      ]
+    },
+    {
+      "order": 12,
+      "name": "José Alberto Arriola Tueros",
+      "party": "Acción Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "LE",
+        null
+      ]
+    },
+    {
+      "order": 13,
+      "name": "Alfredo Azurín Loayza",
+      "party": "Somos Perú",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 14,
+      "name": "José María Balcázar Zelada",
+      "party": "Perú Libre",
+      "votes": [
+        "NO",
+        "SI",
+        "ABST.",
+        "SI",
+        null,
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 15,
+      "name": "Rosangella Andrea Barbarán Reyes",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null,
+        "LO",
+        "SI",
+        "SI",
+        "SI"
+      ]
+    },
+    {
+      "order": 16,
+      "name": "Diego Alonso Fernando Bazán Calderón",
+      "party": "Renovación Popular",
+      "votes": [
+        "NO",
+        "SI",
+        "AUS",
+        "SI",
+        "SI",
+        "SINRES",
+        "AUS",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 17,
+      "name": "Sigrid Tesoro Bazán Narro",
+      "party": "Juntos por el Perú",
+      "votes": [
+        "NO",
+        "NO",
+        "NO",
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 18,
+      "name": "Guido Bellido Ugarte",
+      "party": "Perú Libre",
+      "votes": [
+        "LO",
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 19,
+      "name": "Guillermo Bermejo Rojas",
+      "party": "Perú Libre",
+      "votes": [
+        "AUS",
+        "ABST.",
+        "NO",
+        "NO",
+        "AUS",
+        "SI",
+        "LP",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 20,
+      "name": "Juan Bartolomé Burgos Oliveros",
+      "party": "Avanza País",
+      "votes": [
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 21,
+      "name": "Ernesto Bustamante Donayre",
+      "party": "Fuerza Popular",
+      "votes": [
+        "LE",
+        "LE",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 22,
+      "name": "Digna Calle Lobatón",
+      "party": "Podemos Perú",
+      "votes": [
+        "SI",
+        "LP",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 23,
+      "name": "Lady Mercedes Camones Soriano",
+      "party": "Alianza para el Progreso",
+      "votes": [
+        "***",
+        "LO",
+        "SI",
+        "SI",
+        "AUS",
+        "AUS",
+        "LP",
+        "LO",
+        "AUS"
+      ]
+    },
+    {
+      "order": 24,
+      "name": "Eduardo Enrique Castillo Rivas",
+      "party": "Fuerza Popular",
+      "votes": [
+        "AUS",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI"
+      ]
+    },
+    {
+      "order": 25,
+      "name": "Alejandro Enrique Cavero Alva",
+      "party": "Avanza País",
+      "votes": [
+        "NO",
+        "ABST.",
+        "SI",
+        "SI",
+        "SI",
+        "AUS",
+        "ABST.",
+        "SI",
+        "LO"
+      ]
+    },
+    {
+      "order": 26,
+      "name": "Waldemar José Cerrón Rojas",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "LE",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 27,
+      "name": "Nilza Merly Chacón Trujillo",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI"
+      ]
+    },
+    {
+      "order": 28,
+      "name": "Betssy Betzabet Chávez Chino",
+      "party": "Perú Libre",
+      "votes": [
+        "LO",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "order": 29,
+      "name": "Roberto Enrique Chiabra León",
+      "party": "Alianza para el Progreso",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 30,
+      "name": "Patricia Rosa Chirinos Venegas",
+      "party": "Avanza País",
+      "votes": [
+        "AUS",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 31,
+      "name": "Miguel Ángel Ciccia Vásquez",
+      "party": "Renovación Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "LP",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 32,
+      "name": "Jorge Samuel Coayla Juárez",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "ABST.",
+        "ABST.",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 33,
+      "name": "Luis Gustavo Cordero Jon Tay",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "ABST.",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "ABST.",
+        null
+      ]
+    },
+    {
+      "order": 34,
+      "name": "María del Pilar Cordero Jon Tay",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SUS",
+        "SI",
+        "SUS",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 35,
+      "name": "María Jessica Córdova Lobatón",
+      "party": "Renovación Popular",
+      "votes": [
+        "NO",
+        "SI",
+        "SINRES",
+        "SI",
+        "AUS",
+        "SI",
+        "SI",
+        "LO",
+        null
+      ]
+    },
+    {
+      "order": 36,
+      "name": "Isabel Cortez Aguirre",
+      "party": "Juntos por el Perú",
+      "votes": [
+        "NO",
+        "NO",
+        "NO",
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 37,
+      "name": "Flavio Cruz Mamani",
+      "party": "Perú Libre",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 38,
+      "name": "José Ernesto Cueto Aservi",
+      "party": "Renovación Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 39,
+      "name": "Víctor Raúl Cutipa Ccama",
+      "party": "Perú Libre",
+      "votes": [
+        "ABST.",
+        "SI",
+        "NO",
+        "NO",
+        "NO",
+        "AUS",
+        "SI",
+        "NO",
+        "NO"
+      ]
+    },
+    {
+      "order": 40,
+      "name": "Pasión Neomias Dávila Atanacio",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "LO",
+        "AUS"
+      ]
+    },
+    {
+      "order": 41,
+      "name": "Raúl Felipe Doroteo Carbajo",
+      "party": "Acción Popular",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 42,
+      "name": "Gladys Margot Echaíz Ramos Vda. de Núñez",
+      "party": "Alianza para el Progreso",
+      "votes": [
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "ABST.",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 43,
+      "name": "Hamlet Echeverría Rodríguez",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "NO",
+        "NO",
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 44,
+      "name": "José Luis Elías Ávalos",
+      "party": "Podemos Perú",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "AUS",
+        "AUS",
+        "SI"
+      ]
+    },
+    {
+      "order": 45,
+      "name": "Jhaec Darwin Espinoza Vargas",
+      "party": "Acción Popular",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "ABST.",
+        null
+      ]
+    },
+    {
+      "order": 46,
+      "name": "Jorge Luis Flores Ancachi",
+      "party": "Acción Popular",
+      "votes": [
+        "ABST.",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 47,
+      "name": "Alex Randu Flores Ramírez",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "NO",
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 48,
+      "name": "Víctor Seferino Flores Ruiz",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "LP",
+        null
+      ]
+    },
+    {
+      "order": 49,
+      "name": "Idelso Manuel García Correa",
+      "party": "Alianza para el Progreso",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "AUS",
+        null
+      ]
+    },
+    {
+      "order": 50,
+      "name": "Américo Gonza Castillo",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "LO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 51,
+      "name": "Diana Carolina Gonzales Delgado",
+      "party": "Avanza País",
+      "votes": [
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "ABST.",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 52,
+      "name": "Hernando Guerra García Campos",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 53,
+      "name": "Paul Silvio Gutiérrez Ticona",
+      "party": "Perú Libre",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 54,
+      "name": "Nelcy Lidia Heidinger Ballesteros",
+      "party": "Alianza para el Progreso",
+      "votes": [
+        "SI",
+        "AUS",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 55,
+      "name": "Noelia Rossvith Herrera Medina",
+      "party": "Renovación Popular",
+      "votes": [
+        "SI",
+        "LE",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 56,
+      "name": "Raúl Huamán Coronado",
+      "party": "Fuerza Popular",
+      "votes": [
+        null,
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 57,
+      "name": "Mery Eliana Infantes Castañeda",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "AUS",
+        "SI",
+        "AUS",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 58,
+      "name": "María de los Milagros Jackeline Jáuregui Martínez de Aguayo",
+      "party": "Renovación Popular",
+      "votes": [
+        "SI",
+        "LE",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 59,
+      "name": "José Enrique Jerí Oré",
+      "party": "Somos Perú",
+      "votes": [
+        "SI",
+        "SINRES",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "AUS",
+        null
+      ]
+    },
+    {
+      "order": 60,
+      "name": "David Julio Jiménez Heredia",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "AUS",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 61,
+      "name": "Heidy Lisbeth Juárez Calle",
+      "party": "Alianza para el Progreso",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "AUS",
+        "SI",
+        "SI"
+      ]
+    },
+    {
+      "order": 62,
+      "name": "Carmen Patricia Juárez Gallegos",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "LO",
+        "NO",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 63,
+      "name": "Elva Edhit Julón Irigoin",
+      "party": "Alianza para el Progreso",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        "LO",
+        null
+      ]
+    },
+    {
+      "order": 64,
+      "name": "Luis Roberto Kamiche Morante",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "LE",
+        "LO",
+        "SI",
+        "LO",
+        "SI",
+        "SI",
+        "SI",
+        "LO"
+      ]
+    },
+    {
+      "order": 65,
+      "name": "Nieves Esmeralda Limachi Quispe",
+      "party": "Perú Libre",
+      "votes": [
+        "NO",
+        "LE",
+        "SI",
+        "SI",
+        "SI",
+        "AUS",
+        "AUS",
+        "SI",
+        "AUS"
+      ]
+    },
+    {
+      "order": 66,
+      "name": "Juan Carlos Martín Lizarzaburu Lizarzaburu",
+      "party": "Fuerza Popular",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "ABST.",
+        null
+      ]
+    },
+    {
+      "order": 67,
+      "name": "Jeny Luz López Morales",
+      "party": "Fuerza Popular",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 68,
+      "name": "Ilich Fredy López Ureña",
+      "party": "Acción Popular",
+      "votes": [
+        "AUS",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "LP",
+        "AUS",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 69,
+      "name": "José León Luna Gálvez",
+      "party": "Podemos Perú",
+      "votes": [
+        "AUS",
+        "SI",
+        "NO",
+        "NO",
+        "NO",
+        "SINRES",
+        "SI",
+        "ABST.",
+        null
+      ]
+    },
+    {
+      "order": 70,
+      "name": "Ruth Luque Ibarra",
+      "party": "Juntos por el Perú",
+      "votes": [
+        "SI",
+        "NO",
+        "NO",
+        "SI",
+        "NO",
+        "SI",
+        "ABST.",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 71,
+      "name": "George Edward Málaga Trillo",
+      "party": "Partido Morado",
+      "votes": [
+        "SINRES",
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 72,
+      "name": "Jorge Alfonso Marticorena Mendoza",
+      "party": "Perú Libre",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 73,
+      "name": "Pedro Edwin Martínez Talavera",
+      "party": "Acción Popular",
+      "votes": [
+        "NO",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 74,
+      "name": "Elizabeth Sara Medina Hermosilla",
+      "party": "Perú Libre",
+      "votes": [
+        "NO",
+        "AUS",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 75,
+      "name": "Esdras Ricardo Medina Minaya",
+      "party": "Renovación Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 76,
+      "name": "Isaac Mita Alanoca",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 77,
+      "name": "Segundo Toribio Montalvo Cubas",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "NO"
+      ]
+    },
+    {
+      "order": 78,
+      "name": "Silvia María Monteza Facho",
+      "party": "Acción Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 79,
+      "name": "Jorge Carlos Montoya Manrique",
+      "party": "Renovación Popular",
+      "votes": [
+        "SINRES",
+        "AUS",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "ABST.",
+        null
+      ]
+    },
+    {
+      "order": 80,
+      "name": "Jorge Alberto Morante Figari",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "LE",
+        "SI",
+        "SI",
+        "ABST.",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 81,
+      "name": "Juan Carlos Mori Celis",
+      "party": "Acción Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null,
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 82,
+      "name": "Martha Lupe Moyano Delgado",
+      "party": "Fuerza Popular",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SINRES",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 83,
+      "name": "Alejandro Munante Barrios",
+      "party": "Renovación Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "AUS",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 84,
+      "name": "Auristela Ana Obando Morgan",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "AUS",
+        null
+      ]
+    },
+    {
+      "order": 85,
+      "name": "Vivian Olivos Martínez",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "NO",
+        "NO",
+        "NO",
+        "SINRES",
+        "ABST.",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 86,
+      "name": "Flor Aidee Pablo Medina",
+      "party": "Partido Morado",
+      "votes": [
+        "LP",
+        "NO",
+        "NO",
+        "SI",
+        "AUS",
+        "LO",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 87,
+      "name": "Javier Rommel Padilla Romero",
+      "party": "Renovación Popular",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "LO",
+        null
+      ]
+    },
+    {
+      "order": 88,
+      "name": "Margot Palacios Huamán",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "NO",
+        "AUS",
+        "NO",
+        "SI",
+        "SI",
+        "LO",
+        null
+      ]
+    },
+    {
+      "order": 89,
+      "name": "Francis Jhasmina Paredes Castro",
+      "party": "Perú Libre",
+      "votes": [
+        "LO",
+        "SI",
+        "SI",
+        "SI",
+        "AUS",
+        "SI",
+        "SINRES",
+        "NO",
+        "AUS"
+      ]
+    },
+    {
+      "order": 90,
+      "name": "Karol Ivett Paredes Fonseca",
+      "party": "Acción Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "ABST.",
+        "SI",
+        "SI",
+        "SINRES",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 91,
+      "name": "Alex Antonio Paredes Gonzales",
+      "party": "Perú Libre",
+      "votes": [
+        "NO",
+        "SI",
+        "NO",
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 92,
+      "name": "Susel Ana María Paredes Piqué",
+      "party": "Partido Morado",
+      "votes": [
+        "SI",
+        "NO",
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        "LP",
+        "AUS",
+        null
+      ]
+    },
+    {
+      "order": 93,
+      "name": "Alfredo Pariona Sinche",
+      "party": "Perú Libre",
+      "votes": [
+        "NO",
+        "LE",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "AUS",
+        null
+      ]
+    },
+    {
+      "order": 94,
+      "name": "José Bernardo Pazo Nunura",
+      "party": "Somos Perú",
+      "votes": [
+        "SI",
+        "LE",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 95,
+      "name": "Luis Raúl Picón Quedo",
+      "party": "Alianza para el Progreso",
+      "votes": [
+        "SI",
+        "SI",
+        "SINRES",
+        "AUS",
+        "SI",
+        "AUS",
+        "AUS",
+        "NO",
+        "SI"
+      ]
+    },
+    {
+      "order": 96,
+      "name": "Kelly Roxana Portalatino Ávalos",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "LE",
+        "SI",
+        "LE",
+        "AUS",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 97,
+      "name": "Hilda Marleny Portero López",
+      "party": "Acción Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "AUS",
+        "SI",
+        "AUS",
+        "SI",
+        "SI",
+        "NO",
+        "ABST."
+      ]
+    },
+    {
+      "order": 98,
+      "name": "Segundo Teodomiro Quiroz Barboza",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SINRES",
+        "ABST.",
+        "NO",
+        null,
+        "SI",
+        "SI",
+        "NO",
+        "NO"
+      ]
+    },
+    {
+      "order": 99,
+      "name": "Wilson Rusbel Quispe Mamani",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "NO",
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 100,
+      "name": "Bernardo Jaime Quito Sarmiento",
+      "party": "Perú Libre",
+      "votes": [
+        "ABST.",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 101,
+      "name": "Tania Estefany Ramírez García",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 102,
+      "name": "César Manuel Revilla Villanueva",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "AUS",
+        "AUS",
+        "AUS",
+        "SI",
+        "AUS",
+        "NO",
+        "AUS"
+      ]
+    },
+    {
+      "order": 103,
+      "name": "Abel Augusto Reyes Cam",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "AUS",
+        "LE",
+        "LE",
+        "LE",
+        "AUS",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 104,
+      "name": "Edgard Cornelio Reymundo Mercado",
+      "party": "Juntos por el Perú",
+      "votes": [
+        "NO",
+        "NO",
+        "NO",
+        "SINRES",
+        "SI",
+        "AUS",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 105,
+      "name": "Janet Milagros Rivas Chacara",
+      "party": "Perú Libre",
+      "votes": [
+        "ABST.",
+        "SI",
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 106,
+      "name": "Silvana Emperatriz Robles Araujo",
+      "party": "Perú Libre",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 107,
+      "name": "Magaly Rosmery Ruiz Rodríguez",
+      "party": "Alianza para el Progreso",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "ABST.",
+        "SI",
+        "SI",
+        "LO",
+        null
+      ]
+    },
+    {
+      "order": 108,
+      "name": "Hitler Saavedra Casternoque",
+      "party": "Somos Perú",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 109,
+      "name": "Eduardo Salhuana Cavides",
+      "party": "Alianza para el Progreso",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "AUS",
+        "AUS",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 110,
+      "name": "Roberto Helbert Sánchez Palomino",
+      "party": "Juntos por el Perú",
+      "votes": [
+        "SINRES",
+        "NO",
+        "NO",
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "NO"
+      ]
+    },
+    {
+      "order": 111,
+      "name": "Wilson Soto Palacios",
+      "party": "Acción Popular",
+      "votes": [
+        "SI",
+        "LE",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "ABST.",
+        null
+      ]
+    },
+    {
+      "order": 112,
+      "name": "Alejandro Soto Reyes",
+      "party": "Alianza para el Progreso",
+      "votes": [
+        "NO",
+        "SI",
+        "***",
+        "***",
+        "AUS",
+        "***",
+        "***",
+        "***",
+        "AUS"
+      ]
+    },
+    {
+      "order": 113,
+      "name": "Germán Adolfo Tacuri Valdivia",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 114,
+      "name": "María Elizabeth Taipe Coronado",
+      "party": "Perú Libre",
+      "votes": [
+        "LE",
+        "LO",
+        "SI",
+        "NO",
+        "SI",
+        "AUS",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 115,
+      "name": "Nivardo Edgar Tello Montes",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        "LO",
+        "LP",
+        "AUS",
+        "LO"
+      ]
+    },
+    {
+      "order": 116,
+      "name": "Rosio Torres Salinas",
+      "party": "Alianza para el Progreso",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 117,
+      "name": "Cheryl Trigozo Reátegui",
+      "party": "Alianza para el Progreso",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "LO",
+        null
+      ]
+    },
+    {
+      "order": 118,
+      "name": "Adriana Josefina Tudela Gutiérrez",
+      "party": "Avanza País",
+      "votes": [
+        "NO",
+        "ABST.",
+        "SI",
+        "SI",
+        "SI",
+        "AUS",
+        "ABST.",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 119,
+      "name": "Jhakeline Katy Ugarte Mamani",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "ABST.",
+        null
+      ]
+    },
+    {
+      "order": 120,
+      "name": "Héctor Valer Pinto",
+      "party": "Renovación Popular",
+      "votes": [
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "LP",
+        "ABST.",
+        null
+      ]
+    },
+    {
+      "order": 121,
+      "name": "Elías Marcial Varas Meléndez",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "NO",
+        "NO",
+        "AUS",
+        "SI",
+        "SI",
+        "NO",
+        null
+      ]
+    },
+    {
+      "order": 122,
+      "name": "Lucinda Vásquez Vela",
+      "party": "Perú Libre",
+      "votes": [
+        "SI",
+        "SI",
+        "NO",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "LO",
+        null
+      ]
+    },
+    {
+      "order": 123,
+      "name": "Héctor José Ventura Ángel",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "AUS"
+      ]
+    },
+    {
+      "order": 124,
+      "name": "Elvis Hernán Vergara Mendoza",
+      "party": "Acción Popular",
+      "votes": [
+        "SI",
+        "LO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "ABST.",
+        null
+      ]
+    },
+    {
+      "order": 125,
+      "name": "José Daniel Williams Zapata",
+      "party": "Avanza País",
+      "votes": [
+        "ABST.",
+        "***",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "NO"
+      ]
+    },
+    {
+      "order": 126,
+      "name": "Enrique Wong Pujada",
+      "party": "Podemos Perú",
+      "votes": [
+        "SI",
+        "SUS",
+        "SI",
+        "SI",
+        "AUS",
+        "SUS",
+        "SI",
+        "LE",
+        null
+      ]
+    },
+    {
+      "order": 127,
+      "name": "Norma Martina Yarrow Lumbreras",
+      "party": "Renovación Popular",
+      "votes": [
+        "NO",
+        "SINRES",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 128,
+      "name": "Oscar Zea Choquechambi",
+      "party": "Perú Libre",
+      "votes": [
+        "LO",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null
+      ]
+    },
+    {
+      "order": 129,
+      "name": "Jorge Arturo Zeballos Aponte",
+      "party": "Renovación Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        null,
+        "SI",
+        "SI",
+        "AUS",
+        "AUS"
+      ]
+    },
+    {
+      "order": 130,
+      "name": "Carlos Javier Zeballos Madariaga",
+      "party": "Acción Popular",
+      "votes": [
+        "NO",
+        "SI",
+        "NO",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "ABST.",
+        null
+      ]
+    },
+    {
+      "order": 131,
+      "name": "Cruz María Zeta Chunga",
+      "party": "Fuerza Popular",
+      "votes": [
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "SI",
+        "LE",
+        "SI",
+        "SI",
+        null
+      ]
+    }
+  ]
+}

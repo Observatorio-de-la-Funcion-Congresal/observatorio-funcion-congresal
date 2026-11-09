@@ -1,0 +1,32 @@
+---
+import Container from '../ui/Container.astro';
+import Card from '../ui/Card/Card.astro';
+import type { GeneralData } from '../../types/previous';
+import { fmtInt } from '../../lib/format';
+
+interface Props {
+  items: GeneralData[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="pt-12 md:pt-14">
+  <Container>
+    <h2 class="text-xl md:text-2xl font-bold text-dark-blue-obs mb-6">El Congreso en números</h2>
+    <ul class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      {
+        items.map((item) => (
+          <li>
+            <Card padding={false} roundedClass="rounded-2xl" class="px-4 py-5 text-center h-full">
+              <span class="block text-2xl md:text-3xl font-bold text-primary-blue-obs">
+                {fmtInt(item.value)}
+              </span>
+              <span class="text-xs text-regular-gray-obs font-medium">{item.label}</span>
+            </Card>
+          </li>
+        ))
+      }
+    </ul>
+  </Container>
+</section>

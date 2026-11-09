@@ -1,0 +1,69 @@
+---
+import Container from '../ui/Container.astro';
+import Card from '../ui/Card/Card.astro';
+import type { BillsSection } from '../../types/previous';
+import { fmtInt, fmtPct } from '../../lib/format';
+
+interface Props {
+  data: BillsSection;
+}
+
+const { data } = Astro.props;
+const statuses = data.statuses.map((s) => ({ ...s, pct: (s.count / data.total) * 100 }));
+---
+
+<section class="pt-12 md:pt-14">
+  <Container>
+    <h2 class="text-xl md:text-2xl font-bold text-dark-blue-obs mb-6">{data.title}</h2>
+
+    <Card padding={false} roundedClass="rounded-2xl" class="p-6 mb-6">
+      <div
+        class="flex h-5 rounded-full overflow-hidden mb-3"
+        role="img"
+        aria-label="Distribución de proyectos de ley por estado"
+      >
+        {statuses.map((s) => <div style={`width:${s.pct}%;background:${s.color}`} title={`${s.label}: ${fmtPct(s.pct)}`} />)}
+      </div>
+      <ul class="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-primary-gray-obs mb-6">
+        {
+          statuses.map((s) => (
+            <li class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full" style={`background:${s.color}`} />
+              {s.label} {fmtPct(s.pct)}
+            </li>
+          ))
+        }
+      </ul>
+
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 md:px-6">
+        {
+          statuses.map((s) => (
+            <li class="bg-lighter-gray-obs rounded-xl p-4">
+              <div class="flex items-center justify-between gap-3 mb-1">
+                <span class="flex items-center gap-2 text-xs font-bold text-primary-black-obs">
+                  <span class="w-2 h-2 rounded-full" style={`background:${s.color}`} />
+                  {s.label}
+                </span>
+                <span class="text-xs font-semibold font-mono" style={`color:${s.color}`}>{fmtPct(s.pct)}</span>
+              </div>
+              <p class="text-[11px] text-regular-gray-obs">{s.description}</p>
+              <p class="text-[10px] text-gray-icon-obs font-mono mt-1">{fmtInt(s.count)} casos</p>
+            </li>
+          ))
+        }
+      </ul>
+    </Card>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <Card padding={false} roundedClass="rounded-2xl" class="p-6">
+        <p class="text-[10px] font-semibold text-gray-icon-obs uppercase tracking-wide mb-2">{data.promulgated.label}</p>
+        <p class="text-3xl font-bold text-green-obs">{fmtInt(data.promulgated.value)}</p>
+        <p class="text-xs text-regular-gray-obs">{data.promulgated.caption}</p>
+      </Card>
+      <Card padding={false} roundedClass="rounded-2xl" class="p-6">
+        <p class="text-[10px] font-semibold text-gray-icon-obs uppercase tracking-wide mb-2">{data.observed.label}</p>
+        <p class="text-xs text-primary-gray-obs">{data.observed.text}</p>
+      </Card>
+    </div>
+  </Container>
+</section>

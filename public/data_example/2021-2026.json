@@ -1,19 +1,1370 @@
 {
-  "general": 
-    [
-      { "label": "Leyes aprobadas", "value": 284 },
-      { "label": "Proyectos presentados", "value": 2841 },
-      { "label": "Total de mociones", "value": 312 },
-      { "label": "Interpelaciones", "value": 18 },
-      { "label": "Mociones de censura", "value": 7 }
+  "general": [
+    {
+      "label": "Congresistas",
+      "value": 130
+    },
+    {
+      "label": "Proyectos de ley presentados",
+      "value": 13382
+    },
+    {
+      "label": "Leyes promulgadas",
+      "value": 3387
+    },
+    {
+      "label": "Comisiones ordinarias",
+      "value": 23
+    },
+    {
+      "label": "Semanas de representación",
+      "value": 54
+    }
+  ],
+  "composition": {
+    "description": "El Congreso del período 2021–2026 se conformó con 10 partidos políticos haciendo un total de 130 congresistas. De estos, 123 culminaron el período y 7 se sumaron por distintas causales de rescisión de los miembros titulares.",
+    "start": [
+      {
+        "party": "Perú Libre",
+        "color": "#B91C3B",
+        "seats": 37
+      },
+      {
+        "party": "Fuerza Popular",
+        "color": "#DC2626",
+        "seats": 24
+      },
+      {
+        "party": "APP",
+        "color": "#0F9D6B",
+        "seats": 15
+      },
+      {
+        "party": "Renovación Popular",
+        "color": "#0E8FB5",
+        "seats": 12
+      },
+      {
+        "party": "Acción Popular",
+        "color": "#2540B0",
+        "seats": 10
+      },
+      {
+        "party": "Otros",
+        "color": "#6B7280",
+        "seats": 32
+      }
     ],
-  "composition":
-    [
-      { "party": "Perú Libre", "color": "#B91C2B", "seats": 37 },
-      { "party": "Fuerza Popular", "color": "#E0433A", "seats": 24 },
-      { "party": "Alianza para el Progreso", "color": "#1E8E5A", "seats": 15 },
-      { "party": "Renovación Popular", "color": "#4FA5D9", "seats": 12 },
-      { "party": "Acción Popular", "color": "#1E5FAD", "seats": 18 },
-      { "party": "Otros", "color": "#8A93A2", "seats": 32 }
+    "end": [
+      {
+        "party": "Fuerza Popular",
+        "color": "#A6CEE3",
+        "seats": 21
+      },
+      {
+        "party": "Alianza para el Congreso",
+        "color": "#1F78B4",
+        "seats": 14
+      },
+      {
+        "party": "Podemos Perú",
+        "color": "#B2DF8A",
+        "seats": 14
+      },
+      {
+        "party": "Perú Libre",
+        "color": "#33A02C",
+        "seats": 11
+      },
+      {
+        "party": "Renovación Popular",
+        "color": "#FB9A99",
+        "seats": 9
+      },
+      {
+        "party": "Acción Popular",
+        "color": "#E31A1C",
+        "seats": 8
+      },
+      {
+        "party": "Bloque Magisterial de Concertación Nacional",
+        "color": "#FDBF6F",
+        "seats": 8
+      },
+      {
+        "party": "Juntos por el Perú – Voces del Pueblo",
+        "color": "#FF7F00",
+        "seats": 7
+      },
+      {
+        "party": "Avanza País",
+        "color": "#CAB2D6",
+        "seats": 7
+      },
+      {
+        "party": "Somos Perú",
+        "color": "#6A3D9A",
+        "seats": 7
+      },
+      {
+        "party": "Honor y Democracia",
+        "color": "#FFFF99",
+        "seats": 5
+      },
+      {
+        "party": "Bancada Socialista",
+        "color": "#B15928",
+        "seats": 5
+      },
+      {
+        "party": "Bloque Democrático Popular",
+        "color": "#8DD3C7",
+        "seats": 5
+      },
+      {
+        "party": "Congresistas no agrupados",
+        "color": "#2B7BC4",
+        "seats": 9
+      }
+    ],
+    "note": "El partido es la organización con la que cada congresista ingresó al Congreso. La bancada es el grupo al que pertenecía al terminar el período. Muchos cambiaron de bancada a lo largo de los cinco años."
+  },
+  "bills": {
+    "title": "13 382 proyectos presentados al cierre del Congreso 2021–2026",
+    "total": 13382,
+    "statuses": [
+      {
+        "key": "commission",
+        "label": "En Comisión",
+        "description": "Proyectos en evaluación por la comisión asignada.",
+        "count": 5062,
+        "color": "#023E7D"
+      },
+      {
+        "key": "published",
+        "label": "Publicado",
+        "description": "Leyes ya promulgadas y vigentes.",
+        "count": 3387,
+        "color": "#2E7D32"
+      },
+      {
+        "key": "agenda",
+        "label": "En Agenda del Pleno",
+        "description": "Proyectos con dictamen aprobado pendientes de debate.",
+        "count": 2216,
+        "color": "#D97706"
+      },
+      {
+        "key": "dictamen",
+        "label": "Dictamen o Acuerdo de Comisión",
+        "description": "Proyectos ya dictaminados previo a pasar al Pleno.",
+        "count": 2072,
+        "color": "#0F766E"
+      },
+      {
+        "key": "other",
+        "label": "Otros estados",
+        "description": "Proyectos con otros estados de trámite.",
+        "count": 645,
+        "color": "#9CA3AF"
+      }
+    ],
+    "promulgated": {
+      "label": "Total promulgadas",
+      "value": 3387,
+      "caption": "leyes ya vigentes"
+    },
+    "observed": {
+      "label": "Total observadas por el Ejecutivo",
+      "text": "Ningún proyecto registra este estatus."
+    }
+  },
+  "motions": {
+    "title": "Mociones presentadas en el período 2021 - 2026",
+    "description": "Una moción es un pedido que presenta un grupo de congresistas para que el Congreso debata o decida algo; aquí mostramos hasta dónde llegó cada tipo.",
+    "note": "Se presentaron más de 22 000 mociones de saludos y más de 180 mociones de control político (interpelaciones, censuras y vacancias). Cuántas se aprobaron en el Pleno se confirmará próximamente.",
+    "cards": [
+      {
+        "key": "salutation",
+        "title": "Mociones de saludos",
+        "total": 22050,
+        "breakdown": [
+          {
+            "label": "en agenda del Consejo Directivo",
+            "count": 19472,
+            "color": "#93C5FD"
+          },
+          {
+            "label": "con acuerdo del Consejo Directivo",
+            "count": 1853,
+            "color": "#34D399"
+          },
+          {
+            "label": "Otros estados",
+            "count": 725,
+            "color": "#D1D5DB"
+          }
+        ]
+      },
+      {
+        "key": "interpellation",
+        "title": "Mociones de interpelación a ministro",
+        "info": "Citación a un ministro para que responda preguntas ante el Pleno.",
+        "total": 102,
+        "breakdown": [
+          {
+            "label": "Con asistencia del ministro",
+            "count": 58,
+            "color": "#34D399"
+          },
+          {
+            "label": "Archivadas",
+            "count": 27,
+            "color": "#FCA5A5"
+          },
+          {
+            "label": "En admisión a debate",
+            "count": 11,
+            "color": "#93C5FD"
+          },
+          {
+            "label": "Otros estados",
+            "count": 6,
+            "color": "#D1D5DB"
+          }
+        ]
+      },
+      {
+        "key": "censure",
+        "title": "Mociones de censura",
+        "info": "Pedido para retirar la confianza a un ministro o a la Mesa Directiva.",
+        "total": 62,
+        "breakdown": [
+          {
+            "label": "Llegaron a votación",
+            "count": 27,
+            "color": "#93C5FD",
+            "badge": "resultado por confirmar"
+          },
+          {
+            "label": "Archivadas",
+            "count": 18,
+            "color": "#FCA5A5"
+          },
+          {
+            "label": "Otros estados",
+            "count": 17,
+            "color": "#D1D5DB"
+          }
+        ]
+      },
+      {
+        "key": "vacancy",
+        "title": "Mociones de vacancia presidencial",
+        "info": "Pedido para declarar la vacancia de la Presidencia de la República.",
+        "total": 17,
+        "breakdown": [
+          {
+            "label": "Aprobada (oct 2025)",
+            "count": 4,
+            "color": "#FCD34D",
+            "badge": "dato en verificación"
+          },
+          {
+            "label": "Archivadas",
+            "count": 8,
+            "color": "#FCA5A5"
+          },
+          {
+            "label": "En admisión a debate",
+            "count": 5,
+            "color": "#93C5FD"
+          }
+        ]
+      },
+      {
+        "key": "others",
+        "title": "Otras mociones",
+        "total": 204,
+        "breakdown": []
+      },
+      {
+        "key": "other-types",
+        "title": "Otros tipos de moción",
+        "total": 501,
+        "items": [
+          {
+            "label": "Comisiones investigadoras",
+            "count": 164
+          },
+          {
+            "label": "Comisiones especiales",
+            "count": 123
+          },
+          {
+            "label": "Invitación a ministros para informar",
+            "count": 113
+          },
+          {
+            "label": "Interés nacional",
+            "count": 96
+          },
+          {
+            "label": "Pesar",
+            "count": 5
+          }
+        ],
+        "warning": "POR CONFIRMAR si se agrupan en “Otras mociones”"
+      }
     ]
+  },
+  "commissions": {
+    "title": "Participación en comisiones",
+    "intro": {
+      "question": "¿Para qué sirven las comisiones?",
+      "text": "Las comisiones son grupos de trabajo del Congreso encargados de analizar y debatir los proyectos de ley antes de que sean discutidos por todos los congresistas en el Pleno. También supervisan el trabajo de las entidades públicas y abordan temas específicos, como educación, salud, economía o seguridad, para proponer soluciones y mejoras para el país."
+    },
+    "total": 23,
+    "names": [
+      "Economía y Finanzas",
+      "Presupuesto",
+      "Salud y Población",
+      "Educación",
+      "Constitución",
+      "Fiscalización",
+      "Ética",
+      "Justicia",
+      "Cultura y Patrimonio",
+      "Agraria",
+      "Medio Ambiente",
+      "Comunicaciones",
+      "Transportes",
+      "Mujer y Familia",
+      "Pueblos Andinos",
+      "Amazonía",
+      "Defensa",
+      "Descentralización",
+      "Relaciones Exteriores",
+      "Producción",
+      "Vivienda",
+      "Integración Andina",
+      "MYPE e Industria"
+    ],
+    "average": {
+      "question": "¿En cuántas comisiones en promedio participó un congresista?",
+      "perYear": {
+        "value": 3.4,
+        "unit": "comisiones en promedio por año",
+        "series": [
+          {
+            "label": "2021-2022",
+            "value": 3.1
+          },
+          {
+            "label": "2022-2023",
+            "value": 3.4
+          },
+          {
+            "label": "2023-2024",
+            "value": 3.3
+          },
+          {
+            "label": "2024-2025",
+            "value": 3.7
+          },
+          {
+            "label": "2025-2026",
+            "value": 3.3
+          }
+        ],
+        "footnote": "Considera la participación como titular, incluidos los cargos directivos, en las 23 comisiones ordinarias."
+      },
+      "fiveYears": {
+        "value": 7.9,
+        "unit": "comisiones en los 5 años",
+        "median": 8,
+        "max": 16,
+        "howCalculated": "Incluye titulares y accesitarios que participaron en al menos una comisión durante el período. Un mismo congresista puede contar en varias comisiones si fue reemplazado o si participó en comisiones especiales."
+      }
+    },
+    "presidencies": {
+      "title": "¿Qué partido se llevó más presidencias de comisiones en los 5 años 2021 - 2026?",
+      "subtitle": "108 presidencias registradas · partido con el que ingresó el congresista",
+      "series": [
+        {
+          "party": "Perú Libre",
+          "value": 31,
+          "color": "#8B1A1A"
+        },
+        {
+          "party": "Fuerza Popular",
+          "value": 21,
+          "color": "#0B3D91"
+        },
+        {
+          "party": "Alianza para el Progreso",
+          "value": 16,
+          "color": "#A32020"
+        },
+        {
+          "party": "Acción Popular",
+          "value": 13,
+          "color": "#C9812B"
+        },
+        {
+          "party": "Renovación Popular",
+          "value": 9,
+          "color": "#1D5FBF"
+        },
+        {
+          "party": "Avanza País",
+          "value": 7,
+          "color": "#E07B12"
+        },
+        {
+          "party": "Somos Perú",
+          "value": 5,
+          "color": "#7A5548"
+        },
+        {
+          "party": "Juntos por el Perú",
+          "value": 4,
+          "color": "#0F766E"
+        },
+        {
+          "party": "Podemos Perú",
+          "value": 2,
+          "color": "#2E7D32"
+        },
+        {
+          "party": "Partido Morado",
+          "value": 0,
+          "color": "#6D28D9"
+        }
+      ],
+      "insight": "Perú Libre presidió más comisiones que cualquier otro partido: 31 de las 108 presidencias registradas."
+    }
+  },
+  "representation": {
+    "title": "Seguimiento de las semanas de representación 2021–2026",
+    "compliance": {
+      "faq": {
+        "title": "¿Qué son las semanas de representación?",
+        "paragraphs": [
+          "Es el tiempo que cada congresista dedica, fuera del Pleno y las comisiones, a estar en contacto directo con la ciudadanía de la circunscripción por la que fue elegido.",
+          "Es una obligación mensual: <strong>5 días laborables continuos al mes</strong> (7 días calendario para Peruanos Residentes en el Extranjero), definida en el artículo 23.f del Reglamento del Congreso.",
+          "En la práctica: reuniones con vecinos y organizaciones sociales, coordinaciones con gobiernos regionales y municipales, y visitas de supervisión a obras, programas sociales, colegios, postas y servicios públicos.",
+          "De cada semana queda un informe mensual presentado ante la Oficialía Mayor, que el Congreso publica en PDF: <strong>es el único registro público de lo que hizo cada congresista en esos días.</strong>"
+        ]
+      },
+      "calendar": {
+        "title": "54 semanas de representación oficiales",
+        "subtitle": "sobre 59 meses calendario (setiembre de 2021 a julio de 2026)",
+        "months": [
+          "Ene",
+          "Feb",
+          "Mar",
+          "Abr",
+          "May",
+          "Jun",
+          "Jul",
+          "Ago",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dic"
+        ],
+        "legend": {
+          "ok": "Con semana registrada",
+          "partial": "Cobertura parcial (nov. 2021)",
+          "missing": "Sin semana registrada"
+        },
+        "rows": [
+          {
+            "year": 2021,
+            "months": [
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "ok",
+              "ok",
+              "partial",
+              "ok"
+            ]
+          },
+          {
+            "year": 2022,
+            "months": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "missing",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "missing"
+            ]
+          },
+          {
+            "year": 2023,
+            "months": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "missing",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "missing",
+              "ok"
+            ]
+          },
+          {
+            "year": 2024,
+            "months": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "year": 2025,
+            "months": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "year": 2026,
+            "months": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ]
+          }
+        ],
+        "caption": "Cinco meses sin semana oficial: jul. 2022, dic. 2022, jun. 2023 y nov. 2023 no tienen documentos en la base del Congreso; nov. 2021 tiene cobertura parcial.",
+        "howCalculated": {
+          "title": "¿Cómo se calcula?",
+          "text": "54 semanas × ~129 congresistas activos, acotadas a la ventana de mandato de cada uno = 6 979 informes exigibles. Son informes debidos, no semanas. El número varía porque no todos los congresistas estuvieron activos los 54 meses completos (rescisiones, incorporaciones tardías, etc.)."
+        }
+      },
+      "summary": {
+        "eyebrow": "Cumplimiento en la presentación de informes",
+        "main": {
+          "value": 91.3,
+          "label": "informes presentados",
+          "detail": "6 372 de 6 979 exigibles"
+        },
+        "stats": [
+          {
+            "value": "91,0 %",
+            "label": "Promedio por congresista"
+          },
+          {
+            "value": "28",
+            "label": "Con 100 % de cumplimiento"
+          },
+          {
+            "value": "102 de 140",
+            "label": "Superan el 90 %"
+          },
+          {
+            "value": "14",
+            "label": "Por debajo del 80 %"
+          },
+          {
+            "value": "3",
+            "label": "Por debajo del 50 % (mín. 26,7 %)"
+          }
+        ],
+        "note": "Con licencias, exoneraciones y dispensas (447 documentos) la cobertura sube a 98,3 %. Quedan 257 meses-congresista sin ningún documento."
+      },
+      "byCaucus": {
+        "title": "Cumplimiento por bancada",
+        "subtitle": "Solo bancadas con más de un integrante",
+        "min": 70,
+        "series": [
+          {
+            "label": "Juntos por el Perú – Voces del Pueblo",
+            "value": 94.5
+          },
+          {
+            "label": "Bloque Magisterial",
+            "value": 94.5
+          },
+          {
+            "label": "Acción Popular",
+            "value": 94.1
+          },
+          {
+            "label": "Honor y Democracia",
+            "value": 94.1
+          },
+          {
+            "label": "Fuerza Popular",
+            "value": 93.4
+          },
+          {
+            "label": "No agrupados",
+            "value": 87.4
+          },
+          {
+            "label": "Perú Libre",
+            "value": 86.3
+          }
+        ],
+        "note": "Podemos Perú: 75,0 % (21 de 28 informes) corresponde a un solo congresista y no es comparable con las bancadas grupales."
+      }
+    },
+    "quality": {
+      "overview": {
+        "eyebrow": "Índice de calidad del informe de representación",
+        "name": "ICR",
+        "info": "Puntaje de 0 a 100 que resume qué tan verificable, sustantivo y completo es cada informe mensual.",
+        "score": 47.7,
+        "scoreCaption": "Promedio del período 2021–2026",
+        "stats": [
+          {
+            "value": "46,8",
+            "label": "Mediana"
+          },
+          {
+            "value": "5,6",
+            "label": "Mínimo"
+          },
+          {
+            "value": "94,0",
+            "label": "Máximo"
+          },
+          {
+            "value": "15,3",
+            "label": "Desv. est."
+          }
+        ],
+        "distribution": {
+          "title": "Distribución de informes por nivel",
+          "levels": [
+            {
+              "label": "Bajo o muy bajo",
+              "value": 45.5,
+              "color": "#023E7D"
+            },
+            {
+              "label": "Medio",
+              "value": 40.1,
+              "color": "#2B7BC4"
+            },
+            {
+              "label": "Alto o muy alto",
+              "value": 14.4,
+              "color": "#9FCBEE"
+            }
+          ],
+          "note": "Solo 50 informes (0,8 %) alcanzan el nivel más alto."
+        }
+      },
+      "perMember": {
+        "eyebrow": "Por congresista",
+        "stats": [
+          {
+            "value": "47,6",
+            "label": "Promedio"
+          },
+          {
+            "value": "47,0",
+            "label": "Mediana"
+          },
+          {
+            "value": "38,8 – 55,6",
+            "label": "Rango central (50 %)"
+          }
+        ],
+        "highest": {
+          "label": "Puntaje más alto",
+          "name": "Magally Santisteban Suclupe",
+          "detail": "Fuerza Popular · Tumbes",
+          "score": 76.3
+        },
+        "lowest": {
+          "label": "Puntaje más bajo",
+          "name": "Carlos Anderson Ramírez",
+          "detail": "No agrupado · Lima",
+          "score": 21.5
+        },
+        "note": "Ninguna congresista llega a un promedio de 80 puntos."
+      },
+      "byCaucus": {
+        "title": "ICR promedio por bancada",
+        "subtitle": "Solo bancadas con más de un integrante · escala 0 a 100",
+        "series": [
+          {
+            "label": "Bloque Democrático Popular",
+            "value": 58.0
+          },
+          {
+            "label": "Bancada Socialista",
+            "value": 55.8
+          },
+          {
+            "label": "Perú Libre",
+            "value": 52.9
+          },
+          {
+            "label": "Acción Popular",
+            "value": 50.8
+          },
+          {
+            "label": "Avanza País",
+            "value": 38.6
+          }
+        ],
+        "note": "Podemos Perú: 29,3 puntos corresponde a un solo congresista (21 informes) y no es comparable con las bancadas grupales."
+      },
+      "dimensions": {
+        "title": "Las 10 dimensiones del ICR",
+        "items": [
+          {
+            "name": "Trazabilidad",
+            "weight": 18,
+            "color": "#023E7D",
+            "description": "Actuaciones que un tercero puede verificar."
+          },
+          {
+            "name": "Anclaje territorial",
+            "weight": 15,
+            "color": "#2B7BC4",
+            "description": "Amplitud y arraigo de la gestión declarada."
+          },
+          {
+            "name": "Sustancia",
+            "weight": 13,
+            "color": "#7C3AED",
+            "description": "Volumen real de contenido."
+          },
+          {
+            "name": "Cobertura semanal",
+            "weight": 10,
+            "color": "#059669",
+            "description": "Cuántos de los días exigidos quedan documentados."
+          },
+          {
+            "name": "Actores",
+            "weight": 10,
+            "color": "#D97706",
+            "description": "Con quién se reunió y qué tan repartido."
+          },
+          {
+            "name": "Repertorio",
+            "weight": 10,
+            "color": "#DC2626",
+            "description": "Qué hizo, más allá de lo protocolar."
+          },
+          {
+            "name": "Resultados",
+            "weight": 10,
+            "color": "#0891B2",
+            "description": "Si gestionó algo o solo narró que asistió."
+          },
+          {
+            "name": "Agenda temática",
+            "weight": 6,
+            "color": "#CA8A04",
+            "description": "Amplitud sectorial."
+          },
+          {
+            "name": "Originalidad",
+            "weight": 5,
+            "color": "#9333EA",
+            "description": "Si el informe es nuevo o reciclado de uno anterior."
+          },
+          {
+            "name": "Evidencia",
+            "weight": 3,
+            "color": "#64748B",
+            "description": "Respaldo que acompaña al relato."
+          }
+        ],
+        "methodologyLabel": "Cómo se calcula (nota metodológica)"
+      },
+      "banner": {
+        "title": "Pertenecer a un determinado partido no determina por sí solo la calidad del informe.",
+        "stats": [
+          {
+            "value": "15,0 pts",
+            "label": "variación dentro de una misma bancada"
+          },
+          {
+            "value": "6,9 pts",
+            "label": "diferencia promedio entre bancadas"
+          },
+          {
+            "value": "8 pts",
+            "label": "diferencia entre bancadas en entrega"
+          },
+          {
+            "value": "19 pts",
+            "label": "diferencia en calidad del contenido"
+          },
+          {
+            "value": "55 pts",
+            "label": "brecha máxima entre congresistas"
+          }
+        ]
+      }
+    },
+    "weeks": {
+      "title": "Semanas de representación 2021–2026",
+      "subtitle": "Revisa cuántos informes presentaron los congresistas y cuál porcentaje de cumplimiento alcanzaron.",
+      "intro": {
+        "title": "¿Qué son las semanas de representación?",
+        "paragraphs": [
+          "Cada mes, los congresistas deben dedicar algunos días de su trabajo a estar en contacto con la ciudadanía. Este periodo se llama <strong>semana de representación</strong> y está establecido en el Reglamento del Congreso.",
+          "Durante esos días, los congresistas se reúnen con vecinos y organizaciones sociales, coordinan con autoridades, visitan obras, programas sociales, colegios, postas y otros servicios públicos para conocer las necesidades de la población.",
+          "Al finalizar, deben presentar un informe sobre las actividades realizadas ante la <a href=\"#\">Oficialía Mayor del Congreso</a>, que es el área administrativa encargada de recibir estos informes y apoyar el funcionamiento del Congreso. Estos informes se publican en PDF para que la ciudadanía pueda conocer qué actividades reportó cada congresista."
+        ]
+      },
+      "calendar": {
+        "title": "En total hubo 54 semanas de representación",
+        "subtitle": "entre septiembre de 2021 y julio de 2026 (59 meses en total)",
+        "months": [
+          "Ene",
+          "Feb",
+          "Mar",
+          "Abr",
+          "May",
+          "Jun",
+          "Jul",
+          "Ago",
+          "Set",
+          "Oct",
+          "Nov",
+          "Dic"
+        ],
+        "rows": [
+          {
+            "year": 2021,
+            "months": [
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "ok",
+              "ok",
+              "partial",
+              "ok"
+            ]
+          },
+          {
+            "year": 2022,
+            "months": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "missing",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "missing"
+            ]
+          },
+          {
+            "year": 2023,
+            "months": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "missing",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "missing",
+              "ok"
+            ]
+          },
+          {
+            "year": 2024,
+            "months": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "year": 2025,
+            "months": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "year": 2026,
+            "months": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "status": "ok",
+            "lines": [
+              "Con semana de representación"
+            ]
+          },
+          {
+            "status": "partial",
+            "lines": [
+              "Información parcial",
+              "(nov. 2021)"
+            ]
+          },
+          {
+            "status": "missing",
+            "lines": [
+              "Sin semana de",
+              "representación"
+            ]
+          }
+        ],
+        "note": "No hubo semana de representación en julio y diciembre de 2022, junio y noviembre de 2023. En noviembre de 2021 la cobertura fue parcial."
+      },
+      "compliance": {
+        "title": "¿Cómo fue el cumplimiento de la presentación de informes?",
+        "subtitle": "De un total de 6 979 informes que los congresistas debían presentar, se presentaron <strong>6 372.</strong>",
+        "main": {
+          "value": "91,3 %",
+          "label": "de informes presentados",
+          "detail": "6 372 de 6 979 informes exigibles"
+        },
+        "stats": [
+          {
+            "icon": "user",
+            "value": "91,0 %",
+            "label": "Promedio de informes presentados por congresista"
+          },
+          {
+            "icon": "check",
+            "value": "28",
+            "label": "congresistas presentaron todos sus informes (100 %)"
+          },
+          {
+            "icon": "users",
+            "value": "102 de 140",
+            "label": "congresistas superan el 90 % de cumplimiento"
+          },
+          {
+            "icon": "bill",
+            "value": "14",
+            "label": "congresistas están por debajo del 80 %"
+          }
+        ],
+        "alert": {
+          "value": "3",
+          "label": "congresistas están por debajo del 50 %<br />(el más bajo es 26,7 %)."
+        },
+        "note": "Si se consideran las licencias, exoneraciones y dispensas registradas (447 documentos), la <strong>cobertura sube a 96,3 %.</strong> Aún quedan 257 meses-congresista sin ningún documento."
+      },
+      "groups": {
+        "title": "Porcentaje de informes presentados por grupo parlamentario",
+        "subtitle": "Porcentaje de informes presentados sobre el total exigible.",
+        "ticks": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "series": [
+          {
+            "name": "Juntos por el Perú – Voces del Pueblo",
+            "value": 94.5
+          },
+          {
+            "name": "Bloque Magisterial",
+            "value": 94.5
+          },
+          {
+            "name": "Acción Popular",
+            "value": 94.1
+          },
+          {
+            "name": "Honor y Democracia",
+            "value": 94.1
+          },
+          {
+            "name": "Fuerza Popular",
+            "value": 93.4
+          },
+          {
+            "name": "No agrupados",
+            "value": 87.4
+          },
+          {
+            "name": "Perú Libre",
+            "value": 86.3
+          },
+          {
+            "name": "Podemos Perú",
+            "value": 75.0,
+            "outlier": true
+          }
+        ],
+        "note": "<strong>Nota:</strong> Podemos Perú registró un cumplimiento del <strong>75,0 % (21 de 28 informes).</strong> Este resultado corresponde a un solo congresista, por lo que no es comparable con el de los demás grupos parlamentarios, que están integrados por varios congresistas."
+      },
+      "qualityCta": {
+        "title": "¿Qué tan completos y de calidad son estos informes?",
+        "text": "Explora el análisis de calidad de los informes de representación, elaborado por nuestro voluntario Luis Rodas.",
+        "linkLabel": "Ver análisis de calidad de los informes",
+        "url": "#"
+      }
+    }
+  },
+  "votes": {
+    "title": "Votaciones en 9 proyectos de ley",
+    "description": "Resumen de la votación en 9 proyectos de ley de alcance mediático que generaron debate público durante el período 2021–2026.",
+    "laws": [
+      {
+        "number": "31520",
+        "title": "Reforma de la Ley Universitaria / SUNEDU",
+        "short": "Ley Universitaria",
+        "voteType": "regular",
+        "yes": 68,
+        "no": 39,
+        "abstain": 5,
+        "noVote": 19,
+        "recorded": 130,
+        "partial": false
+      },
+      {
+        "number": "31751",
+        "title": "Suspensión del plazo de prescripción",
+        "short": "Prescripción",
+        "voteType": "regular",
+        "yes": 88,
+        "no": 12,
+        "abstain": 6,
+        "noVote": 25,
+        "recorded": 130,
+        "partial": false
+      },
+      {
+        "number": "31981",
+        "title": "Elecciones primarias",
+        "short": "Elec. primarias",
+        "voteType": "regular",
+        "yes": 80,
+        "no": 35,
+        "abstain": 4,
+        "noVote": 12,
+        "recorded": 130,
+        "partial": false
+      },
+      {
+        "number": "31988",
+        "title": "Restablecimiento de la bicameralidad",
+        "short": "Bicameralidad",
+        "voteType": "none",
+        "yes": 93,
+        "no": 28,
+        "abstain": 1,
+        "noVote": 9,
+        "recorded": 130,
+        "partial": false
+      },
+      {
+        "number": "31990",
+        "title": "Colaboración eficaz",
+        "short": "Colaboración eficaz",
+        "voteType": "none",
+        "yes": 88,
+        "no": 15,
+        "abstain": 2,
+        "noVote": 26,
+        "recorded": 124,
+        "partial": false
+      },
+      {
+        "number": "31996",
+        "title": "Ingreso a la Carrera Pública Magisterial de docentes interinos",
+        "short": "Docentes interinos",
+        "voteType": "exonerated",
+        "yes": 95,
+        "no": 7,
+        "abstain": 0,
+        "noVote": 29,
+        "recorded": 130,
+        "partial": false
+      },
+      {
+        "number": "32059",
+        "title": "Nombramiento progresivo de personal administrativo CAS de Salud",
+        "short": "CAS Salud",
+        "voteType": "exonerated",
+        "yes": 106,
+        "no": 0,
+        "abstain": 6,
+        "noVote": 19,
+        "recorded": 130,
+        "partial": false
+      },
+      {
+        "number": "32107",
+        "title": "Lesa humanidad y crímenes de guerra",
+        "short": "Lesa humanidad",
+        "voteType": "none",
+        "yes": 60,
+        "no": 36,
+        "abstain": 11,
+        "noVote": 24,
+        "recorded": 130,
+        "partial": false
+      },
+      {
+        "number": "32130",
+        "title": "Investigación del delito y funciones de la PNP",
+        "short": "Función PNP",
+        "voteType": "regular",
+        "yes": 8,
+        "no": 5,
+        "abstain": 1,
+        "noVote": 117,
+        "recorded": 26,
+        "partial": true
+      }
+    ],
+    "parties": [
+      {
+        "party": "Perú Libre",
+        "members": 38,
+        "rates": [
+          50.0,
+          73.7,
+          39.5,
+          39.5,
+          63.2,
+          73.7,
+          84.2,
+          31.6,
+          18.4
+        ]
+      },
+      {
+        "party": "Fuerza Popular",
+        "members": 24,
+        "rates": [
+          75.0,
+          87.5,
+          79.2,
+          87.5,
+          62.5,
+          58.3,
+          79.2,
+          75.0,
+          33.3
+        ]
+      },
+      {
+        "party": "Acción Popular",
+        "members": 16,
+        "rates": [
+          56.2,
+          87.5,
+          62.5,
+          100.0,
+          81.2,
+          87.5,
+          100.0,
+          37.5,
+          0.0
+        ]
+      },
+      {
+        "party": "Alianza para el Progreso",
+        "members": 15,
+        "rates": [
+          33.3,
+          66.7,
+          73.3,
+          73.3,
+          66.7,
+          73.3,
+          60.0,
+          20.0,
+          13.3
+        ]
+      },
+      {
+        "party": "Renovación Popular",
+        "members": 13,
+        "rates": [
+          46.2,
+          84.6,
+          84.6,
+          69.2,
+          84.6,
+          84.6,
+          92.3,
+          23.1,
+          7.7
+        ]
+      },
+      {
+        "party": "Avanza País",
+        "members": 7,
+        "rates": [
+          28.6,
+          28.6,
+          85.7,
+          100.0,
+          100.0,
+          57.1,
+          57.1,
+          85.7,
+          0.0
+        ]
+      },
+      {
+        "party": "Somos Perú",
+        "members": 5,
+        "rates": [
+          60.0,
+          40.0,
+          100.0,
+          100.0,
+          80.0,
+          100.0,
+          100.0,
+          60.0,
+          40.0
+        ]
+      },
+      {
+        "party": "Podemos Perú",
+        "members": 5,
+        "rates": [
+          40.0,
+          100.0,
+          60.0,
+          60.0,
+          40.0,
+          40.0,
+          80.0,
+          40.0,
+          60.0
+        ]
+      },
+      {
+        "party": "Juntos por el Perú",
+        "members": 5,
+        "rates": [
+          20.0,
+          0.0,
+          0.0,
+          20.0,
+          20.0,
+          80.0,
+          80.0,
+          20.0,
+          0.0
+        ]
+      },
+      {
+        "party": "Partido Morado",
+        "members": 3,
+        "rates": [
+          33.3,
+          0.0,
+          0.0,
+          66.7,
+          66.7,
+          33.3,
+          66.7,
+          33.3,
+          0.0
+        ]
+      }
+    ]
+  }
 }
