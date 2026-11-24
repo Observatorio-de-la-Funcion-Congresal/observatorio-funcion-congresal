@@ -1,6 +1,7 @@
 ---
 import Container from './ui/Container.astro';
 import LogoSrc from '../assets/logo-white.png?url';
+import OpenPeruLogoSrc from '../assets/openperu-imagotipo-white.svg?url';
 import fbIcon from '../assets/icons/fb_Icon.svg?raw';
 import lnIcon from '../assets/icons/ln_Icon.svg?raw';
 import inIcon from '../assets/icons/in_Icon.svg?raw';
@@ -41,10 +42,17 @@ const startWithSlash = (path: string) => path.startsWith('/');
           <p class="block mb-1">
             Plataforma de transparencia política que promueve la participación ciudadana informada en el proceso democrático peruano.
           </p>
-          <p class="block opacity-90">
-            Apoyo técnico de <a target="_blank" rel="noopener noreferrer" href="https://www.openperu.org.pe" class="hover:underline hover:opacity-100">Open Perú</a>
-          </p>
+          <p class="block opacity-90">Apoyo técnico de</p>
         </div>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.openperu.org.pe"
+          aria-label="Open Perú"
+          class="inline-block self-start -mt-2"
+        >
+          <img src={OpenPeruLogoSrc} alt="Open Perú" class="h-12 w-auto" loading="lazy">
+        </a>
         
         <div class="flex items-center gap-3 mt-2">
           {
